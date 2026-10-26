@@ -144,8 +144,8 @@ terraform, aws-lambda, amazon-s3, amazon-ecs, ecs-fargate, qemu, ffmpeg, git
 
 | Field | Value |
 |---|---|
-| Video demo | `outputs/demo_annotated.mp4` (12 s, 288 frames @ 24 fps, 1.9 MB) — upload directly or host unlisted |
-| Code repository | **TODO: publish this directory to a public GitHub repo** (not currently a git repo) |
+| Video demo | `outputs/demo_submission.mp4` (85 s, 1080p, 4.8 MB) — upload directly |
+| Code repository | https://github.com/krishnakumarbhat/VIGIL (public, `main`) |
 | Architecture | `outputs/architecture_diagram.png` |
 | Technical report | `outputs/DEVPOST_SUBMISSION.md` (paste as the "additional information" / project details body) |
 | Evidence | `outputs/benchmarks.json`, `outputs/benchmarks.csv`, `outputs/cool_evidence.json`, `logs/experiments.tsv` |
@@ -155,11 +155,9 @@ terraform, aws-lambda, amazon-s3, amazon-ecs, ecs-fargate, qemu, ffmpeg, git
 1. Create the Devpost project, paste the fields above (name, tagline, elevator pitch).
 2. Paste `outputs/DEVPOST_SUBMISSION.md` into the project details body; it renders as
    Markdown and carries the evidence index.
-3. Upload `outputs/demo_annotated.mp4` as the video, or host it unlisted and paste the URL.
-   Optional: render a 60–90 s narrated cut — 12 s is short for a judging pass.
+3. Upload `outputs/demo_submission.mp4` (85 s) as the video.
 4. Upload `outputs/architecture_diagram.png` as the thumbnail.
-5. Publish the repo (public, or shared with the judges) and paste the URL. Exclude
-   `data/models/*.onnx` if size is a problem; the README documents the download.
+5. Repository is public: https://github.com/krishnakumarbhat/VIGIL
 6. Pick the tracks: **Overall**, **Agentic Vision**. Do **not** enter **Best Use of COOL** —
    no verified Graviton evidence exists and the report says so.
 7. Save the draft early, then submit before **2026-10-27 12:29 IST**.
