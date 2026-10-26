@@ -1,0 +1,35 @@
+{
+  "run_id": "run-20261022T140409Z-27336c",
+  "source": "data/demo/demo.mp4",
+  "telemetry": "outputs/telemetry/demo.jsonl",
+  "frames": 288,
+  "mean_ms": 158.622,
+  "p50_ms": 140.401,
+  "p95_ms": 321.687,
+  "max_ms": 461.145,
+  "faces": 288,
+  "forensic_frames": 1,
+  "escalations": 0,
+  "degraded_frames": 0,
+  "budget_exhausted": 35,
+  "backends": [
+    "yunet+sface"
+  ],
+  "generated_utc": "2026-10-22T14:04:58.075Z",
+  "wall_clock_s": 48.045,
+  "fps_wall": 5.99,
+  "enrolled": [
+    "employee_a",
+    "employee_b"
+  ],
+  "incidents": [],
+  "agent_stats": {
+    "frames": 288,
+    "actions": 2,
+    "forensic_runs": 1,
+    "escalations": 0
+  },
+  "backend": "yunet+sface",
+  "degraded": false,
+  "notes": []
+}

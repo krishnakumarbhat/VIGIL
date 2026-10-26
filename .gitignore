@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+data/models/*.onnx
+.venv/
+.env
+outputs/VIGIL5_submission.zip
+outputs/*.zip

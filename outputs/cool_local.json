@@ -1,0 +1,139 @@
+{
+  "schema": "vigil.cool_local/1.0",
+  "generated_utc": "2026-10-22T14:05:00+00:00",
+  "environment": {
+    "machine": "x86_64",
+    "platform": "Linux-7.1.1-76070101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "opencv": "5.0.0",
+    "opencv_module": "/media/pope/projecteo/python_libs/cv2/__init__.py",
+    "numpy": "2.2.6",
+    "cpu_count_logical": 16,
+    "load_average_1m": 19.39,
+    "peak_rss_mb": 58.8
+  },
+  "dispatch": {
+    "ops": {
+      "resize_2x": {
+        "optimized_ms": 4.805,
+        "baseline_ms": 4.543,
+        "dispatch_speedup": 0.945
+      },
+      "gaussian_blur_9": {
+        "optimized_ms": 3.385,
+        "baseline_ms": 4.28,
+        "dispatch_speedup": 1.264
+      },
+      "canny": {
+        "optimized_ms": 1.006,
+        "baseline_ms": 2.09,
+        "dispatch_speedup": 2.078
+      },
+      "laplacian": {
+        "optimized_ms": 1.542,
+        "baseline_ms": 1.7,
+        "dispatch_speedup": 1.102
+      },
+      "farneback": {
+        "optimized_ms": 107.099,
+        "baseline_ms": 98.585,
+        "dispatch_speedup": 0.921
+      }
+    },
+    "mean_speedup": 1.262,
+    "median_speedup": 1.102,
+    "note": "Interleaved A/B, 9 repetitions per operator, median; x86 SIMD/IPP dispatch, not Graviton."
+  },
+  "threads": {
+    "1": {
+      "p50_ms": 76.448,
+      "p95_ms": 137.53,
+      "fps": 11.31,
+      "frames": 12
+    },
+    "2": {
+      "p50_ms": 75.358,
+      "p95_ms": 98.136,
+      "fps": 13.47,
+      "frames": 12
+    },
+    "4": {
+      "p50_ms": 54.366,
+      "p95_ms": 78.076,
+      "fps": 17.39,
+      "frames": 12
+    },
+    "8": {
+      "p50_ms": 38.658,
+      "p95_ms": 51.635,
+      "fps": 24.95,
+      "frames": 12
+    }
+  },
+  "opencl": {
+    "available": true,
+    "enabled": true,
+    "device": "NVIDIA GeForce RTX 3050 Laptop GPU",
+    "cpu_blur_ms": {
+      "wall_ms": 3.271,
+      "cpu_ms": 3.176
+    },
+    "opencl_blur_ms": {
+      "wall_ms": 3.209,
+      "cpu_ms": 6.318
+    },
+    "note": "OpenCL device present; measured on the same 640x360 frame."
+  },
+  "spatial_attention": {
+    "n_images": 40,
+    "full_640": {
+      "p50_ms": 134.137,
+      "p95_ms": 168.675,
+      "fps": 8.31,
+      "recall": 0.975
+    },
+    "roi_320_oracle": {
+      "p50_ms": 32.319,
+      "p95_ms": 51.026,
+      "fps": 30.5,
+      "recall": 1.0
+    },
+    "latency_speedup": 3.671,
+    "caveat": "Oracle crop from ground truth; an upper bound on the saving, not a deployment claim."
+  },
+  "kernel_order": {
+    "gray_then_resize": {
+      "wall_ms": 1.142,
+      "cpu_ms": 1.158
+    },
+    "resize_then_gray": {
+      "wall_ms": 0.243,
+      "cpu_ms": 0.251
+    },
+    "roi_bgr_to_gray_resize_blur": {
+      "wall_ms": 0.082,
+      "cpu_ms": 0.084
+    },
+    "resize_first_speedup": 4.7,
+    "roi_speedup": 13.927,
+    "identical_output": false,
+    "note": "Resizing BGR before grayscale is not bit-identical in general; the crop variant is a different ROI, not a different result for the same ROI."
+  },
+  "energy": {
+    "rapl_energy_uj_readable": false,
+    "cpu_ms_per_gaussian_blur_640x360": 3.161,
+    "note": "RAPL counters are not readable in this container, so energy is reported as CPU-time, not joules."
+  },
+  "commands": {
+    "local": "python3 benchmarks/cool_local.py --out outputs/cool_local.json",
+    "full": "python3 benchmarks/run_eval.py",
+    "arm64_emulated": "bash scripts/run_arm64_emulated.sh",
+    "arm64_native": "COOL_WHEEL_URL=<url> bash aws/run_cool_bench.sh arm64"
+  },
+  "caveats": [
+    "All timings are x86_64 local measurements on a shared host; load average is recorded.",
+    "No COOL binary was available; no COOL speedup is claimed.",
+    "The ROI result is an oracle upper bound derived from ground-truth boxes.",
+    "Energy is CPU-time, not joules: RAPL is not readable here."
+  ]
+}

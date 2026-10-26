@@ -1,0 +1,178 @@
+{
+  "note": "Face crops derived from images shipped with the OpenCV source tree; see source paths.",
+  "n_detections": 13,
+  "n_identities": 13,
+  "references": [
+    {
+      "identity": "id00",
+      "file": "ref_id00.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_03.jpg"
+    },
+    {
+      "identity": "id01",
+      "file": "ref_id01.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_02.jpg"
+    },
+    {
+      "identity": "id02",
+      "file": "ref_id02.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_01.jpg"
+    },
+    {
+      "identity": "id03",
+      "file": "ref_id03.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_04.jpg"
+    },
+    {
+      "identity": "id04",
+      "file": "ref_id04.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_05.jpg"
+    },
+    {
+      "identity": "id05",
+      "file": "ref_id05.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_09.jpg"
+    },
+    {
+      "identity": "id06",
+      "file": "ref_id06.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_10.jpg"
+    },
+    {
+      "identity": "id07",
+      "file": "ref_id07.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_08.jpg"
+    },
+    {
+      "identity": "id08",
+      "file": "ref_id08.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_06.jpg"
+    },
+    {
+      "identity": "id09",
+      "file": "ref_id09.jpg",
+      "source": "/media/pope/projecteo/github_proj/contri/opencv/doc/js_tutorials/js_assets/lena.jpg"
+    },
+    {
+      "identity": "id10",
+      "file": "ref_id10.jpg",
+      "source": "/media/pope/projecteo/github_proj/contri/opencv/samples/data/messi5.jpg"
+    },
+    {
+      "identity": "id11",
+      "file": "ref_id11.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_00.jpg"
+    },
+    {
+      "identity": "id12",
+      "file": "ref_id12.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_07.jpg"
+    }
+  ],
+  "records": [
+    {
+      "file": "src_messi5_ee5e7209.jpg",
+      "source": "/media/pope/projecteo/github_proj/contri/opencv/samples/data/messi5.jpg",
+      "face_index": 0,
+      "det_score": 0.9152528047561646,
+      "identity": "id10",
+      "reference": "ref_id10.jpg"
+    },
+    {
+      "file": "src_lena_36fe10b1.jpg",
+      "source": "/media/pope/projecteo/github_proj/contri/opencv/doc/js_tutorials/js_assets/lena.jpg",
+      "face_index": 0,
+      "det_score": 0.9162971377372742,
+      "identity": "id09",
+      "reference": "ref_id09.jpg"
+    },
+    {
+      "file": "clean_ext_00_c7b83084.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_00.jpg",
+      "face_index": 0,
+      "det_score": 0.9134895205497742,
+      "identity": "id11",
+      "reference": "ref_id11.jpg"
+    },
+    {
+      "file": "clean_ext_01_6e072318.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_01.jpg",
+      "face_index": 0,
+      "det_score": 0.9440327882766724,
+      "identity": "id02",
+      "reference": "ref_id02.jpg"
+    },
+    {
+      "file": "clean_ext_02_00779216.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_02.jpg",
+      "face_index": 0,
+      "det_score": 0.9484270811080933,
+      "identity": "id01",
+      "reference": "ref_id01.jpg"
+    },
+    {
+      "file": "clean_ext_03_760c74a0.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_03.jpg",
+      "face_index": 0,
+      "det_score": 0.9490693807601929,
+      "identity": "id00",
+      "reference": "ref_id00.jpg"
+    },
+    {
+      "file": "clean_ext_04_8f6e75a3.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_04.jpg",
+      "face_index": 0,
+      "det_score": 0.9434824585914612,
+      "identity": "id03",
+      "reference": "ref_id03.jpg"
+    },
+    {
+      "file": "clean_ext_05_6a12b6d5.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_05.jpg",
+      "face_index": 0,
+      "det_score": 0.9423077702522278,
+      "identity": "id04",
+      "reference": "ref_id04.jpg"
+    },
+    {
+      "file": "clean_ext_06_d3c569e8.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_06.jpg",
+      "face_index": 0,
+      "det_score": 0.923959493637085,
+      "identity": "id08",
+      "reference": "ref_id08.jpg"
+    },
+    {
+      "file": "clean_ext_07_81347742.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_07.jpg",
+      "face_index": 0,
+      "det_score": 0.8431352376937866,
+      "identity": "id12",
+      "reference": "ref_id12.jpg"
+    },
+    {
+      "file": "clean_ext_08_b9311c96.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_08.jpg",
+      "face_index": 0,
+      "det_score": 0.9268079996109009,
+      "identity": "id07",
+      "reference": "ref_id07.jpg"
+    },
+    {
+      "file": "clean_ext_09_6458d4cd.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_09.jpg",
+      "face_index": 0,
+      "det_score": 0.9412484765052795,
+      "identity": "id05",
+      "reference": "ref_id05.jpg"
+    },
+    {
+      "file": "clean_ext_10_2789bb4e.jpg",
+      "source": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/samples/faces/ext_10.jpg",
+      "face_index": 0,
+      "det_score": 0.9384477138519287,
+      "identity": "id06",
+      "reference": "ref_id06.jpg"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# syntax=docker/dockerfile:1.7
+# VIGIL-5 x86_64 image (Lambda or ECS).
+#
+#   docker build --platform linux/amd64 -f aws/Dockerfile.x86 -t vigil5:x86 .
+#
+# x86 is the reference/baseline architecture. The arm64 file is the one that
+# should receive the COOL wheel on Graviton.
+FROM --platform=linux/amd64 public.ecr.aws/lambda/python:3.11
+
+ARG OPENCV_VERSION="opencv-python-headless>=5.0.0,<6"
+
+ENV PYTHONPATH=/var/task \
+    PYTHONUNBUFFERED=1 \
+    VIGIL_THREADS=1 \
+    VIGIL_AWS_MOCK=1 \
+    OPENCV_OPENCL_RUNTIME=disabled
+
+COPY aws/requirements.txt /tmp/requirements.txt
+RUN python -m pip install --no-cache-dir --upgrade pip \
+ && python -m pip install --no-cache-dir -r /tmp/requirements.txt \
+ && python -m pip install --no-cache-dir "$OPENCV_VERSION" \
+ && python -c "import cv2, numpy; print('opencv', cv2.__version__, 'numpy', numpy.__version__)"
+
+COPY src/ /var/task/src/
+COPY aws/__init__.py aws/lambda_handler.py /var/task/aws/
+COPY aws/cool_evidence.py /var/task/aws/cool_evidence.py
+
+CMD ["aws.lambda_handler.handler"]

@@ -1,0 +1,142 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "VIGIL-5 arm64/X86 vision agent - Lambda, ECS cluster, encrypted evidence bucket, alarms"
+
+Parameters:
+  ImageUri:
+    Type: String
+    Description: "ECR image URI produced from aws/Dockerfile.arm64 (or aws/Dockerfile.x86)."
+  Architecture:
+    Type: String
+    Default: arm64
+    AllowedValues: [arm64, x86_64]
+    Description: "Lambda architecture; must match the image manifest."
+  LambdaMemoryMb:
+    Type: Number
+    Default: 2048
+    MinValue: 512
+    MaxValue: 10240
+  LogRetentionDays:
+    Type: Number
+    Default: 14
+    AllowedValues: [1, 3, 5, 7, 14, 30, 60, 90]
+
+Resources:
+  EvidenceBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "vigil5-evidence-${AWS::AccountId}-${AWS::Region}"
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      VersioningConfiguration:
+        Status: Enabled
+
+  VisionLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/aws/lambda/${AWS::StackName}-vision"
+      RetentionInDays: !Ref LogRetentionDays
+
+  VisionRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service: lambda.amazonaws.com
+            Action: sts:AssumeRole
+      Policies:
+        - PolicyName: vigil5-runtime
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Effect: Allow
+                Action: [s3:GetObject, s3:PutObject, s3:ListBucket]
+                Resource:
+                  - !GetAtt EvidenceBucket.Arn
+                  - !Sub "${EvidenceBucket.Arn}/*"
+              - Effect: Allow
+                Action: [rekognition:DetectFaces]
+                Resource: "*"
+              - Effect: Allow
+                Action: [cloudwatch:PutMetricData]
+                Resource: "*"
+              - Effect: Allow
+                Action: [bedrock:InvokeModel]
+                Resource: "*"
+              - Effect: Allow
+                Action: [logs:CreateLogStream, logs:PutLogEvents]
+                Resource: !Sub "${VisionLogGroup.Arn}:*"
+
+  VisionFunction:
+    Type: AWS::Lambda::Function
+    Properties:
+      FunctionName: !Sub "${AWS::StackName}-vision"
+      PackageType: Image
+      Code:
+        ImageUri: !Ref ImageUri
+      Architectures: [!Ref Architecture]
+      Role: !GetAtt VisionRole.Arn
+      MemorySize: !Ref LambdaMemoryMb
+      Timeout: 30
+      Environment:
+        Variables:
+          VIGIL_THREADS: "1"
+          VIGIL_AWS_ENABLED: "true"
+          VIGIL_AWS_MOCK: "false"
+          VIGIL_AWS_REGION: !Ref "AWS::Region"
+          VIGIL_AWS_BUCKET: !Ref EvidenceBucket
+      DependsOn: VisionLogGroup
+      Tags:
+        - Key: Project
+          Value: VIGIL-5
+
+  ErrorAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub "${AWS::StackName}-lambda-errors"
+      AlarmDescription: "At least one VIGIL-5 Lambda error in five minutes"
+      Namespace: AWS/Lambda
+      MetricName: Errors
+      Dimensions:
+        - Name: FunctionName
+          Value: !Ref VisionFunction
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqual
+      TreatMissingData: notBreaching
+
+  VisionCluster:
+    Type: AWS::ECS::Cluster
+    Properties:
+      ClusterName: !Sub "${AWS::StackName}-cluster"
+      ClusterSettings:
+        - Name: containerInsights
+          Value: enabled
+
+  EcsLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub "/ecs/${AWS::StackName}"
+      RetentionInDays: !Ref LogRetentionDays
+
+Outputs:
+  EvidenceBucket:
+    Description: "Encrypted bucket for JSON telemetry and incident records."
+    Value: !Ref EvidenceBucket
+  LambdaFunction:
+    Description: "Arm64 Lambda function name."
+    Value: !Ref VisionFunction
+  EcsCluster:
+    Description: "ECS cluster for continuous ingestion."
+    Value: !Ref VisionCluster

@@ -1,0 +1,36 @@
+# syntax=docker/dockerfile:1.7
+# VIGIL-5 / AWS Graviton (arm64) image.
+#
+# Build with a Cloud-Optimized OpenCV (COOL) wheel from AWS Marketplace:
+#   docker buildx build --platform linux/arm64 \
+#     --build-arg COOL_WHEEL_URL="$COOL_WHEEL_URL" -f aws/Dockerfile.arm64 -t vigil5:arm64 .
+# Without COOL_WHEEL_URL the image falls back to upstream headless OpenCV and
+# is *not* COOL-optimised; aws/cool_evidence.py records which path was used.
+FROM --platform=linux/arm64 public.ecr.aws/lambda/python:3.11-arm64
+
+ARG COOL_WHEEL_URL=""
+ARG OPENCV_FALLBACK="opencv-python-headless>=5.0.0,<6"
+
+ENV PYTHONPATH=/var/task \
+    PYTHONUNBUFFERED=1 \
+    VIGIL_THREADS=1 \
+    VIGIL_AWS_MOCK=1 \
+    OPENCV_OPENCL_RUNTIME=disabled
+
+COPY aws/requirements.txt /tmp/requirements.txt
+RUN python -m pip install --no-cache-dir --upgrade pip \
+ && python -m pip install --no-cache-dir -r /tmp/requirements.txt \
+ && if [ -n "$COOL_WHEEL_URL" ]; then \
+        python -m pip install --no-cache-dir "$COOL_WHEEL_URL"; \
+    else \
+        python -m pip install --no-cache-dir "$OPENCV_FALLBACK"; \
+    fi \
+ && python -c "import cv2, numpy; print('opencv', cv2.__version__, 'numpy', numpy.__version__)"
+
+COPY src/ /var/task/src/
+COPY aws/__init__.py aws/lambda_handler.py /var/task/aws/
+COPY aws/cool_evidence.py /var/task/aws/cool_evidence.py
+
+# Lambda base images use this entrypoint; the ECS task can override it with
+# ["python3", "-m", "src.engine", ...] for continuous video ingestion.
+CMD ["aws.lambda_handler.handler"]

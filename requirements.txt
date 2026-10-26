@@ -1,0 +1,8 @@
+# Pinned build-host dependency set — Python 3.10.12, Ubuntu 22.04 x86_64.
+# Verified with `pip install -r requirements.txt` on the host described in
+# outputs/benchmarks.json -> environment.
+opencv-python==5.0.0.93
+numpy==2.2.6
+pydantic==2.14.1
+psutil==5.9.0
+matplotlib==3.10.9

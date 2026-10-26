@@ -1,0 +1,49 @@
+{
+  "family": "vigil5-vision-arm64",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "2048",
+  "memory": "4096",
+  "runtimePlatform": {
+    "cpuArchitecture": "ARM64",
+    "operatingSystemFamily": "LINUX"
+  },
+  "executionRoleArn": "arn:aws:iam::ACCOUNT_ID:role/vigil5-task-execution",
+  "taskRoleArn": "arn:aws:iam::ACCOUNT_ID:role/vigil5-task",
+  "containerDefinitions": [
+    {
+      "name": "vigil5",
+      "image": "ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/vigil5-arm64:latest",
+      "essential": true,
+      "command": [
+        "python3",
+        "-m",
+        "src.engine",
+        "--video",
+        "s3://REPLACE_BUCKET/input/stream.mp4",
+        "--out",
+        "/tmp/annotated.mp4",
+        "--telemetry",
+        "/tmp/telemetry.jsonl",
+        "--gallery",
+        "/opt/vigil/gallery"
+      ],
+      "environment": [
+        {"name": "VIGIL_THREADS", "value": "1"},
+        {"name": "VIGIL_AWS_ENABLED", "value": "true"},
+        {"name": "VIGIL_AWS_MOCK", "value": "false"},
+        {"name": "VIGIL_AWS_REGION", "value": "us-east-1"},
+        {"name": "VIGIL_AWS_BUCKET", "value": "REPLACE_BUCKET"},
+        {"name": "VIGIL_TELEMETRY_DIR", "value": "/tmp/telemetry"}
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/vigil5",
+          "awslogs-region": "us-east-1",
+          "awslogs-stream-prefix": "vision"
+        }
+      }
+    }
+  ]
+}

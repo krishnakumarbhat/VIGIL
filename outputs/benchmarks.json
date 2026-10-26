@@ -1,0 +1,1000 @@
+{
+ "schema": "vigil.benchmarks/1.0",
+ "environment": {
+  "timestamp_utc": "2026-10-22T14:03:19+00:00",
+  "platform": "Linux-7.1.1-76070101-generic-x86_64-with-glibc2.35",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "python": "3.10.12",
+  "opencv": "5.0.0",
+  "opencv_module": "/media/pope/projecteo/python_libs/cv2/__init__.py",
+  "numpy": "2.2.6",
+  "cpu_count_logical": 16,
+  "pinned_cores": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "load_average_1m": 18.3,
+  "opencv_threads": 1,
+  "opencl": true,
+  "simd": [
+   "Dispatched code generation:  SSE4_1 SSE4_2 AVX FP16 AVX2 AVX512_SKX"
+  ],
+  "ipp": [
+   "Intel IPP:                   2026.0.0 [2026.0.0]"
+  ],
+  "build_info_sha256": "70fa761cd0c7ca93"
+ },
+ "runtime": {
+  "model_load_s": 0.461,
+  "rss_start_mb": 70.24,
+  "rss_after_models_mb": 134.02,
+  "process_peak_rss_mb": 717.3,
+  "backend": "yunet+sface",
+  "degraded": false,
+  "notes": [],
+  "total_benchmark_s": 314.08
+ },
+ "benchmarks": {
+  "detection": {
+   "n_images": 100,
+   "n_positive": 60,
+   "n_negative": 40,
+   "tp": 59,
+   "fp": 0,
+   "fn": 1,
+   "precision": 1.0,
+   "recall": 0.9833,
+   "f1": 0.9916,
+   "roc_auc": 0.9917,
+   "recall_by_size": {
+    "<48": {
+     "recall": 0.917,
+     "n": 12
+    },
+    "48-80": {
+     "recall": 1.0,
+     "n": 18
+    },
+    "80-128": {
+     "recall": 1.0,
+     "n": 6
+    },
+    ">=128": {
+     "recall": 1.0,
+     "n": 24
+    }
+   },
+   "latency_ms_p50": 54.269,
+   "latency_ms_p95": 93.892,
+   "latency_ms_mean": 57.861,
+   "cpu_latency_ms_p50": 54.038,
+   "cpu_latency_ms_p95": 72.925,
+   "cpu_fps": 17.99,
+   "throughput_fps": 17.28,
+   "threshold": 0.6,
+   "per_image": [
+    {
+     "file": "positive/pos_000.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_001.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_002.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_003.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_004.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_005.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_006.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_007.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_008.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_009.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_010.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_011.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_012.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_013.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_014.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_015.jpg",
+     "detections": 0,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_016.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_017.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_018.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_019.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_020.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_021.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_022.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_023.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_024.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_025.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_026.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_027.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_028.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_029.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_030.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_031.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_032.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_033.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_034.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_035.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_036.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_037.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_038.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_039.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_040.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_041.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_042.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_043.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_044.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_045.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_046.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_047.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_048.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_049.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_050.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_051.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_052.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_053.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_054.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_055.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_056.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_057.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_058.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "positive/pos_059.jpg",
+     "detections": 1,
+     "has_face": true
+    },
+    {
+     "file": "negative/neg_000.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_001.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_002.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_003.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_004.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_005.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_006.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_007.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_008.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_009.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_010.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_011.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_012.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_013.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_014.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_015.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_016.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_017.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_018.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_019.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_020.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_021.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_022.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_023.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_024.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_025.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_026.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_027.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_028.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_029.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_030.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_031.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_032.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_033.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_034.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_035.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_036.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_037.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_038.jpg",
+     "detections": 0,
+     "has_face": false
+    },
+    {
+     "file": "negative/neg_039.jpg",
+     "detections": 0,
+     "has_face": false
+    }
+   ],
+   "repetitions": [
+    {
+     "latency_ms_p50": 65.924,
+     "latency_ms_p95": 88.128,
+     "cpu_latency_ms_p50": 65.127,
+     "cpu_latency_ms_p95": 87.294,
+     "throughput_fps": 14.66
+    },
+    {
+     "latency_ms_p50": 59.286,
+     "latency_ms_p95": 85.912,
+     "cpu_latency_ms_p50": 59.329,
+     "cpu_latency_ms_p95": 84.679,
+     "throughput_fps": 16.22
+    },
+    {
+     "latency_ms_p50": 54.269,
+     "latency_ms_p95": 93.892,
+     "cpu_latency_ms_p50": 54.038,
+     "cpu_latency_ms_p95": 72.925,
+     "throughput_fps": 17.28
+    }
+   ],
+   "wall_p50_spread_ms": [
+    54.269,
+    65.924
+   ],
+   "cpu_p50_spread_ms": [
+    54.038,
+    65.127
+   ]
+  },
+  "recognition": {
+   "n_pairs": 60,
+   "n_genuine": 30,
+   "n_impostor": 30,
+   "roc_auc": 1.0,
+   "tar_at_far_1e-2": 1.0,
+   "threshold_at_far_1e-2": 0.7846,
+   "accuracy_at_config_threshold": 1.0,
+   "config_threshold": 0.363,
+   "genuine_mean": 0.9025,
+   "impostor_mean": 0.0367,
+   "embedding_latency_ms_p50": 296.048,
+   "embedding_latency_ms_p95": 353.253,
+   "embedding_cpu_ms_p50": 293.407,
+   "embedding_cpu_ms_p95": 351.643,
+   "embedding_dim": 128,
+   "repetitions": [
+    {
+     "latency_ms_p50": 340.725,
+     "cpu_ms_p50": 339.513,
+     "cpu_ms_p95": 411.668
+    },
+    {
+     "latency_ms_p50": 296.048,
+     "cpu_ms_p50": 293.407,
+     "cpu_ms_p95": 351.643
+    },
+    {
+     "latency_ms_p50": 316.83,
+     "cpu_ms_p50": 316.871,
+     "cpu_ms_p95": 368.5
+    }
+   ],
+   "cpu_p50_spread_ms": [
+    293.407,
+    339.513
+   ]
+  },
+  "agent": {
+   "static_320_detector": {
+    "config": "static_320_detector",
+    "mode": "static",
+    "frames": 288,
+    "wall_fps": 77.83,
+    "latency_p50_ms": 12.535,
+    "latency_p95_ms": 17.452,
+    "latency_mean_ms": 12.848,
+    "cpu_latency_p50_ms": 12.548,
+    "cpu_latency_p95_ms": 17.476,
+    "cpu_fps": 77.82,
+    "rss_before_mb": 512.29,
+    "rss_after_mb": 593.41,
+    "rss_delta_mb": 81.1,
+    "precision": 0.9552,
+    "recall": 0.6211,
+    "f1": 0.7527,
+    "tp": 277,
+    "fp": 13,
+    "fn": 169,
+    "identity_accuracy": null,
+    "mean_iou": 0.724,
+    "event_recall": 0.0,
+    "event_hits": {
+     "occlusion": false,
+     "fast_entry": false,
+     "low_light": false,
+     "blur": false
+    },
+    "trigger_precision": 0.0,
+    "false_trigger_rate": 0.0,
+    "trigger_frames": 0,
+    "repetitions": [
+     {
+      "wall_fps": 73.35,
+      "latency_p50_ms": 13.476,
+      "latency_p95_ms": 18.029,
+      "cpu_fps": 73.56,
+      "cpu_latency_p50_ms": 13.469,
+      "cpu_latency_p95_ms": 17.887,
+      "f1": 0.7527,
+      "event_recall": 0.0
+     },
+     {
+      "wall_fps": 76.13,
+      "latency_p50_ms": 12.798,
+      "latency_p95_ms": 17.429,
+      "cpu_fps": 76.13,
+      "cpu_latency_p50_ms": 12.808,
+      "cpu_latency_p95_ms": 17.453,
+      "f1": 0.7527,
+      "event_recall": 0.0
+     },
+     {
+      "wall_fps": 77.83,
+      "latency_p50_ms": 12.535,
+      "latency_p95_ms": 17.452,
+      "cpu_fps": 77.82,
+      "cpu_latency_p50_ms": 12.548,
+      "cpu_latency_p95_ms": 17.476,
+      "f1": 0.7527,
+      "event_recall": 0.0
+     }
+    ],
+    "wall_p50_spread_ms": [
+     12.535,
+     13.476
+    ],
+    "cpu_p50_spread_ms": [
+     12.548,
+     13.469
+    ],
+    "wall_fps_spread": [
+     73.35,
+     77.83
+    ]
+   },
+   "adaptive_no_forensics": {
+    "config": "adaptive_no_forensics",
+    "mode": "agent",
+    "frames": 288,
+    "wall_fps": 10.22,
+    "latency_p50_ms": 85.595,
+    "latency_p95_ms": 147.183,
+    "latency_mean_ms": 97.839,
+    "cpu_latency_p50_ms": 85.306,
+    "cpu_latency_p95_ms": 147.153,
+    "cpu_fps": 10.25,
+    "rss_before_mb": 514.88,
+    "rss_after_mb": 618.47,
+    "rss_delta_mb": 103.6,
+    "forensic_frames": 0,
+    "escalations": 1,
+    "adaptive_steps_total": 3,
+    "verification_pass_rate": 0.9965,
+    "precision": 0.9306,
+    "recall": 0.6009,
+    "f1": 0.7302,
+    "tp": 268,
+    "fp": 20,
+    "fn": 178,
+    "identity_accuracy": 1.0,
+    "mean_iou": 0.723,
+    "event_recall": 0.0,
+    "event_hits": {
+     "occlusion": false,
+     "fast_entry": false,
+     "low_light": false,
+     "blur": false
+    },
+    "trigger_precision": 0.0,
+    "false_trigger_rate": 0.0051,
+    "trigger_frames": 1,
+    "repetitions": [
+     {
+      "wall_fps": 9.78,
+      "latency_p50_ms": 89.293,
+      "latency_p95_ms": 160.539,
+      "cpu_fps": 9.84,
+      "cpu_latency_p50_ms": 89.291,
+      "cpu_latency_p95_ms": 157.009,
+      "f1": 0.7302,
+      "event_recall": 0.0
+     },
+     {
+      "wall_fps": 9.98,
+      "latency_p50_ms": 88.499,
+      "latency_p95_ms": 151.514,
+      "cpu_fps": 10.0,
+      "cpu_latency_p50_ms": 88.474,
+      "cpu_latency_p95_ms": 151.351,
+      "f1": 0.7302,
+      "event_recall": 0.25
+     },
+     {
+      "wall_fps": 10.22,
+      "latency_p50_ms": 85.595,
+      "latency_p95_ms": 147.183,
+      "cpu_fps": 10.25,
+      "cpu_latency_p50_ms": 85.306,
+      "cpu_latency_p95_ms": 147.153,
+      "f1": 0.7302,
+      "event_recall": 0.0
+     }
+    ],
+    "wall_p50_spread_ms": [
+     85.595,
+     89.293
+    ],
+    "cpu_p50_spread_ms": [
+     85.306,
+     89.291
+    ],
+    "wall_fps_spread": [
+     9.78,
+     10.22
+    ]
+   },
+   "full_agent": {
+    "config": "full_agent",
+    "mode": "agent",
+    "frames": 288,
+    "wall_fps": 10.32,
+    "latency_p50_ms": 83.884,
+    "latency_p95_ms": 149.643,
+    "latency_mean_ms": 96.929,
+    "cpu_latency_p50_ms": 83.884,
+    "cpu_latency_p95_ms": 148.536,
+    "cpu_fps": 10.34,
+    "rss_before_mb": 515.04,
+    "rss_after_mb": 616.35,
+    "rss_delta_mb": 101.3,
+    "forensic_frames": 4,
+    "escalations": 1,
+    "adaptive_steps_total": 7,
+    "verification_pass_rate": 0.9965,
+    "precision": 0.921,
+    "recall": 0.6009,
+    "f1": 0.7273,
+    "tp": 268,
+    "fp": 23,
+    "fn": 178,
+    "identity_accuracy": 1.0,
+    "mean_iou": 0.723,
+    "event_recall": 0.75,
+    "event_hits": {
+     "occlusion": true,
+     "fast_entry": false,
+     "low_light": true,
+     "blur": true
+    },
+    "trigger_precision": 0.6,
+    "false_trigger_rate": 0.0101,
+    "trigger_frames": 5,
+    "repetitions": [
+     {
+      "wall_fps": 10.1,
+      "latency_p50_ms": 88.069,
+      "latency_p95_ms": 143.465,
+      "cpu_fps": 10.12,
+      "cpu_latency_p50_ms": 88.002,
+      "cpu_latency_p95_ms": 143.236,
+      "f1": 0.7293,
+      "event_recall": 0.75
+     },
+     {
+      "wall_fps": 10.32,
+      "latency_p50_ms": 83.884,
+      "latency_p95_ms": 149.643,
+      "cpu_fps": 10.34,
+      "cpu_latency_p50_ms": 83.884,
+      "cpu_latency_p95_ms": 148.536,
+      "f1": 0.7273,
+      "event_recall": 0.75
+     },
+     {
+      "wall_fps": 9.68,
+      "latency_p50_ms": 92.747,
+      "latency_p95_ms": 155.174,
+      "cpu_fps": 9.71,
+      "cpu_latency_p50_ms": 92.363,
+      "cpu_latency_p95_ms": 154.816,
+      "f1": 0.7302,
+      "event_recall": 0.75
+     }
+    ],
+    "wall_p50_spread_ms": [
+     83.884,
+     92.747
+    ],
+    "cpu_p50_spread_ms": [
+     83.884,
+     92.363
+    ],
+    "wall_fps_spread": [
+     9.68,
+     10.32
+    ]
+   }
+  },
+  "dispatch": {
+   "note": "x86 SIMD dispatch measurement; COOL/Graviton evidence is produced separately on Arm.",
+   "ops": {
+    "resize_2x": {
+     "optimized_ms": 1.753,
+     "baseline_ms": 1.877,
+     "speedup": 1.071
+    },
+    "gaussian_blur_9": {
+     "optimized_ms": 1.017,
+     "baseline_ms": 2.61,
+     "speedup": 2.566
+    },
+    "canny": {
+     "optimized_ms": 5.399,
+     "baseline_ms": 5.916,
+     "speedup": 1.096
+    },
+    "farneback": {
+     "optimized_ms": 75.128,
+     "baseline_ms": 75.941,
+     "speedup": 1.011
+    },
+    "laplacian": {
+     "optimized_ms": 2.922,
+     "baseline_ms": 3.428,
+     "speedup": 1.173
+    }
+   },
+   "mean_speedup": 1.383
+  },
+  "thread_scaling": {
+   "1": {
+    "p50_ms": 59.202,
+    "p95_ms": 117.751,
+    "fps": 13.62,
+    "cpu_p50_ms": 59.219,
+    "cpu_fps": 13.63,
+    "cpu_p50_spread_ms": [
+     59.219,
+     65.336
+    ],
+    "wall_fps_repetitions": [
+     13.75,
+     13.62,
+     12.99
+    ]
+   },
+   "2": {
+    "p50_ms": 50.37,
+    "p95_ms": 89.958,
+    "fps": 16.43,
+    "cpu_p50_ms": 73.94,
+    "cpu_fps": 10.64,
+    "cpu_p50_spread_ms": [
+     73.94,
+     74.022
+    ],
+    "wall_fps_repetitions": [
+     16.43,
+     16.22,
+     15.86
+    ]
+   },
+   "4": {
+    "p50_ms": 46.377,
+    "p95_ms": 88.972,
+    "fps": 18.31,
+    "cpu_p50_ms": 84.658,
+    "cpu_fps": 9.12,
+    "cpu_p50_spread_ms": [
+     84.658,
+     86.793
+    ],
+    "wall_fps_repetitions": [
+     18.82,
+     18.31,
+     18.27
+    ]
+   }
+  }
+ },
+ "methodology": {
+  "repetitions": 3,
+  "repetition_policy": "Each timing block runs VIGIL_BENCH_REPS times; the pass with the lowest CPU-time p50 is reported, together with the observed wall/CPU spread.",
+  "detection": "100 labelled synthetic images (60 positives / 40 negatives), exact boxes, IoU>=0.5; ROC-AUC over GT-face scores vs background/unmatched scores.",
+  "recognition": "30 genuine / 30 impostor pairs built from 13 clustered identities with rotation, scale, exposure and JPEG augmentation.",
+  "agent": "288-frame demo clip (640x360, 24 fps) with scripted occlusion, fast entry, low light and blur; IoU>=0.35 matching, event windows +/- 2/6 frames.",
+  "threads": "60 frames, OpenCV threads 1/2/4, pinned to 4 logical CPUs.",
+  "dispatch": "cv2.setUseOptimized(False) vs True on 5 representative operators."
+ },
+ "limitations": [
+  "Synthetic eval corpus; not directly comparable to WIDER FACE / LFW leaderboards.",
+  "Single shared laptop host (load average reported); absolute latencies vary with background load.",
+  "CPU-only on x86; Graviton/COOL numbers must be produced on Arm with aws/run_cool_bench.sh.",
+  "No certified presentation-attack detection; liveness is an explicitly labelled proxy."
+ ],
+ "_measurement_conditions": {
+  "generated_at": "2026-10-22T14:05:40.848286Z",
+  "host_load": "CONCURRENT - a local RTX 3050 LoRA training job and Kaggle downloads were active on this host during this pass, so wall-clock latencies are inflated relative to the earlier quiet-host pass (85.16 FPS, p50 11.68 ms) recorded in DEVPOST_SUBMISSION.md. Re-run `bash scripts/run_all.sh` on an idle host to reproduce the headline figures.",
+  "quiet_host_reference": {
+   "throughput_fps": 85.16,
+   "latency_ms_p50": 11.68,
+   "latency_ms_p95": 13.24
+  },
+  "loaded_host_measured": {
+   "detection_latency_ms_p50": 54.269
+  }
+ }
+}

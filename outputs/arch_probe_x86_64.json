@@ -1,0 +1,72 @@
+{
+  "schema": "vigil.arch_probe/1.0",
+  "environment": {
+    "timestamp_utc": "2026-10-22T14:05:15+00:00",
+    "machine": "x86_64",
+    "platform": "Linux-7.1.1-76070101-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "opencv": "5.0.0",
+    "opencv_module": "/media/pope/projecteo/python_libs/cv2/__init__.py",
+    "numpy": "2.2.6",
+    "emulated": false,
+    "emulation_note": "Native execution.",
+    "build_info_sha256": "70fa761cd0c7ca93",
+    "baseline": [
+      "Baseline:                    SSE SSE2 SSE3"
+    ],
+    "dispatch": [
+      "Dispatched code generation:  SSE4_1 SSE4_2 AVX FP16 AVX2 AVX512_SKX"
+    ],
+    "ipp": [
+      "Intel IPP:                   2026.0.0 [2026.0.0]"
+    ],
+    "parallel": [
+      "Parallel framework:            pthreads"
+    ],
+    "opencl_available": true,
+    "threads": 1,
+    "load_average_1m": 18.92
+  },
+  "operators": {
+    "resize_2x": {
+      "optimized_ms": 2.407,
+      "baseline_ms": 2.968,
+      "dispatch_speedup": 1.233
+    },
+    "gaussian_blur_9": {
+      "optimized_ms": 1.112,
+      "baseline_ms": 3.408,
+      "dispatch_speedup": 3.065
+    },
+    "canny": {
+      "optimized_ms": 0.43,
+      "baseline_ms": 1.364,
+      "dispatch_speedup": 3.172
+    },
+    "laplacian": {
+      "optimized_ms": 0.745,
+      "baseline_ms": 0.952,
+      "dispatch_speedup": 1.278
+    },
+    "farneback": {
+      "optimized_ms": 109.383,
+      "baseline_ms": 95.872,
+      "dispatch_speedup": 0.876
+    }
+  },
+  "detection_yunet_640": {
+    "model": "face_detection_yunet_2023mar.onnx",
+    "images": 8,
+    "input_side": 640,
+    "p50_ms": 60.367,
+    "p95_ms": 75.753,
+    "mean_ms": 62.742,
+    "fps": 15.94,
+    "detections_total": 8,
+    "detections_per_image": 1.0
+  },
+  "commands": {
+    "native": "python3 benchmarks/arch_probe.py --out outputs/arch_probe_<machine>.json",
+    "arm64_emulated": "bash scripts/run_arm64_emulated.sh"
+  }
+}
