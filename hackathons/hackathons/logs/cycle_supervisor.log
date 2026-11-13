@@ -1,0 +1,245 @@
+=== cycle supervisor started 2026-10-22T08:51:18Z (protected A100 session: pro7b-1792644801) ===
+----- cycle 085118 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 091227 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 093329 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 095417 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 101450 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 103548 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 105640 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 111746 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 113840 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 115928 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 122033 -----
+[A] LoRA artefact present: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/out_121745.zip -> unzipping + stacking
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/final_stack.py", line 321, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/final_stack.py", line 150, in main
+    lora_oof = load_colab_lora_oof()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/final_stack.py", line 72, in load_colab_lora_oof
+    with zipfile.ZipFile(str(zip_path), "r") as zf:
+  File "/usr/lib/python3.10/zipfile.py", line 1288, in __init__
+    self._RealGetContents()
+  File "/usr/lib/python3.10/zipfile.py", line 1355, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 756s
+[A] A100 job looks finished (recent artefact) -> pipelining ARC-AGI-2 TTC into pro7b-1792644801
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[A] ARC exec finished 2026-10-22T12:33:37Z
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 125446 -----
+[A] LoRA artefact present: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/out_125335.zip -> unzipping + stacking
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[final_stack] completed in 151.1s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 802s
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+----- cycle 133211 -----
+[A] LoRA artefact present: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/out_125840.zip -> unzipping + stacking
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125840.zip
+[final_stack] completed in 95.0s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 542s
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+MASTER_STATUS.md updated (63 lines)
+=== cycle supervisor started 2026-10-22T13:55:17Z (protected A100 session: pro7b-1792644801) ===
+----- cycle 135517 -----
+[A] A100 job looks finished (recent artefact) -> pipelining ARC-AGI-2 TTC into pro7b-1792644801
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[A] ARC exec finished 2026-10-22T13:55:22Z
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+[C2] pushing ntl-qwen-lora (A100-recipe replication on Kaggle T4)
+Kernel push error: Maximum batch GPU session count of 2 reached.
+[D] ARC evaluation-split benchmark done
+MASTER_STATUS.md updated (74 lines)
+----- cycle 141815 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (74 lines)
+=== cycle supervisor started 2026-10-22T14:23:28Z (protected A100 session: pro7b-1792644801) ===
+----- cycle 142328 -----
+[A] A100 job looks finished (recent artefact) -> pipelining ARC-AGI-2 TTC into pro7b-1792644801
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[A] ARC exec finished 2026-10-22T14:23:32Z
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Session 'pro7b-1792644801' not found.
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (74 lines)
+----- cycle 144506 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 150640 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 152813 -----
+[B] ntl-stage2-deberta: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/kernels/status?username=krishnakumarbhat&kernelslug=ntl-stage2-deberta (Caused by NameResolutionError("HTTPSConnection(host='www.kaggle.com', port=443): Failed to resolve 'www.kaggle.com' ([Errno -2] Name or service not known)"))
+[C] arc-agi2-llm-ttc: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/kernels/status?username=krishnakumarbhat&kernelslug=arc-agi2-llm-ttc (Caused by NameResolutionError("HTTPSConnection(host='www.kaggle.com', port=443): Failed to resolve 'www.kaggle.com' ([Errno -2] Name or service not known)"))
+[C3] ntl-qwen-lora: HTTPSConnectionPool(host='www.kaggle.com', port=443): Max retries exceeded with url: /api/v1/kernels/status?username=krishnakumarbhat&kernelslug=ntl-qwen-lora (Caused by NameResolutionError("HTTPSConnection(host='www.kaggle.com', port=443): Failed to resolve 'www.kaggle.com' ([Errno -2] Name or service not known)"))
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 155009 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 161111 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 163302 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 165425 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 171548 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 173646 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)
+----- cycle 175839 -----
+[B] ntl-stage2-deberta: krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED"
+[B] deberta kernel krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.CANCEL_ACKNOWLEDGED" -> slot freed, ARC v5 can use it
+[C] arc-agi2-llm-ttc: krishnakumarbhat/arc-agi2-llm-ttc has status "KernelWorkerStatus.RUNNING"
+[C3] ntl-qwen-lora: krishnakumarbhat/ntl-qwen-lora has status "KernelWorkerStatus.RUNNING"
+[C2] ntl-real-deberta: krishnakumarbhat/ntl-real-deberta has status "KernelWorkerStatus.COMPLETE"
+MASTER_STATUS.md updated (84 lines)

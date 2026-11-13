@@ -1,0 +1,43 @@
+[runner] loaded 120 evaluation tasks in 0.1s
+[runner] 5/120 solved=0 elapsed=9s
+[runner] 10/120 solved=3 elapsed=16s
+[runner] 15/120 solved=3 elapsed=17s
+[runner] 20/120 solved=3 elapsed=18s
+[runner] 25/120 solved=4 elapsed=19s
+[runner] 30/120 solved=4 elapsed=22s
+[runner] 35/120 solved=5 elapsed=23s
+[runner] 40/120 solved=6 elapsed=24s
+[runner] 45/120 solved=7 elapsed=26s
+[runner] 50/120 solved=7 elapsed=28s
+[runner] 55/120 solved=7 elapsed=29s
+[runner] 60/120 solved=8 elapsed=31s
+[runner] 65/120 solved=9 elapsed=33s
+[runner] 70/120 solved=10 elapsed=34s
+[runner] 75/120 solved=12 elapsed=37s
+[runner] 80/120 solved=12 elapsed=39s
+[runner] 85/120 solved=14 elapsed=40s
+[runner] 90/120 solved=14 elapsed=43s
+[runner] 95/120 solved=16 elapsed=45s
+[runner] 100/120 solved=19 elapsed=47s
+[runner] 105/120 solved=19 elapsed=49s
+[runner] 110/120 solved=19 elapsed=50s
+[runner] 115/120 solved=19 elapsed=52s
+[runner] 120/120 solved=19 elapsed=56s
+{
+  "split": "evaluation",
+  "tasks": 120,
+  "solved": 19,
+  "solve_rate": 0.1583,
+  "wall_seconds": 56.61,
+  "runtime_mean_s": 5.2254,
+  "by_method": {
+    "object_tree": 11,
+    "cell_tree": 9
+  },
+  "graded_tasks": 120,
+  "graded_pass1": 0,
+  "graded_pass2": 0,
+  "graded_pass1_rate": 0.0,
+  "graded_pass2_rate": 0.0,
+  "unfinished": 0
+}

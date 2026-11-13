@@ -1,0 +1,12 @@
+member cat         oof auc 0.959052
+member lgbm        oof auc 0.957583
+member xgb         oof auc 0.956385
+member lgbm_base   oof auc 0.957673
+member lgbm_aug    oof auc 0.957917
+member realmlp     oof auc 0.959001
+member nnprior     oof auc 0.943050
+weights {'cat': 0.2698, 'lgbm': 0.0516, 'xgb': 0.0002, 'lgbm_base': 0.0382, 'lgbm_aug': 0.0418, 'realmlp': 0.5951, 'nnprior': 0.0033}
+FINAL OOF AUC 0.959665946852307
+previous best recorded: 0.959622
+submission.csv written with probabilities (299844,) range 0.0178 0.9835
+DONE

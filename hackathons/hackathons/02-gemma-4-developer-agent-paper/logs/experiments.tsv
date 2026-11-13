@@ -1,0 +1,64 @@
+track	metric	value	notes
+02-gg-spv	n_tasks_covered	5	graph+embedding artifacts available locally
+02-gg-spv	recall_at_5/flat_baseline	0.0	symbol ground truth
+02-gg-spv	recall_at_1/flat_baseline	0.0	symbol ground truth
+02-gg-spv	mean_tokens_read/flat_baseline	9626.8	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops0	0.0	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops0	0.0	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops0	1516.8	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops1	0.0	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops1	0.0	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops1	2473.4	chars/4 proxy
+02-gg-spv	n_tasks_covered	40	graph+embedding artifacts available locally
+02-gg-spv	recall_at_5/flat_baseline	0.2727	symbol ground truth
+02-gg-spv	recall_at_1/flat_baseline	0.0455	symbol ground truth
+02-gg-spv	mean_tokens_read/flat_baseline	3691.2	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops0	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops0	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops0	2101.6	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops1	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops1	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops1	3022.7	chars/4 proxy
+02-gg-spv	recall_at_5/gg_spv_12b	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_spv_12b	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_spv_12b	3031.7	chars/4 proxy
+02-gg-spv	verifier_auroc_hard_neg	0.524	gold vs same-file distractors
+02-gg-spv	verifier_gold_mean_conf	0.1594	accept threshold 0.5
+02-gg-spv	n_tasks_covered	40	graph+embedding artifacts available locally
+02-gg-spv	recall_at_5/flat_baseline	0.2727	symbol ground truth
+02-gg-spv	recall_at_1/flat_baseline	0.0455	symbol ground truth
+02-gg-spv	mean_tokens_read/flat_baseline	3691.2	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops0	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops0	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops0	2101.6	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops1	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops1	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops1	3022.7	chars/4 proxy
+02-gg-spv	recall_at_5/gg_spv_12b	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_spv_12b	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_spv_12b	3031.7	chars/4 proxy
+02-gg-spv	verifier_auroc_hard_neg	0.6528	gold vs same-file distractors
+02-gg-spv	verifier_gold_mean_conf	0.1542	accept threshold 0.5
+02-gg-spv	n_tasks_covered	40	graph+embedding artifacts available locally
+02-gg-spv	recall_at_5/flat_baseline	0.2727	symbol ground truth
+02-gg-spv	recall_at_1/flat_baseline	0.0455	symbol ground truth
+02-gg-spv	mean_tokens_read/flat_baseline	3691.2	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops0	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops0	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops0	2101.6	chars/4 proxy
+02-gg-spv	recall_at_5/gg_hops1	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_hops1	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_hops1	3022.7	chars/4 proxy
+02-gg-spv	recall_at_5/gg_spv_12b	0.3182	symbol ground truth
+02-gg-spv	recall_at_1/gg_spv_12b	0.1818	symbol ground truth
+02-gg-spv	mean_tokens_read/gg_spv_12b	3031.7	chars/4 proxy
+02-gg-spv	verifier_auroc_hard_neg	0.875	gold vs same-file distractors
+02-gg-spv	verifier_gold_mean_conf	0.7736	accept threshold 0.5
+02-gg-spv	verifier_tpr_at_0.5	0.90	conditional on localization (gold rank<=20, n=10)
+02-gg-spv	verifier_fpr_hard_at_0.5	0.0385	same-file distractors n=26
+02-gg-spv	verifier_auroc_easy_neg	0.905	cross-file distractors n=30
+02-gg-spv	pass_rate/gg_spv_12b	0.125	5/40, simulated synthesis f=0.80
+02-gg-spv	pass_rate/gg_spv_noverify	0.100	4/40, no verifier, f=0.80
+02-gg-spv	pass_rate/flat_baseline	0.025	1/40, flat read, f=0.80
+02-gg-spv	negative_result_hops	0.0	recall@5 identical for hops=0/1/2 (0.3182); expansion costs ~920 tokens/task
+02-gg-spv	fidelity_sweep_pass|localized	0.571->0.714	4/7 (f=0.3..0.7) -> 5/7 (f=1.0), monotone

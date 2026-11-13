@@ -1,0 +1,632 @@
+=== 2026-10-22T12:30:09Z Track 05 LoRA on Pro T4 session arcpro_t4-1792670357 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    5.2s] colab payload (11989, 5) real 2699 mirror 9290
+[0;31m---------------------------------------------------------------------------[0m[0;31mKeyError[0m                                  Traceback (most recent call last)[0;32m/tmp/ipykernel_822/1466082638.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m     86[0m     [0mm[0m [0;34m=[0m [0mmirror[0m[0;34m.[0m[0mdropna[0m[0;34m([0m[0msubset[0m[0;34m=[0m[0;34m[[0m[0;34m"text"[0m[0;34m][0m[0;34m)[0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     87[0m     [0mm[0m[0;34m[[0m[0;34m"source"[0m[0;34m][0m [0;34m=[0m [0;34m"mirror"[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 88[0;31m     [0mframes[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mm[0m[0;34m[[0m[0;34m[[0m[0;34m"prompt_id"[0m[0;34m,[0m [0;34m"model"[0m[0;34m,[0m [0;34m"text"[0m[0;34m,[0m [0;34m"n_words"[0m[0;34m,[0m [0;34m"domain"[0m[0;34m,[0m [0;34m"topic"[0m[0;34m,[0m [0;34m"split"[0m[0;34m,[0m [0;34m"source"[0m[0;34m][0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     89[0m     [0mlog[0m[0;34m([0m[0;34m"mirror rows"[0m[0;34m,[0m [0mlen[0m[0;34m([0m[0mm[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     90[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/pandas/core/frame.py[0m in [0;36m__getitem__[0;34m(self, key)[0m
+[1;32m   4106[0m             [0;32mif[0m [0mis_iterator[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4107[0m                 [0mkey[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 4108[0;31m             [0mindexer[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mcolumns[0m[0;34m.[0m[0m_get_indexer_strict[0m[0;34m([0m[0mkey[0m[0;34m,[0m [0;34m"columns"[0m[0;34m)[0m[0;34m[[0m[0;36m1[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   4109[0m [0;34m[0m[0m
+[1;32m   4110[0m         [0;31m# take() does not accept boolean indexers[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/pandas/core/indexes/base.py[0m in [0;36m_get_indexer_strict[0;34m(self, key, axis_name)[0m
+[1;32m   6198[0m             [0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m,[0m [0mnew_indexer[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_reindex_non_unique[0m[0;34m([0m[0mkeyarr[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   6199[0m [0;34m[0m[0m
+[0;32m-> 6200[0;31m         [0mself[0m[0;34m.[0m[0m_raise_if_missing[0m[0;34m([0m[0mkeyarr[0m[0;34m,[0m [0mindexer[0m[0;34m,[0m [0maxis_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   6201[0m [0;34m[0m[0m
+[1;32m   6202[0m         [0mkeyarr[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mtake[0m[0;34m([0m[0mindexer[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/pandas/core/indexes/base.py[0m in [0;36m_raise_if_missing[0;34m(self, key, indexer, axis_name)[0m
+[1;32m   6250[0m [0;34m[0m[0m
+[1;32m   6251[0m             [0mnot_found[0m [0;34m=[0m [0mlist[0m[0;34m([0m[0mensure_index[0m[0;34m([0m[0mkey[0m[0;34m)[0m[0;34m[[0m[0mmissing_mask[0m[0;34m.[0m[0mnonzero[0m[0;34m([0m[0;34m)[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m][0m[0;34m.[0m[0munique[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 6252[0;31m             [0;32mraise[0m [0mKeyError[0m[0;34m([0m[0;34mf"{not_found} not in index"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   6253[0m [0;34m[0m[0m
+[1;32m   6254[0m     [0;34m@[0m[0moverload[0m[0;34m[0m[0;34m[0m[0m
+[0;31mKeyError[0m: "['n_words', 'domain', 'topic', 'split'] not in index"
+=== exec done 2026-10-22T12:30:21Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/fold_status.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/cv_report.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold4.npy
+=== PRO SESSION KEPT ALIVE: arcpro_t4-1792670357 ===
+=== 2026-10-22T12:33:17Z Track 05 LoRA on Pro T4 session arcpro_t4-1792670357 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    2.7s] colab payload (11989, 5) real 2699 mirror 9290
+[    2.7s] mirror rows 9290
+[    2.8s] train frame (11989, 9) prompts 660
+[    2.8s] real rows 2699 prompts 150
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[0;31m---------------------------------------------------------------------------[0m[0;31mNameError[0m                                 Traceback (most recent call last)[0;32m/tmp/ipykernel_822/1736074838.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    147[0m         [0mlog[0m[0;34m([0m[0;34m"4bit unavailable"[0m[0;34m,[0m [0mrepr[0m[0;34m([0m[0me[0m[0;34m)[0m[0;34m[[0m[0;34m:[0m[0;36m140[0m[0;34m][0m[0;34m)[0m[0;34m;[0m [0mquant[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    148[0m [0;34m[0m[0m
+[0;32m--> 149[0;31m model = AutoModelForSequenceClassification.from_pretrained(
+[0m[1;32m    150[0m     [0mMODEL_ID[0m[0;34m,[0m [0mnum_labels[0m[0;34m=[0m[0mlen[0m[0;34m([0m[0mLABELS[0m[0;34m)[0m[0;34m,[0m [0mquantization_config[0m[0;34m=[0m[0mquant[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    151[0m     device_map="cuda", trust_remote_code=True)
+[0;31mNameError[0m: name 'AutoModelForSequenceClassification' is not defined
+=== exec done 2026-10-22T12:33:31Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/fold_status.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/cv_report.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold4.npy
+=== PRO SESSION KEPT ALIVE: arcpro_t4-1792670357 ===
+=== 2026-10-22T12:36:45Z Track 05 LoRA on Pro T4 session arcpro_t4-1792670357 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    2.6s] colab payload (11989, 5) real 2699 mirror 9290
+[    2.7s] mirror rows 9290
+[    2.7s] train frame (11989, 9) prompts 660
+[    2.7s] real rows 2699 prompts 150
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[0;31m---------------------------------------------------------------------------[0m[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_822/2168081353.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    154[0m                   target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+[1;32m    155[0m                                   "gate_proj", "up_proj", "down_proj"])
+[0;32m--> 156[0;31m [0mmodel[0m [0;34m=[0m [0mget_peft_model[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mlcfg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    157[0m [0mmodel[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mpad_token_id[0m [0;34m=[0m [0mtok[0m[0;34m.[0m[0mpad_token_id[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    158[0m [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py[0m in [0;36mget_peft_model[0;34m(model, peft_config, adapter_name, mixed, autocast_adapter_dtype, revision, low_cpu_mem_usage)[0m
+[1;32m    196[0m         )
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[0m[1;32m    199[0m         [0mmodel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    200[0m         [0mpeft_config[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, **kwargs)[0m
+[1;32m   1839[0m         [0;31m# will be used to guard the target layer matching against matching `modules_to_save` layers. Only the[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1840[0m         [0;31m# config is relevant for this, the `modules_to_save` attribute can follow later.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1841[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1842[0m [0;34m[0m[0m
+[1;32m   1843[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mpeft_config[0m[0;34m,[0m [0;34m"modules_to_save"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage)[0m
+[1;32m    175[0m             [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    176[0m             [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m                 [0mself[0m[0;34m.[0m[0mbase_model[0m [0;34m=[0m [0mcls[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0;34m{[0m[0madapter_name[0m[0;34m:[0m [0mpeft_config[0m[0;34m}[0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m [0;34m[0m[0m
+[1;32m    179[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mbase_model[0m[0;34m,[0m [0;34m"_cast_adapter_dtype"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, low_cpu_mem_usage, state_dict)[0m
+[1;32m    342[0m         [0mself[0m[0;34m.[0m[0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    343[0m         [0;32mif[0m [0mpeft_config[0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m [0;32mor[0m [0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 344[0;31m             [0mself[0m[0;34m.[0m[0minject_adapter[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mlow_cpu_mem_usage[0m[0;34m=[0m[0mlow_cpu_mem_usage[0m[0;34m,[0m [0mstate_dict[0m[0;34m=[0m[0mstate_dict[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    345[0m [0;34m[0m[0m
+[1;32m    346[0m         [0mself[0m[0;34m.[0m[0m_post_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36minject_adapter[0;34m(self, model, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage, state_dict)[0m
+[1;32m    976[0m                     [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    977[0m                     [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m                         self._create_and_replace(
+[0m[1;32m    979[0m                             [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mtarget_name[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0mcurrent_key[0m[0;34m=[0m[0mkey[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    980[0m                         )
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_and_replace[0;34m(self, lora_config, adapter_name, target, target_name, parent, current_key, parameter_name)[0m
+[1;32m    387[0m                 )
+[1;32m    388[0m             [0mdevice_map[0m [0;34m=[0m [0mget_device_map[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 389[0;31m             [0mnew_module[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_create_new_module[0m[0;34m([0m[0mlora_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    390[0m             [0;32mif[0m [0madapter_name[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mactive_adapters[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    391[0m                 [0;31m# adding an additional adapter: it is not automatically trainable[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_new_module[0;34m(lora_config, adapter_name, target, **kwargs)[0m
+[1;32m    550[0m         [0mnew_module[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    551[0m         [0;32mfor[0m [0mdispatcher[0m [0;32min[0m [0mdispatchers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m             [0mnew_module[0m [0;34m=[0m [0mdispatcher[0m[0;34m([0m[0mtarget[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mlora_config[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0;32mif[0m [0mnew_module[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# first match wins[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    554[0m                 [0;32mbreak[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py[0m in [0;36mdispatch_torchao[0;34m(target, adapter_name, config, **kwargs)[0m
+[1;32m    158[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    159[0m [0;34m[0m[0m
+[0;32m--> 160[0;31m     [0;32mif[0m [0;32mnot[0m [0mis_torchao_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    161[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    162[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/import_utils.py[0m in [0;36mis_torchao_available[0;34m()[0m
+[1;32m    160[0m [0;34m[0m[0m
+[1;32m    161[0m     [0;32mif[0m [0mtorchao_version[0m [0;34m<[0m [0mTORCHAO_MINIMUM_VERSION[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 162[0;31m         raise ImportError(
+[0m[1;32m    163[0m             [0;34mf"Found an incompatible version of torchao. Found version {torchao_version}, "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    164[0m             [0;34mf"but only versions above {TORCHAO_MINIMUM_VERSION} are supported"[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== exec done 2026-10-22T12:39:04Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/fold_status.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/cv_report.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold4.npy
+=== PRO SESSION KEPT ALIVE: arcpro_t4-1792670357 ===
+=== 2026-10-22T12:40:53Z Track 05 LoRA on Pro T4 session arcpro_t4-1792670357 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    2.7s] colab payload (11989, 5) real 2699 mirror 9290
+[    2.7s] mirror rows 9290
+[    2.7s] train frame (11989, 9) prompts 660
+[    2.7s] real rows 2699 prompts 150
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 29,970,432 || all params: 3,115,945,984 || trainable%: 0.9618
+[   18.9s] model ready Qwen/Qwen2.5-3B 4bit False mem 11897 MB
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:216 in exec_command                       │
+│                                                                              │
+│   213 │   │   │   )                                                          │
+│   214 │   │   │   state.store.add(s)                                         │
+│   215 │   │   │                                                              │
+│ ❱ 216 │   │   │   outputs = runtime.execute_code(                            │
+│   217 │   │   │   │   code,                                                  │
+│   218 │   │   │   │   output_hook=lambda o: display_output(o, output_image), │
+│   219 │   │   │   │   timeout=timeout,                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/runtime.py:221 in execute_code                                  │
+│                                                                              │
+│   218 │   │   │   │   │   │   if idx < len(outputs):                         │
+│   219 │   │   │   │   │   │   │   output_hook(outputs[idx])                  │
+│   220 │   │   │                                                              │
+│ ❱ 221 │   │   │   reply = self.kernel_client.execute_interactive(            │
+│   222 │   │   │   │   code, output_hook=wrapped_output_hook, **kwargs        │
+│   223 │   │   │   )                                                          │
+│   224 │   │   │   # execute_interactive returns the raw reply message        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/client.py:364 in execute_interactive                │
+│                                                                              │
+│   361 │   │   │   The reply message for this request                         │
+│   362 │   │   """                                                            │
+│   363 │   │   self._set_variables(variables)                                 │
+│ ❱ 364 │   │   return self._manager.client.execute_interactive(               │
+│   365 │   │   │   code,                                                      │
+│   366 │   │   │   silent=silent,                                             │
+│   367 │   │   │   store_history=store_history,                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/wsclient.py:1097 in execute_interactive             │
+│                                                                              │
+│   1094 │   │   │   │   │   self.iopub_channel.msg_ready()                    │
+│   1095 │   │   │   │   │   or (allow_stdin and                               │
+│        self.stdin_channel.msg_ready())                                       │
+│   1096 │   │   │   │   ):                                                    │
+│ ❱ 1097 │   │   │   │   │   raise TimeoutError("Timeout waiting for output")  │
+│   1098 │   │   │   │                                                         │
+│   1099 │   │   │   │   if allow_stdin:                                       │
+│   1100 │   │   │   │   │   try:                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutError: Timeout waiting for output
+=== exec done 2026-10-22T17:07:38Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/fold_status.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/cv_report.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold1.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold2.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold3.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold4.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold4.npy
+=== PRO SESSION KEPT ALIVE: arcpro_t4-1792670357 ===

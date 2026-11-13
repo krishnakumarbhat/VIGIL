@@ -1,0 +1,22 @@
+[    8.7s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    8.8s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    8.9s] rankmean best (0.37856790123456796, (0.5, 0.5, 0.0), 0.0)
+[   19.2s]   lr_c05 a=0.0 -> 0.3962
+[   19.2s]   lr_c05 a=0.25 -> 0.3935
+[   19.2s]   lr_c05 a=0.5 -> 0.3889
+[   28.1s]   lr_c1 a=0.0 -> 0.4021
+[   28.1s]   lr_c1 a=0.25 -> 0.4008
+[   28.1s]   lr_c1 a=0.5 -> 0.3973
+[   38.4s]   lr_c2 a=0.0 -> 0.4034
+[   38.4s]   lr_c2 a=0.25 -> 0.4026
+[   38.4s]   lr_c2 a=0.5 -> 0.4011
+[   59.7s]   lr2_knn a=0.0 -> 0.3655
+[   59.7s]   lr2_knn a=0.25 -> 0.3648
+[   59.7s]   lr2_knn a=0.5 -> 0.3641
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_addendum.py", line 79, in <module>
+    best_all = max(("rankmean", "stack"), key=lambda k: res[k].get("bal_acc_clean", res[k]["best"]))
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_addendum.py", line 79, in <lambda>
+    best_all = max(("rankmean", "stack"), key=lambda k: res[k].get("bal_acc_clean", res[k]["best"]))
+KeyError: 'best'
+EXIT=1

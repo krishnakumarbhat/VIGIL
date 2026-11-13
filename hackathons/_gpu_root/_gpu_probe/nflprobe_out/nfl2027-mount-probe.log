@@ -1,0 +1,51 @@
+[{"stream_name":"stdout","time":1.033047168,"data":"{\n"}
+,{"stream_name":"stdout","time":1.033132636,"data":" \"exists\": true,\n"}
+,{"stream_name":"stdout","time":1.033140753,"data":" \"listing\": {\n"}
+,{"stream_name":"stdout","time":1.033146476,"data":"  \".\": [],\n"}
+,{"stream_name":"stdout","time":1.033174472,"data":"  \"nfl-big-data-bowl-2027\": [\n"}
+,{"stream_name":"stdout","time":1.033178875,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033183911,"data":"    \"players.csv\",\n"}
+,{"stream_name":"stdout","time":1.03318934,"data":"    47301\n"}
+,{"stream_name":"stdout","time":1.033193854,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033198564,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033203627,"data":"    \"game_tracking_2023.csv\",\n"}
+,{"stream_name":"stdout","time":1.033208469,"data":"    335463637\n"}
+,{"stream_name":"stdout","time":1.033213097,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.03321821,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033222644,"data":"    \"game_tracking_2025.csv\",\n"}
+,{"stream_name":"stdout","time":1.033227292,"data":"    1022575093\n"}
+,{"stream_name":"stdout","time":1.03323248,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.03325746,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033262713,"data":"    \"game_tracking_2024.csv\",\n"}
+,{"stream_name":"stdout","time":1.0332675629999999,"data":"    717952893\n"}
+,{"stream_name":"stdout","time":1.033272438,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033277176,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.03328158,"data":"    \"combine_tracking.csv\",\n"}
+,{"stream_name":"stdout","time":1.033286597,"data":"    83788174\n"}
+,{"stream_name":"stdout","time":1.033480476,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033491111,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033497637,"data":"    \"games.csv\",\n"}
+,{"stream_name":"stdout","time":1.033503332,"data":"    43174\n"}
+,{"stream_name":"stdout","time":1.033508847,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033514167,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033546476,"data":"    \"player_career_successes.csv\",\n"}
+,{"stream_name":"stdout","time":1.033553021,"data":"    13801\n"}
+,{"stream_name":"stdout","time":1.033557953,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033563291,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033568918,"data":"    \"combine_results.csv\",\n"}
+,{"stream_name":"stdout","time":1.033573762,"data":"    41020\n"}
+,{"stream_name":"stdout","time":1.033578737,"data":"   ],\n"}
+,{"stream_name":"stdout","time":1.033583566,"data":"   [\n"}
+,{"stream_name":"stdout","time":1.033588397,"data":"    \"player_play.csv\",\n"}
+,{"stream_name":"stdout","time":1.033593805,"data":"    146879042\n"}
+,{"stream_name":"stdout","time":1.033598736,"data":"   ]\n"}
+,{"stream_name":"stdout","time":1.033866041,"data":"  ]\n"}
+,{"stream_name":"stdout","time":1.033884871,"data":" }\n"}
+,{"stream_name":"stdout","time":1.033889855,"data":"}\n"}
+,{"stream_name":"stderr","time":4.321942534,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4.321988701,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4.871509548,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4.871570581,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7.252630072,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":8.737398247,"data":"[NbConvertApp] Writing 275295 bytes to __results__.html\n"}
+]

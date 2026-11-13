@@ -1,0 +1,56 @@
+track	metric	value	notes
+arc-agi-2	solve_rate_training	0.3167	solved=19/60 budget=8.0s workers=8 wall=31.16s methods={'object_tree': 10, 'cell_tree': 9, 'depth1': 2, 'depth2': 1}
+arc-agi-2	solve_rate_training	0.33	solved=66/200 budget=8.0s workers=10 wall=73.11s methods={'object_tree': 31, 'cell_tree': 31, 'depth1': 6, 'depth2': 3}
+arc-agi-2	graded_pass2_training	0.0	pass@2=0/200 pass@1=13
+arc-agi-2	solve_rate_training	0.35	solved=70/200 budget=8.0s workers=10 wall=78.08s methods={'cell_tree': 39, 'object_tree': 32, 'depth1': 6, 'depth2': 3}
+arc-agi-2	graded_pass2_training	0.0	pass@2=0/200 pass@1=14
+arc-agi-2	solve_rate_training	0.334	solved=334/1000 budget=10.0s workers=12 wall=294.25s methods={'cell_tree': 205, 'object_tree': 133, 'depth1': 34, 'depth2': 13}
+arc-agi-2	graded_pass2_training	0.005	pass@2=5/1000 pass@1=68
+arc-agi-2	solve_rate_evaluation	0.1583	solved=19/120 budget=20.0s workers=12 wall=56.61s methods={'object_tree': 11, 'cell_tree': 9}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_training	0.165	solved=33/200 budget=10.0s workers=12 wall=79.99s methods={'object_tree': 21, 'depth1': 6, 'cell_tree': 4, 'depth2': 3, 'mlp': 1}
+arc-agi-2	graded_pass2_training	0.0	pass@2=0/200 pass@1=14
+arc-agi-2	solve_rate_evaluation	0.0417	solved=5/120 budget=15.0s workers=12 wall=58.55s methods={'object_tree': 5}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=15.0s workers=12 wall=56.09s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6, 'object_tree_d4': 2}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_training	0.375	solved=75/200 budget=10.0s workers=12 wall=73.72s methods={'cell_tree': 38, 'object_tree': 32, 'patch_lookup': 9, 'object_tree_d4': 8, 'depth1': 6, 'depth2': 3}
+arc-agi-2	graded_pass2_training	0.0	pass@2=0/200 pass@1=14
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=45.27s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6, 'object_tree_d4': 2}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=45.82s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6, 'object_tree_d4': 2}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_training	0.353	solved=353/1000 budget=10.0s workers=12 wall=243.67s methods={'cell_tree': 205, 'object_tree': 133, 'patch_lookup': 46, 'depth1': 34, 'depth2': 12}
+arc-agi-2	graded_pass2_training	0.005	pass@2=5/1000 pass@1=67
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=43.26s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=47.52s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_training	0.353	solved=353/1000 budget=10.0s workers=12 wall=257.4s methods={'cell_tree': 205, 'object_tree': 133, 'patch_lookup': 46, 'depth1': 34, 'depth2': 12}
+arc-agi-2	graded_pass2_training	0.005	pass@2=5/1000 pass@1=67
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=46.77s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_evaluation	0.1667	solved=20/120 budget=20.0s workers=12 wall=53.94s methods={'object_tree': 11, 'cell_tree': 9, 'patch_lookup': 6}
+arc-agi-2	graded_pass2_evaluation	0.0	pass@2=0/120 pass@1=0
+arc-agi-2	solve_rate_training	0.353	solved=353/1000 budget=10.0s workers=12 wall=250.48s methods={'cell_tree': 205, 'object_tree': 133, 'patch_lookup': 46, 'depth1': 34, 'depth2': 12, 'mlp': 1}
+arc-agi-2	graded_pass2_training	0.005	pass@2=5/1000 pass@1=67
+arc-agi-2-v2	pass1_training	0.0667	10/150 wall=35.0s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.0667	10/150 oracle=0.0667 top1=0.2564
+arc-agi-2-v2	pass1_training	0.0867	13/150 wall=55.4s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.0867	13/150 oracle=0.0867 top1=0.3171
+arc-agi-2-v2	pass1_training	0.052	52/1000 wall=340.7s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.053	53/1000 oracle=0.053 top1=0.2105
+arc-agi-2-v2	pass1_training	0.056	56/1000 wall=372.6s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.057	57/1000 oracle=0.057 top1=0.2213
+arc-agi-2-v2	pass1_training	0.054	54/1000 wall=455.6s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.056	56/1000 oracle=0.057 top1=0.216
+arc-agi-2-v2	pass1_evaluation	0.0	0/12 wall=41.0s workers=3 ranker=False
+arc-agi-2-v2	pass2_evaluation	0.0	0/12 oracle=0.0 top1=0.0
+arc-agi-2-v2	pass1_training	0.055	55/1000 wall=348.9s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.057	57/1000 oracle=0.058 top1=0.2227
+arc-agi-2-v2	pass1_training	0.09	90/1000 wall=276.8s workers=12 ranker=False
+arc-agi-2-v2	pass2_training	0.092	92/1000 oracle=0.093 top1=0.3125
+arc-agi-2-v2	pass1_evaluation	0.0	0/120 wall=90.8s workers=12 ranker=False
+arc-agi-2-v2	pass2_evaluation	0.0	0/120 oracle=0.0 top1=0.0
+arc-agi-2-v2	pass1_evaluation	0.0	0/120 wall=88.8s workers=12 ranker=False
+arc-agi-2-v2	pass2_evaluation	0.0	0/120 oracle=0.0 top1=0.0

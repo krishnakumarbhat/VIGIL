@@ -1,0 +1,1 @@
+/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/auth/code.fifo

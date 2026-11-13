@@ -1,0 +1,23 @@
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    0.3s] payload (29989, 5) {'external': np.int64(18000), 'mirror': np.int64(9290), 'real': np.int64(2699)}
+[    0.3s] real 2699 aux 27290 prompts 150
+[   11.4s] tokenised in 10s real (2699, 384) aux (27290, 384) RAM 44MB
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 80,804,864 || all params: 7,151,488,512 || trainable%: 1.1299
+[   17.8s] model ready Qwen/Qwen2.5-7B-Instruct mem 13.5 GB
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[  215.7s] fold0 s1-aux+real step 50/1054 loss 3.7080
+[  411.5s] fold0 s1-aux+real step 100/1054 loss 2.6112

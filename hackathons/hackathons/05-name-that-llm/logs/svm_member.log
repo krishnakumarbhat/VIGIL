@@ -1,0 +1,10 @@
+[   0.1s] real (2699, 5) mirror (9000, 10)
+[   9.6s] features (11699, 238885)
+[  20.0s] fold 0 bal_acc 0.3407 acc 0.3407
+[  30.7s] fold 1 bal_acc 0.4056 acc 0.4056
+[  41.5s] fold 2 bal_acc 0.3667 acc 0.3667
+[  52.5s] fold 3 bal_acc 0.3484 acc 0.3488
+[  63.4s] fold 4 bal_acc 0.3463 acc 0.3463
+[  63.4s] OOF bal_acc 0.3616 mean fold 0.3615
+[  63.4s] test (3, 18)
+[  63.4s] DONE

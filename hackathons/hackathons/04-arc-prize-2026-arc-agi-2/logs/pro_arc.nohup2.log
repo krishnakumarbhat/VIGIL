@@ -1,0 +1,48 @@
+=== 2026-10-22T03:44:42Z PRO ARC session proarc-1792640682 gpu=T4 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'proarc-1792640682'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c1-sbtj066ifdik-c.asia-southeast1-1.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJxc0dROFEifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMxLXNidGowNjZpZmRpayIsICJleHAiOjE3OTI2NDQyODgsICJwb3J0Ijo4MDgwfQ.RvbAtOvszBtw8RawMDmP-lUmHu99TC9cRQdX6ufnIJy9hf08suVATTClbvbOS76YsQb4idWT2MDuuN6F1eXtHQ
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c1-sbtj066ifdik-c.asia-southeast1-1.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJxc0dROFEifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMxLXNidGowNjZpZmRpayIsICJleHAiOjE3OTI2NDQyODgsICJwb3J0Ijo4MDgwfQ.RvbAtOvszBtw8RawMDmP-lUmHu99TC9cRQdX6ufnIJy9hf08suVATTClbvbOS76YsQb4idWT2MDuuN6F1eXtHQ
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c1-sbtj066ifdik-c.asia-southeast1-1.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJxc0dROFEifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMxLXNidGowNjZpZmRpayIsICJleHAiOjE3OTI2NDQyODgsICJwb3J0Ijo4MDgwfQ.RvbAtOvszBtw8RawMDmP-lUmHu99TC9cRQdX6ufnIJy9hf08suVATTClbvbOS76YsQb4idWT2MDuuN6F1eXtHQ
+=== EXEC START 2026-10-22T03:45:37Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]

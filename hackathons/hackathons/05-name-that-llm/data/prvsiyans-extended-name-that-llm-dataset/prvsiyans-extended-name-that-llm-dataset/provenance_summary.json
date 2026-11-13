@@ -1,0 +1,796 @@
+{
+ "dataset": "prvsiyan/prvsiyans-extended-name-that-llm-dataset",
+ "title": "prvsiyan's Extended Name That LLM Dataset",
+ "built_at_utc": "2026-10-19T22:20:46.010Z",
+ "runner": "gen_api_blocks/1.0 (2026-10-17)",
+ "protocol": {
+  "messages": "single user message, prompt verbatim",
+  "system_prompt": "none",
+  "sampling": "nothing sent (provider defaults)",
+  "reasoning": "nothing sent (provider defaults; Claude per-model effective setting in reasoning_setting)",
+  "length": "per generation '(about N words)', N ~ competition train word counts clipped to [40, 250], seeded per (prompt, label)"
+ },
+ "labels": {
+  "claude-fable-5": {
+   "calls_total": 460,
+   "calls_status": {
+    "ok": 460
+   },
+   "passages": 460,
+   "routes": {
+    "anthropic": 460
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "claude-fable-5": 460
+   },
+   "served_model_ids": {
+    "claude-fable-5": 460
+   },
+   "served_providers": {
+    "Anthropic (first-party API)": 460
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:33:02.764Z",
+   "last_generated_utc": "2026-10-18T13:00:40.800Z",
+   "reasoning_settings": {
+    "api_default: no `thinking` param sent -> documented effective setting for claude-fable-5: adaptive thinking (model default, effort high); observed: thinking block(s) present, thinking_tokens=<n>": 455,
+    "api_default: no `thinking` param sent -> documented effective setting for claude-fable-5: adaptive thinking (model default, effort high); observed: no thinking block, thinking_tokens=<n>": 5
+   },
+   "max_output_caps": {
+    "16000": 460
+   }
+  },
+  "claude-opus-4-6": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "anthropic": 460,
+    "kaggle_proxy": 60
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "claude-opus-4-6": 460,
+    "anthropic/claude-opus-4-6@default": 60
+   },
+   "served_model_ids": {
+    "claude-opus-4-6": 460,
+    "anthropic/claude-opus-4-6@default": 60
+   },
+   "served_providers": {
+    "Anthropic (first-party API)": 460,
+    "Kaggle Model Proxy (backend not exposed)": 60
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:06.278609+00:00",
+   "last_generated_utc": "2026-10-18T13:00:41.033Z",
+   "reasoning_settings": {
+    "api_default: no `thinking` param sent -> documented effective setting for claude-opus-4-6: no thinking (model default); observed: no thinking block, thinking_tokens=None": 460,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "16000": 470,
+    "8000": 5,
+    "12000": 45
+   }
+  },
+  "claude-opus-4-8": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "anthropic": 460,
+    "kaggle_proxy": 60
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "claude-opus-4-8": 460,
+    "anthropic/claude-opus-4-8@default": 60
+   },
+   "served_model_ids": {
+    "claude-opus-4-8": 460,
+    "anthropic/claude-opus-4-8@default": 60
+   },
+   "served_providers": {
+    "Anthropic (first-party API)": 460,
+    "Kaggle Model Proxy (backend not exposed)": 60
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:13.708160+00:00",
+   "last_generated_utc": "2026-10-18T13:00:46.121Z",
+   "reasoning_settings": {
+    "api_default: no `thinking` param sent -> documented effective setting for claude-opus-4-8: no thinking (model default); observed: no thinking block, thinking_tokens=<n>": 460,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "16000": 470,
+    "8000": 5,
+    "12000": 45
+   }
+  },
+  "claude-opus-5": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "anthropic": 460,
+    "kaggle_proxy": 60
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "claude-opus-5": 460,
+    "anthropic/claude-opus-5@default": 60
+   },
+   "served_model_ids": {
+    "claude-opus-5": 460,
+    "anthropic/claude-opus-5@default": 60
+   },
+   "served_providers": {
+    "Anthropic (first-party API)": 460,
+    "Kaggle Model Proxy (backend not exposed)": 60
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:15.489377+00:00",
+   "last_generated_utc": "2026-10-18T13:00:42.287Z",
+   "reasoning_settings": {
+    "api_default: no `thinking` param sent -> documented effective setting for claude-opus-5: adaptive thinking (model default, effort high); observed: thinking block(s) present, thinking_tokens=<n>": 459,
+    "api_default: no `thinking` param sent -> documented effective setting for claude-opus-5: adaptive thinking (model default, effort high); observed: no thinking block, thinking_tokens=<n>": 1,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "16000": 460,
+    "8000": 5,
+    "12000": 55
+   }
+  },
+  "claude-sonnet-5": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "anthropic": 460,
+    "kaggle_proxy": 60
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "claude-sonnet-5": 460,
+    "anthropic/claude-sonnet-5@default": 60
+   },
+   "served_model_ids": {
+    "claude-sonnet-5": 460,
+    "anthropic/claude-sonnet-5@default": 60
+   },
+   "served_providers": {
+    "Anthropic (first-party API)": 460,
+    "Kaggle Model Proxy (backend not exposed)": 60
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:11.857507+00:00",
+   "last_generated_utc": "2026-10-18T13:00:43.359Z",
+   "reasoning_settings": {
+    "api_default: no `thinking` param sent -> documented effective setting for claude-sonnet-5: adaptive thinking (model default, effort high); observed: no thinking block, thinking_tokens=<n>": 449,
+    "api_default: no `thinking` param sent -> documented effective setting for claude-sonnet-5: adaptive thinking (model default, effort high); observed: thinking block(s) present, thinking_tokens=<n>": 11,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "16000": 470,
+    "8000": 5,
+    "12000": 45
+   }
+  },
+  "gemini-3.1-pro-preview": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "google": 215,
+    "kaggle_proxy": 279,
+    "openrouter": 26
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "gemini-3.1-pro-preview": 215,
+    "google/gemini-3.1-pro-preview": 305
+   },
+   "served_model_ids": {
+    "gemini-3.1-pro-preview": 215,
+    "google/gemini-3.1-pro-preview": 305
+   },
+   "served_providers": {
+    "Google Vertex AI express mode (google-genai SDK, first-party)": 215,
+    "Kaggle Model Proxy (backend not exposed)": 279,
+    "Google AI Studio": 26
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:18.632534+00:00",
+   "last_generated_utc": "2026-10-19T22:08:03.802654+00:00",
+   "reasoning_settings": {
+    "api_default: no thinking_config sent (Gemini 3 default thinking)": 215,
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 219,
+    "provider_default: no reasoning params sent; provider pinned to google-ai-studio (order+only, allow_fallbacks=false)": 26,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "32000": 241,
+    "16000": 229,
+    "8000": 5,
+    "12000": 45
+   },
+   "google_model_version_probe": [
+    {
+     "prompt_id": "n001",
+     "model_version": "gemini-3.1-pro-preview",
+     "response_id": "WmDTavqTLbXFmPUPzICFgQQ",
+     "at_utc": "2026-10-17T11:48:03.093Z"
+    },
+    {
+     "prompt_id": "n002",
+     "model_version": "gemini-3.1-pro-preview",
+     "response_id": "XmDTapmsLKq1mPUPxrKLyAw",
+     "at_utc": "2026-10-17T11:48:04.805Z"
+    },
+    {
+     "prompt_id": "n003",
+     "model_version": "gemini-3.1-pro-preview",
+     "response_id": "bmDTatnnFIysz_IP6bXkgQc",
+     "at_utc": "2026-10-17T11:48:12.660Z"
+    }
+   ]
+  },
+  "gemini-3.6-flash": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "google": 216,
+    "kaggle_proxy": 278,
+    "openrouter": 26
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "gemini-3.6-flash": 216,
+    "google/gemini-3.6-flash": 304
+   },
+   "served_model_ids": {
+    "gemini-3.6-flash": 216,
+    "google/gemini-3.6-flash": 304
+   },
+   "served_providers": {
+    "Google Vertex AI express mode (google-genai SDK, first-party)": 216,
+    "Kaggle Model Proxy (backend not exposed)": 278,
+    "Google AI Studio": 26
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:38:16.473827+00:00",
+   "last_generated_utc": "2026-10-19T21:58:14.474340+00:00",
+   "reasoning_settings": {
+    "api_default: no thinking_config sent (Gemini 3 default thinking)": 216,
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 218,
+    "provider_default: no reasoning params sent; provider pinned to google-ai-studio (order+only, allow_fallbacks=false)": 26,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "32000": 242,
+    "16000": 228,
+    "8000": 5,
+    "12000": 45
+   },
+   "google_model_version_probe": [
+    {
+     "prompt_id": "n001",
+     "model_version": "gemini-3.6-flash",
+     "response_id": "WWDTauGkL7XFmPUPzICFgQQ",
+     "at_utc": "2026-10-17T11:47:49.078Z"
+    },
+    {
+     "prompt_id": "n002",
+     "model_version": "gemini-3.6-flash",
+     "response_id": "XWDTap_wLaq1mPUPxrKLyAw",
+     "at_utc": "2026-10-17T11:47:49.642Z"
+    },
+    {
+     "prompt_id": "n003",
+     "model_version": "gemini-3.6-flash",
+     "response_id": "Z2DTarGFC9CamPUPhMq7iQ0",
+     "at_utc": "2026-10-17T11:47:59.948Z"
+    }
+   ]
+  },
+  "gemini-3.7-flash": {
+   "calls_total": 450,
+   "calls_status": {
+    "ok": 450
+   },
+   "passages": 450,
+   "routes": {
+    "google": 450
+   },
+   "splits": {
+    "new": 300,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "gemini-3.7-flash": 450
+   },
+   "served_model_ids": {
+    "gemini-3.7-flash": 450
+   },
+   "served_providers": {
+    "Google Vertex AI express mode (google-genai SDK, first-party)": 450
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:47:46.405Z",
+   "last_generated_utc": "2026-10-18T12:54:07.077Z",
+   "reasoning_settings": {
+    "api_default: no thinking_config sent (Gemini 3 default thinking)": 450
+   },
+   "max_output_caps": {
+    "32000": 450
+   },
+   "google_model_version_probe": [
+    {
+     "prompt_id": "n001",
+     "model_version": "gemini-3.7-flash",
+     "response_id": "W2DTatThLbXFmPUPzICFgQQ",
+     "at_utc": "2026-10-17T11:47:46.405Z"
+    },
+    {
+     "prompt_id": "n002",
+     "model_version": "gemini-3.7-flash",
+     "response_id": "ZWDTauTfD5PntfAP0rHgkA4",
+     "at_utc": "2026-10-17T11:47:58.244Z"
+    },
+    {
+     "prompt_id": "n003",
+     "model_version": "gemini-3.7-flash",
+     "response_id": "c2DTatKgC72Bz_IPgISV0Ak",
+     "at_utc": "2026-10-17T11:48:10.011Z"
+    }
+   ]
+  },
+  "gemini-3.8-flash": {
+   "calls_total": 521,
+   "calls_status": {
+    "ok": 520,
+    "error": 1
+   },
+   "passages": 520,
+   "routes": {
+    "google": 216,
+    "kaggle_proxy": 278,
+    "openrouter": 26
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "gemini-3.8-flash": 216,
+    "google/gemini-3.8-flash": 304
+   },
+   "served_model_ids": {
+    "gemini-3.8-flash": 216,
+    "google/gemini-3.8-flash": 304
+   },
+   "served_providers": {
+    "Google Vertex AI express mode (google-genai SDK, first-party)": 216,
+    "Kaggle Model Proxy (backend not exposed)": 278,
+    "Google AI Studio": 26
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:33:58.428972+00:00",
+   "last_generated_utc": "2026-10-19T21:42:56.488566+00:00",
+   "reasoning_settings": {
+    "api_default: no thinking_config sent (Gemini 3 default thinking)": 216,
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 218,
+    "provider_default: no reasoning params sent; provider pinned to google-ai-studio (order+only, allow_fallbacks=false)": 26,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "32000": 242,
+    "16000": 228,
+    "8000": 5,
+    "12000": 45
+   },
+   "google_model_version_probe": [
+    {
+     "prompt_id": "n001",
+     "model_version": "gemini-3.8-flash",
+     "response_id": "b2DTavm6FIeDz_IPhe-X8Qk",
+     "at_utc": "2026-10-17T11:48:33.000Z"
+    },
+    {
+     "prompt_id": "n002",
+     "model_version": "gemini-3.8-flash",
+     "response_id": "ZmDTapyBDJ6bmPUPl9e-qA0",
+     "at_utc": "2026-10-17T11:48:12.150Z"
+    },
+    {
+     "prompt_id": "n003",
+     "model_version": "gemini-3.8-flash",
+     "response_id": "cGDTavWzGdSgz_IPkOjeoAU",
+     "at_utc": "2026-10-17T11:48:16.219Z"
+    }
+   ]
+  },
+  "glm-5.3": {
+   "calls_total": 460,
+   "calls_status": {
+    "ok": 460
+   },
+   "passages": 460,
+   "routes": {
+    "openrouter": 460
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "z-ai/glm-5.3": 460
+   },
+   "served_model_ids": {
+    "z-ai/glm-5.3": 460
+   },
+   "served_providers": {
+    "Z.AI": 460
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:33:19.304Z",
+   "last_generated_utc": "2026-10-18T13:06:21.652Z",
+   "reasoning_settings": {
+    "provider_default: no reasoning params sent; provider pinned to z-ai (order+only, allow_fallbacks=false)": 460
+   },
+   "max_output_caps": {
+    "32000": 460
+   }
+  },
+  "glm-5.3-flash": {
+   "calls_total": 460,
+   "calls_status": {
+    "ok": 460
+   },
+   "passages": 460,
+   "routes": {
+    "openrouter": 460
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "z-ai/glm-5.3-flash": 460
+   },
+   "served_model_ids": {
+    "z-ai/glm-5.3-flash": 460
+   },
+   "served_providers": {
+    "Z.AI": 460
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:32:38.166Z",
+   "last_generated_utc": "2026-10-18T13:06:36.783Z",
+   "reasoning_settings": {
+    "provider_default: no reasoning params sent; provider pinned to z-ai (order+only, allow_fallbacks=false)": 460
+   },
+   "max_output_caps": {
+    "32000": 460
+   }
+  },
+  "gpt-5.5": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "kaggle_proxy": 315,
+    "openai": 205
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "openai/gpt-5.5-2026-04-23": 315,
+    "gpt-5.5-2026-04-23": 205
+   },
+   "served_model_ids": {
+    "openai/gpt-5.5-2026-04-23": 315,
+    "gpt-5.5-2026-04-23": 205
+   },
+   "served_providers": {
+    "Kaggle Model Proxy (backend not exposed)": 315,
+    "OpenAI (first-party API)": 205
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:41:10.519829+00:00",
+   "last_generated_utc": "2026-10-18T20:44:11.006274+00:00",
+   "reasoning_settings": {
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 255,
+    "api_default: no reasoning_effort sent (GPT-5.x / 6 default effort medium)": 205,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "8000": 465,
+    "16000": 10,
+    "12000": 45
+   }
+  },
+  "gpt-5.6-luna": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "kaggle_proxy": 315,
+    "openai": 205
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "openai/gpt-5.6-luna": 315,
+    "gpt-5.6-luna": 205
+   },
+   "served_model_ids": {
+    "openai/gpt-5.6-luna": 315,
+    "gpt-5.6-luna": 205
+   },
+   "served_providers": {
+    "Kaggle Model Proxy (backend not exposed)": 315,
+    "OpenAI (first-party API)": 205
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:41:08.282568+00:00",
+   "last_generated_utc": "2026-10-18T20:45:28.697818+00:00",
+   "reasoning_settings": {
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 255,
+    "api_default: no reasoning_effort sent (GPT-5.x / 6 default effort medium)": 205,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "16000": 265,
+    "8000": 210,
+    "12000": 45
+   }
+  },
+  "gpt-5.6-sol": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "kaggle_proxy": 315,
+    "openai": 205
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "openai/gpt-5.6-sol": 315,
+    "gpt-5.6-sol": 205
+   },
+   "served_model_ids": {
+    "openai/gpt-5.6-sol": 315,
+    "gpt-5.6-sol": 205
+   },
+   "served_providers": {
+    "Kaggle Model Proxy (backend not exposed)": 315,
+    "OpenAI (first-party API)": 205
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:41:22.983232+00:00",
+   "last_generated_utc": "2026-10-18T20:47:38.856193+00:00",
+   "reasoning_settings": {
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 255,
+    "api_default: no reasoning_effort sent (GPT-5.x / 6 default effort medium)": 205,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "12000": 308,
+    "8000": 210,
+    "16000": 2
+   }
+  },
+  "gpt-5.6-terra": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "kaggle_proxy": 315,
+    "openai": 205
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "openai/gpt-5.6-terra": 315,
+    "gpt-5.6-terra": 205
+   },
+   "served_model_ids": {
+    "openai/gpt-5.6-terra": 315,
+    "gpt-5.6-terra": 205
+   },
+   "served_providers": {
+    "Kaggle Model Proxy (backend not exposed)": 315,
+    "OpenAI (first-party API)": 205
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:41:19.691153+00:00",
+   "last_generated_utc": "2026-10-18T20:43:44.645597+00:00",
+   "reasoning_settings": {
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 255,
+    "api_default: no reasoning_effort sent (GPT-5.x / 6 default effort medium)": 205,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "12000": 300,
+    "8000": 210,
+    "16000": 10
+   }
+  },
+  "gpt-6-astra": {
+   "calls_total": 520,
+   "calls_status": {
+    "ok": 520
+   },
+   "passages": 520,
+   "routes": {
+    "kaggle_proxy": 315,
+    "openai": 205
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150,
+    "proxy_v1": 60
+   },
+   "requested_model_ids": {
+    "openai/gpt-6-astra": 315,
+    "gpt-6-astra": 205
+   },
+   "served_model_ids": {
+    "openai/gpt-6-astra": 315,
+    "gpt-6-astra": 205
+   },
+   "served_providers": {
+    "Kaggle Model Proxy (backend not exposed)": 315,
+    "OpenAI (first-party API)": 205
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-16T17:41:34.079880+00:00",
+   "last_generated_utc": "2026-10-18T20:48:22.794312+00:00",
+   "reasoning_settings": {
+    "proxy_default: nothing sent (Kaggle @default slug / provider default thinking)": 255,
+    "api_default: no reasoning_effort sent (GPT-5.x / 6 default effort medium)": 205,
+    "not sent (provider default thinking: Gemini and gpt-5.x/6 think by default, Claude Sonnet 5 / Opus 4.x do not, Opus 5 adaptive)": 60
+   },
+   "max_output_caps": {
+    "6000": 255,
+    "8000": 210,
+    "16000": 10,
+    "12000": 45
+   }
+  },
+  "kimi-k3": {
+   "calls_total": 760,
+   "calls_status": {
+    "ok": 760
+   },
+   "passages": 760,
+   "routes": {
+    "openrouter": 760
+   },
+   "splits": {
+    "new": 610,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "moonshotai/kimi-k3": 760
+   },
+   "served_model_ids": {
+    "moonshotai/kimi-k3": 760
+   },
+   "served_providers": {
+    "Moonshot AI": 310,
+    "Alibaba": 450
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:33:53.999Z",
+   "last_generated_utc": "2026-10-18T13:06:03.095Z",
+   "reasoning_settings": {
+    "provider_default: no reasoning params sent; provider pinned to moonshotai (order+only, allow_fallbacks=false)": 310,
+    "variant: sent {\"reasoning\": {\"enabled\": false}}; provider pinned to alibaba (order+only, allow_fallbacks=false)": 450
+   },
+   "max_output_caps": {
+    "32000": 310,
+    "4000": 20,
+    "2000": 430
+   }
+  },
+  "qwen3.8-max": {
+   "calls_total": 460,
+   "calls_status": {
+    "ok": 460
+   },
+   "passages": 460,
+   "routes": {
+    "openrouter": 460
+   },
+   "splits": {
+    "new": 310,
+    "train_regen": 150
+   },
+   "requested_model_ids": {
+    "qwen/qwen3.8-max-0902": 460
+   },
+   "served_model_ids": {
+    "qwen/qwen3.8-max-0902": 460
+   },
+   "served_providers": {
+    "Alibaba": 460
+   },
+   "quarantined_served_ids": {},
+   "first_generated_utc": "2026-10-17T11:33:44.494Z",
+   "last_generated_utc": "2026-10-18T13:07:08.031Z",
+   "reasoning_settings": {
+    "provider_default: no reasoning params sent; provider pinned to alibaba (order+only, allow_fallbacks=false)": 460
+   },
+   "max_output_caps": {
+    "32000": 460
+   }
+  }
+ }
+}

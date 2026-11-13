@@ -1,0 +1,305 @@
+=== 2026-10-22T13:42:44Z pro session ntl_lora_fresh-1792676564 gpu=T4 model=Qwen/Qwen2.5-3B script=/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/ntl_lora_colab.py ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'ntl_lora_fresh-1792676564'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:243 in assign                                         │
+│                                                                              │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│   242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│ ❱ 243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+│   246                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=30b2b85b_5b3c_44ee_bf4d_6fb62
+6184912........&variant=GPU&accelerator=T4: Service Unavailable
+create failed (attempt 1); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'ntl_lora_fresh-1792676564'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:243 in assign                                         │
+│                                                                              │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│   242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│ ❱ 243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+│   246                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=59a50d60_9afc_431d_b5ca_50730
+25d3efb........&variant=GPU&accelerator=T4: Service Unavailable
+create failed (attempt 2); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'ntl_lora_fresh-1792676564'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-usw4b0-24uayb63qzs5w-b.us-west4.prod.r.colab.dev -> 136.69.72.109
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/colab_train.parquet' to '/content/colab_train.parquet'
+=== EXEC START 2026-10-22T13:50:45Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    4.8s] colab payload (11989, 5) real 2699 mirror 9290
+[    4.9s] mirror rows 9290
+[    4.9s] train frame (11989, 9) prompts 660
+[    5.9s] real rows 2699 prompts 150
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 29,970,432 || all params: 3,115,945,984 || trainable%: 0.9618
+[   93.0s] model ready Qwen/Qwen2.5-3B 4bit False mem 6000 MB
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:216 in exec_command                       │
+│                                                                              │
+│   213 │   │   │   )                                                          │
+│   214 │   │   │   state.store.add(s)                                         │
+│   215 │   │   │                                                              │
+│ ❱ 216 │   │   │   outputs = runtime.execute_code(                            │
+│   217 │   │   │   │   code,                                                  │
+│   218 │   │   │   │   output_hook=lambda o: display_output(o, output_image), │
+│   219 │   │   │   │   timeout=timeout,                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/runtime.py:221 in execute_code                                  │
+│                                                                              │
+│   218 │   │   │   │   │   │   if idx < len(outputs):                         │
+│   219 │   │   │   │   │   │   │   output_hook(outputs[idx])                  │
+│   220 │   │   │                                                              │
+│ ❱ 221 │   │   │   reply = self.kernel_client.execute_interactive(            │
+│   222 │   │   │   │   code, output_hook=wrapped_output_hook, **kwargs        │
+│   223 │   │   │   )                                                          │
+│   224 │   │   │   # execute_interactive returns the raw reply message        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/client.py:364 in execute_interactive                │
+│                                                                              │
+│   361 │   │   │   The reply message for this request                         │
+│   362 │   │   """                                                            │
+│   363 │   │   self._set_variables(variables)                                 │
+│ ❱ 364 │   │   return self._manager.client.execute_interactive(               │
+│   365 │   │   │   code,                                                      │
+│   366 │   │   │   silent=silent,                                             │
+│   367 │   │   │   store_history=store_history,                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/wsclient.py:1097 in execute_interactive             │
+│                                                                              │
+│   1094 │   │   │   │   │   self.iopub_channel.msg_ready()                    │
+│   1095 │   │   │   │   │   or (allow_stdin and                               │
+│        self.stdin_channel.msg_ready())                                       │
+│   1096 │   │   │   │   ):                                                    │
+│ ❱ 1097 │   │   │   │   │   raise TimeoutError("Timeout waiting for output")  │
+│   1098 │   │   │   │                                                         │
+│   1099 │   │   │   │   if allow_stdin:                                       │
+│   1100 │   │   │   │   │   try:                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutError: Timeout waiting for output
+=== EXEC DONE 2026-10-22T17:44:13Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/submission.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/eval_metrics.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_by_source.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/run_meta.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_idx_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_real_y_fold0.npy
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/fold_status.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/cv_report.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/_manifest.json
+PRO SESSION KEPT ALIVE: ntl_lora_fresh-1792676564 (no stop)
+=== finished 2026-10-22T17:45:23Z ===

@@ -1,0 +1,16 @@
+track	metric	value	notes
+track06	roc_auc	0.959265	baseline 3-member logit blend lgbm+cat+xgb (prior session, n5 header)
+track06	roc_auc	0.959242	REJECT n5a nnprior inject: cross-fitted LR stack best cfg lr_logits+probs_C0.5; 18 cfgs incl ranks (0.95844) all < baseline 0.959265; coord-ascent collapses to cat-only
+track06	roc_auc	0.959628	realmlp+nnprior logit stack, 10-fold seed42, weights {wts}
+track06	roc_auc	0.959354	final enhanced blend (approx weights from best known) weights={'lgbm': 0.15, 'cat': 0.55, 'xgb': 0.08, 'nnprior': 0.02, 'realmlp': 0.2}
+06_playground_s6e10	kernel_v4_fixed_oof_auc::rank_logit_blend	0.959272	infra fix only (cat2 dtype bug: category cols reached LR imputer); blend w={cat .776, lgbm .204, xgb .021, logreg .000}; logreg+TE member (0.9406) is dead weight -> n5 open
+track06	roc_auc	0.959622	strict cross-fitted re-verify strict_coord_ascent4; optimism +0.000006; keep=True
+06-playground-s6e10-airline-satisfaction	orig_dataset_exact_match_rate	0.000024	NEGATIVE: 17/699635 playground train rows match the 129,880-row original airline dataset on all 21 features; label agreement 0.0 -> no leakage shortcut, do not retry
+06-playground-s6e10-airline-satisfaction	orig_dataset_augmentation_cv	pending	testing: add original airline rows (129,880, labels mapped neutral-or-dissatisfied->False) to each training fold
+06-playground-s6e10-airline-satisfaction	lgbm_orig_aug_oof_auc	0.957917	base 0.957673 + 129880 original airline rows as extra supervision; delta +0.000245
+06-playground-s6e10-airline-satisfaction	ps6e10_final_blend_oof_auc	0.959355	members ['lgbm_base', 'lgbm_aug', 'cat', 'xgb'] weights {'lgbm_base': 0.0945, 'lgbm_aug': 0.1725, 'cat': 0.733, 'xgb': 0.0}; prev 0.959622
+06-playground-s6e10-airline-satisfaction	ps6e10_max_ensemble_oof_auc	0.959666	members=['cat', 'lgbm', 'xgb', 'lgbm_base', 'lgbm_aug', 'realmlp', 'nnprior'] weights={'cat': 0.2698, 'lgbm': 0.0516, 'xgb': 0.0002, 'lgbm_base': 0.0382, 'lgbm_aug': 0.0418, 'realmlp': 0.5951, 'nnprior': 0.0033} prev_best=0.959622
+06-playground-s6e10-airline-satisfaction	baseline_existing_members	0.959666	measured from outputs/cv_scores.json; cat=0.959052, lgbm=0.957583, xgb=0.956385, realmlp=0.959001, nnprior=0.943050, lgbm_aug=0.957917, lgbm_base=0.957673
+06-playground-s6e10-airline-satisfaction	sweep_started	PENDING	PID 3822155 running in background; cat d8-9 iters3k lr0.03 seeds 42/1337/2024; lgbm leaves63/127 seeds42/1337; feature variant proxy
+06-playground-s6e10-airline-satisfaction	cat_sweep_cat_d8_i3k_lr03_s42_full	0.958858	depth=8 iters=3000 lr=0.03 seed=42
+06-playground-s6e10-airline-satisfaction	cat_sweep_cat_d8_i3k_lr03_s42_full	0.958858	depth=8 iters=3000 lr=0.03 seed=42

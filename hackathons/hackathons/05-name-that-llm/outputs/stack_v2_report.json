@@ -1,0 +1,200 @@
+{
+ "bal_acc": 0.6890852597564008,
+ "acc": 0.6891441274546128,
+ "rows": 2699,
+ "members": [
+  "deberta_base",
+  "char",
+  "knn",
+  "local_qwen05b",
+  "local_qwen05b_s1337",
+  "local_qwen05b_s7",
+  "style",
+  "svm",
+  "svmext",
+  "word"
+ ],
+ "per_class_recall": {
+  "claude-fable-5": 0.5302013422818792,
+  "claude-opus-4-6": 0.8733333333333333,
+  "claude-opus-4-8": 0.7733333333333333,
+  "claude-opus-5": 0.8333333333333334,
+  "claude-sonnet-5": 0.76,
+  "gemini-3.1-pro-preview": 0.8333333333333334,
+  "gemini-3.6-flash": 0.7666666666666667,
+  "gemini-3.7-flash": 0.54,
+  "gemini-3.8-flash": 0.6866666666666666,
+  "glm-5.3": 0.52,
+  "glm-5.3-flash": 0.58,
+  "gpt-5.5": 0.7066666666666667,
+  "gpt-5.6-luna": 0.68,
+  "gpt-5.6-sol": 0.58,
+  "gpt-5.6-terra": 0.58,
+  "gpt-6-astra": 0.8466666666666667,
+  "kimi-k3": 0.49333333333333335,
+  "qwen3.8-max": 0.82
+ },
+ "folds": [
+  {
+   "fold": 0,
+   "temps": {
+    "deberta_base": 0.815,
+    "char": 1.439,
+    "knn": 0.585,
+    "local_qwen05b": 0.852,
+    "local_qwen05b_s1337": 0.867,
+    "local_qwen05b_s7": 0.924,
+    "style": 4.0,
+    "svm": 1.862,
+    "svmext": 1.055,
+    "word": 0.84
+   },
+   "weights": {
+    "deberta_base": 0.051,
+    "char": 0.0,
+    "knn": 0.0,
+    "local_qwen05b": 0.161,
+    "local_qwen05b_s1337": 0.293,
+    "local_qwen05b_s7": 0.285,
+    "style": 0.061,
+    "svm": 0.0,
+    "svmext": 0.01,
+    "word": 0.14
+   },
+   "bias_max_abs": 0.5,
+   "train_bal_before_bias": 0.78,
+   "train_bal_after_bias": 0.7827,
+   "val_bal_acc": 0.387,
+   "val_acc": 0.387
+  },
+  {
+   "fold": 1,
+   "temps": {
+    "deberta_base": 0.781,
+    "char": 1.458,
+    "knn": 0.575,
+    "local_qwen05b": 0.848,
+    "local_qwen05b_s1337": 0.891,
+    "local_qwen05b_s7": 0.914,
+    "style": 4.0,
+    "svm": 1.895,
+    "svmext": 1.071,
+    "word": 0.852
+   },
+   "weights": {
+    "deberta_base": 0.243,
+    "char": 0.082,
+    "knn": 0.062,
+    "local_qwen05b": 0.238,
+    "local_qwen05b_s1337": 0.223,
+    "local_qwen05b_s7": 0.152,
+    "style": 0.0,
+    "svm": 0.0,
+    "svmext": 0.0,
+    "word": 0.0
+   },
+   "bias_max_abs": 0.25,
+   "train_bal_before_bias": 0.7499,
+   "train_bal_after_bias": 0.7536,
+   "val_bal_acc": 0.5444,
+   "val_acc": 0.5444
+  },
+  {
+   "fold": 2,
+   "temps": {
+    "deberta_base": 0.746,
+    "char": 1.459,
+    "knn": 0.58,
+    "local_qwen05b": 0.834,
+    "local_qwen05b_s1337": 0.865,
+    "local_qwen05b_s7": 0.913,
+    "style": 4.0,
+    "svm": 1.892,
+    "svmext": 1.073,
+    "word": 0.845
+   },
+   "weights": {
+    "deberta_base": 0.0,
+    "char": 0.079,
+    "knn": 0.0,
+    "local_qwen05b": 0.278,
+    "local_qwen05b_s1337": 0.333,
+    "local_qwen05b_s7": 0.206,
+    "style": 0.0,
+    "svm": 0.0,
+    "svmext": 0.0,
+    "word": 0.104
+   },
+   "bias_max_abs": 0.5,
+   "train_bal_before_bias": 0.7133,
+   "train_bal_after_bias": 0.7193,
+   "val_bal_acc": 0.6833,
+   "val_acc": 0.6833
+  },
+  {
+   "fold": 3,
+   "temps": {
+    "deberta_base": 0.765,
+    "char": 1.429,
+    "knn": 0.574,
+    "local_qwen05b": 0.879,
+    "local_qwen05b_s1337": 0.902,
+    "local_qwen05b_s7": 0.939,
+    "style": 4.0,
+    "svm": 1.858,
+    "svmext": 1.052,
+    "word": 0.838
+   },
+   "weights": {
+    "deberta_base": 0.225,
+    "char": 0.0,
+    "knn": 0.132,
+    "local_qwen05b": 0.123,
+    "local_qwen05b_s1337": 0.167,
+    "local_qwen05b_s7": 0.167,
+    "style": 0.0,
+    "svm": 0.079,
+    "svmext": 0.0,
+    "word": 0.108
+   },
+   "bias_max_abs": 0.25,
+   "train_bal_before_bias": 0.6606,
+   "train_bal_after_bias": 0.663,
+   "val_bal_acc": 0.8702,
+   "val_acc": 0.8701
+  },
+  {
+   "fold": 4,
+   "temps": {
+    "deberta_base": 0.727,
+    "char": 1.455,
+    "knn": 0.581,
+    "local_qwen05b": 0.85,
+    "local_qwen05b_s1337": 0.876,
+    "local_qwen05b_s7": 0.913,
+    "style": 4.0,
+    "svm": 1.884,
+    "svmext": 1.062,
+    "word": 0.846
+   },
+   "weights": {
+    "deberta_base": 0.262,
+    "char": 0.152,
+    "knn": 0.0,
+    "local_qwen05b": 0.063,
+    "local_qwen05b_s1337": 0.255,
+    "local_qwen05b_s7": 0.226,
+    "style": 0.0,
+    "svm": 0.0,
+    "svmext": 0.005,
+    "word": 0.037
+   },
+   "bias_max_abs": 0.25,
+   "train_bal_before_bias": 0.6451,
+   "train_bal_after_bias": 0.6493,
+   "val_bal_acc": 0.9611,
+   "val_acc": 0.9611
+  }
+ ],
+ "protocol": "SGKF(5, shuffle, seed 42, groups=prompt_id); per-fold temperature, weight search and per-class bias tuned on the 4 training folds only"
+}

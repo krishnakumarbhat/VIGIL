@@ -1,0 +1,223 @@
+[runner] loaded 1000 training tasks in 0.4s
+[runner] 5/1000 solved=2 elapsed=12s
+[runner] 10/1000 solved=4 elapsed=20s
+[runner] 15/1000 solved=5 elapsed=21s
+[runner] 20/1000 solved=6 elapsed=21s
+[runner] 25/1000 solved=8 elapsed=22s
+[runner] 30/1000 solved=10 elapsed=24s
+[runner] 35/1000 solved=12 elapsed=25s
+[runner] 40/1000 solved=15 elapsed=27s
+[runner] 45/1000 solved=17 elapsed=28s
+[runner] 50/1000 solved=18 elapsed=29s
+[runner] 55/1000 solved=20 elapsed=31s
+[runner] 60/1000 solved=23 elapsed=32s
+[runner] 65/1000 solved=25 elapsed=33s
+[runner] 70/1000 solved=26 elapsed=33s
+[runner] 75/1000 solved=29 elapsed=34s
+[runner] 80/1000 solved=32 elapsed=35s
+[runner] 85/1000 solved=36 elapsed=36s
+[runner] 90/1000 solved=40 elapsed=38s
+[runner] 95/1000 solved=42 elapsed=39s
+[runner] 100/1000 solved=43 elapsed=40s
+[runner] 105/1000 solved=44 elapsed=40s
+[runner] 110/1000 solved=47 elapsed=43s
+[runner] 115/1000 solved=47 elapsed=44s
+[runner] 120/1000 solved=48 elapsed=44s
+[runner] 125/1000 solved=48 elapsed=45s
+[runner] 130/1000 solved=51 elapsed=48s
+[runner] 135/1000 solved=52 elapsed=48s
+[runner] 140/1000 solved=53 elapsed=48s
+[runner] 145/1000 solved=56 elapsed=50s
+[runner] 150/1000 solved=59 elapsed=52s
+[runner] 155/1000 solved=60 elapsed=52s
+[runner] 160/1000 solved=61 elapsed=53s
+[runner] 165/1000 solved=62 elapsed=55s
+[runner] 170/1000 solved=63 elapsed=56s
+[runner] 175/1000 solved=64 elapsed=57s
+[runner] 180/1000 solved=67 elapsed=58s
+[runner] 185/1000 solved=69 elapsed=60s
+[runner] 190/1000 solved=69 elapsed=60s
+[runner] 195/1000 solved=73 elapsed=62s
+[runner] 200/1000 solved=76 elapsed=63s
+[runner] 205/1000 solved=79 elapsed=63s
+[runner] 210/1000 solved=81 elapsed=64s
+[runner] 215/1000 solved=83 elapsed=66s
+[runner] 220/1000 solved=84 elapsed=67s
+[runner] 225/1000 solved=84 elapsed=68s
+[runner] 230/1000 solved=86 elapsed=69s
+[runner] 235/1000 solved=88 elapsed=69s
+[runner] 240/1000 solved=89 elapsed=72s
+[runner] 245/1000 solved=92 elapsed=73s
+[runner] 250/1000 solved=93 elapsed=73s
+[runner] 255/1000 solved=94 elapsed=74s
+[runner] 260/1000 solved=95 elapsed=75s
+[runner] 265/1000 solved=96 elapsed=76s
+[runner] 270/1000 solved=96 elapsed=77s
+[runner] 275/1000 solved=99 elapsed=78s
+[runner] 280/1000 solved=101 elapsed=80s
+[runner] 285/1000 solved=101 elapsed=81s
+[runner] 290/1000 solved=101 elapsed=83s
+[runner] 295/1000 solved=104 elapsed=85s
+[runner] 300/1000 solved=105 elapsed=88s
+[runner] 305/1000 solved=108 elapsed=90s
+[runner] 310/1000 solved=109 elapsed=91s
+[runner] 315/1000 solved=111 elapsed=91s
+[runner] 320/1000 solved=113 elapsed=93s
+[runner] 325/1000 solved=116 elapsed=93s
+[runner] 330/1000 solved=116 elapsed=95s
+[runner] 335/1000 solved=118 elapsed=96s
+[runner] 340/1000 solved=118 elapsed=96s
+[runner] 345/1000 solved=120 elapsed=98s
+[runner] 350/1000 solved=124 elapsed=98s
+[runner] 355/1000 solved=126 elapsed=99s
+[runner] 360/1000 solved=129 elapsed=102s
+[runner] 365/1000 solved=129 elapsed=103s
+[runner] 370/1000 solved=130 elapsed=103s
+[runner] 375/1000 solved=132 elapsed=104s
+[runner] 380/1000 solved=135 elapsed=106s
+[runner] 385/1000 solved=138 elapsed=106s
+[runner] 390/1000 solved=138 elapsed=108s
+[runner] 395/1000 solved=142 elapsed=109s
+[runner] 400/1000 solved=144 elapsed=111s
+[runner] 405/1000 solved=145 elapsed=112s
+[runner] 410/1000 solved=148 elapsed=113s
+[runner] 415/1000 solved=151 elapsed=115s
+[runner] 420/1000 solved=154 elapsed=116s
+[runner] 425/1000 solved=156 elapsed=117s
+[runner] 430/1000 solved=159 elapsed=118s
+[runner] 435/1000 solved=159 elapsed=119s
+[runner] 440/1000 solved=159 elapsed=120s
+[runner] 445/1000 solved=162 elapsed=122s
+[runner] 450/1000 solved=162 elapsed=124s
+[runner] 455/1000 solved=162 elapsed=124s
+[runner] 460/1000 solved=164 elapsed=125s
+[runner] 465/1000 solved=168 elapsed=127s
+[runner] 470/1000 solved=170 elapsed=129s
+[runner] 475/1000 solved=171 elapsed=129s
+[runner] 480/1000 solved=173 elapsed=130s
+[runner] 485/1000 solved=175 elapsed=132s
+[runner] 490/1000 solved=175 elapsed=133s
+[runner] 495/1000 solved=176 elapsed=134s
+[runner] 500/1000 solved=178 elapsed=137s
+[runner] 505/1000 solved=178 elapsed=137s
+[runner] 510/1000 solved=179 elapsed=139s
+[runner] 515/1000 solved=180 elapsed=139s
+[runner] 520/1000 solved=182 elapsed=139s
+[runner] 525/1000 solved=182 elapsed=141s
+[runner] 530/1000 solved=185 elapsed=142s
+[runner] 535/1000 solved=185 elapsed=143s
+[runner] 540/1000 solved=187 elapsed=144s
+[runner] 545/1000 solved=190 elapsed=146s
+[runner] 550/1000 solved=193 elapsed=147s
+[runner] 555/1000 solved=193 elapsed=148s
+[runner] 560/1000 solved=197 elapsed=150s
+[runner] 565/1000 solved=197 elapsed=151s
+[runner] 570/1000 solved=200 elapsed=152s
+[runner] 575/1000 solved=203 elapsed=153s
+[runner] 580/1000 solved=204 elapsed=155s
+[runner] 585/1000 solved=205 elapsed=156s
+[runner] 590/1000 solved=206 elapsed=157s
+[runner] 595/1000 solved=208 elapsed=159s
+[runner] 600/1000 solved=211 elapsed=159s
+[runner] 605/1000 solved=213 elapsed=160s
+[runner] 610/1000 solved=215 elapsed=163s
+[runner] 615/1000 solved=217 elapsed=163s
+[runner] 620/1000 solved=219 elapsed=164s
+[runner] 625/1000 solved=220 elapsed=165s
+[runner] 630/1000 solved=223 elapsed=166s
+[runner] 635/1000 solved=224 elapsed=167s
+[runner] 640/1000 solved=226 elapsed=167s
+[runner] 645/1000 solved=227 elapsed=169s
+[runner] 650/1000 solved=232 elapsed=169s
+[runner] 655/1000 solved=235 elapsed=170s
+[runner] 660/1000 solved=237 elapsed=171s
+[runner] 665/1000 solved=238 elapsed=173s
+[runner] 670/1000 solved=241 elapsed=174s
+[runner] 675/1000 solved=244 elapsed=174s
+[runner] 680/1000 solved=245 elapsed=175s
+[runner] 685/1000 solved=246 elapsed=175s
+[runner] 690/1000 solved=247 elapsed=177s
+[runner] 695/1000 solved=251 elapsed=178s
+[runner] 700/1000 solved=254 elapsed=180s
+[runner] 705/1000 solved=255 elapsed=180s
+[runner] 710/1000 solved=255 elapsed=181s
+[runner] 715/1000 solved=255 elapsed=183s
+[runner] 720/1000 solved=256 elapsed=184s
+[runner] 725/1000 solved=256 elapsed=185s
+[runner] 730/1000 solved=258 elapsed=187s
+[runner] 735/1000 solved=259 elapsed=188s
+[runner] 740/1000 solved=262 elapsed=189s
+[runner] 745/1000 solved=264 elapsed=190s
+[runner] 750/1000 solved=265 elapsed=191s
+[runner] 755/1000 solved=267 elapsed=193s
+[runner] 760/1000 solved=268 elapsed=193s
+[runner] 765/1000 solved=268 elapsed=194s
+[runner] 770/1000 solved=270 elapsed=195s
+[runner] 775/1000 solved=272 elapsed=196s
+[runner] 780/1000 solved=273 elapsed=196s
+[runner] 785/1000 solved=275 elapsed=198s
+[runner] 790/1000 solved=275 elapsed=199s
+[runner] 795/1000 solved=276 elapsed=200s
+[runner] 800/1000 solved=276 elapsed=200s
+[runner] 805/1000 solved=277 elapsed=201s
+[runner] 810/1000 solved=281 elapsed=202s
+[runner] 815/1000 solved=283 elapsed=203s
+[runner] 820/1000 solved=284 elapsed=203s
+[runner] 825/1000 solved=285 elapsed=204s
+[runner] 830/1000 solved=287 elapsed=206s
+[runner] 835/1000 solved=291 elapsed=207s
+[runner] 840/1000 solved=293 elapsed=209s
+[runner] 845/1000 solved=294 elapsed=209s
+[runner] 850/1000 solved=299 elapsed=210s
+[runner] 855/1000 solved=300 elapsed=213s
+[runner] 860/1000 solved=301 elapsed=214s
+[runner] 865/1000 solved=302 elapsed=214s
+[runner] 870/1000 solved=304 elapsed=216s
+[runner] 875/1000 solved=305 elapsed=217s
+[runner] 880/1000 solved=307 elapsed=219s
+[runner] 885/1000 solved=310 elapsed=220s
+[runner] 890/1000 solved=311 elapsed=221s
+[runner] 895/1000 solved=312 elapsed=222s
+[runner] 900/1000 solved=315 elapsed=223s
+[runner] 905/1000 solved=317 elapsed=225s
+[runner] 910/1000 solved=318 elapsed=226s
+[runner] 915/1000 solved=319 elapsed=227s
+[runner] 920/1000 solved=322 elapsed=228s
+[runner] 925/1000 solved=324 elapsed=230s
+[runner] 930/1000 solved=328 elapsed=230s
+[runner] 935/1000 solved=329 elapsed=230s
+[runner] 940/1000 solved=331 elapsed=232s
+[runner] 945/1000 solved=332 elapsed=234s
+[runner] 950/1000 solved=335 elapsed=234s
+[runner] 955/1000 solved=337 elapsed=237s
+[runner] 960/1000 solved=339 elapsed=237s
+[runner] 965/1000 solved=341 elapsed=239s
+[runner] 970/1000 solved=342 elapsed=240s
+[runner] 975/1000 solved=346 elapsed=240s
+[runner] 980/1000 solved=348 elapsed=241s
+[runner] 985/1000 solved=350 elapsed=243s
+[runner] 990/1000 solved=351 elapsed=244s
+[runner] 995/1000 solved=352 elapsed=245s
+[runner] 1000/1000 solved=353 elapsed=249s
+{
+  "split": "training",
+  "tasks": 1000,
+  "solved": 353,
+  "solve_rate": 0.353,
+  "wall_seconds": 250.48,
+  "runtime_mean_s": 2.9413,
+  "by_method": {
+    "cell_tree": 205,
+    "object_tree": 133,
+    "patch_lookup": 46,
+    "depth1": 34,
+    "depth2": 12,
+    "mlp": 1
+  },
+  "graded_tasks": 1000,
+  "graded_pass1": 67,
+  "graded_pass2": 5,
+  "graded_pass1_rate": 0.067,
+  "graded_pass2_rate": 0.005,
+  "unfinished": 0
+}

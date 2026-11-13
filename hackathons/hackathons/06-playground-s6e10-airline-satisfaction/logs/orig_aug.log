@@ -1,0 +1,28 @@
+[    1.0s] orig rows 129880 pos rate 0.43446258084385586
+[    2.8s] X (699635, 43) Xo (129880, 44)
+[  326.2s]   base fold 5/10 running auc 0.95838
+[  640.0s]   base fold 10/10 running auc 0.95748
+[  640.1s] base OOF AUC 0.957673
+[LightGBM] [Fatal] The number of features in data (43) is not the same as it was in training data (44).
+You can set ``predict_disable_shape_check=true`` to discard this error, but please be aware what you are doing.
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction/src/orig_augmentation.py", line 117, in <module>
+    a_aug, o_aug = run(True, "augmented")
+  File "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction/src/orig_augmentation.py", line 107, in run
+    oof[vi] = m.predict_proba(X.iloc[vi])[:, 1]
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/sklearn.py", line 1773, in predict_proba
+    result = super().predict(
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/sklearn.py", line 1270, in predict
+    return self._Booster.predict(  # type: ignore[union-attr]
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/basic.py", line 4894, in predict
+    return predictor.predict(
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/basic.py", line 1140, in predict
+    preds, nrow = self.__pred_for_np2d(
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/basic.py", line 1296, in __pred_for_np2d
+    return self.__inner_predict_np2d(
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/basic.py", line 1237, in __inner_predict_np2d
+    _safe_call(
+  File "/media/pope/projecteo/python_libs/site-packages/lightgbm/basic.py", line 297, in _safe_call
+    raise LightGBMError(_LIB.LGBM_GetLastError().decode("utf-8"))
+lightgbm.basic.LightGBMError: The number of features in data (43) is not the same as it was in training data (44).
+You can set ``predict_disable_shape_check=true`` to discard this error, but please be aware what you are doing.

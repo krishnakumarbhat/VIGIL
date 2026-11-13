@@ -1,0 +1,134 @@
+=== 2026-10-22T02:34:37Z session track05-1792636477 ===
+colab account -> old (config: /home/pope/.config/colab-cli/sessions.old.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792636477'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T02:35:42.415355
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T02:35:43Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-3B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '5.2', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     4.0s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:216 in exec_command                       │
+│                                                                              │
+│   213 │   │   │   )                                                          │
+│   214 │   │   │   state.store.add(s)                                         │
+│   215 │   │   │                                                              │
+│ ❱ 216 │   │   │   outputs = runtime.execute_code(                            │
+│   217 │   │   │   │   code,                                                  │
+│   218 │   │   │   │   output_hook=lambda o: display_output(o, output_image), │
+│   219 │   │   │   │   timeout=timeout,                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/runtime.py:221 in execute_code                                  │
+│                                                                              │
+│   218 │   │   │   │   │   │   if idx < len(outputs):                         │
+│   219 │   │   │   │   │   │   │   output_hook(outputs[idx])                  │
+│   220 │   │   │                                                              │
+│ ❱ 221 │   │   │   reply = self.kernel_client.execute_interactive(            │
+│   222 │   │   │   │   code, output_hook=wrapped_output_hook, **kwargs        │
+│   223 │   │   │   )                                                          │
+│   224 │   │   │   # execute_interactive returns the raw reply message        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/client.py:364 in execute_interactive                │
+│                                                                              │
+│   361 │   │   │   The reply message for this request                         │
+│   362 │   │   """                                                            │
+│   363 │   │   self._set_variables(variables)                                 │
+│ ❱ 364 │   │   return self._manager.client.execute_interactive(               │
+│   365 │   │   │   code,                                                      │
+│   366 │   │   │   silent=silent,                                             │
+│   367 │   │   │   store_history=store_history,                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/wsclient.py:1097 in execute_interactive             │
+│                                                                              │
+│   1094 │   │   │   │   │   self.iopub_channel.msg_ready()                    │
+│   1095 │   │   │   │   │   or (allow_stdin and                               │
+│        self.stdin_channel.msg_ready())                                       │
+│   1096 │   │   │   │   ):                                                    │
+│ ❱ 1097 │   │   │   │   │   raise TimeoutError("Timeout waiting for output")  │
+│   1098 │   │   │   │                                                         │
+│   1099 │   │   │   │   if allow_stdin:                                       │
+│   1100 │   │   │   │   │   try:                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutError: Timeout waiting for output
+=== MAIN EXEC DONE 2026-10-22T07:35:46Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792636477'...
+
+To authorize colab-cli, visit this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fapplicationdefaultauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcolaboratory+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&state=bVCUJuBgoIooe6EQbrb6vGPoy4yNHp&code_challenge=T1LOReR6GEfffLWIf13BoSH2dZfJMg_y1ORkxLgcKY4&code_challenge_method=S256&prompt=consent&token_usage=remote&access_type=offline
+
+After approving, Google will display an authorization code.
+Enter the authorization code: 
+Aborted.
+=== finished 2026-10-22T07:36:18Z ===

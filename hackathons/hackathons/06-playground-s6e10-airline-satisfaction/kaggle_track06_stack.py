@@ -1,0 +1,173 @@
+import os, json, time
+import numpy as np
+import pandas as pd
+
+OUT = "/kaggle/working"; os.makedirs(OUT, exist_ok=True)
+T0 = time.time()
+def log(*a): print(f"[{time.time()-T0:7.1f}s]", *a, flush=True)
+
+IN = "/kaggle/input"
+train_path = test_path = None
+for root, d, fs in os.walk(IN):
+    for f in fs:
+        if f == "train.csv": train_path = os.path.join(root, f)
+        if f == "test.csv": test_path = os.path.join(root, f)
+log("train", train_path, "test", test_path)
+tr = pd.read_csv(train_path)
+te = pd.read_csv(test_path)
+log("train shape", tr.shape, "test shape", te.shape)
+
+TARGET = "satisfaction"
+RATING_COLS = [c for c in tr.columns if c not in (
+    "id","Age","Flight Distance","Departure Delay in Minutes","Arrival Delay in Minutes",
+    "Gender","Customer Type","Type of Travel","Class",TARGET)]
+SERVICE_COLS = [c for c in RATING_COLS if c not in ("Inflight entertainment","Food and drink","Seat comfort")]
+log("rating cols", len(RATING_COLS))
+
+def fe(df, med=None):
+    X = df.copy()
+    if med is None:
+        med = X["Departure Delay in Minutes"].median()
+    X["Arrival Delay in Minutes"] = X["Arrival Delay in Minutes"].fillna(med)
+    X["delay_diff"] = X["Arrival Delay in Minutes"] - X["Departure Delay in Minutes"]
+    X["Flight_Distance_Bin"] = (X["Flight Distance"] // 10).astype(str)
+    X["Age_Bin"] = (X["Age"] // 5).astype(str)
+    r = X[RATING_COLS]
+    X["rating_mean"] = r.mean(axis=1); X["rating_std"] = r.std(axis=1)
+    X["rating_min"] = r.min(axis=1); X["rating_max"] = r.max(axis=1)
+    X["rating_sum"] = r.sum(axis=1)
+    X["total_service_score"] = X[SERVICE_COLS].sum(axis=1)
+    X["inflight_comfort_score"] = X[["Seat comfort","Inflight entertainment"]].sum(axis=1)
+    X["boarding_entertainment_interaction"] = X["Online boarding"] * X["Inflight entertainment"]
+    X["zero_rating_count"] = (r == 0).sum(axis=1)
+    X["low_rating_count"] = (r <= 1).sum(axis=1)
+    X["is_delayed"] = (X["Departure Delay in Minutes"] > 0).astype(int)
+    X["is_long_flight"] = (X["Flight Distance"] > 2000).astype(int)
+    X["type_x_class"] = X["Type of Travel"].astype(str) + "_" + X["Class"].astype(str)
+    X["cust_x_age"] = X["Customer Type"].astype(str) + "_" + X["Age_Bin"].astype(str)
+    X["gender_class"] = X["Gender"].astype(str) + "_" + X["Class"].astype(str)
+    X = X.drop(columns=[TARGET] if TARGET in X.columns else [])
+    return X
+
+y = tr[TARGET].astype(int).to_numpy()
+med = tr["Departure Delay in Minutes"].median()
+Xtr = fe(tr, med); Xte = fe(te, med)
+cat_cols = [c for c in Xtr.columns if Xtr[c].dtype == "object"]
+for c in cat_cols:
+    Xtr[c] = Xtr[c].astype("category"); Xte[c] = pd.Categorical(Xte[c], categories=Xtr[c].cat.categories)
+log("features", Xtr.shape, "cat", len(cat_cols))
+
+from sklearn.model_selection import StratifiedKFold
+from sklearn.metrics import roc_auc_score
+NF = 10
+skf = StratifiedKFold(n_splits=NF, shuffle=True, random_state=42)
+
+models = {}
+try:
+    import lightgbm as lgb
+    models["lgbm"] = lgb.LGBMClassifier(n_estimators=2000, learning_rate=0.05, num_leaves=63,
+        colsample_bytree=0.8, subsample=0.8, subsample_freq=1, reg_alpha=0.1, reg_lambda=1.0,
+        objective="binary", verbose=-1, n_jobs=4)
+except Exception as e: log("lgbm missing", e)
+try:
+    from catboost import CatBoostClassifier
+    models["cat"] = CatBoostClassifier(iterations=2000, learning_rate=0.05, depth=7, verbose=0,
+        task_type="GPU", devices="0", l2_leaf_reg=3, random_seed=42)
+except Exception as e: log("catboost GPU missing", repr(e)[:120])
+try:
+    import xgboost as xgb
+    models["xgb"] = xgb.XGBClassifier(n_estimators=2000, learning_rate=0.05, max_depth=7,
+        subsample=0.8, colsample_bytree=0.8, reg_lambda=1.0, tree_method="hist", device="cuda",
+        eval_metric="auc", n_jobs=4, random_state=42)
+except Exception as e: log("xgb missing", repr(e)[:120])
+
+oofs = {k: np.zeros(len(tr)) for k in models}
+oofs["logreg"] = np.zeros(len(tr))
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+skf_idx = list(skf.split(Xtr, y))
+for k, m in models.items():
+    for f, (ti, vi) in enumerate(skf_idx):
+        Xa, Xb = Xtr.iloc[ti], Xtr.iloc[vi]
+        ya, yb = y[ti], y[vi]
+        if k == "cat":
+            m.fit(Xa, ya, cat_features=cat_cols, eval_set=(Xb, yb), early_stopping_rounds=100, verbose=0)
+        elif k == "lgbm":
+            m.fit(Xa, ya, eval_set=[(Xb, yb)], callbacks=[])
+        else:
+            m.fit(Xa, ya)
+        oofs[k][vi] = m.predict_proba(Xb)[:, 1]
+    log(f"{k} oof auc {roc_auc_score(y, oofs[k]):.5f}")
+    np.save(f"{OUT}/oof_{k}.npy", oofs[k])
+
+# target encoding on categorical pairs, OOF
+def add_te(tr_df, te_df, cols, yv, nfold=5, smoothing=20.0):
+    tr_o = tr_df.copy(); te_o = te_df.copy()
+    glob = yv.mean()
+    for c in cols:
+        codes, code_te = tr_df[c].astype(str), te_df[c].astype(str)
+        mp = {}
+        for f, (ti, vi) in enumerate(StratifiedKFold(nfold, shuffle=True, random_state=7).split(tr_df, yv)):
+            s = pd.Series(yv[ti]).groupby(codes.iloc[ti]).agg(["mean","count"])
+            sm = (s["mean"]*s["count"] + glob*smoothing)/(s["count"]+smoothing)
+            mp_f = sm.to_dict()
+            tr_o.loc[vi, c+"_te"] = codes.iloc[vi].map(mp_f).fillna(glob)
+        s_all = pd.Series(yv).groupby(codes).agg(["mean","count"])
+        sm_all = (s_all["mean"]*s_all["count"] + glob*smoothing)/(s_all["count"]+smoothing)
+        te_o[c+"_te"] = code_te.map(sm_all.to_dict()).fillna(glob)
+    return tr_o, te_o
+
+te_cols = [c for c in ["type_x_class","cust_x_age","gender_class","Flight_Distance_Bin","Age_Bin","Class","Type of Travel","Customer Type"] if c in Xtr.columns]
+Xtr2, Xte2 = add_te(Xtr, Xte, te_cols, y)
+from sklearn.impute import SimpleImputer
+# pandas 3.x: str columns report dtype "str", not "object" -> use portable check
+cat2 = [c for c in Xtr2.columns if not __import__("pandas").api.types.is_numeric_dtype(Xtr2[c])]
+for c in cat2:
+    Xtr2[c] = Xtr2[c].astype("category"); Xte2[c] = Xte2[c].astype("category").cat.set_categories(Xtr2[c].cat.categories)
+for c in cat2:
+    Xtr2[c] = Xtr2[c].cat.codes.astype(float)
+    Xte2[c] = Xte2[c].cat.codes.astype(float)
+pipe = make_pipeline(SimpleImputer(strategy="median"),
+                     StandardScaler(), LogisticRegression(max_iter=2000, C=1.0))
+for f, (ti, vi) in enumerate(skf_idx):
+    pipe.fit(Xtr2.iloc[ti], y[ti])
+    oofs["logreg"][vi] = pipe.predict_proba(Xtr2.iloc[vi])[:, 1]
+log("logreg+TE oof auc", roc_auc_score(y, oofs["logreg"]))
+
+# blend via rank averaging + logit averaging
+from scipy.optimize import minimize
+from scipy.special import logit, expit
+keys = [k for k in oofs]
+logit_oofs = {k: logit(np.clip(oofs[k], 1e-6, 1-1e-6)) for k in keys}
+def neg_auc(w):
+    w = np.abs(w); w = w/ (w.sum()+1e-9)
+    p = sum(w[i]*logit_oofs[k] for i, k in enumerate(keys))
+    return -roc_auc_score(y, expit(p))
+w0 = np.ones(len(keys))/len(keys)
+res = minimize(neg_auc, w0, method="Nelder-Mead", options={"maxiter": 2000, "xatol": 1e-4, "fatol": 1e-6})
+w = np.abs(res.x); w = w/w.sum()
+blend = sum(w[i]*logit_oofs[k] for i, k in enumerate(keys))
+final_auc = roc_auc_score(y, expit(blend))
+log("weights", dict(zip(keys, w.round(4).tolist())))
+log("FINAL OOF AUC", final_auc)
+
+# fit final models on full data and predict test
+test_preds = {}
+for k, m in models.items():
+    if k == "cat": m.fit(Xtr, y, cat_features=cat_cols, verbose=0)
+    elif k == "lgbm": m.fit(Xtr, y)
+    else: m.fit(Xtr, y)
+    test_preds[k] = m.predict_proba(Xte)[:, 1]
+    np.save(f"{OUT}/test_{k}.npy", test_preds[k])
+pipe.fit(Xtr2, y)
+test_preds["logreg"] = pipe.predict_proba(Xte2)[:, 1]
+np.save(f"{OUT}/test_logreg.npy", test_preds["logreg"])
+final_blend = sum(w[i]*logit(np.clip(test_preds[k],1e-6,1-1e-6)) for i, k in enumerate(keys))
+np.save(f"{OUT}/oof_blend.npy", expit(blend))
+sub = pd.DataFrame({"id": te["id"], "satisfaction": (expit(final_blend) > 0.5).astype(int)})
+sub.to_csv(f"{OUT}/submission.csv", index=False)
+json.dump({"oof_auc_per_model": {k: float(roc_auc_score(y, oofs[k])) for k in keys},
+           "final_oof_auc": float(final_auc), "weights": dict(zip(keys, w.tolist())),
+           "n_features": int(Xtr.shape[1]), "n_splits": NF}, open(f"{OUT}/cv_scores.json", "w"), indent=1)
+log("DONE final_oof_auc", final_auc)

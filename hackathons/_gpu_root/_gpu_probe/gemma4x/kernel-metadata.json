@@ -1,0 +1,14 @@
+{
+  "id": "krishnakumarbhat/gemma4-data-extract-cpu",
+  "title": "Gemma4 Data Extract Cpu",
+  "code_file": "code.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": ["gemma-4-developer-agent"],
+  "kernel_sources": [],
+  "model_sources": []
+}

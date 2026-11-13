@@ -1,0 +1,34 @@
+[   10.1s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   10.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   10.3s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   18.8s] anchor recomputed 0.40863 (recorded 0.40863, drift +0.00000)
+[   18.8s] math checks OK max|sum_c P(c|b)-1|=5.55e-16
+[   18.8s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   26.6s]   v1 C=4 m=10 -> 0.43394
+[   26.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   47.9s]   v1 C=4 m=40 -> 0.43284
+[   48.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.1s]   v1 C=4 m=200 -> 0.42831
+[   56.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   62.2s]   v1 C=8 m=10 -> 0.45496
+[   62.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   66.5s]   v1 C=8 m=40 -> 0.45262
+[   66.5s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   70.5s]   v1 C=8 m=200 -> 0.44641
+[   70.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   75.9s]   v1 C=16 m=10 -> 0.47828
+[   76.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   81.3s]   v1 C=16 m=40 -> 0.47844
+[   81.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   85.6s]   v1 C=16 m=200 -> 0.46955
+[   85.7s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   91.4s]   v1 C=32 m=10 -> 0.51191
+[   91.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   96.8s]   v1 C=32 m=40 -> 0.50910
+[   96.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[  102.2s]   v1 C=32 m=200 -> 0.49879
+[  102.2s]   v2 alpha=0.05 -> 0.40973
+[  102.2s]   v2 alpha=0.1 -> 0.40971
+[  102.2s]   v2 alpha=0.2 -> 0.41002
+[  102.2s] verdict {'frontier_before': 0.40863, 'anchor_this_session': 0.40863471314451705, 'best_v1': 0.5119128540305011, 'best_v1_tag': 'c32_m10', 'keep': True, 'improvement': 0.10328285403050114}
+[  102.2s] lenprior iteration done

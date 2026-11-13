@@ -1,0 +1,966 @@
+{
+  "seed": 7,
+  "root": "/home/pope/Desktop/gpu /hackathons/07-opencv-ai-competition-2026/data/eval/detection",
+  "items": [
+    {
+      "file": "positive/pos_000.jpg",
+      "has_face": true,
+      "box": [
+        96,
+        281,
+        29,
+        37
+      ],
+      "size": 56,
+      "identity": "id05"
+    },
+    {
+      "file": "positive/pos_001.jpg",
+      "has_face": true,
+      "box": [
+        208,
+        188,
+        77,
+        111
+      ],
+      "size": 160,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_002.jpg",
+      "has_face": true,
+      "box": [
+        82,
+        45,
+        71,
+        105
+      ],
+      "size": 128,
+      "identity": "id07"
+    },
+    {
+      "file": "positive/pos_003.jpg",
+      "has_face": true,
+      "box": [
+        467,
+        129,
+        90,
+        135
+      ],
+      "size": 160,
+      "identity": "id12"
+    },
+    {
+      "file": "positive/pos_004.jpg",
+      "has_face": true,
+      "box": [
+        254,
+        19,
+        83,
+        102
+      ],
+      "size": 160,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_005.jpg",
+      "has_face": true,
+      "box": [
+        375,
+        314,
+        19,
+        27
+      ],
+      "size": 40,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_006.jpg",
+      "has_face": true,
+      "box": [
+        104,
+        116,
+        89,
+        131
+      ],
+      "size": 160,
+      "identity": "id07"
+    },
+    {
+      "file": "positive/pos_007.jpg",
+      "has_face": true,
+      "box": [
+        234,
+        239,
+        21,
+        27
+      ],
+      "size": 40,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_008.jpg",
+      "has_face": true,
+      "box": [
+        166,
+        279,
+        34,
+        50
+      ],
+      "size": 72,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_009.jpg",
+      "has_face": true,
+      "box": [
+        540,
+        259,
+        30,
+        41
+      ],
+      "size": 56,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_010.jpg",
+      "has_face": true,
+      "box": [
+        38,
+        31,
+        66,
+        86
+      ],
+      "size": 128,
+      "identity": "id05"
+    },
+    {
+      "file": "positive/pos_011.jpg",
+      "has_face": true,
+      "box": [
+        115,
+        204,
+        70,
+        111
+      ],
+      "size": 160,
+      "identity": "id11"
+    },
+    {
+      "file": "positive/pos_012.jpg",
+      "has_face": true,
+      "box": [
+        237,
+        52,
+        20,
+        26
+      ],
+      "size": 40,
+      "identity": "id05"
+    },
+    {
+      "file": "positive/pos_013.jpg",
+      "has_face": true,
+      "box": [
+        137,
+        41,
+        99,
+        130
+      ],
+      "size": 210,
+      "identity": "id10"
+    },
+    {
+      "file": "positive/pos_014.jpg",
+      "has_face": true,
+      "box": [
+        521,
+        282,
+        19,
+        26
+      ],
+      "size": 40,
+      "identity": "id00"
+    },
+    {
+      "file": "positive/pos_015.jpg",
+      "has_face": true,
+      "box": [
+        89,
+        195,
+        19,
+        27
+      ],
+      "size": 40,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_016.jpg",
+      "has_face": true,
+      "box": [
+        309,
+        154,
+        20,
+        26
+      ],
+      "size": 40,
+      "identity": "id05"
+    },
+    {
+      "file": "positive/pos_017.jpg",
+      "has_face": true,
+      "box": [
+        372,
+        51,
+        29,
+        37
+      ],
+      "size": 56,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_018.jpg",
+      "has_face": true,
+      "box": [
+        86,
+        244,
+        47,
+        66
+      ],
+      "size": 96,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_019.jpg",
+      "has_face": true,
+      "box": [
+        127,
+        279,
+        50,
+        63
+      ],
+      "size": 96,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_020.jpg",
+      "has_face": true,
+      "box": [
+        505,
+        225,
+        22,
+        32
+      ],
+      "size": 40,
+      "identity": "id07"
+    },
+    {
+      "file": "positive/pos_021.jpg",
+      "has_face": true,
+      "box": [
+        357,
+        149,
+        103,
+        142
+      ],
+      "size": 210,
+      "identity": "id01"
+    },
+    {
+      "file": "positive/pos_022.jpg",
+      "has_face": true,
+      "box": [
+        267,
+        132,
+        35,
+        50
+      ],
+      "size": 72,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_023.jpg",
+      "has_face": true,
+      "box": [
+        311,
+        102,
+        103,
+        146
+      ],
+      "size": 210,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_024.jpg",
+      "has_face": true,
+      "box": [
+        283,
+        224,
+        118,
+        113
+      ],
+      "size": 210,
+      "identity": "id02"
+    },
+    {
+      "file": "positive/pos_025.jpg",
+      "has_face": true,
+      "box": [
+        133,
+        51,
+        70,
+        111
+      ],
+      "size": 160,
+      "identity": "id11"
+    },
+    {
+      "file": "positive/pos_026.jpg",
+      "has_face": true,
+      "box": [
+        349,
+        214,
+        21,
+        29
+      ],
+      "size": 40,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_027.jpg",
+      "has_face": true,
+      "box": [
+        64,
+        93,
+        21,
+        29
+      ],
+      "size": 40,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_028.jpg",
+      "has_face": true,
+      "box": [
+        322,
+        220,
+        35,
+        50
+      ],
+      "size": 72,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_029.jpg",
+      "has_face": true,
+      "box": [
+        50,
+        132,
+        38,
+        52
+      ],
+      "size": 72,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_030.jpg",
+      "has_face": true,
+      "box": [
+        419,
+        43,
+        103,
+        142
+      ],
+      "size": 210,
+      "identity": "id01"
+    },
+    {
+      "file": "positive/pos_031.jpg",
+      "has_face": true,
+      "box": [
+        272,
+        102,
+        35,
+        48
+      ],
+      "size": 72,
+      "identity": "id01"
+    },
+    {
+      "file": "positive/pos_032.jpg",
+      "has_face": true,
+      "box": [
+        212,
+        41,
+        60,
+        79
+      ],
+      "size": 128,
+      "identity": "id10"
+    },
+    {
+      "file": "positive/pos_033.jpg",
+      "has_face": true,
+      "box": [
+        509,
+        279,
+        21,
+        27
+      ],
+      "size": 40,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_034.jpg",
+      "has_face": true,
+      "box": [
+        478,
+        82,
+        34,
+        50
+      ],
+      "size": 72,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_035.jpg",
+      "has_face": true,
+      "box": [
+        498,
+        161,
+        17,
+        27
+      ],
+      "size": 40,
+      "identity": "id11"
+    },
+    {
+      "file": "positive/pos_036.jpg",
+      "has_face": true,
+      "box": [
+        345,
+        57,
+        85,
+        117
+      ],
+      "size": 160,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_037.jpg",
+      "has_face": true,
+      "box": [
+        87,
+        157,
+        31,
+        41
+      ],
+      "size": 56,
+      "identity": "id02"
+    },
+    {
+      "file": "positive/pos_038.jpg",
+      "has_face": true,
+      "box": [
+        248,
+        70,
+        110,
+        142
+      ],
+      "size": 210,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_039.jpg",
+      "has_face": true,
+      "box": [
+        262,
+        273,
+        20,
+        28
+      ],
+      "size": 40,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_040.jpg",
+      "has_face": true,
+      "box": [
+        380,
+        9,
+        71,
+        105
+      ],
+      "size": 128,
+      "identity": "id07"
+    },
+    {
+      "file": "positive/pos_041.jpg",
+      "has_face": true,
+      "box": [
+        418,
+        134,
+        34,
+        50
+      ],
+      "size": 72,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_042.jpg",
+      "has_face": true,
+      "box": [
+        436,
+        88,
+        63,
+        89
+      ],
+      "size": 128,
+      "identity": "id08"
+    },
+    {
+      "file": "positive/pos_043.jpg",
+      "has_face": true,
+      "box": [
+        460,
+        262,
+        79,
+        79
+      ],
+      "size": 160,
+      "identity": "id01"
+    },
+    {
+      "file": "positive/pos_044.jpg",
+      "has_face": true,
+      "box": [
+        152,
+        14,
+        30,
+        41
+      ],
+      "size": 56,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_045.jpg",
+      "has_face": true,
+      "box": [
+        331,
+        171,
+        38,
+        48
+      ],
+      "size": 72,
+      "identity": "id09"
+    },
+    {
+      "file": "positive/pos_046.jpg",
+      "has_face": true,
+      "box": [
+        106,
+        249,
+        50,
+        69
+      ],
+      "size": 96,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_047.jpg",
+      "has_face": true,
+      "box": [
+        94,
+        211,
+        54,
+        71
+      ],
+      "size": 96,
+      "identity": "id02"
+    },
+    {
+      "file": "positive/pos_048.jpg",
+      "has_face": true,
+      "box": [
+        341,
+        83,
+        68,
+        94
+      ],
+      "size": 128,
+      "identity": "id03"
+    },
+    {
+      "file": "positive/pos_049.jpg",
+      "has_face": true,
+      "box": [
+        117,
+        53,
+        24,
+        39
+      ],
+      "size": 56,
+      "identity": "id11"
+    },
+    {
+      "file": "positive/pos_050.jpg",
+      "has_face": true,
+      "box": [
+        236,
+        234,
+        109,
+        104
+      ],
+      "size": 210,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_051.jpg",
+      "has_face": true,
+      "box": [
+        392,
+        262,
+        79,
+        79
+      ],
+      "size": 160,
+      "identity": "id01"
+    },
+    {
+      "file": "positive/pos_052.jpg",
+      "has_face": true,
+      "box": [
+        344,
+        94,
+        109,
+        151
+      ],
+      "size": 210,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_053.jpg",
+      "has_face": true,
+      "box": [
+        335,
+        244,
+        34,
+        50
+      ],
+      "size": 72,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_054.jpg",
+      "has_face": true,
+      "box": [
+        193,
+        228,
+        31,
+        41
+      ],
+      "size": 56,
+      "identity": "id02"
+    },
+    {
+      "file": "positive/pos_055.jpg",
+      "has_face": true,
+      "box": [
+        576,
+        27,
+        44,
+        69
+      ],
+      "size": 96,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_056.jpg",
+      "has_face": true,
+      "box": [
+        156,
+        15,
+        46,
+        66
+      ],
+      "size": 96,
+      "identity": "id06"
+    },
+    {
+      "file": "positive/pos_057.jpg",
+      "has_face": true,
+      "box": [
+        313,
+        63,
+        37,
+        51
+      ],
+      "size": 72,
+      "identity": "id04"
+    },
+    {
+      "file": "positive/pos_058.jpg",
+      "has_face": true,
+      "box": [
+        108,
+        92,
+        27,
+        37
+      ],
+      "size": 56,
+      "identity": "id00"
+    },
+    {
+      "file": "positive/pos_059.jpg",
+      "has_face": true,
+      "box": [
+        430,
+        226,
+        77,
+        108
+      ],
+      "size": 160,
+      "identity": "id06"
+    },
+    {
+      "file": "negative/neg_000.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_001.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_002.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_003.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_004.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_005.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_006.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_007.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_008.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_009.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_010.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_011.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_012.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_013.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_014.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_015.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_016.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_017.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_018.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_019.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_020.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_021.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_022.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_023.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_024.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_025.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_026.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_027.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_028.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_029.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_030.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_031.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_032.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_033.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_034.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_035.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_036.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_037.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_038.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    },
+    {
+      "file": "negative/neg_039.jpg",
+      "has_face": false,
+      "box": null,
+      "size": 0
+    }
+  ]
+}

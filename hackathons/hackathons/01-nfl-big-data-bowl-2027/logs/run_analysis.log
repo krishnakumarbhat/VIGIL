@@ -1,0 +1,138 @@
+tables loaded: combine=510 cuts=5618 plays=30959
+T1 sep_at_pass_forward
+  -> sep_at_pass_forward: rows=9359 features=102
+  -> sep_at_pass_forward_kinematics_only: rows=9359 features=91
+  -> sep_at_pass_forward_presnap_only: rows=9359 features=72
+T2 player_mean_sep
+  -> player_mean_sep: rows=145 features=62
+  -> player_mean_sep_preregistered: rows=145 features=17
+T3 sep_gain
+  -> sep_gain: rows=8715 features=102
+T3b sep_gain_no_cushion
+  -> sep_gain_no_cushion: rows=8715 features=101
+T4 derived_sep_pf
+  -> derived_sep_pf: rows=4105 features=102
+T5 career_snaps_log
+  -> career_snaps_log: rows=510 features=62
+T6 player_mean_yac
+  -> player_mean_yac: rows=122 features=62
+T7 derived_sep_catch
+  -> derived_sep_catch: rows=3159 features=102
+tables loaded: combine=510 cuts=5618 plays=30959
+T1 sep_at_pass_forward
+  -> sep_at_pass_forward: rows=9359 features=102
+wrote outputs/cache/oof_store.npz (0 arrays)
+  -> sep_at_pass_forward_kinematics_only: rows=9359 features=91
+wrote outputs/cache/oof_store.npz (10 arrays)
+  -> sep_at_pass_forward_presnap_only: rows=9359 features=72
+wrote outputs/cache/oof_store.npz (15 arrays)
+T2 player_mean_sep
+  -> player_mean_sep: rows=145 features=62
+wrote outputs/cache/oof_store.npz (20 arrays)
+  -> player_mean_sep_preregistered: rows=145 features=17
+wrote outputs/cache/oof_store.npz (25 arrays)
+T3 sep_gain
+  -> sep_gain: rows=8715 features=102
+wrote outputs/cache/oof_store.npz (30 arrays)
+T3b sep_gain_no_cushion
+  -> sep_gain_no_cushion: rows=8715 features=101
+wrote outputs/cache/oof_store.npz (40 arrays)
+T4 derived_sep_pf
+  -> derived_sep_pf: rows=4105 features=102
+wrote outputs/cache/oof_store.npz (50 arrays)
+T5 career_snaps_log
+  -> career_snaps_log: rows=510 features=62
+wrote outputs/cache/oof_store.npz (55 arrays)
+T6 player_mean_yac
+  -> player_mean_yac: rows=122 features=62
+wrote outputs/cache/oof_store.npz (60 arrays)
+T7 derived_sep_catch
+  -> derived_sep_catch: rows=3159 features=102
+wrote outputs/cache/oof_store.npz (65 arrays)
+T8 yards_after_catch
+  -> yards_after_catch: rows=1259 features=102
+wrote outputs/cache/oof_store.npz (70 arrays)
+legacy formulation
+  -> legacy_player_features_on_play_target: rows=46737 features=62
+wrote outputs/cache/oof_store.npz (80 arrays)
+MixedLM fits
+wrote outputs/cache/oof_store.npz (85 arrays)
+learning curve + per-position breakdown for sep_gain::by_game_play
+wrote outputs/cache/oof_store.npz (85 arrays)
+wrote outputs/model_metrics.json
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+/media/pope/projecteo/python_libs/site-packages/pandas/core/nanops.py:1632: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return spearmanr(a, b)[0]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+/media/pope/projecteo/python_libs/site-packages/pandas/core/nanops.py:1632: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return spearmanr(a, b)[0]
+figures:
+  figure fig1_cross_product_inside_outside.png
+  figure fig2_kce_distribution.png
+  figure fig3_dbr_distribution.png
+  figure fig4_turn_rate_histogram.png
+  figure fig5_feature_importance.png
+  fig6 failed: AttributeError: 'numpy.ndarray' object has no attribute 'quantile'
+  figure fig7_learning_curve.png
+  figure fig8_per_position_breakdown.png
+done in 382.2s; headline=sep_gain::by_game_play r2=0.6561
+tables loaded: combine=510 cuts=5618 plays=30959
+resuming: 13 target(s) already measured (sep_at_pass_forward, sep_at_pass_forward_kinematics_only, sep_at_pass_forward_presnap_only, player_mean_sep, player_mean_sep_preregistered, sep_gain, sep_gain_no_cushion, derived_sep_pf, career_snaps_log, player_mean_yac, derived_sep_catch, yards_after_catch, legacy_player_features_on_play_target)
+T1 sep_at_pass_forward
+  -> sep_at_pass_forward: already measured (9359 rows, checkpoint)
+  -> sep_at_pass_forward_kinematics_only: already measured (9359 rows, checkpoint)
+  -> sep_at_pass_forward_presnap_only: already measured (9359 rows, checkpoint)
+T2 player_mean_sep
+  -> player_mean_sep: already measured (145 rows, checkpoint)
+  -> player_mean_sep_preregistered: already measured (145 rows, checkpoint)
+T3 sep_gain
+  -> sep_gain: already measured (8715 rows, checkpoint)
+T3b sep_gain_no_cushion
+  -> sep_gain_no_cushion: already measured (8715 rows, checkpoint)
+T4 derived_sep_pf
+  -> derived_sep_pf: already measured (4105 rows, checkpoint)
+T5 career_snaps_log
+  -> career_snaps_log: already measured (510 rows, checkpoint)
+T6 player_mean_yac
+  -> player_mean_yac: already measured (122 rows, checkpoint)
+T7 derived_sep_catch
+  -> derived_sep_catch: already measured (3159 rows, checkpoint)
+T8 yards_after_catch
+  -> yards_after_catch: already measured (1259 rows, checkpoint)
+legacy formulation
+  -> legacy_player_features_on_play_target: already measured (46737 rows, checkpoint)
+MixedLM fits
+wrote outputs/cache/oof_store.npz (85 arrays)
+learning curve + per-position breakdown for sep_gain::by_game_play
+  checkpoint hit: learning curve already measured
+  checkpoint hit: per-position breakdown already measured
+wrote outputs/cache/oof_store.npz (85 arrays)
+wrote outputs/model_metrics.json
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+/media/pope/projecteo/python_libs/site-packages/pandas/core/nanops.py:1632: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return spearmanr(a, b)[0]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3045: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[:, None]
+/media/pope/projecteo/python_libs/site-packages/numpy/lib/_function_base_impl.py:3046: RuntimeWarning: invalid value encountered in divide
+  c /= stddev[None, :]
+/media/pope/projecteo/python_libs/site-packages/pandas/core/nanops.py:1632: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  return spearmanr(a, b)[0]
+figures:
+  figure fig1_cross_product_inside_outside.png
+  figure fig2_kce_distribution.png
+  figure fig3_dbr_distribution.png
+  figure fig4_turn_rate_histogram.png
+  figure fig5_feature_importance.png
+  figure fig6_oof_pred_vs_actual.png
+  figure fig7_learning_curve.png
+  figure fig8_per_position_breakdown.png
+done in 10.0s; headline=sep_gain::by_game_play r2=0.6561

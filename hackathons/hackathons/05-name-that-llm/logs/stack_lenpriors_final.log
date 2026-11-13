@@ -1,0 +1,19 @@
+[    6.2s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.3s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   13.3s] anchor 0.40863
+[   13.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   21.7s]   P-A random-rblock C=32 -> 0.39386
+[   29.1s]   P-A random-rblock C=8 -> 0.39256
+[   29.2s]   P-B tune rows 4660, est rows 4630
+[   29.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   33.4s]   P-B TUNE full_m10 C=8 -> 0.45436
+[   39.1s]   P-B TUNE full_m10 C=32 -> 0.51315
+[   39.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   42.6s]   P-B TUNE ronly_m10 C=8 -> 0.44590
+[   48.0s]   P-B TUNE ronly_m10 C=32 -> 0.50032
+[   50.3s]   P-B TUNE anchor C=8 -> 0.40585
+[   50.3s]   P-B selected on TUNE: full_m10_c32
+[   50.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.2s]   P-B EST: best 0.51073 vs anchor 0.41138 (delta +0.09935)
+[   56.2s] final drill done

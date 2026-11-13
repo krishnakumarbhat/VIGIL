@@ -1,0 +1,10 @@
+[   1.1s] pool 11699 rows
+[ 106.7s] tf-idf built (11699, 118885) (11699, 120000) (11699, 200000)
+[ 278.4s] svm fitted
+[ 365.9s] char fitted
+[ 377.5s] word fitted
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[ 460.4s] style fitted
+[ 497.1s] knn index built
+[ 497.1s] DONE ['svm', 'char', 'word', 'style', 'knn']

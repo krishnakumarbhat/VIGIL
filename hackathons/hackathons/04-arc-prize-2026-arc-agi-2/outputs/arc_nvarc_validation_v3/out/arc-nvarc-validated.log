@@ -1,0 +1,1237 @@
+[{"stream_name":"stderr","time":8.866653896,"data":"/usr/local/lib/python3.11/dist-packages/pydevd_plugins/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":8.866711101,"data":"  __import__(\"pkg_resources\").declare_namespace(__name__)\n"}
+,{"stream_name":"stderr","time":9.491788978,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.491814755,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.491818685,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.491822028,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":10.40794406,"data":"/usr/local/lib/python3.11/dist-packages/pydevd_plugins/__init__.py:2: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":10.407992548,"data":"  __import__(\"pkg_resources\").declare_namespace(__name__)\n"}
+,{"stream_name":"stderr","time":10.691226384,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.691261233,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.691265941,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.691269615,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":33.663096277,"data":"[fork preflight] gpus= 4 model config dirs= ['/kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1']\n"}
+,{"stream_name":"stdout","time":35.916247274,"data":"Found existing installation: tensorflow 2.18.0\r\n"}
+,{"stream_name":"stdout","time":37.381425438,"data":"Uninstalling tensorflow-2.18.0:\r\n"}
+,{"stream_name":"stdout","time":51.00877092,"data":"  Successfully uninstalled tensorflow-2.18.0\r\n"}
+,{"stream_name":"stdout","time":51.550277408,"data":"Writing arc_loader.py\n"}
+,{"stream_name":"stdout","time":51.563300314,"data":"Writing arc_decoder.py\n"}
+,{"stream_name":"stdout","time":51.583075773,"data":"Writing arc_solver.py\n"}
+,{"stream_name":"stdout","time":51.595374488,"data":"Writing starter.py\n"}
+,{"stream_name":"stdout","time":144.361725509,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":144.361752767,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":144.36175628,"data":"[Rank 0] start!\n"}
+,{"stream_name":"stdout","time":144.361758832,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":144.567212394,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":144.56723588,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":144.567239271,"data":"[Rank 0] start!\n"}
+,{"stream_name":"stdout","time":144.567242176,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":144.845078667,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":144.845108027,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":144.845111054,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":144.84511329,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":144.845115492,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":144.845117592,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":145.047558034,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":145.047584085,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":145.04758719,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":145.047589437,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":145.047591503,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":145.047593595,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":191.331184195,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":191.331214344,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":191.331217862,"data":"[Rank 1] start!\n"}
+,{"stream_name":"stdout","time":191.331220457,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":191.536818125,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":191.53684739,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":191.536850957,"data":"[Rank 1] start!\n"}
+,{"stream_name":"stdout","time":191.536853544,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":191.659324045,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":191.659349749,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":191.65935291,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":191.659384162,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":191.659388432,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":191.659391242,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":191.86171876,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":191.8617437,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":191.861757402,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":191.861759914,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":191.861761895,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":191.861764091,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":234.038151135,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":234.038177835,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":234.038184901,"data":"[Rank 2] start!\n"}
+,{"stream_name":"stdout","time":234.038187608,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":234.24007453,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":234.240094625,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":234.240098165,"data":"[Rank 2] start!\n"}
+,{"stream_name":"stdout","time":234.240100746,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":234.366805829,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":234.366830055,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":234.366833314,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":234.366836037,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":234.366838556,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":234.366841275,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":234.569163101,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":234.56918691,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":234.569190384,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":234.569193095,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":234.569195619,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":234.569198171,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stderr","time":267.857845952,"data":"\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████     | 1/2 [01:27\u003c01:27, 87.90s/it]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:41\u003c00:41, 41.09s/it]\rLoading checkpoint shards:  50%|█████     | 1/2 [01:27\u003c01:27, 87.90s/it]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:41\u003c00:41, 41.09s/it]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:01\u003c00:01,  1.28s/it]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:01\u003c00:01,  1.28s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:33\u003c00:00, 19.47s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:33\u003c00:00, 16.75s/it]\n"}
+,{"stream_name":"stderr","time":267.87550952,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [01:16\u003c00:00, 37.58s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [02:03\u003c00:00, 56.86s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [01:16\u003c00:00, 38.11s/it]\n"}
+,{"stream_name":"stderr","time":267.875535114,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [02:03\u003c00:00, 61.52s/it]\n"}
+,{"stream_name":"stderr","time":268.064233188,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [00:33\u003c00:00, 19.47s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:33\u003c00:00, 16.75s/it]\n"}
+,{"stream_name":"stderr","time":268.064253373,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [01:16\u003c00:00, 37.58s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [02:03\u003c00:00, 56.86s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [01:16\u003c00:00, 38.11s/it]\n"}
+,{"stream_name":"stderr","time":268.064256765,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [02:03\u003c00:00, 61.52s/it]\n"}
+,{"stream_name":"stdout","time":278.363321204,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":278.363346572,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":278.363349618,"data":"[Rank 3] start!\n"}
+,{"stream_name":"stdout","time":278.363351773,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":278.565660796,"data":"🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.\n"}
+,{"stream_name":"stdout","time":278.565689114,"data":"🦥 Unsloth Zoo will now patch everything to make training faster!\n"}
+,{"stream_name":"stdout","time":278.565693951,"data":"[Rank 3] start!\n"}
+,{"stream_name":"stdout","time":278.565697222,"data":"[fork] model config selected: /kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1\n"}
+,{"stream_name":"stdout","time":278.688714726,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":278.688748707,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":278.688753068,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":278.688756203,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":278.688759358,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":278.688762395,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stdout","time":278.890919821,"data":"==((====))==  Unsloth 2025.9.7: Fast Qwen3 patching. Transformers: 4.55.4.\n"}
+,{"stream_name":"stdout","time":278.890946581,"data":"   \\\\   /|    NVIDIA L4. Num GPUs = 1. Max memory: 22.034 GB. Platform: Linux.\n"}
+,{"stream_name":"stdout","time":278.890962881,"data":"O^O/ \\_/ \\    Torch: 2.8.0+cu128. CUDA: 8.9. CUDA Toolkit: 12.8. Triton: 3.4.0\n"}
+,{"stream_name":"stdout","time":278.890965402,"data":"\\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.32.post2. FA2 = True]\n"}
+,{"stream_name":"stdout","time":278.890967388,"data":" \"-____-\"     Free license: http://github.com/unslothai/unsloth\n"}
+,{"stream_name":"stdout","time":278.890969735,"data":"Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!\n"}
+,{"stream_name":"stderr","time":280.568385745,"data":"\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:01\u003c00:01,  1.30s/it]\rLoading checkpoint shards:  50%|█████     | 1/2 [00:01\u003c00:01,  1.30s/it]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:01\u003c00:00,  1.14it/s]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:01\u003c00:00,  1.06it/s]\n"}
+,{"stream_name":"stderr","time":280.770100817,"data":"\rLoading checkpoint shards: 100%|██████████| 2/2 [00:01\u003c00:00,  1.14it/s]\rLoading checkpoint shards: 100%|██████████| 2/2 [00:01\u003c00:00,  1.06it/s]\n"}
+,{"stream_name":"stdout","time":281.646044669,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":281.646076486,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":281.847974228,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":281.847998568,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.012342157,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.012391383,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.214247918,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.214269531,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.252581595,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.252599825,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.454753314,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":282.454775684,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":294.346947701,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":294.346997592,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":294.549156933,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":294.54918234,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":869.440642016,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":869.440673407,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":869.440678066,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":869.440681081,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":869.440694493,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":869.440696871,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":869.440698789,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":869.440700769,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":869.440703059,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":869.440705252,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":869.4407072,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":869.440709542,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":869.440711358,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":869.647230986,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":869.648087734,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":869.648097652,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":869.648100486,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":869.648103357,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":869.648105699,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":869.648107774,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":869.64810986,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":869.648112096,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":869.64811447,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":869.648131518,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":869.648133985,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":869.64813587,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":1205.127066598,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1205.127103924,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1205.127107524,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1205.127110882,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1205.127114842,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1205.127117675,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1205.127120085,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":1205.127122515,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1205.127125182,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1205.127128424,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":1205.127130836,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1205.127133738,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":1205.127136241,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":1205.127138576,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":1205.333727868,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1205.333749942,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1205.33375337,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1205.333756239,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1205.333759466,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1205.333784647,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1205.333786892,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":1205.33378897,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1205.333791109,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1205.333793324,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":1205.333795181,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1205.333797435,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":1205.333799341,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":1205.333801235,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":1556.311774533,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1556.31183007,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1556.31183482,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1556.311839064,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1556.311844816,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1556.311849384,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.311853446,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.31185713,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311861116,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1556.311865342,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311869045,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.311872849,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1556.311876754,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1556.311906279,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.311910418,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.311913828,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311916894,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.311920163,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1556.311923695,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311926727,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311931554,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1556.311935271,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.311938415,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311941635,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1556.311945468,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":1556.311948761,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1556.31195257,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.311955835,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311958893,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.311962107,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.311965388,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":1556.311968427,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":1556.311971847,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":1556.518603528,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1556.518624108,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1556.518627003,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1556.518630659,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1556.518634143,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1556.51864547,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.518647516,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.518649464,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518651437,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1556.518653636,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518655633,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.518657894,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1556.518659827,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1556.518661947,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.518663845,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.51866574,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518667579,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.518669434,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1556.518671714,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518673641,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518676479,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1556.518678721,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":1556.518680574,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518682496,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1556.518684726,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":1556.518686595,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1556.518688841,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.518693003,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518694999,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1556.518696924,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1556.518698815,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":1556.518700645,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":1556.51870248,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":1584.146252044,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1584.146279265,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1584.146282224,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1584.146284667,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1584.146293392,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1584.146295868,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146306898,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146309175,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1584.146411514,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.14642971,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1584.146432795,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146434823,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146436987,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146438989,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1584.146441395,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146443318,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146445284,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.146447124,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146449072,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":1584.146461947,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1584.146464357,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.146466477,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1584.14646869,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1584.146470913,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146472857,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146474747,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.146476812,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.146479364,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":1584.146481311,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":1584.146483243,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":1584.348417325,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1584.348441028,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1584.348444461,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1584.348447214,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1584.34845109,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1584.348455457,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.348458263,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.348460987,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1584.34846412,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.348467095,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1584.348470669,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.34847348,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.348487135,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.348489886,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1584.348493143,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.348496164,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.348499157,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.348501689,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.348504472,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":1584.348508357,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1584.348511554,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":1584.348514337,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1584.348517456,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1584.348521074,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.348523951,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.34852647,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1584.348529074,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1584.348531693,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":1584.348534591,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":1584.348537173,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":1756.091561335,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1756.091599341,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1756.091603205,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1756.091606266,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1756.091610175,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":1756.091623079,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":1756.09162527,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":1756.091627175,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":1756.09162941,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":1756.091631555,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":1756.091633491,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":1756.091635792,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":1756.091637682,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":1756.091639484,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1756.091641329,"data":"[Rank 1] training stats for puzzle 64efde09: TrainOutput(global_step=128, training_loss=0.00562653923407197, metrics={'train_runtime': 257.902, 'train_samples_per_second': 0.496, 'train_steps_per_second': 0.496, 'total_flos': 8812680171356160.0, 'train_loss': 0.00562653923407197, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1756.091688762,"data":"[Rank 1] decoding ['64efde09_0.permute4150723698.ex10', '64efde09_0.permute9302675184.ex10', '64efde09_0.rot90.rot90.permute5386701942.ex01', '64efde09_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1756.09170225,"data":"[Rank 1] scoring 64efde09_0.permute9302675184.ex10 #0\n"}
+,{"stream_name":"stdout","time":1756.091704747,"data":"[Rank 1] scoring 64efde09_0.rot90.rot90.permute8579032416.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.091706922,"data":"[Rank 1] decoding ['64efde09_0.rot90.permute4281673590.ex10', '64efde09_0.rot90.permute4950812673.ex01', '64efde09_0.rot90.rot90.rot90.permute1654278039.ex01', '64efde09_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1756.091709709,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #0\n"}
+,{"stream_name":"stdout","time":1756.091711599,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #1\n"}
+,{"stream_name":"stdout","time":1756.091713651,"data":"[Rank 1] decoding ['64efde09_0.transpose.permute1602397845.ex01', '64efde09_0.transpose.permute9180254367.ex01', '64efde09_0.transpose.rot90.rot90.permute0986123745.ex01', '64efde09_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1756.091715875,"data":"[Rank 1] decoding ['64efde09_0.transpose.rot90.permute4907281356.ex10', '64efde09_0.transpose.rot90.permute5980213764.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1756.091718166,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.permute5980213764.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.091720234,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.091722191,"data":"[Rank 1] allocated 13770MB for inference\n"}
+,{"stream_name":"stdout","time":1756.091733732,"data":"[Rank 1] finished 64efde09 in 886.6s\n"}
+,{"stream_name":"stdout","time":1756.298413848,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1756.298433571,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1756.298436501,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1756.298438629,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1756.298441605,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":1756.298443837,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":1756.298445798,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":1756.298447716,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":1756.298450063,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":1756.298452252,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":1756.298454256,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":1756.298456681,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":1756.298458565,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":1756.298460398,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1756.298462325,"data":"[Rank 1] training stats for puzzle 64efde09: TrainOutput(global_step=128, training_loss=0.00562653923407197, metrics={'train_runtime': 257.902, 'train_samples_per_second': 0.496, 'train_steps_per_second': 0.496, 'total_flos': 8812680171356160.0, 'train_loss': 0.00562653923407197, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1756.298465557,"data":"[Rank 1] decoding ['64efde09_0.permute4150723698.ex10', '64efde09_0.permute9302675184.ex10', '64efde09_0.rot90.rot90.permute5386701942.ex01', '64efde09_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1756.298467769,"data":"[Rank 1] scoring 64efde09_0.permute9302675184.ex10 #0\n"}
+,{"stream_name":"stdout","time":1756.298469649,"data":"[Rank 1] scoring 64efde09_0.rot90.rot90.permute8579032416.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.298471642,"data":"[Rank 1] decoding ['64efde09_0.rot90.permute4281673590.ex10', '64efde09_0.rot90.permute4950812673.ex01', '64efde09_0.rot90.rot90.rot90.permute1654278039.ex01', '64efde09_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1756.298473836,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #0\n"}
+,{"stream_name":"stdout","time":1756.298490494,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #1\n"}
+,{"stream_name":"stdout","time":1756.29849258,"data":"[Rank 1] decoding ['64efde09_0.transpose.permute1602397845.ex01', '64efde09_0.transpose.permute9180254367.ex01', '64efde09_0.transpose.rot90.rot90.permute0986123745.ex01', '64efde09_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1756.298494828,"data":"[Rank 1] decoding ['64efde09_0.transpose.rot90.permute4907281356.ex10', '64efde09_0.transpose.rot90.permute5980213764.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1756.29849705,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.permute5980213764.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.298498939,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01 #0\n"}
+,{"stream_name":"stdout","time":1756.298500873,"data":"[Rank 1] allocated 13770MB for inference\n"}
+,{"stream_name":"stdout","time":1756.298502768,"data":"[Rank 1] finished 64efde09 in 886.6s\n"}
+,{"stream_name":"stdout","time":1807.607425406,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1807.607471051,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1807.60747493,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1807.607477818,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1807.607484103,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1807.607487132,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1807.607489563,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":1807.607492033,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1807.607494795,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1807.607497564,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":1807.607500343,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1807.60750322,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":1807.607505929,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":1807.607517185,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":1807.607520939,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1807.607524518,"data":"[Rank 2] training stats for puzzle 6e4f6532: TrainOutput(global_step=128, training_loss=0.014140726998448372, metrics={'train_runtime': 199.6342, 'train_samples_per_second': 0.641, 'train_steps_per_second': 0.641, 'total_flos': 6811687140065280.0, 'train_loss': 0.014140726998448372, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1807.607546125,"data":"[Rank 2] decoding ['6e4f6532_0.permute4150723698.ex10', '6e4f6532_0.permute6720984531.ex10', '6e4f6532_0.rot90.rot90.permute7931086254.ex01', '6e4f6532_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1807.607549038,"data":"[Rank 2] decoding ['6e4f6532_0.rot90.permute1258796043.ex01', '6e4f6532_0.rot90.permute5386701942.ex10', '6e4f6532_0.rot90.rot90.rot90.permute2908315674.ex01', '6e4f6532_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1807.607551275,"data":"[Rank 2] decoding ['6e4f6532_1.permute1602397845.ex10', '6e4f6532_1.permute6827490351.ex10', '6e4f6532_1.rot90.rot90.permute9180254367.ex01', '6e4f6532_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1807.607553367,"data":"[Rank 2] decoding ['6e4f6532_1.rot90.permute5436201789.ex01', '6e4f6532_1.rot90.permute8024967315.ex01', '6e4f6532_1.rot90.rot90.rot90.permute0986123745.ex01', '6e4f6532_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1807.607654912,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.permute4950812673.ex01', '6e4f6532_0.transpose.permute9316478025.ex10', '6e4f6532_0.transpose.rot90.rot90.permute4281673590.ex01', '6e4f6532_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1807.607668979,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.rot90.permute1654278039.ex01', '6e4f6532_0.transpose.rot90.permute3170468295.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1807.607672029,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.permute5980213764.ex10', '6e4f6532_1.transpose.permute6703249158.ex01', '6e4f6532_1.transpose.rot90.rot90.permute4907281356.ex01', '6e4f6532_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1807.607674396,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.rot90.permute7613284905.ex10', '6e4f6532_1.transpose.rot90.permute7690351428.ex01', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6142358709.ex10', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6150492378.ex01']\n"}
+,{"stream_name":"stdout","time":1807.60767696,"data":"[Rank 2] allocated 13053MB for inference\n"}
+,{"stream_name":"stdout","time":1807.607678924,"data":"[Rank 2] finished 6e4f6532 in 602.9s\n"}
+,{"stream_name":"stdout","time":1807.814628702,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1807.814648522,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1807.814651242,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1807.814653316,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1807.814656163,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1807.814658398,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1807.814660243,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":1807.814676556,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":1807.814679064,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":1807.814681238,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":1807.814683105,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":1807.814685278,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":1807.814687353,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":1807.814689168,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":1807.814690976,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1807.81469292,"data":"[Rank 2] training stats for puzzle 6e4f6532: TrainOutput(global_step=128, training_loss=0.014140726998448372, metrics={'train_runtime': 199.6342, 'train_samples_per_second': 0.641, 'train_steps_per_second': 0.641, 'total_flos': 6811687140065280.0, 'train_loss': 0.014140726998448372, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1807.814696633,"data":"[Rank 2] decoding ['6e4f6532_0.permute4150723698.ex10', '6e4f6532_0.permute6720984531.ex10', '6e4f6532_0.rot90.rot90.permute7931086254.ex01', '6e4f6532_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1807.81469878,"data":"[Rank 2] decoding ['6e4f6532_0.rot90.permute1258796043.ex01', '6e4f6532_0.rot90.permute5386701942.ex10', '6e4f6532_0.rot90.rot90.rot90.permute2908315674.ex01', '6e4f6532_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1807.8147009,"data":"[Rank 2] decoding ['6e4f6532_1.permute1602397845.ex10', '6e4f6532_1.permute6827490351.ex10', '6e4f6532_1.rot90.rot90.permute9180254367.ex01', '6e4f6532_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1807.814702965,"data":"[Rank 2] decoding ['6e4f6532_1.rot90.permute5436201789.ex01', '6e4f6532_1.rot90.permute8024967315.ex01', '6e4f6532_1.rot90.rot90.rot90.permute0986123745.ex01', '6e4f6532_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1807.814705226,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.permute4950812673.ex01', '6e4f6532_0.transpose.permute9316478025.ex10', '6e4f6532_0.transpose.rot90.rot90.permute4281673590.ex01', '6e4f6532_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1807.814707406,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.rot90.permute1654278039.ex01', '6e4f6532_0.transpose.rot90.permute3170468295.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1807.814709608,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.permute5980213764.ex10', '6e4f6532_1.transpose.permute6703249158.ex01', '6e4f6532_1.transpose.rot90.rot90.permute4907281356.ex01', '6e4f6532_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1807.814711778,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.rot90.permute7613284905.ex10', '6e4f6532_1.transpose.rot90.permute7690351428.ex01', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6142358709.ex10', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6150492378.ex01']\n"}
+,{"stream_name":"stdout","time":1807.814716482,"data":"[Rank 2] allocated 13053MB for inference\n"}
+,{"stream_name":"stdout","time":1807.81471841,"data":"[Rank 2] finished 6e4f6532 in 602.9s\n"}
+,{"stream_name":"stdout","time":1866.810492852,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1866.810526445,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1866.810530073,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1866.810532901,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1866.810537064,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1866.810539918,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810542473,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810545027,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1866.810547822,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1866.81055023,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1866.810552858,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810555303,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810557619,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810560087,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1866.810562792,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810565165,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810567507,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":1866.810569865,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810572256,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":1866.810695597,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1866.810715299,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":1866.810730717,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1866.810733294,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1866.810735507,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810737459,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810739336,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1866.810741361,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1866.810743305,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":1866.810745164,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":1866.81074697,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":1866.810748785,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1866.810750702,"data":"[Rank 0] training stats for puzzle 8f3a5a89: TrainOutput(global_step=128, training_loss=0.009753894992172718, metrics={'train_runtime': 151.2924, 'train_samples_per_second': 0.846, 'train_steps_per_second': 0.846, 'total_flos': 5184681624207360.0, 'train_loss': 0.009753894992172718, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1866.810753106,"data":"[Rank 0] decoding ['8f3a5a89_0.permute4150723698.ex012', '8f3a5a89_0.permute9302675184.ex012', '8f3a5a89_0.rot90.rot90.permute5386701942.ex021', '8f3a5a89_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":1866.810755185,"data":"[Rank 0] scoring 8f3a5a89_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":1866.810757102,"data":"[Rank 0] decoding ['8f3a5a89_0.rot90.permute4281673590.ex102', '8f3a5a89_0.rot90.permute4950812673.ex201', '8f3a5a89_0.rot90.rot90.rot90.permute1654278039.ex210', '8f3a5a89_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":1866.810759287,"data":"[Rank 0] scoring 8f3a5a89_0.rot90.permute4950812673.ex201 #1\n"}
+,{"stream_name":"stdout","time":1866.810761938,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.permute1602397845.ex201', '8f3a5a89_0.transpose.permute9180254367.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute0986123745.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":1866.810764259,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute9180254367.ex021 #1\n"}
+,{"stream_name":"stdout","time":1866.810766171,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute1602397845.ex201 #0\n"}
+,{"stream_name":"stdout","time":1866.810768164,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.rot90.permute4907281356.ex102', '8f3a5a89_0.transpose.rot90.permute5980213764.ex102', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":1866.810770849,"data":"[Rank 0] allocated 11304MB for inference\n"}
+,{"stream_name":"stdout","time":1866.810772708,"data":"[Rank 0] finished 8f3a5a89 in 283.7s\n"}
+,{"stream_name":"stdout","time":1867.017714307,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1867.018686217,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":1867.018699647,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":1867.018705084,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1867.018708481,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":1867.018710683,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018712678,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018714743,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":1867.018717014,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":1867.018718947,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":1867.018721203,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018723098,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018725058,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018727263,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":1867.018729535,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018731587,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018733483,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":1867.018735355,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018737481,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":1867.018740642,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":1867.018742966,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":1867.018745021,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":1867.018747418,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":1867.018752654,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018754663,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018756521,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":1867.018758455,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":1867.018760423,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":1867.018762366,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":1867.018764264,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":1867.018766133,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":1867.018768098,"data":"[Rank 0] training stats for puzzle 8f3a5a89: TrainOutput(global_step=128, training_loss=0.009753894992172718, metrics={'train_runtime': 151.2924, 'train_samples_per_second': 0.846, 'train_steps_per_second': 0.846, 'total_flos': 5184681624207360.0, 'train_loss': 0.009753894992172718, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":1867.018770468,"data":"[Rank 0] decoding ['8f3a5a89_0.permute4150723698.ex012', '8f3a5a89_0.permute9302675184.ex012', '8f3a5a89_0.rot90.rot90.permute5386701942.ex021', '8f3a5a89_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":1867.018772609,"data":"[Rank 0] scoring 8f3a5a89_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":1867.018774468,"data":"[Rank 0] decoding ['8f3a5a89_0.rot90.permute4281673590.ex102', '8f3a5a89_0.rot90.permute4950812673.ex201', '8f3a5a89_0.rot90.rot90.rot90.permute1654278039.ex210', '8f3a5a89_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":1867.018776618,"data":"[Rank 0] scoring 8f3a5a89_0.rot90.permute4950812673.ex201 #1\n"}
+,{"stream_name":"stdout","time":1867.01877885,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.permute1602397845.ex201', '8f3a5a89_0.transpose.permute9180254367.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute0986123745.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":1867.018781081,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute9180254367.ex021 #1\n"}
+,{"stream_name":"stdout","time":1867.018783015,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute1602397845.ex201 #0\n"}
+,{"stream_name":"stdout","time":1867.01878494,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.rot90.permute4907281356.ex102', '8f3a5a89_0.transpose.rot90.permute5980213764.ex102', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":1867.018787188,"data":"[Rank 0] allocated 11304MB for inference\n"}
+,{"stream_name":"stdout","time":1867.018789021,"data":"[Rank 0] finished 8f3a5a89 in 283.7s\n"}
+,{"stream_name":"stdout","time":2056.344051727,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2056.344088553,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2056.344093407,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2056.3440976,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2056.344115323,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2056.344119129,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.344122201,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.344125499,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344128418,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2056.34413212,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.34413534,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.344138595,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.344141699,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2056.344145359,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.344148488,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.344151507,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344154765,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.344157904,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2056.34416156,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344164816,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.34416918,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2056.344172906,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.344176059,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344179435,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2056.344183193,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.344186444,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2056.34419032,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.34419731,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.34420054,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.34420371,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.344206873,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":2056.344210489,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":2056.344213747,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":2056.344216815,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2056.344220194,"data":"[Rank 3] training stats for puzzle 80a900e0: TrainOutput(global_step=128, training_loss=0.003059808164834976, metrics={'train_runtime': 196.4371, 'train_samples_per_second': 0.652, 'train_steps_per_second': 0.652, 'total_flos': 6712596430848000.0, 'train_loss': 0.003059808164834976, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2056.344224292,"data":"[Rank 3] decoding ['80a900e0_0.permute4150723698.ex10', '80a900e0_0.permute9302675184.ex10', '80a900e0_0.rot90.rot90.permute5386701942.ex01', '80a900e0_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2056.344227849,"data":"[Rank 3] decoding ['80a900e0_0.rot90.permute4281673590.ex10', '80a900e0_0.rot90.permute4950812673.ex01', '80a900e0_0.rot90.rot90.rot90.permute1654278039.ex01', '80a900e0_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2056.344232183,"data":"[Rank 3] decoding ['80a900e0_0.transpose.permute1602397845.ex01', '80a900e0_0.transpose.permute9180254367.ex01', '80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01', '80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2056.344235919,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344239175,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.344242342,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.344245521,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.344248949,"data":"[Rank 3] decoding ['80a900e0_0.transpose.rot90.permute4907281356.ex10', '80a900e0_0.transpose.rot90.permute5980213764.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2056.344252891,"data":"[Rank 3] allocated 12216MB for inference\n"}
+,{"stream_name":"stdout","time":2056.344256004,"data":"[Rank 3] finished 80a900e0 in 500.8s\n"}
+,{"stream_name":"stdout","time":2056.551477126,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2056.552376836,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2056.55238575,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2056.552388246,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2056.552391548,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2056.552403149,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.552405229,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.552407104,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552409209,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2056.552411398,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552413403,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.552415389,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.552417423,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2056.552419629,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.552421554,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.552423414,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.55242532,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.552427226,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2056.552429617,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552431732,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552435797,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2056.552438041,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.552439956,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.5524419,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2056.552444143,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.552446037,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2056.552448326,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.552459144,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552461351,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552463878,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":2056.552465829,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":2056.552467679,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":2056.552469616,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":2056.55247158,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2056.552473558,"data":"[Rank 3] training stats for puzzle 80a900e0: TrainOutput(global_step=128, training_loss=0.003059808164834976, metrics={'train_runtime': 196.4371, 'train_samples_per_second': 0.652, 'train_steps_per_second': 0.652, 'total_flos': 6712596430848000.0, 'train_loss': 0.003059808164834976, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2056.552476034,"data":"[Rank 3] decoding ['80a900e0_0.permute4150723698.ex10', '80a900e0_0.permute9302675184.ex10', '80a900e0_0.rot90.rot90.permute5386701942.ex01', '80a900e0_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2056.552478228,"data":"[Rank 3] decoding ['80a900e0_0.rot90.permute4281673590.ex10', '80a900e0_0.rot90.permute4950812673.ex01', '80a900e0_0.rot90.rot90.rot90.permute1654278039.ex01', '80a900e0_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2056.55248098,"data":"[Rank 3] decoding ['80a900e0_0.transpose.permute1602397845.ex01', '80a900e0_0.transpose.permute9180254367.ex01', '80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01', '80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2056.55248324,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552485126,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #1\n"}
+,{"stream_name":"stdout","time":2056.552487117,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2056.552489111,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10 #1\n"}
+,{"stream_name":"stdout","time":2056.552491057,"data":"[Rank 3] decoding ['80a900e0_0.transpose.rot90.permute4907281356.ex10', '80a900e0_0.transpose.rot90.permute5980213764.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2056.55249333,"data":"[Rank 3] allocated 12216MB for inference\n"}
+,{"stream_name":"stdout","time":2056.552495241,"data":"[Rank 3] finished 80a900e0 in 500.8s\n"}
+,{"stream_name":"stdout","time":2272.736472258,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2272.736517902,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2272.736521674,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2272.736524533,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.736529078,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2272.736546392,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.736550073,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.736552732,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736555735,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2272.736558861,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736561714,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.736564376,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.736567699,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2272.736570914,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.736573562,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.736576251,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736579157,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.736582385,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2272.73658614,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.7365895,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736595183,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2272.736599115,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.736602201,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736605685,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2272.736609592,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.736612719,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2272.736616435,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.736619707,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736627891,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.73663125,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.736634505,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":2272.736637665,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":2272.736640611,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":2272.736643633,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2272.736647121,"data":"[Rank 3] training stats for puzzle 80a900e0: TrainOutput(global_step=128, training_loss=0.003059808164834976, metrics={'train_runtime': 196.4371, 'train_samples_per_second': 0.652, 'train_steps_per_second': 0.652, 'total_flos': 6712596430848000.0, 'train_loss': 0.003059808164834976, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.736649705,"data":"[Rank 3] decoding ['80a900e0_0.permute4150723698.ex10', '80a900e0_0.permute9302675184.ex10', '80a900e0_0.rot90.rot90.permute5386701942.ex01', '80a900e0_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2272.736656883,"data":"[Rank 3] decoding ['80a900e0_0.rot90.permute4281673590.ex10', '80a900e0_0.rot90.permute4950812673.ex01', '80a900e0_0.rot90.rot90.rot90.permute1654278039.ex01', '80a900e0_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2272.736659235,"data":"[Rank 3] decoding ['80a900e0_0.transpose.permute1602397845.ex01', '80a900e0_0.transpose.permute9180254367.ex01', '80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01', '80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2272.736661402,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.73666322,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.73666504,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.736666998,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.736668874,"data":"[Rank 3] decoding ['80a900e0_0.transpose.rot90.permute4907281356.ex10', '80a900e0_0.transpose.rot90.permute5980213764.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2272.73667106,"data":"[Rank 3] allocated 12216MB for inference\n"}
+,{"stream_name":"stdout","time":2272.736672849,"data":"[Rank 3] finished 80a900e0 in 500.8s\n"}
+,{"stream_name":"stdout","time":2272.736674703,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2272.73667652,"data":"[Rank 3] training stats for puzzle eee78d87: TrainOutput(global_step=128, training_loss=0.010694796219468117, metrics={'train_runtime': 103.1275, 'train_samples_per_second': 1.241, 'train_steps_per_second': 1.241, 'total_flos': 3068615511244800.0, 'train_loss': 0.010694796219468117, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.736678789,"data":"[Rank 3] decoding ['eee78d87_0.permute4150723698.ex012', 'eee78d87_0.permute9302675184.ex012', 'eee78d87_0.rot90.rot90.permute5386701942.ex021', 'eee78d87_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":2272.736680871,"data":"[Rank 3] scoring eee78d87_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":2272.736682806,"data":"[Rank 3] decoding ['eee78d87_0.rot90.permute4281673590.ex102', 'eee78d87_0.rot90.permute4950812673.ex201', 'eee78d87_0.rot90.rot90.rot90.permute1654278039.ex210', 'eee78d87_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":2272.736687396,"data":"[Rank 3] scoring eee78d87_0.rot90.permute4950812673.ex201 #0\n"}
+,{"stream_name":"stdout","time":2272.736689372,"data":"[Rank 3] decoding ['eee78d87_0.transpose.permute1602397845.ex201', 'eee78d87_0.transpose.permute9180254367.ex021', 'eee78d87_0.transpose.rot90.rot90.permute0986123745.ex021', 'eee78d87_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":2272.736692167,"data":"[Rank 3] decoding ['eee78d87_0.transpose.rot90.permute4907281356.ex102', 'eee78d87_0.transpose.rot90.permute5980213764.ex102', 'eee78d87_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', 'eee78d87_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":2272.736694506,"data":"[Rank 3] allocated 10422MB for inference\n"}
+,{"stream_name":"stdout","time":2272.736696341,"data":"[Rank 3] finished eee78d87 in 219.4s\n"}
+,{"stream_name":"stdout","time":2272.736698214,"data":"[Rank 3] done!\n"}
+,{"stream_name":"stdout","time":2272.944248478,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2272.944271514,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2272.944274355,"data":"[Rank 3] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2272.944276599,"data":"[Rank 3] training stats for puzzle 62593bfd: TrainOutput(global_step=128, training_loss=0.002975509036332369, metrics={'train_runtime': 280.6245, 'train_samples_per_second': 0.456, 'train_steps_per_second': 0.456, 'total_flos': 9535083406295040.0, 'train_loss': 0.002975509036332369, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.944279269,"data":"[Rank 3] decoding ['62593bfd_0.permute4150723698.ex10', '62593bfd_0.permute6720984531.ex10', '62593bfd_0.rot90.rot90.permute7931086254.ex01', '62593bfd_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2272.944281596,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.944283556,"data":"[Rank 3] scoring 62593bfd_0.permute4150723698.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.944285629,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944287605,"data":"[Rank 3] decoding ['62593bfd_0.rot90.permute1258796043.ex01', '62593bfd_0.rot90.permute5386701942.ex10', '62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01', '62593bfd_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2272.9442898,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute1258796043.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944291675,"data":"[Rank 3] scoring 62593bfd_0.rot90.permute5386701942.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.944293616,"data":"[Rank 3] scoring 62593bfd_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.94429564,"data":"[Rank 3] decoding ['62593bfd_1.permute1602397845.ex10', '62593bfd_1.permute6827490351.ex10', '62593bfd_1.rot90.rot90.permute9180254367.ex01', '62593bfd_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2272.944297845,"data":"[Rank 3] scoring 62593bfd_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.944299681,"data":"[Rank 3] scoring 62593bfd_1.permute6827490351.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.944301599,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944303507,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.permute9368452107.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.944305477,"data":"[Rank 3] decoding ['62593bfd_1.rot90.permute5436201789.ex01', '62593bfd_1.rot90.permute8024967315.ex01', '62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01', '62593bfd_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2272.944324694,"data":"[Rank 3] scoring 62593bfd_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944326719,"data":"[Rank 3] scoring 62593bfd_1.rot90.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944329566,"data":"[Rank 3] decoding ['62593bfd_0.transpose.permute4950812673.ex01', '62593bfd_0.transpose.permute9316478025.ex10', '62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01', '62593bfd_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2272.944331776,"data":"[Rank 3] scoring 62593bfd_0.transpose.permute9316478025.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.944333966,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.rot90.permute4281673590.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944336123,"data":"[Rank 3] decoding ['62593bfd_0.transpose.rot90.permute1654278039.ex01', '62593bfd_0.transpose.rot90.permute3170468295.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '62593bfd_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2272.944338348,"data":"[Rank 3] scoring 62593bfd_0.transpose.rot90.permute1654278039.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.944340285,"data":"[Rank 3] decoding ['62593bfd_1.transpose.permute5980213764.ex10', '62593bfd_1.transpose.permute6703249158.ex01', '62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01', '62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2272.944342489,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.944344434,"data":"[Rank 3] scoring 62593bfd_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944346264,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944348129,"data":"[Rank 3] scoring 62593bfd_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":2272.944350007,"data":"[Rank 3] timeout after 1262.6s for puzzle 62593bfd\n"}
+,{"stream_name":"stdout","time":2272.944351971,"data":"[Rank 3] allocated 13789MB for inference\n"}
+,{"stream_name":"stdout","time":2272.944353836,"data":"[Rank 3] finished 62593bfd in 1262.6s\n"}
+,{"stream_name":"stdout","time":2272.944355695,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2272.944374026,"data":"[Rank 3] training stats for puzzle 80a900e0: TrainOutput(global_step=128, training_loss=0.003059808164834976, metrics={'train_runtime': 196.4371, 'train_samples_per_second': 0.652, 'train_steps_per_second': 0.652, 'total_flos': 6712596430848000.0, 'train_loss': 0.003059808164834976, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.944376582,"data":"[Rank 3] decoding ['80a900e0_0.permute4150723698.ex10', '80a900e0_0.permute9302675184.ex10', '80a900e0_0.rot90.rot90.permute5386701942.ex01', '80a900e0_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2272.944378731,"data":"[Rank 3] decoding ['80a900e0_0.rot90.permute4281673590.ex10', '80a900e0_0.rot90.permute4950812673.ex01', '80a900e0_0.rot90.rot90.rot90.permute1654278039.ex01', '80a900e0_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2272.944381191,"data":"[Rank 3] decoding ['80a900e0_0.transpose.permute1602397845.ex01', '80a900e0_0.transpose.permute9180254367.ex01', '80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01', '80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2272.944386216,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944388331,"data":"[Rank 3] scoring 80a900e0_0.transpose.permute1602397845.ex01 #1\n"}
+,{"stream_name":"stdout","time":2272.944390256,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute0986123745.ex01 #0\n"}
+,{"stream_name":"stdout","time":2272.944392173,"data":"[Rank 3] scoring 80a900e0_0.transpose.rot90.rot90.permute5436201789.ex10 #1\n"}
+,{"stream_name":"stdout","time":2272.944394105,"data":"[Rank 3] decoding ['80a900e0_0.transpose.rot90.permute4907281356.ex10', '80a900e0_0.transpose.rot90.permute5980213764.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '80a900e0_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2272.944396394,"data":"[Rank 3] allocated 12216MB for inference\n"}
+,{"stream_name":"stdout","time":2272.944398233,"data":"[Rank 3] finished 80a900e0 in 500.8s\n"}
+,{"stream_name":"stdout","time":2272.944400057,"data":"[Rank 3] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2272.944401987,"data":"[Rank 3] training stats for puzzle eee78d87: TrainOutput(global_step=128, training_loss=0.010694796219468117, metrics={'train_runtime': 103.1275, 'train_samples_per_second': 1.241, 'train_steps_per_second': 1.241, 'total_flos': 3068615511244800.0, 'train_loss': 0.010694796219468117, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2272.944404385,"data":"[Rank 3] decoding ['eee78d87_0.permute4150723698.ex012', 'eee78d87_0.permute9302675184.ex012', 'eee78d87_0.rot90.rot90.permute5386701942.ex021', 'eee78d87_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":2272.944406518,"data":"[Rank 3] scoring eee78d87_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":2272.944408409,"data":"[Rank 3] decoding ['eee78d87_0.rot90.permute4281673590.ex102', 'eee78d87_0.rot90.permute4950812673.ex201', 'eee78d87_0.rot90.rot90.rot90.permute1654278039.ex210', 'eee78d87_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":2272.944410604,"data":"[Rank 3] scoring eee78d87_0.rot90.permute4950812673.ex201 #0\n"}
+,{"stream_name":"stdout","time":2272.944412557,"data":"[Rank 3] decoding ['eee78d87_0.transpose.permute1602397845.ex201', 'eee78d87_0.transpose.permute9180254367.ex021', 'eee78d87_0.transpose.rot90.rot90.permute0986123745.ex021', 'eee78d87_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":2272.944415024,"data":"[Rank 3] decoding ['eee78d87_0.transpose.rot90.permute4907281356.ex102', 'eee78d87_0.transpose.rot90.permute5980213764.ex102', 'eee78d87_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', 'eee78d87_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":2272.944417263,"data":"[Rank 3] allocated 10422MB for inference\n"}
+,{"stream_name":"stdout","time":2272.944419197,"data":"[Rank 3] finished eee78d87 in 219.4s\n"}
+,{"stream_name":"stdout","time":2272.944421307,"data":"[Rank 3] done!\n"}
+,{"stream_name":"stdout","time":2401.778459209,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2401.77849868,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2401.778502286,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2401.77850559,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.77850943,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2401.77852122,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2401.778523375,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":2401.778525276,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2401.778527503,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2401.778529771,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2401.778531729,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2401.77853396,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":2401.778535908,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":2401.778537744,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":2401.77853959,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2401.778541517,"data":"[Rank 2] training stats for puzzle 6e4f6532: TrainOutput(global_step=128, training_loss=0.014140726998448372, metrics={'train_runtime': 199.6342, 'train_samples_per_second': 0.641, 'train_steps_per_second': 0.641, 'total_flos': 6811687140065280.0, 'train_loss': 0.014140726998448372, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.778544871,"data":"[Rank 2] decoding ['6e4f6532_0.permute4150723698.ex10', '6e4f6532_0.permute6720984531.ex10', '6e4f6532_0.rot90.rot90.permute7931086254.ex01', '6e4f6532_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2401.778547116,"data":"[Rank 2] decoding ['6e4f6532_0.rot90.permute1258796043.ex01', '6e4f6532_0.rot90.permute5386701942.ex10', '6e4f6532_0.rot90.rot90.rot90.permute2908315674.ex01', '6e4f6532_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2401.778549438,"data":"[Rank 2] decoding ['6e4f6532_1.permute1602397845.ex10', '6e4f6532_1.permute6827490351.ex10', '6e4f6532_1.rot90.rot90.permute9180254367.ex01', '6e4f6532_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2401.778551537,"data":"[Rank 2] decoding ['6e4f6532_1.rot90.permute5436201789.ex01', '6e4f6532_1.rot90.permute8024967315.ex01', '6e4f6532_1.rot90.rot90.rot90.permute0986123745.ex01', '6e4f6532_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2401.778553697,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.permute4950812673.ex01', '6e4f6532_0.transpose.permute9316478025.ex10', '6e4f6532_0.transpose.rot90.rot90.permute4281673590.ex01', '6e4f6532_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2401.778555853,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.rot90.permute1654278039.ex01', '6e4f6532_0.transpose.rot90.permute3170468295.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2401.778558103,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.permute5980213764.ex10', '6e4f6532_1.transpose.permute6703249158.ex01', '6e4f6532_1.transpose.rot90.rot90.permute4907281356.ex01', '6e4f6532_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2401.778563345,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.rot90.permute7613284905.ex10', '6e4f6532_1.transpose.rot90.permute7690351428.ex01', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6142358709.ex10', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6150492378.ex01']\n"}
+,{"stream_name":"stdout","time":2401.778565631,"data":"[Rank 2] allocated 13053MB for inference\n"}
+,{"stream_name":"stdout","time":2401.778567547,"data":"[Rank 2] finished 6e4f6532 in 602.9s\n"}
+,{"stream_name":"stdout","time":2401.778569385,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2401.778667867,"data":"[Rank 2] training stats for puzzle b6f77b65: TrainOutput(global_step=128, training_loss=0.019372547045350075, metrics={'train_runtime': 152.0084, 'train_samples_per_second': 0.842, 'train_steps_per_second': 0.842, 'total_flos': 5082394440499200.0, 'train_loss': 0.019372547045350075, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.778681345,"data":"[Rank 2] decoding ['b6f77b65_0.permute4150723698.ex43120', 'b6f77b65_0.permute7931086254.ex04321', 'b6f77b65_0.rot90.rot90.permute0165489723.ex32401', 'b6f77b65_0.rot90.rot90.permute8579032416.ex34021']\n"}
+,{"stream_name":"stdout","time":2401.778685565,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.permute0165489723.ex32401 #0\n"}
+,{"stream_name":"stdout","time":2401.77868882,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.permute0165489723.ex32401 #1\n"}
+,{"stream_name":"stdout","time":2401.778692033,"data":"[Rank 2] decoding ['b6f77b65_0.rot90.permute1654278039.ex13402', 'b6f77b65_0.rot90.permute7568409321.ex01234', 'b6f77b65_0.rot90.rot90.rot90.permute1456732089.ex30421', 'b6f77b65_0.rot90.rot90.rot90.permute9316478025.ex41230']\n"}
+,{"stream_name":"stdout","time":2401.778695851,"data":"[Rank 2] scoring b6f77b65_0.rot90.permute7568409321.ex01234 #0\n"}
+,{"stream_name":"stdout","time":2401.778699174,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.rot90.permute1456732089.ex30421 #0\n"}
+,{"stream_name":"stdout","time":2401.778702491,"data":"[Rank 2] decoding ['b6f77b65_1.permute1602397845.ex34120', 'b6f77b65_1.permute9368452107.ex20431', 'b6f77b65_1.rot90.rot90.permute0986123745.ex10243', 'b6f77b65_1.rot90.rot90.permute1678240593.ex03142']\n"}
+,{"stream_name":"stdout","time":2401.778706075,"data":"[Rank 2] scoring b6f77b65_1.permute9368452107.ex20431 #0\n"}
+,{"stream_name":"stdout","time":2401.778709666,"data":"[Rank 2] decoding ['b6f77b65_1.rot90.permute6150492378.ex32140', 'b6f77b65_1.rot90.permute7690351428.ex24031', 'b6f77b65_1.rot90.rot90.rot90.permute6572109834.ex32401', 'b6f77b65_1.rot90.rot90.rot90.permute6703249158.ex30124']\n"}
+,{"stream_name":"stdout","time":2401.778713694,"data":"[Rank 2] decoding ['b6f77b65_2.permute4950812673.ex43201', 'b6f77b65_2.permute7284135096.ex13042', 'b6f77b65_2.rot90.rot90.permute3450786921.ex12043', 'b6f77b65_2.rot90.rot90.permute4965803712.ex13402']\n"}
+,{"stream_name":"stdout","time":2401.778717477,"data":"[Rank 2] scoring b6f77b65_2.permute7284135096.ex13042 #0\n"}
+,{"stream_name":"stdout","time":2401.778720775,"data":"[Rank 2] decoding ['b6f77b65_2.rot90.permute0845731926.ex40213', 'b6f77b65_2.rot90.permute9302675184.ex20143', 'b6f77b65_2.rot90.rot90.rot90.permute1258796043.ex03124', 'b6f77b65_2.rot90.rot90.rot90.permute1948706532.ex13024']\n"}
+,{"stream_name":"stdout","time":2401.778725643,"data":"[Rank 2] decoding ['b6f77b65_0.transpose.permute5980213764.ex02134', 'b6f77b65_0.transpose.permute7562830149.ex30142', 'b6f77b65_0.transpose.rot90.rot90.permute6142358709.ex32401', 'b6f77b65_0.transpose.rot90.rot90.permute9578240136.ex42130']\n"}
+,{"stream_name":"stdout","time":2401.778745485,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute5980213764.ex02134 #0\n"}
+,{"stream_name":"stdout","time":2401.778748826,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute5980213764.ex02134 #1\n"}
+,{"stream_name":"stdout","time":2401.778751988,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute7562830149.ex30142 #1\n"}
+,{"stream_name":"stdout","time":2401.778755109,"data":"[Rank 2] scoring b6f77b65_0.transpose.rot90.rot90.permute9578240136.ex42130 #1\n"}
+,{"stream_name":"stdout","time":2401.778758271,"data":"[Rank 2] decoding ['b6f77b65_0.transpose.rot90.permute5431627809.ex03412', 'b6f77b65_0.transpose.rot90.permute9180254367.ex12340', 'b6f77b65_0.transpose.rot90.rot90.rot90.permute8024967315.ex20314', 'b6f77b65_0.transpose.rot90.rot90.rot90.permute8271654930.ex32041']\n"}
+,{"stream_name":"stdout","time":2401.778762125,"data":"[Rank 2] scoring b6f77b65_0.transpose.rot90.permute5431627809.ex03412 #1\n"}
+,{"stream_name":"stdout","time":2401.778765411,"data":"[Rank 2] decoding ['b6f77b65_1.transpose.permute2908315674.ex34210', 'b6f77b65_1.transpose.permute5386701942.ex43201', 'b6f77b65_1.transpose.rot90.rot90.permute6720984531.ex42031', 'b6f77b65_1.transpose.rot90.rot90.permute9756482013.ex34120']\n"}
+,{"stream_name":"stdout","time":2401.7787693,"data":"[Rank 2] scoring b6f77b65_1.transpose.permute2908315674.ex34210 #0\n"}
+,{"stream_name":"stdout","time":2401.778771189,"data":"[Rank 2] scoring b6f77b65_1.transpose.permute2908315674.ex34210 #1\n"}
+,{"stream_name":"stdout","time":2401.778773117,"data":"[Rank 2] decoding ['b6f77b65_1.transpose.rot90.permute0859274163.ex03214', 'b6f77b65_1.transpose.rot90.permute4281673590.ex21403', 'b6f77b65_1.transpose.rot90.rot90.rot90.permute3170468295.ex30142', 'b6f77b65_1.transpose.rot90.rot90.rot90.permute8356214097.ex20314']\n"}
+,{"stream_name":"stdout","time":2401.778775365,"data":"[Rank 2] decoding ['b6f77b65_2.transpose.permute5436201789.ex20314', 'b6f77b65_2.transpose.permute7068392154.ex40123', 'b6f77b65_2.transpose.rot90.rot90.permute6827490351.ex34201', 'b6f77b65_2.transpose.rot90.rot90.permute8431095762.ex42310']\n"}
+,{"stream_name":"stdout","time":2401.778777573,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.rot90.permute6827490351.ex34201 #0\n"}
+,{"stream_name":"stdout","time":2401.778779798,"data":"[Rank 2] decoding ['b6f77b65_2.transpose.rot90.permute4095713862.ex43210', 'b6f77b65_2.transpose.rot90.permute4907281356.ex40321', 'b6f77b65_2.transpose.rot90.rot90.rot90.permute5198207463.ex10432', 'b6f77b65_2.transpose.rot90.rot90.rot90.permute7613284905.ex32410']\n"}
+,{"stream_name":"stdout","time":2401.778782243,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.permute4095713862.ex43210 #0\n"}
+,{"stream_name":"stdout","time":2401.778784471,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.permute4095713862.ex43210 #1\n"}
+,{"stream_name":"stdout","time":2401.986382528,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.rot90.rot90.permute7613284905.ex32410 #0Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2401.986400439,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2401.986402859,"data":"[Rank 2] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2401.986404861,"data":"[Rank 2] training stats for puzzle 16b78196: TrainOutput(global_step=128, training_loss=0.004513110965490341, metrics={'train_runtime': 382.259, 'train_samples_per_second': 0.335, 'train_steps_per_second': 0.335, 'total_flos': 1.192924279996416e+16, 'train_loss': 0.004513110965490341, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.986407344,"data":"[Rank 2] decoding ['16b78196_0.permute4150723698.ex10', '16b78196_0.permute9302675184.ex10', '16b78196_0.rot90.rot90.permute5386701942.ex01', '16b78196_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986416113,"data":"[Rank 2] scoring 16b78196_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":2401.986418186,"data":"[Rank 2] scoring 16b78196_0.permute9302675184.ex10 #1\n"}
+,{"stream_name":"stdout","time":2401.986420065,"data":"[Rank 2] decoding ['16b78196_0.rot90.permute4281673590.ex10', '16b78196_0.rot90.permute4950812673.ex01', '16b78196_0.rot90.rot90.rot90.permute1654278039.ex01', '16b78196_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986422171,"data":"[Rank 2] decoding ['16b78196_0.transpose.permute1602397845.ex01', '16b78196_0.transpose.permute9180254367.ex01', '16b78196_0.transpose.rot90.rot90.permute0986123745.ex01', '16b78196_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2401.986424299,"data":"[Rank 2] scoring 16b78196_0.transpose.permute1602397845.ex01 #0\n"}
+,{"stream_name":"stdout","time":2401.986426265,"data":"[Rank 2] decoding ['16b78196_0.transpose.rot90.permute4907281356.ex10', '16b78196_0.transpose.rot90.permute5980213764.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '16b78196_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986428469,"data":"[Rank 2] scoring 16b78196_0.transpose.rot90.rot90.rot90.permute6142358709.ex01 #0\n"}
+,{"stream_name":"stdout","time":2401.98643039,"data":"[Rank 2] allocated 14947MB for inference\n"}
+,{"stream_name":"stdout","time":2401.986432188,"data":"[Rank 2] finished 16b78196 in 924.1s\n"}
+,{"stream_name":"stdout","time":2401.986434054,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2401.986435865,"data":"[Rank 2] training stats for puzzle 6e4f6532: TrainOutput(global_step=128, training_loss=0.014140726998448372, metrics={'train_runtime': 199.6342, 'train_samples_per_second': 0.641, 'train_steps_per_second': 0.641, 'total_flos': 6811687140065280.0, 'train_loss': 0.014140726998448372, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.986439194,"data":"[Rank 2] decoding ['6e4f6532_0.permute4150723698.ex10', '6e4f6532_0.permute6720984531.ex10', '6e4f6532_0.rot90.rot90.permute7931086254.ex01', '6e4f6532_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986448297,"data":"[Rank 2] decoding ['6e4f6532_0.rot90.permute1258796043.ex01', '6e4f6532_0.rot90.permute5386701942.ex10', '6e4f6532_0.rot90.rot90.rot90.permute2908315674.ex01', '6e4f6532_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986450794,"data":"[Rank 2] decoding ['6e4f6532_1.permute1602397845.ex10', '6e4f6532_1.permute6827490351.ex10', '6e4f6532_1.rot90.rot90.permute9180254367.ex01', '6e4f6532_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":2401.986452868,"data":"[Rank 2] decoding ['6e4f6532_1.rot90.permute5436201789.ex01', '6e4f6532_1.rot90.permute8024967315.ex01', '6e4f6532_1.rot90.rot90.rot90.permute0986123745.ex01', '6e4f6532_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":2401.98645499,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.permute4950812673.ex01', '6e4f6532_0.transpose.permute9316478025.ex10', '6e4f6532_0.transpose.rot90.rot90.permute4281673590.ex01', '6e4f6532_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986457131,"data":"[Rank 2] decoding ['6e4f6532_0.transpose.rot90.permute1654278039.ex01', '6e4f6532_0.transpose.rot90.permute3170468295.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '6e4f6532_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":2401.986459365,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.permute5980213764.ex10', '6e4f6532_1.transpose.permute6703249158.ex01', '6e4f6532_1.transpose.rot90.rot90.permute4907281356.ex01', '6e4f6532_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":2401.986463819,"data":"[Rank 2] decoding ['6e4f6532_1.transpose.rot90.permute7613284905.ex10', '6e4f6532_1.transpose.rot90.permute7690351428.ex01', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6142358709.ex10', '6e4f6532_1.transpose.rot90.rot90.rot90.permute6150492378.ex01']\n"}
+,{"stream_name":"stdout","time":2401.986466081,"data":"[Rank 2] allocated 13053MB for inference\n"}
+,{"stream_name":"stdout","time":2401.986467862,"data":"[Rank 2] finished 6e4f6532 in 602.9s\n"}
+,{"stream_name":"stdout","time":2401.986469811,"data":"[Rank 2] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2401.98647195,"data":"[Rank 2] training stats for puzzle b6f77b65: TrainOutput(global_step=128, training_loss=0.019372547045350075, metrics={'train_runtime': 152.0084, 'train_samples_per_second': 0.842, 'train_steps_per_second': 0.842, 'total_flos': 5082394440499200.0, 'train_loss': 0.019372547045350075, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2401.986474302,"data":"[Rank 2] decoding ['b6f77b65_0.permute4150723698.ex43120', 'b6f77b65_0.permute7931086254.ex04321', 'b6f77b65_0.rot90.rot90.permute0165489723.ex32401', 'b6f77b65_0.rot90.rot90.permute8579032416.ex34021']\n"}
+,{"stream_name":"stdout","time":2401.986476402,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.permute0165489723.ex32401 #0\n"}
+,{"stream_name":"stdout","time":2401.986478334,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.permute0165489723.ex32401 #1\n"}
+,{"stream_name":"stdout","time":2401.986480172,"data":"[Rank 2] decoding ['b6f77b65_0.rot90.permute1654278039.ex13402', 'b6f77b65_0.rot90.permute7568409321.ex01234', 'b6f77b65_0.rot90.rot90.rot90.permute1456732089.ex30421', 'b6f77b65_0.rot90.rot90.rot90.permute9316478025.ex41230']\n"}
+,{"stream_name":"stdout","time":2401.986482308,"data":"[Rank 2] scoring b6f77b65_0.rot90.permute7568409321.ex01234 #0\n"}
+,{"stream_name":"stdout","time":2401.986484168,"data":"[Rank 2] scoring b6f77b65_0.rot90.rot90.rot90.permute1456732089.ex30421 #0\n"}
+,{"stream_name":"stdout","time":2401.986486202,"data":"[Rank 2] decoding ['b6f77b65_1.permute1602397845.ex34120', 'b6f77b65_1.permute9368452107.ex20431', 'b6f77b65_1.rot90.rot90.permute0986123745.ex10243', 'b6f77b65_1.rot90.rot90.permute1678240593.ex03142']\n"}
+,{"stream_name":"stdout","time":2401.986488288,"data":"[Rank 2] scoring b6f77b65_1.permute9368452107.ex20431 #0\n"}
+,{"stream_name":"stdout","time":2401.986490151,"data":"[Rank 2] decoding ['b6f77b65_1.rot90.permute6150492378.ex32140', 'b6f77b65_1.rot90.permute7690351428.ex24031', 'b6f77b65_1.rot90.rot90.rot90.permute6572109834.ex32401', 'b6f77b65_1.rot90.rot90.rot90.permute6703249158.ex30124']\n"}
+,{"stream_name":"stdout","time":2401.986492281,"data":"[Rank 2] decoding ['b6f77b65_2.permute4950812673.ex43201', 'b6f77b65_2.permute7284135096.ex13042', 'b6f77b65_2.rot90.rot90.permute3450786921.ex12043', 'b6f77b65_2.rot90.rot90.permute4965803712.ex13402']\n"}
+,{"stream_name":"stdout","time":2401.986494468,"data":"[Rank 2] scoring b6f77b65_2.permute7284135096.ex13042 #0\n"}
+,{"stream_name":"stdout","time":2401.98649627,"data":"[Rank 2] decoding ['b6f77b65_2.rot90.permute0845731926.ex40213', 'b6f77b65_2.rot90.permute9302675184.ex20143', 'b6f77b65_2.rot90.rot90.rot90.permute1258796043.ex03124', 'b6f77b65_2.rot90.rot90.rot90.permute1948706532.ex13024']\n"}
+,{"stream_name":"stdout","time":2401.986498818,"data":"[Rank 2] decoding ['b6f77b65_0.transpose.permute5980213764.ex02134', 'b6f77b65_0.transpose.permute7562830149.ex30142', 'b6f77b65_0.transpose.rot90.rot90.permute6142358709.ex32401', 'b6f77b65_0.transpose.rot90.rot90.permute9578240136.ex42130']\n"}
+,{"stream_name":"stdout","time":2401.986500958,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute5980213764.ex02134 #0\n"}
+,{"stream_name":"stdout","time":2401.986504925,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute5980213764.ex02134 #1\n"}
+,{"stream_name":"stdout","time":2401.986507897,"data":"[Rank 2] scoring b6f77b65_0.transpose.permute7562830149.ex30142 #1\n"}
+,{"stream_name":"stdout","time":2401.986509819,"data":"[Rank 2] scoring b6f77b65_0.transpose.rot90.rot90.permute9578240136.ex42130 #1\n"}
+,{"stream_name":"stdout","time":2401.986511762,"data":"[Rank 2] decoding ['b6f77b65_0.transpose.rot90.permute5431627809.ex03412', 'b6f77b65_0.transpose.rot90.permute9180254367.ex12340', 'b6f77b65_0.transpose.rot90.rot90.rot90.permute8024967315.ex20314', 'b6f77b65_0.transpose.rot90.rot90.rot90.permute8271654930.ex32041']\n"}
+,{"stream_name":"stdout","time":2401.986514001,"data":"[Rank 2] scoring b6f77b65_0.transpose.rot90.permute5431627809.ex03412 #1\n"}
+,{"stream_name":"stdout","time":2401.986515859,"data":"[Rank 2] decoding ['b6f77b65_1.transpose.permute2908315674.ex34210', 'b6f77b65_1.transpose.permute5386701942.ex43201', 'b6f77b65_1.transpose.rot90.rot90.permute6720984531.ex42031', 'b6f77b65_1.transpose.rot90.rot90.permute9756482013.ex34120']\n"}
+,{"stream_name":"stdout","time":2401.986518011,"data":"[Rank 2] scoring b6f77b65_1.transpose.permute2908315674.ex34210 #0\n"}
+,{"stream_name":"stdout","time":2401.986520024,"data":"[Rank 2] scoring b6f77b65_1.transpose.permute2908315674.ex34210 #1\n"}
+,{"stream_name":"stdout","time":2401.986521974,"data":"[Rank 2] decoding ['b6f77b65_1.transpose.rot90.permute0859274163.ex03214', 'b6f77b65_1.transpose.rot90.permute4281673590.ex21403', 'b6f77b65_1.transpose.rot90.rot90.rot90.permute3170468295.ex30142', 'b6f77b65_1.transpose.rot90.rot90.rot90.permute8356214097.ex20314']\n"}
+,{"stream_name":"stdout","time":2401.986524224,"data":"[Rank 2] decoding ['b6f77b65_2.transpose.permute5436201789.ex20314', 'b6f77b65_2.transpose.permute7068392154.ex40123', 'b6f77b65_2.transpose.rot90.rot90.permute6827490351.ex34201', 'b6f77b65_2.transpose.rot90.rot90.permute8431095762.ex42310']\n"}
+,{"stream_name":"stdout","time":2401.986526392,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.rot90.permute6827490351.ex34201 #0\n"}
+,{"stream_name":"stdout","time":2401.986528277,"data":"[Rank 2] decoding ['b6f77b65_2.transpose.rot90.permute4095713862.ex43210', 'b6f77b65_2.transpose.rot90.permute4907281356.ex40321', 'b6f77b65_2.transpose.rot90.rot90.rot90.permute5198207463.ex10432', 'b6f77b65_2.transpose.rot90.rot90.rot90.permute7613284905.ex32410']\n"}
+,{"stream_name":"stdout","time":2401.986530476,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.permute4095713862.ex43210 #0\n"}
+,{"stream_name":"stdout","time":2401.986532305,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.permute4095713862.ex43210 #1\n"}
+,{"stream_name":"stdout","time":2404.993490665,"data":"[Rank 2] scoring b6f77b65_2.transpose.rot90.rot90.rot90.permute7613284905.ex32410 #0\n"}
+,{"stream_name":"stdout","time":2404.993518675,"data":"[Rank 2] allocated 11268MB for inference\n"}
+,{"stream_name":"stdout","time":2404.993521182,"data":"[Rank 2] finished b6f77b65 in 600.7s\n"}
+,{"stream_name":"stdout","time":2404.993523355,"data":"[Rank 2] done!\n"}
+,{"stream_name":"stdout","time":2405.195424009,"data":"\n"}
+,{"stream_name":"stdout","time":2405.19544843,"data":"[Rank 2] allocated 11268MB for inference\n"}
+,{"stream_name":"stdout","time":2405.195451409,"data":"[Rank 2] finished b6f77b65 in 600.7s\n"}
+,{"stream_name":"stdout","time":2405.195453565,"data":"[Rank 2] done!\n"}
+,{"stream_name":"stdout","time":2430.39198805,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2430.392018527,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2430.392021442,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2430.392035843,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.392039003,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":2430.392041183,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":2430.392043178,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":2430.39204508,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":2430.392047252,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":2430.392049401,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":2430.392051415,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":2430.392053738,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":2430.39205556,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":2430.392057393,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2430.392059332,"data":"[Rank 1] training stats for puzzle 64efde09: TrainOutput(global_step=128, training_loss=0.00562653923407197, metrics={'train_runtime': 257.902, 'train_samples_per_second': 0.496, 'train_steps_per_second': 0.496, 'total_flos': 8812680171356160.0, 'train_loss': 0.00562653923407197, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.392131601,"data":"[Rank 1] decoding ['64efde09_0.permute4150723698.ex10', '64efde09_0.permute9302675184.ex10', '64efde09_0.rot90.rot90.permute5386701942.ex01', '64efde09_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392147426,"data":"[Rank 1] scoring 64efde09_0.permute9302675184.ex10 #0\n"}
+,{"stream_name":"stdout","time":2430.392151785,"data":"[Rank 1] scoring 64efde09_0.rot90.rot90.permute8579032416.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.392155526,"data":"[Rank 1] decoding ['64efde09_0.rot90.permute4281673590.ex10', '64efde09_0.rot90.permute4950812673.ex01', '64efde09_0.rot90.rot90.rot90.permute1654278039.ex01', '64efde09_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392159609,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #0\n"}
+,{"stream_name":"stdout","time":2430.392162898,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #1\n"}
+,{"stream_name":"stdout","time":2430.392166139,"data":"[Rank 1] decoding ['64efde09_0.transpose.permute1602397845.ex01', '64efde09_0.transpose.permute9180254367.ex01', '64efde09_0.transpose.rot90.rot90.permute0986123745.ex01', '64efde09_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2430.392170054,"data":"[Rank 1] decoding ['64efde09_0.transpose.rot90.permute4907281356.ex10', '64efde09_0.transpose.rot90.permute5980213764.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392185653,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.permute5980213764.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.392188989,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.392192187,"data":"[Rank 1] allocated 13770MB for inference\n"}
+,{"stream_name":"stdout","time":2430.392194124,"data":"[Rank 1] finished 64efde09 in 886.6s\n"}
+,{"stream_name":"stdout","time":2430.392195984,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2430.392197953,"data":"[Rank 1] training stats for puzzle b10624e5: TrainOutput(global_step=128, training_loss=0.004928271286189556, metrics={'train_runtime': 285.6223, 'train_samples_per_second': 0.448, 'train_steps_per_second': 0.448, 'total_flos': 9704496554311680.0, 'train_loss': 0.004928271286189556, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.392200252,"data":"[Rank 1] decoding ['b10624e5_0.permute4150723698.ex10', 'b10624e5_0.permute9302675184.ex10', 'b10624e5_0.rot90.rot90.permute5386701942.ex01', 'b10624e5_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392203113,"data":"[Rank 1] decoding ['b10624e5_0.rot90.permute4281673590.ex10', 'b10624e5_0.rot90.permute4950812673.ex01', 'b10624e5_0.rot90.rot90.rot90.permute1654278039.ex01', 'b10624e5_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392205262,"data":"[Rank 1] scoring b10624e5_0.rot90.permute4950812673.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.392207135,"data":"[Rank 1] scoring b10624e5_0.rot90.rot90.rot90.permute4965803712.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.39220902,"data":"[Rank 1] decoding ['b10624e5_0.transpose.permute1602397845.ex01', 'b10624e5_0.transpose.permute9180254367.ex01', 'b10624e5_0.transpose.rot90.rot90.permute0986123745.ex01', 'b10624e5_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2430.392211199,"data":"[Rank 1] decoding ['b10624e5_0.transpose.rot90.permute4907281356.ex10', 'b10624e5_0.transpose.rot90.permute5980213764.ex01', 'b10624e5_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', 'b10624e5_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2430.392213431,"data":"[Rank 1] allocated 13950MB for inference\n"}
+,{"stream_name":"stdout","time":2430.392215269,"data":"[Rank 1] finished b10624e5 in 678.6s\n"}
+,{"stream_name":"stdout","time":2430.392217103,"data":"[Rank 1] done!\n"}
+,{"stream_name":"stdout","time":2430.594248701,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2430.594272052,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":2430.594274803,"data":"[Rank 1] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":2430.594277084,"data":"[Rank 1] training stats for puzzle 4c416de3: TrainOutput(global_step=128, training_loss=0.002854475984349847, metrics={'train_runtime': 285.2139, 'train_samples_per_second': 0.449, 'train_steps_per_second': 0.449, 'total_flos': 9493529237913600.0, 'train_loss': 0.002854475984349847, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.594279871,"data":"[Rank 1] decoding ['4c416de3_0.permute4150723698.ex012', '4c416de3_0.permute9302675184.ex012', '4c416de3_0.rot90.rot90.permute5386701942.ex021', '4c416de3_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":2430.594282058,"data":"[Rank 1] scoring 4c416de3_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":2430.59430137,"data":"[Rank 1] scoring 4c416de3_0.rot90.rot90.permute5386701942.ex021 #1\n"}
+,{"stream_name":"stdout","time":2430.594303549,"data":"[Rank 1] decoding ['4c416de3_0.rot90.permute4281673590.ex102', '4c416de3_0.rot90.permute4950812673.ex201', '4c416de3_0.rot90.rot90.rot90.permute1654278039.ex210', '4c416de3_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":2430.594306627,"data":"[Rank 1] decoding ['4c416de3_0.transpose.permute1602397845.ex201', '4c416de3_0.transpose.permute9180254367.ex021', '4c416de3_0.transpose.rot90.rot90.permute0986123745.ex021', '4c416de3_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":2430.594310555,"data":"[Rank 1] scoring 4c416de3_0.transpose.permute9180254367.ex021 #0\n"}
+,{"stream_name":"stdout","time":2430.594313892,"data":"[Rank 1] decoding ['4c416de3_0.transpose.rot90.permute4907281356.ex102', '4c416de3_0.transpose.rot90.permute5980213764.ex102', '4c416de3_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '4c416de3_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":2430.594317797,"data":"[Rank 1] allocated 13155MB for inference\n"}
+,{"stream_name":"stdout","time":2430.594320695,"data":"[Rank 1] finished 4c416de3 in 587.7s\n"}
+,{"stream_name":"stdout","time":2430.594324059,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2430.594326878,"data":"[Rank 1] training stats for puzzle 64efde09: TrainOutput(global_step=128, training_loss=0.00562653923407197, metrics={'train_runtime': 257.902, 'train_samples_per_second': 0.496, 'train_steps_per_second': 0.496, 'total_flos': 8812680171356160.0, 'train_loss': 0.00562653923407197, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.594332486,"data":"[Rank 1] decoding ['64efde09_0.permute4150723698.ex10', '64efde09_0.permute9302675184.ex10', '64efde09_0.rot90.rot90.permute5386701942.ex01', '64efde09_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2430.594335881,"data":"[Rank 1] scoring 64efde09_0.permute9302675184.ex10 #0\n"}
+,{"stream_name":"stdout","time":2430.59433897,"data":"[Rank 1] scoring 64efde09_0.rot90.rot90.permute8579032416.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.594342292,"data":"[Rank 1] decoding ['64efde09_0.rot90.permute4281673590.ex10', '64efde09_0.rot90.permute4950812673.ex01', '64efde09_0.rot90.rot90.rot90.permute1654278039.ex01', '64efde09_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2430.594346221,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #0\n"}
+,{"stream_name":"stdout","time":2430.594349719,"data":"[Rank 1] scoring 64efde09_0.rot90.permute4281673590.ex10 #1\n"}
+,{"stream_name":"stdout","time":2430.594352998,"data":"[Rank 1] decoding ['64efde09_0.transpose.permute1602397845.ex01', '64efde09_0.transpose.permute9180254367.ex01', '64efde09_0.transpose.rot90.rot90.permute0986123745.ex01', '64efde09_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2430.594356771,"data":"[Rank 1] decoding ['64efde09_0.transpose.rot90.permute4907281356.ex10', '64efde09_0.transpose.rot90.permute5980213764.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', '64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2430.594383792,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.permute5980213764.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.594387336,"data":"[Rank 1] scoring 64efde09_0.transpose.rot90.rot90.rot90.permute7690351428.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.59439062,"data":"[Rank 1] allocated 13770MB for inference\n"}
+,{"stream_name":"stdout","time":2430.594393895,"data":"[Rank 1] finished 64efde09 in 886.6s\n"}
+,{"stream_name":"stdout","time":2430.594401947,"data":"[Rank 1] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":2430.594405152,"data":"[Rank 1] training stats for puzzle b10624e5: TrainOutput(global_step=128, training_loss=0.004928271286189556, metrics={'train_runtime': 285.6223, 'train_samples_per_second': 0.448, 'train_steps_per_second': 0.448, 'total_flos': 9704496554311680.0, 'train_loss': 0.004928271286189556, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":2430.594409168,"data":"[Rank 1] decoding ['b10624e5_0.permute4150723698.ex10', 'b10624e5_0.permute9302675184.ex10', 'b10624e5_0.rot90.rot90.permute5386701942.ex01', 'b10624e5_0.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":2430.594412773,"data":"[Rank 1] decoding ['b10624e5_0.rot90.permute4281673590.ex10', 'b10624e5_0.rot90.permute4950812673.ex01', 'b10624e5_0.rot90.rot90.rot90.permute1654278039.ex01', 'b10624e5_0.rot90.rot90.rot90.permute4965803712.ex01']\n"}
+,{"stream_name":"stdout","time":2430.594417357,"data":"[Rank 1] scoring b10624e5_0.rot90.permute4950812673.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.594419454,"data":"[Rank 1] scoring b10624e5_0.rot90.rot90.rot90.permute4965803712.ex01 #0\n"}
+,{"stream_name":"stdout","time":2430.594421399,"data":"[Rank 1] decoding ['b10624e5_0.transpose.permute1602397845.ex01', 'b10624e5_0.transpose.permute9180254367.ex01', 'b10624e5_0.transpose.rot90.rot90.permute0986123745.ex01', 'b10624e5_0.transpose.rot90.rot90.permute5436201789.ex10']\n"}
+,{"stream_name":"stdout","time":2430.594423686,"data":"[Rank 1] decoding ['b10624e5_0.transpose.rot90.permute4907281356.ex10', 'b10624e5_0.transpose.rot90.permute5980213764.ex01', 'b10624e5_0.transpose.rot90.rot90.rot90.permute6142358709.ex01', 'b10624e5_0.transpose.rot90.rot90.rot90.permute7690351428.ex01']\n"}
+,{"stream_name":"stdout","time":2430.59442592,"data":"[Rank 1] allocated 13950MB for inference\n"}
+,{"stream_name":"stdout","time":2430.594427775,"data":"[Rank 1] finished b10624e5 in 678.6s\n"}
+,{"stream_name":"stdout","time":2430.594429723,"data":"[Rank 1] done!\n"}
+,{"stream_name":"stdout","time":3007.093006888,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":3007.093063103,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":3007.093069422,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":3007.0930737,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.093082832,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":3007.093087456,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093091587,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.093096265,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":3007.093101273,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.093105956,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":3007.093125354,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093129232,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093132107,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.093135539,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":3007.093139043,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.09314221,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.093145512,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.093148734,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093152024,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":3007.093156927,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":3007.093160717,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.093163949,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":3007.093167677,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":3007.093171679,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093174937,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.093176895,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.093193991,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.093208879,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":3007.093211382,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":3007.093213648,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":3007.093215564,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":3007.093217807,"data":"[Rank 0] training stats for puzzle 8f3a5a89: TrainOutput(global_step=128, training_loss=0.009753894992172718, metrics={'train_runtime': 151.2924, 'train_samples_per_second': 0.846, 'train_steps_per_second': 0.846, 'total_flos': 5184681624207360.0, 'train_loss': 0.009753894992172718, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.093220798,"data":"[Rank 0] decoding ['8f3a5a89_0.permute4150723698.ex012', '8f3a5a89_0.permute9302675184.ex012', '8f3a5a89_0.rot90.rot90.permute5386701942.ex021', '8f3a5a89_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":3007.093232404,"data":"[Rank 0] scoring 8f3a5a89_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":3007.093234649,"data":"[Rank 0] decoding ['8f3a5a89_0.rot90.permute4281673590.ex102', '8f3a5a89_0.rot90.permute4950812673.ex201', '8f3a5a89_0.rot90.rot90.rot90.permute1654278039.ex210', '8f3a5a89_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":3007.093236887,"data":"[Rank 0] scoring 8f3a5a89_0.rot90.permute4950812673.ex201 #1\n"}
+,{"stream_name":"stdout","time":3007.093238778,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.permute1602397845.ex201', '8f3a5a89_0.transpose.permute9180254367.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute0986123745.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":3007.093240938,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute9180254367.ex021 #1\n"}
+,{"stream_name":"stdout","time":3007.093242888,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute1602397845.ex201 #0\n"}
+,{"stream_name":"stdout","time":3007.093244892,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.rot90.permute4907281356.ex102', '8f3a5a89_0.transpose.rot90.permute5980213764.ex102', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":3007.093247146,"data":"[Rank 0] allocated 11304MB for inference\n"}
+,{"stream_name":"stdout","time":3007.093249102,"data":"[Rank 0] finished 8f3a5a89 in 283.7s\n"}
+,{"stream_name":"stdout","time":3007.093250986,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":3007.093253494,"data":"[Rank 0] training stats for puzzle cb2d8a2c: TrainOutput(global_step=128, training_loss=0.008667264133691788, metrics={'train_runtime': 228.9236, 'train_samples_per_second': 0.559, 'train_steps_per_second': 0.559, 'total_flos': 7924060262891520.0, 'train_loss': 0.008667264133691788, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.093255867,"data":"[Rank 0] decoding ['cb2d8a2c_0.permute4150723698.ex3120', 'cb2d8a2c_0.permute6720984531.ex1023', 'cb2d8a2c_0.rot90.rot90.permute7931086254.ex1032', 'cb2d8a2c_0.rot90.rot90.permute9302675184.ex3012']\n"}
+,{"stream_name":"stdout","time":3007.093258113,"data":"[Rank 0] scoring cb2d8a2c_0.permute6720984531.ex1023 #0\n"}
+,{"stream_name":"stdout","time":3007.093260075,"data":"[Rank 0] scoring cb2d8a2c_0.permute6720984531.ex1023 #1\n"}
+,{"stream_name":"stdout","time":3007.093261938,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.permute7931086254.ex1032 #0\n"}
+,{"stream_name":"stdout","time":3007.093263941,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.permute9302675184.ex3012 #0\n"}
+,{"stream_name":"stdout","time":3007.093265868,"data":"[Rank 0] decoding ['cb2d8a2c_0.rot90.permute1258796043.ex3201', 'cb2d8a2c_0.rot90.permute5386701942.ex1203', 'cb2d8a2c_0.rot90.rot90.rot90.permute2908315674.ex3201', 'cb2d8a2c_0.rot90.rot90.rot90.permute8579032416.ex0213']\n"}
+,{"stream_name":"stdout","time":3007.093268035,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.rot90.permute2908315674.ex3201 #0\n"}
+,{"stream_name":"stdout","time":3007.093269912,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.rot90.permute8579032416.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.093271766,"data":"[Rank 0] decoding ['cb2d8a2c_1.permute1602397845.ex0132', 'cb2d8a2c_1.permute6827490351.ex0132', 'cb2d8a2c_1.rot90.rot90.permute9180254367.ex3012', 'cb2d8a2c_1.rot90.rot90.permute9368452107.ex3012']\n"}
+,{"stream_name":"stdout","time":3007.093273847,"data":"[Rank 0] scoring cb2d8a2c_1.permute1602397845.ex0132 #0\n"}
+,{"stream_name":"stdout","time":3007.093275775,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.rot90.permute9368452107.ex3012 #0\n"}
+,{"stream_name":"stdout","time":3007.093280588,"data":"[Rank 0] decoding ['cb2d8a2c_1.rot90.permute5436201789.ex1320', 'cb2d8a2c_1.rot90.permute8024967315.ex0321', 'cb2d8a2c_1.rot90.rot90.rot90.permute0986123745.ex3021', 'cb2d8a2c_1.rot90.rot90.rot90.permute7068392154.ex3120']\n"}
+,{"stream_name":"stdout","time":3007.093282857,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute5436201789.ex1320 #0\n"}
+,{"stream_name":"stdout","time":3007.093284735,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute5436201789.ex1320 #1\n"}
+,{"stream_name":"stdout","time":3007.093286585,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute8024967315.ex0321 #1\n"}
+,{"stream_name":"stdout","time":3007.093288402,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.rot90.rot90.permute7068392154.ex3120 #0\n"}
+,{"stream_name":"stdout","time":3007.09329031,"data":"[Rank 0] decoding ['cb2d8a2c_0.transpose.permute4950812673.ex0231', 'cb2d8a2c_0.transpose.permute9316478025.ex0132', 'cb2d8a2c_0.transpose.rot90.rot90.permute4281673590.ex0213', 'cb2d8a2c_0.transpose.rot90.rot90.permute7284135096.ex0123']\n"}
+,{"stream_name":"stdout","time":3007.093292453,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.permute4281673590.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.093294459,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.permute7284135096.ex0123 #0\n"}
+,{"stream_name":"stdout","time":3007.093296676,"data":"[Rank 0] decoding ['cb2d8a2c_0.transpose.rot90.permute1654278039.ex2031', 'cb2d8a2c_0.transpose.rot90.permute3170468295.ex0132', 'cb2d8a2c_0.transpose.rot90.rot90.rot90.permute4965803712.ex2013', 'cb2d8a2c_0.transpose.rot90.rot90.rot90.permute7568409321.ex0213']\n"}
+,{"stream_name":"stdout","time":3007.093298949,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.permute1654278039.ex2031 #0\n"}
+,{"stream_name":"stdout","time":3007.093300831,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.rot90.permute7568409321.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.093302756,"data":"[Rank 0] decoding ['cb2d8a2c_1.transpose.permute5980213764.ex0231', 'cb2d8a2c_1.transpose.permute6703249158.ex0123', 'cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032', 'cb2d8a2c_1.transpose.rot90.rot90.permute7562830149.ex0312']\n"}
+,{"stream_name":"stdout","time":3007.093304913,"data":"[Rank 0] scoring cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032 #0\n"}
+,{"stream_name":"stdout","time":3007.093306789,"data":"[Rank 0] scoring cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032 #1\n"}
+,{"stream_name":"stdout","time":3007.093308673,"data":"[Rank 0] decoding ['cb2d8a2c_1.transpose.rot90.permute7613284905.ex0312', 'cb2d8a2c_1.transpose.rot90.permute7690351428.ex0132', 'cb2d8a2c_1.transpose.rot90.rot90.rot90.permute6142358709.ex1230', 'cb2d8a2c_1.transpose.rot90.rot90.rot90.permute6150492378.ex2103']\n"}
+,{"stream_name":"stdout","time":3007.100156746,"data":"[Rank 0] allocated 12651MB for inference\n"}
+,{"stream_name":"stdout","time":3007.100168709,"data":"[Rank 0] finished cb2d8a2c in 1144.0s\n"}
+,{"stream_name":"stdout","time":3007.100171289,"data":"[Rank 0] done!\n"}
+,{"stream_name":"stdout","time":3007.301658937,"data":"Unsloth: Training embed_tokens in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":3007.301678908,"data":"Unsloth: Training lm_head in mixed precision to save VRAM\n"}
+,{"stream_name":"stdout","time":3007.301681627,"data":"[Rank 0] allocated 13011MB for training\n"}
+,{"stream_name":"stdout","time":3007.301683709,"data":"[Rank 0] training stats for puzzle 221dfab4: TrainOutput(global_step=128, training_loss=0.0052785142324864864, metrics={'train_runtime': 252.8627, 'train_samples_per_second': 0.506, 'train_steps_per_second': 0.506, 'total_flos': 8521800992686080.0, 'train_loss': 0.0052785142324864864, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.301702055,"data":"[Rank 0] decoding ['221dfab4_0.permute4150723698.ex10', '221dfab4_0.permute6720984531.ex10', '221dfab4_0.rot90.rot90.permute7931086254.ex01', '221dfab4_0.rot90.rot90.permute9302675184.ex01']\n"}
+,{"stream_name":"stdout","time":3007.301704384,"data":"[Rank 0] scoring 221dfab4_0.permute4150723698.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301706283,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.permute7931086254.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301708315,"data":"[Rank 0] decoding ['221dfab4_0.rot90.permute1258796043.ex01', '221dfab4_0.rot90.permute5386701942.ex10', '221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01', '221dfab4_0.rot90.rot90.rot90.permute8579032416.ex01']\n"}
+,{"stream_name":"stdout","time":3007.301710488,"data":"[Rank 0] scoring 221dfab4_0.rot90.rot90.rot90.permute2908315674.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.301712474,"data":"[Rank 0] decoding ['221dfab4_1.permute1602397845.ex10', '221dfab4_1.permute6827490351.ex10', '221dfab4_1.rot90.rot90.permute9180254367.ex01', '221dfab4_1.rot90.rot90.permute9368452107.ex10']\n"}
+,{"stream_name":"stdout","time":3007.301714667,"data":"[Rank 0] scoring 221dfab4_1.permute1602397845.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301716594,"data":"[Rank 0] scoring 221dfab4_1.permute6827490351.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301718423,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.permute9180254367.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301720319,"data":"[Rank 0] decoding ['221dfab4_1.rot90.permute5436201789.ex01', '221dfab4_1.rot90.permute8024967315.ex01', '221dfab4_1.rot90.rot90.rot90.permute0986123745.ex01', '221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10']\n"}
+,{"stream_name":"stdout","time":3007.301722525,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute5436201789.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301724389,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301726227,"data":"[Rank 0] scoring 221dfab4_1.rot90.permute8024967315.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.301728137,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301730116,"data":"[Rank 0] scoring 221dfab4_1.rot90.rot90.rot90.permute7068392154.ex10 #1\n"}
+,{"stream_name":"stdout","time":3007.301733052,"data":"[Rank 0] decoding ['221dfab4_0.transpose.permute4950812673.ex01', '221dfab4_0.transpose.permute9316478025.ex10', '221dfab4_0.transpose.rot90.rot90.permute4281673590.ex01', '221dfab4_0.transpose.rot90.rot90.permute7284135096.ex01']\n"}
+,{"stream_name":"stdout","time":3007.301735289,"data":"[Rank 0] scoring 221dfab4_0.transpose.permute4950812673.ex01 #1\n"}
+,{"stream_name":"stdout","time":3007.301737241,"data":"[Rank 0] decoding ['221dfab4_0.transpose.rot90.permute1654278039.ex01', '221dfab4_0.transpose.rot90.permute3170468295.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute4965803712.ex10', '221dfab4_0.transpose.rot90.rot90.rot90.permute7568409321.ex10']\n"}
+,{"stream_name":"stdout","time":3007.301739421,"data":"[Rank 0] decoding ['221dfab4_1.transpose.permute5980213764.ex10', '221dfab4_1.transpose.permute6703249158.ex01', '221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01', '221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10']\n"}
+,{"stream_name":"stdout","time":3007.301741569,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute5980213764.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301743404,"data":"[Rank 0] scoring 221dfab4_1.transpose.permute6703249158.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301745264,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute4907281356.ex01 #0\n"}
+,{"stream_name":"stdout","time":3007.301747379,"data":"[Rank 0] scoring 221dfab4_1.transpose.rot90.rot90.permute7562830149.ex10 #0\n"}
+,{"stream_name":"stdout","time":3007.301751941,"data":"[Rank 0] timeout after 1302.0s for puzzle 221dfab4\n"}
+,{"stream_name":"stdout","time":3007.301753899,"data":"[Rank 0] allocated 13752MB for inference\n"}
+,{"stream_name":"stdout","time":3007.301755735,"data":"[Rank 0] finished 221dfab4 in 1302.0s\n"}
+,{"stream_name":"stdout","time":3007.301757548,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":3007.301759435,"data":"[Rank 0] training stats for puzzle 8f3a5a89: TrainOutput(global_step=128, training_loss=0.009753894992172718, metrics={'train_runtime': 151.2924, 'train_samples_per_second': 0.846, 'train_steps_per_second': 0.846, 'total_flos': 5184681624207360.0, 'train_loss': 0.009753894992172718, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.301761798,"data":"[Rank 0] decoding ['8f3a5a89_0.permute4150723698.ex012', '8f3a5a89_0.permute9302675184.ex012', '8f3a5a89_0.rot90.rot90.permute5386701942.ex021', '8f3a5a89_0.rot90.rot90.permute8579032416.ex120']\n"}
+,{"stream_name":"stdout","time":3007.301763887,"data":"[Rank 0] scoring 8f3a5a89_0.permute4150723698.ex012 #0\n"}
+,{"stream_name":"stdout","time":3007.301765842,"data":"[Rank 0] decoding ['8f3a5a89_0.rot90.permute4281673590.ex102', '8f3a5a89_0.rot90.permute4950812673.ex201', '8f3a5a89_0.rot90.rot90.rot90.permute1654278039.ex210', '8f3a5a89_0.rot90.rot90.rot90.permute4965803712.ex210']\n"}
+,{"stream_name":"stdout","time":3007.301767971,"data":"[Rank 0] scoring 8f3a5a89_0.rot90.permute4950812673.ex201 #1\n"}
+,{"stream_name":"stdout","time":3007.301770069,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.permute1602397845.ex201', '8f3a5a89_0.transpose.permute9180254367.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute0986123745.ex021', '8f3a5a89_0.transpose.rot90.rot90.permute5436201789.ex021']\n"}
+,{"stream_name":"stdout","time":3007.301772276,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute9180254367.ex021 #1\n"}
+,{"stream_name":"stdout","time":3007.30177421,"data":"[Rank 0] scoring 8f3a5a89_0.transpose.permute1602397845.ex201 #0\n"}
+,{"stream_name":"stdout","time":3007.301776675,"data":"[Rank 0] decoding ['8f3a5a89_0.transpose.rot90.permute4907281356.ex102', '8f3a5a89_0.transpose.rot90.permute5980213764.ex102', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute6142358709.ex021', '8f3a5a89_0.transpose.rot90.rot90.rot90.permute7690351428.ex210']\n"}
+,{"stream_name":"stdout","time":3007.301778947,"data":"[Rank 0] allocated 11304MB for inference\n"}
+,{"stream_name":"stdout","time":3007.301780805,"data":"[Rank 0] finished 8f3a5a89 in 283.7s\n"}
+,{"stream_name":"stdout","time":3007.301782673,"data":"[Rank 0] allocated 13012MB for training\n"}
+,{"stream_name":"stdout","time":3007.301784539,"data":"[Rank 0] training stats for puzzle cb2d8a2c: TrainOutput(global_step=128, training_loss=0.008667264133691788, metrics={'train_runtime': 228.9236, 'train_samples_per_second': 0.559, 'train_steps_per_second': 0.559, 'total_flos': 7924060262891520.0, 'train_loss': 0.008667264133691788, 'epoch': 1.0})\n"}
+,{"stream_name":"stdout","time":3007.301786892,"data":"[Rank 0] decoding ['cb2d8a2c_0.permute4150723698.ex3120', 'cb2d8a2c_0.permute6720984531.ex1023', 'cb2d8a2c_0.rot90.rot90.permute7931086254.ex1032', 'cb2d8a2c_0.rot90.rot90.permute9302675184.ex3012']\n"}
+,{"stream_name":"stdout","time":3007.301789013,"data":"[Rank 0] scoring cb2d8a2c_0.permute6720984531.ex1023 #0\n"}
+,{"stream_name":"stdout","time":3007.30179084,"data":"[Rank 0] scoring cb2d8a2c_0.permute6720984531.ex1023 #1\n"}
+,{"stream_name":"stdout","time":3007.301792687,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.permute7931086254.ex1032 #0\n"}
+,{"stream_name":"stdout","time":3007.301794587,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.permute9302675184.ex3012 #0\n"}
+,{"stream_name":"stdout","time":3007.301798839,"data":"[Rank 0] decoding ['cb2d8a2c_0.rot90.permute1258796043.ex3201', 'cb2d8a2c_0.rot90.permute5386701942.ex1203', 'cb2d8a2c_0.rot90.rot90.rot90.permute2908315674.ex3201', 'cb2d8a2c_0.rot90.rot90.rot90.permute8579032416.ex0213']\n"}
+,{"stream_name":"stdout","time":3007.301801181,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.rot90.permute2908315674.ex3201 #0\n"}
+,{"stream_name":"stdout","time":3007.301803097,"data":"[Rank 0] scoring cb2d8a2c_0.rot90.rot90.rot90.permute8579032416.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.301804965,"data":"[Rank 0] decoding ['cb2d8a2c_1.permute1602397845.ex0132', 'cb2d8a2c_1.permute6827490351.ex0132', 'cb2d8a2c_1.rot90.rot90.permute9180254367.ex3012', 'cb2d8a2c_1.rot90.rot90.permute9368452107.ex3012']\n"}
+,{"stream_name":"stdout","time":3007.301807069,"data":"[Rank 0] scoring cb2d8a2c_1.permute1602397845.ex0132 #0\n"}
+,{"stream_name":"stdout","time":3007.301809286,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.rot90.permute9368452107.ex3012 #0\n"}
+,{"stream_name":"stdout","time":3007.301811191,"data":"[Rank 0] decoding ['cb2d8a2c_1.rot90.permute5436201789.ex1320', 'cb2d8a2c_1.rot90.permute8024967315.ex0321', 'cb2d8a2c_1.rot90.rot90.rot90.permute0986123745.ex3021', 'cb2d8a2c_1.rot90.rot90.rot90.permute7068392154.ex3120']\n"}
+,{"stream_name":"stdout","time":3007.301813358,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute5436201789.ex1320 #0\n"}
+,{"stream_name":"stdout","time":3007.301815219,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute5436201789.ex1320 #1\n"}
+,{"stream_name":"stdout","time":3007.301817155,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.permute8024967315.ex0321 #1\n"}
+,{"stream_name":"stdout","time":3007.301819024,"data":"[Rank 0] scoring cb2d8a2c_1.rot90.rot90.rot90.permute7068392154.ex3120 #0\n"}
+,{"stream_name":"stdout","time":3007.301820944,"data":"[Rank 0] decoding ['cb2d8a2c_0.transpose.permute4950812673.ex0231', 'cb2d8a2c_0.transpose.permute9316478025.ex0132', 'cb2d8a2c_0.transpose.rot90.rot90.permute4281673590.ex0213', 'cb2d8a2c_0.transpose.rot90.rot90.permute7284135096.ex0123']\n"}
+,{"stream_name":"stdout","time":3007.30182315,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.permute4281673590.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.301825036,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.permute7284135096.ex0123 #0\n"}
+,{"stream_name":"stdout","time":3007.301826949,"data":"[Rank 0] decoding ['cb2d8a2c_0.transpose.rot90.permute1654278039.ex2031', 'cb2d8a2c_0.transpose.rot90.permute3170468295.ex0132', 'cb2d8a2c_0.transpose.rot90.rot90.rot90.permute4965803712.ex2013', 'cb2d8a2c_0.transpose.rot90.rot90.rot90.permute7568409321.ex0213']\n"}
+,{"stream_name":"stdout","time":3007.301829182,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.permute1654278039.ex2031 #0\n"}
+,{"stream_name":"stdout","time":3007.301831055,"data":"[Rank 0] scoring cb2d8a2c_0.transpose.rot90.rot90.rot90.permute7568409321.ex0213 #0\n"}
+,{"stream_name":"stdout","time":3007.30183307,"data":"[Rank 0] decoding ['cb2d8a2c_1.transpose.permute5980213764.ex0231', 'cb2d8a2c_1.transpose.permute6703249158.ex0123', 'cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032', 'cb2d8a2c_1.transpose.rot90.rot90.permute7562830149.ex0312']\n"}
+,{"stream_name":"stdout","time":3007.301835267,"data":"[Rank 0] scoring cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032 #0\n"}
+,{"stream_name":"stdout","time":3007.301837164,"data":"[Rank 0] scoring cb2d8a2c_1.transpose.rot90.rot90.permute4907281356.ex1032 #1\n"}
+,{"stream_name":"stdout","time":3007.301839069,"data":"[Rank 0] decoding ['cb2d8a2c_1.transpose.rot90.permute7613284905.ex0312', 'cb2d8a2c_1.transpose.rot90.permute7690351428.ex0132', 'cb2d8a2c_1.transpose.rot90.rot90.rot90.permute6142358709.ex1230', 'cb2d8a2c_1.transpose.rot90.rot90.rot90.permute6150492378.ex2103']\n"}
+,{"stream_name":"stdout","time":3007.301843393,"data":"[Rank 0] allocated 12651MB for inference\n"}
+,{"stream_name":"stdout","time":3007.301845312,"data":"[Rank 0] finished cb2d8a2c in 1144.0s\n"}
+,{"stream_name":"stdout","time":3007.301847177,"data":"[Rank 0] done!\n"}
+,{"stream_name":"stdout","time":3029.060882958,"data":"*** Generating submission for 16 outputs...\n"}
+,{"stream_name":"stdout","time":3029.10756493,"data":"{\n"}
+,{"stream_name":"stdout","time":3029.107585083,"data":"  \"mode\": \"validation\",\n"}
+,{"stream_name":"stdout","time":3029.10758808,"data":"  \"duration_s\": 3014.9,\n"}
+,{"stream_name":"stdout","time":3029.107590277,"data":"  \"solver_budget_s\": 6900.0,\n"}
+,{"stream_name":"stdout","time":3029.107592343,"data":"  \"source_version\": 1,\n"}
+,{"stream_name":"stdout","time":3029.107594287,"data":"  \"smoke_benchmark\": true,\n"}
+,{"stream_name":"stdout","time":3029.10759631,"data":"  \"not_unbiased_heldout\": true,\n"}
+,{"stream_name":"stdout","time":3029.107598373,"data":"  \"selected_val_ids\": [\n"}
+,{"stream_name":"stdout","time":3029.107600285,"data":"    \"16b78196\",\n"}
+,{"stream_name":"stdout","time":3029.107602097,"data":"    \"221dfab4\",\n"}
+,{"stream_name":"stdout","time":3029.107603915,"data":"    \"4c416de3\",\n"}
+,{"stream_name":"stdout","time":3029.107605757,"data":"    \"62593bfd\",\n"}
+,{"stream_name":"stdout","time":3029.107607963,"data":"    \"64efde09\",\n"}
+,{"stream_name":"stdout","time":3029.107609754,"data":"    \"6e4f6532\",\n"}
+,{"stream_name":"stdout","time":3029.107611511,"data":"    \"80a900e0\",\n"}
+,{"stream_name":"stdout","time":3029.107613398,"data":"    \"8f3a5a89\",\n"}
+,{"stream_name":"stdout","time":3029.107615143,"data":"    \"b10624e5\",\n"}
+,{"stream_name":"stdout","time":3029.107616879,"data":"    \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.107618636,"data":"    \"cb2d8a2c\",\n"}
+,{"stream_name":"stdout","time":3029.107620468,"data":"    \"eee78d87\"\n"}
+,{"stream_name":"stdout","time":3029.107622245,"data":"  ],\n"}
+,{"stream_name":"stdout","time":3029.107624025,"data":"  \"no_accuracy_claim\": \"public model may have trained on evaluation tasks; rank not guaranteed\",\n"}
+,{"stream_name":"stdout","time":3029.107626125,"data":"  \"invalid_entries\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107628031,"data":"  \"submission_task_count\": 120,\n"}
+,{"stream_name":"stdout","time":3029.107629875,"data":"  \"n_prediction_bundles\": 180,\n"}
+,{"stream_name":"stdout","time":3029.107631717,"data":"  \"model_test_rows_with_bundles\": [\n"}
+,{"stream_name":"stdout","time":3029.107633636,"data":"    \"16b78196_0\",\n"}
+,{"stream_name":"stdout","time":3029.107635422,"data":"    \"221dfab4_0\",\n"}
+,{"stream_name":"stdout","time":3029.107637193,"data":"    \"221dfab4_1\",\n"}
+,{"stream_name":"stdout","time":3029.107638932,"data":"    \"4c416de3_0\",\n"}
+,{"stream_name":"stdout","time":3029.107640665,"data":"    \"62593bfd_0\",\n"}
+,{"stream_name":"stdout","time":3029.107642488,"data":"    \"62593bfd_1\",\n"}
+,{"stream_name":"stdout","time":3029.107644243,"data":"    \"64efde09_0\",\n"}
+,{"stream_name":"stdout","time":3029.107646013,"data":"    \"80a900e0_0\",\n"}
+,{"stream_name":"stdout","time":3029.107647759,"data":"    \"8f3a5a89_0\",\n"}
+,{"stream_name":"stdout","time":3029.107649497,"data":"    \"b10624e5_0\",\n"}
+,{"stream_name":"stdout","time":3029.107651229,"data":"    \"b6f77b65_0\",\n"}
+,{"stream_name":"stdout","time":3029.107652971,"data":"    \"b6f77b65_1\",\n"}
+,{"stream_name":"stdout","time":3029.107657331,"data":"    \"b6f77b65_2\",\n"}
+,{"stream_name":"stdout","time":3029.107667845,"data":"    \"cb2d8a2c_0\",\n"}
+,{"stream_name":"stdout","time":3029.107669791,"data":"    \"cb2d8a2c_1\",\n"}
+,{"stream_name":"stdout","time":3029.10767158,"data":"    \"eee78d87_0\"\n"}
+,{"stream_name":"stdout","time":3029.10767333,"data":"  ],\n"}
+,{"stream_name":"stdout","time":3029.107675103,"data":"  \"per_test_rows\": [\n"}
+,{"stream_name":"stdout","time":3029.107676874,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107678581,"data":"      \"task_id\": \"16b78196\",\n"}
+,{"stream_name":"stdout","time":3029.107680507,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107682443,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107684263,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107686035,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107687755,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107689516,"data":"      \"task_id\": \"221dfab4\",\n"}
+,{"stream_name":"stdout","time":3029.107691381,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107693153,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107694902,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107696828,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.10769854,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107700255,"data":"      \"task_id\": \"221dfab4\",\n"}
+,{"stream_name":"stdout","time":3029.107702113,"data":"      \"test_index\": 1,\n"}
+,{"stream_name":"stdout","time":3029.10770395,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107705718,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107707505,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107709192,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107710959,"data":"      \"task_id\": \"4c416de3\",\n"}
+,{"stream_name":"stdout","time":3029.107712803,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107714569,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107716351,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107718311,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107719999,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107721688,"data":"      \"task_id\": \"62593bfd\",\n"}
+,{"stream_name":"stdout","time":3029.107723488,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107725349,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.10772713,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107728929,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107730633,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107732305,"data":"      \"task_id\": \"62593bfd\",\n"}
+,{"stream_name":"stdout","time":3029.107734106,"data":"      \"test_index\": 1,\n"}
+,{"stream_name":"stdout","time":3029.107735891,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107737653,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107739517,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107741225,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.10774292,"data":"      \"task_id\": \"64efde09\",\n"}
+,{"stream_name":"stdout","time":3029.107744733,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107746496,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107748272,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107752608,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.10775447,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107756239,"data":"      \"task_id\": \"6e4f6532\",\n"}
+,{"stream_name":"stdout","time":3029.107758054,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107759803,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107761574,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107763331,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107765113,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107766828,"data":"      \"task_id\": \"6e4f6532\",\n"}
+,{"stream_name":"stdout","time":3029.107768644,"data":"      \"test_index\": 1,\n"}
+,{"stream_name":"stdout","time":3029.10777049,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.10777227,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107774063,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107775757,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107777443,"data":"      \"task_id\": \"80a900e0\",\n"}
+,{"stream_name":"stdout","time":3029.107779275,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107781042,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107782809,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107784653,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107786368,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107788071,"data":"      \"task_id\": \"8f3a5a89\",\n"}
+,{"stream_name":"stdout","time":3029.107790452,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.10779227,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107794055,"data":"      \"pass2\": true\n"}
+,{"stream_name":"stdout","time":3029.10779582,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107797512,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107799277,"data":"      \"task_id\": \"b10624e5\",\n"}
+,{"stream_name":"stdout","time":3029.107801116,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107803116,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107804957,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107806755,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107808442,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107810114,"data":"      \"task_id\": \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.107811929,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107813753,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107815545,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107817296,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107818996,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107820687,"data":"      \"task_id\": \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.107822498,"data":"      \"test_index\": 1,\n"}
+,{"stream_name":"stdout","time":3029.107824251,"data":"      \"pass1\": true,\n"}
+,{"stream_name":"stdout","time":3029.10782602,"data":"      \"pass2\": true\n"}
+,{"stream_name":"stdout","time":3029.107827881,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107829574,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107831273,"data":"      \"task_id\": \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.10783312,"data":"      \"test_index\": 2,\n"}
+,{"stream_name":"stdout","time":3029.107837053,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107838974,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107840883,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107842942,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107844704,"data":"      \"task_id\": \"cb2d8a2c\",\n"}
+,{"stream_name":"stdout","time":3029.107846553,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107848322,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107850183,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107851961,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107853733,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107855413,"data":"      \"task_id\": \"cb2d8a2c\",\n"}
+,{"stream_name":"stdout","time":3029.107857218,"data":"      \"test_index\": 1,\n"}
+,{"stream_name":"stdout","time":3029.107859111,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107860875,"data":"      \"pass2\": false\n"}
+,{"stream_name":"stdout","time":3029.107862736,"data":"    },\n"}
+,{"stream_name":"stdout","time":3029.107864454,"data":"    {\n"}
+,{"stream_name":"stdout","time":3029.107866147,"data":"      \"task_id\": \"eee78d87\",\n"}
+,{"stream_name":"stdout","time":3029.107867976,"data":"      \"test_index\": 0,\n"}
+,{"stream_name":"stdout","time":3029.107869742,"data":"      \"pass1\": false,\n"}
+,{"stream_name":"stdout","time":3029.107871498,"data":"      \"pass2\": true\n"}
+,{"stream_name":"stdout","time":3029.107873353,"data":"    }\n"}
+,{"stream_name":"stdout","time":3029.107875051,"data":"  ],\n"}
+,{"stream_name":"stdout","time":3029.107876758,"data":"  \"n_test_rows_selected\": 18,\n"}
+,{"stream_name":"stdout","time":3029.107878571,"data":"  \"n_pass1\": 1,\n"}
+,{"stream_name":"stdout","time":3029.107880368,"data":"  \"n_pass2\": 3,\n"}
+,{"stream_name":"stdout","time":3029.107882168,"data":"  \"pass1_fraction\": 0.05555555555555555,\n"}
+,{"stream_name":"stdout","time":3029.107884059,"data":"  \"pass2_fraction\": 0.16666666666666666,\n"}
+,{"stream_name":"stdout","time":3029.107885889,"data":"  \"task_normalized_pass2\": 0.19444444444444442,\n"}
+,{"stream_name":"stdout","time":3029.107887843,"data":"  \"tasks_with_all_test_row_bundles\": [\n"}
+,{"stream_name":"stdout","time":3029.107889856,"data":"    \"16b78196\",\n"}
+,{"stream_name":"stdout","time":3029.107891639,"data":"    \"221dfab4\",\n"}
+,{"stream_name":"stdout","time":3029.107893408,"data":"    \"4c416de3\",\n"}
+,{"stream_name":"stdout","time":3029.107895155,"data":"    \"62593bfd\",\n"}
+,{"stream_name":"stdout","time":3029.107896893,"data":"    \"64efde09\",\n"}
+,{"stream_name":"stdout","time":3029.107898633,"data":"    \"80a900e0\",\n"}
+,{"stream_name":"stdout","time":3029.107900364,"data":"    \"8f3a5a89\",\n"}
+,{"stream_name":"stdout","time":3029.107902181,"data":"    \"b10624e5\",\n"}
+,{"stream_name":"stdout","time":3029.107903918,"data":"    \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.107905663,"data":"    \"cb2d8a2c\",\n"}
+,{"stream_name":"stdout","time":3029.107907408,"data":"    \"eee78d87\"\n"}
+,{"stream_name":"stdout","time":3029.10790915,"data":"  ],\n"}
+,{"stream_name":"stdout","time":3029.107910836,"data":"  \"n_tasks_with_all_test_row_bundles\": 11,\n"}
+,{"stream_name":"stdout","time":3029.107912688,"data":"  \"tasks_with_nonfallback_candidates\": [\n"}
+,{"stream_name":"stdout","time":3029.107914561,"data":"    \"16b78196\",\n"}
+,{"stream_name":"stdout","time":3029.107916395,"data":"    \"221dfab4\",\n"}
+,{"stream_name":"stdout","time":3029.107920142,"data":"    \"4c416de3\",\n"}
+,{"stream_name":"stdout","time":3029.107921995,"data":"    \"62593bfd\",\n"}
+,{"stream_name":"stdout","time":3029.107923745,"data":"    \"64efde09\",\n"}
+,{"stream_name":"stdout","time":3029.107925491,"data":"    \"80a900e0\",\n"}
+,{"stream_name":"stdout","time":3029.107927212,"data":"    \"8f3a5a89\",\n"}
+,{"stream_name":"stdout","time":3029.107928952,"data":"    \"b10624e5\",\n"}
+,{"stream_name":"stdout","time":3029.107930672,"data":"    \"b6f77b65\",\n"}
+,{"stream_name":"stdout","time":3029.107932484,"data":"    \"cb2d8a2c\",\n"}
+,{"stream_name":"stdout","time":3029.107934268,"data":"    \"eee78d87\"\n"}
+,{"stream_name":"stdout","time":3029.107936052,"data":"  ]\n"}
+,{"stream_name":"stdout","time":3029.107937785,"data":"}\n"}
+,{"stream_name":"stderr","time":3033.217799954,"data":"/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"remove_papermill_header.RemovePapermillHeader\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":3033.217827098,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":3033.28146261,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":3033.589133231,"data":"[NbConvertApp] Writing 134282 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":3035.656932105,"data":"/usr/local/lib/python3.11/dist-packages/traitlets/traitlets.py:2915: FutureWarning: --Exporter.preprocessors=[\"nbconvert.preprocessors.ExtractOutputPreprocessor\"] for containers is deprecated in traitlets 5.0. You can pass `--Exporter.preprocessors item` ... multiple times to add items to a list.\n"}
+,{"stream_name":"stderr","time":3035.656958344,"data":"  warn(\n"}
+,{"stream_name":"stderr","time":3035.698137631,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3036.780878305,"data":"[NbConvertApp] Writing 579854 bytes to __results__.html\n"}
+,{"stream_name":"stderr","time":3039.619828984,"data":"/usr/local/lib/python3.11/dist-packages/nbdev/doclinks.py:20: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools\u003c81.\n"}
+,{"stream_name":"stderr","time":3039.619863346,"data":"  import pkg_resources,importlib\n"}
+]

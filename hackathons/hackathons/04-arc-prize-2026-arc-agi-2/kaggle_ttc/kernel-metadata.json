@@ -1,0 +1,15 @@
+{
+  "id": "krishnakumarbhat/arc-agi2-llm-ttc",
+  "title": "Arc Agi2 Llm Ttc",
+  "code_file": "kaggle_arc_llm_ttc.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": ["arc-prize-2026-arc-agi-2"],
+  "kernel_sources": [],
+  "model_sources": []
+}

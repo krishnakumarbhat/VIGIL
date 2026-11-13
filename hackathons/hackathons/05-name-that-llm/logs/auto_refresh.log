@@ -1,0 +1,237 @@
+=== watcher start 2026-10-22T06:47:48Z ===
+2026-10-22T06:47:54Z artefact set changed (6765bead6f8692ec) -> rebuilding stack
+[final_stack] completed in 14.9s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T06:48:10Z final_stack rc=0
+features ready (2699, 281376) (15s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 26s
+  refit svc_c1_m15 (mirror share 0.15) 81s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 86s
+2026-10-22T06:49:38Z finalize rc=0
+MASTER_STATUS.md updated (63 lines)
+2026-10-22T12:06:33Z artefact set changed (a490dc9deee91204) -> rebuilding stack
+[colab] unzipped out_120229.zip -> /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_120229
+[final_stack] completed in 104.8s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T12:08:29Z final_stack rc=0
+features ready (2699, 281376) (52s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 138s
+  refit svc_c1_m15 (mirror share 0.15) 588s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 603s
+2026-10-22T12:18:45Z finalize rc=0
+MASTER_STATUS.md updated (63 lines)
+2026-10-22T12:29:31Z artefact set changed (825fe257afdc7647) -> rebuilding stack
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_121745.zip
+[colab] unzipped out_122251.zip -> /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[final_stack] completed in 137.3s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T12:32:10Z final_stack rc=0
+features ready (2699, 281376) (77s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 183s
+  refit svc_c1_m15 (mirror share 0.15) 745s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 780s
+2026-10-22T12:45:26Z finalize rc=0
+MASTER_STATUS.md updated (63 lines)
+2026-10-22T12:56:16Z artefact set changed (c3bdaeff7f4fa00a) -> rebuilding stack
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_121745.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[final_stack] completed in 152.0s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T12:58:59Z final_stack rc=0
+features ready (2699, 281376) (82s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 216s
+  refit svc_c1_m15 (mirror share 0.15) 777s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 791s
+2026-10-22T13:12:24Z finalize rc=0
+MASTER_STATUS.md updated (63 lines)
+2026-10-22T13:23:21Z artefact set changed (7f669e17aafe9fa6) -> rebuilding stack
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_121745.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125840.zip
+[final_stack] completed in 77.1s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T13:24:44Z final_stack rc=0
+features ready (2699, 281376) (40s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 144s
+  refit svc_c1_m15 (mirror share 0.15) 572s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 586s
+2026-10-22T13:34:38Z finalize rc=0
+MASTER_STATUS.md updated (63 lines)
+2026-10-22T13:45:19Z artefact set changed (4db63848e43fdb61) -> rebuilding stack
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_121745.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125840.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125840.zip
+[final_stack] completed in 73.5s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T13:46:41Z final_stack rc=0
+features ready (2699, 281376) (39s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 149s
+  refit svc_c1_m15 (mirror share 0.15) 686s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 701s
+2026-10-22T13:58:29Z finalize rc=0
+MASTER_STATUS.md updated (74 lines)
+=== watcher start 2026-10-22T14:29:21Z ===
+2026-10-22T14:29:21Z artefact set changed (4db63848e43fdb61) -> rebuilding stack
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_121745.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/.piped_out_125840.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_122806.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123313.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_123821.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124326.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_124830.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125335.zip
+[colab] skip non-zip artefact /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/colab_pro_artifacts/extracted_out_122251/content/out_125840.zip
+[final_stack] completed in 80.7s
+  stage1_bal_acc=0.3667
+  nested_mean=0.3607790549169859
+  weights={'ridge_a05': 0.5, 'svc_c1_m15': 0.4, 'svc_c4': 0.1}
+  lora_filled=0
+  files: /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_blend_config.json, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/final_stack_parquet, /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/SUBMISSION_NOTES.md
+2026-10-22T14:30:48Z final_stack rc=0
+features ready (2699, 281376) (43s)
+selected: blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0 bal_acc= 0.3667
+  refit ridge_a05 (mirror share 0.0) 125s
+  refit svc_c1_m15 (mirror share 0.15) 528s
+saved final_model.joblib
+             id                   model
+0  00353fb1c541  gemini-3.1-pro-preview
+1  005f5a9a6139  gemini-3.1-pro-preview
+2  0062a53d5487  gemini-3.1-pro-preview
+done 540s
+2026-10-22T14:39:54Z finalize rc=0
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/real_row_blend.py:159: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  per_class = {LABELS[i]: float(recall_score(y_v, p_v, labels=[i], average=None, zero_division=0))
+member deberta (2699, 18)
+member loRA_qwen05b (2699, 18) coverage 2159
+members: ['deberta', 'loRA_qwen05b']
+  deberta: bal_acc 0.4016
+  loRA_qwen05b: bal_acc 0.3806
+rows with full member coverage: 2159/2699
+fold 0: train 0.5620 val 0.2833 w {'deberta': 0.38, 'loRA_qwen05b': 0.378}
+fold 1: train 0.5330 val 0.3759 w {'deberta': 0.326, 'loRA_qwen05b': 0.367}
+fold 2: train 0.4793 val 0.5333 w {'deberta': 0.399, 'loRA_qwen05b': 0.413}
+fold 3: train 0.4019 val 0.7703 w {'deberta': 0.527, 'loRA_qwen05b': 0.599}
+best single member on the covered rows: loRA_qwen05b 0.4617 (2159 rows)
+BLEND ACCEPTED
+CROSS-FITTED OOF bal_acc 0.4904723000311236 acc 0.4905048633626679
+per-class recall: {'claude-fable-5': 0.42, 'claude-opus-4-6': 0.8, 'claude-opus-4-8': 0.475, 'claude-opus-5': 0.867, 'claude-sonnet-5': 0.467, 'gemini-3.1-pro-preview': 0.775, 'gemini-3.6-flash': 0.517, 'gemini-3.7-flash': 0.417, 'gemini-3.8-flash': 0.408, 'glm-5.3': 0.208, 'glm-5.3-flash': 0.258, 'gpt-5.5': 0.408, 'gpt-5.6-luna': 0.467, 'gpt-5.6-sol': 0.325, 'gpt-5.6-terra': 0.325, 'gpt-6-astra': 0.675, 'kimi-k3': 0.367, 'qwen3.8-max': 0.65}
+length bins: {'(0,60]': 0.428, '(60,120]': 0.493, '(120,180]': 0.488, '(180,1000]': 0.562}
+submission.parquet written from /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/kaggle_deberta/test_42.npy (3, 2) margins [0.004 0.26  0.293]
+DONE
+2026-10-22T14:40:18Z real_row_blend rc=0
+MASTER_STATUS.md updated (84 lines)

@@ -1,0 +1,77 @@
+=== 2026-10-22T00:18:50Z session track05-1792628330 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628330'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=480834ad_3b6e_42a1_a6df_a96fd
+6d0bc6c........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=480834ad_3b6e_42a1_a6df_a96fd
+6d0bc6c........&variant=GPU&accelerator=T4: Precondition Failed

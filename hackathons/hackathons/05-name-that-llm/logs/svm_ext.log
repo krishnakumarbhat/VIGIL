@@ -1,0 +1,11 @@
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/svm_ext_experiment.py:57: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  .apply(lambda g: g.sample(n=min(per, len(g)), random_state=42))
+[   5.1s] real 2699 mirror 9000 external 39996
+[ 583.6s] features (51695, 370000)
+[ 822.3s] fold 0 bal_acc 0.3648 acc 0.3648
+[1024.4s] fold 1 bal_acc 0.3981 acc 0.3981
+[1244.7s] fold 2 bal_acc 0.4019 acc 0.4019
+[1515.8s] fold 3 bal_acc 0.3633 acc 0.3636
+[1756.6s] fold 4 bal_acc 0.3722 acc 0.3722
+[1756.6s] OOF bal_acc 0.3801 (incumbent mirror-only svm 0.3616)
+[1756.6s] DONE

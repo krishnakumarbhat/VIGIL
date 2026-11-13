@@ -1,0 +1,26 @@
+[{"stream_name":"stdout","time":1.719213179,"data":"[    0.0s] train /kaggle/input/competitions/playground-series-s6e10/train.csv test /kaggle/input/competitions/playground-series-s6e10/test.csv\n"}
+,{"stream_name":"stdout","time":11.53175244,"data":"[    9.8s] train shape (699635, 23) test shape (299844, 22)\n"}
+,{"stream_name":"stdout","time":11.531793982,"data":"[    9.8s] rating cols 13\n"}
+,{"stream_name":"stdout","time":14.823283878,"data":"[   13.1s] features (699635, 40) cat 9\n"}
+,{"stream_name":"stdout","time":1010.907217728,"data":"[ 1009.2s] lgbm oof auc 0.95758\n"}
+,{"stream_name":"stdout","time":2611.115606497,"data":"[ 2609.4s] cat oof auc 0.95905\n"}
+,{"stream_name":"stderr","time":2633.560617,"data":"/usr/local/lib/python3.13/dist-packages/xgboost/core.py:569: UserWarning: [02:48:27] WARNING: /__w/xgboost/xgboost/src/common/error_msg.cc:62: Falling back to prediction using DMatrix due to mismatched devices. This might lead to higher memory usage and slower performance. XGBoost is running on: cuda:0, while the input data is on: cpu.\n"}
+,{"stream_name":"stderr","time":2633.560651576,"data":"Potential solutions:\n"}
+,{"stream_name":"stderr","time":2633.560674772,"data":"- Use a data structure that matches the device ordinal in the booster.\n"}
+,{"stream_name":"stderr","time":2633.560681747,"data":"- Set the device for booster before call to inplace_predict.\n"}
+,{"stream_name":"stderr","time":2633.560687409,"data":"\n"}
+,{"stream_name":"stderr","time":2633.560693257,"data":"This warning will only be shown once.\n"}
+,{"stream_name":"stderr","time":2633.560698911,"data":"\n"}
+,{"stream_name":"stderr","time":2633.560703773,"data":"  return func(**kwargs)\n"}
+,{"stream_name":"stdout","time":2834.407009794,"data":"[ 2832.7s] xgb oof auc 0.95638\n"}
+,{"stream_name":"stdout","time":2923.070569412,"data":"[ 2921.4s] logreg+TE oof auc 0.9405854244782708\n"}
+,{"stream_name":"stdout","time":2958.92631824,"data":"[ 2957.2s] weights {'lgbm': 0.2035, 'cat': 0.7756, 'xgb': 0.0209, 'logreg': 0.0}\n"}
+,{"stream_name":"stdout","time":2958.926379607,"data":"[ 2957.2s] FINAL OOF AUC 0.9592722797958316\n"}
+,{"stream_name":"stdout","time":3298.317955262,"data":"[ 3296.6s] DONE final_oof_auc 0.9592722797958316\n"}
+,{"stream_name":"stderr","time":3302.133078321,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":3302.1331042,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":3302.33669125,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":3302.336716382,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":3303.097357214,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":3303.646035892,"data":"[NbConvertApp] Writing 332584 bytes to __results__.html\n"}
+]

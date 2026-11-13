@@ -1,0 +1,99 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amsfonts,amssymb,graphicx,booktabs,longtable,geometry,hyperref,caption,subcaption}
+\geometry{margin=1in}
+\title{\textbf{ARC-AGI-2 Neuro-Symbolic DSL Synthesis:\\D4 Canonicalisation, Bidirectional Search, and the Completeness Gap}}
+\author{Track 03 Engineer --- ARC Prize 2026 Paper Track ($450\,k$, deadline 2026-11-09)}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a neuro-symbolic DSL synthesis approach for ARC-AGI-2 that combines a structural primitive language (`dsl_primitives`), a D4+colour canonicalisation (`canonical`), and bidirectional depth-2 search (`search`). Real empirical results are drawn exclusively from verified sibling-track artifacts (`04-arc-prize-2026-arc-agi-2/`). On the v2 training split (`eval_metrics_training_v2.json`, 150 tasks) we observe graded pass@1 = 8.67\% (13/150) and pass@2 = 8.67\% (13/150); on the 120-task evaluation split (`eval_metrics_evaluation.json`) graded pass@1 = 0/120 (0.0\%). The corresponding Kaggle submission, made 2026-10-31, scored 0.00 on the public leaderboard (rank 3552/3554 when checked). Symbolic families (depth-1/2) achieve 97.1\% and 92.3\% precision but cover very few fits; learned families (`cell_tree`, `object_tree`, `patch_lookup`, `mlp`) supply most of the v2 training fits (41/150) via the learned ranker (`program_ranker.py`). The canonicalisation collapses equivalent states under the invariance group $G = D_4 \times B$ (order $8 \cdot k!$), shrinking the search frontier by up to 48--960$\times$ for grids using 3--5 colours. We state the orbit-stabilizer argument, the soundness conditions, and the completeness limitation for depth-$>2$ compositions. Offline split metrics were produced or read on 2026-10-22; the leaderboard result was read on 2026-10-31.
+\end{abstract}
+
+\section{Introduction}
+
+ARC-AGI-2 (`arXiv:2505.11831`) introduces a refined benchmark of 1120 static reasoning tasks. The paper-track ($450\,k$ prize, `https://www.kaggle.com/competitions/arc-prize-2026-paper-track/overview`) requires rigorous documentation of theory, formalisation, empirical verification, and limitations. We treat the solver produced by a previous engineer (`04-arc-prize-2026-arc-agi-2/`) as our empirical engine and report every number from its verified artifacts.
+
+\section{Method}
+
+\subsection{Canonicalisation and the Invariance Group}
+
+Let $\mathcal{G}$ be the set of $30 \times 30$ integer grids with values $\{0,\dots,9\}$. The symmetry group is $G = D_4 \times B$, where $D_4$ (order 8) acts by rotation and reflection, and $B \le S_{10}$ (order $k!$) acts by colour relabelling. The canonical key is
+\[
+\kappa(g) = \min_{r \in D_4} \mathrm{bytes}\bigl(\mathrm{canon}(r(g))\bigr),
+\]
+where $\mathrm{canon}$ relabels colours by first appearance in row-major order (`canonical_colors`). The orbit size is $|\mathrm{Orbit}(g)| = |G| / |\mathrm{Stab}(g)|$; for asymmetric grids using all 10 colours this reaches $8 \cdot 10! \approx 2.9 \times 10^7$.
+
+\subsection{DSL Operator Schema}
+
+Every primitive is $f: \mathcal{G} \to \mathcal{G} \cup \{\bot\}$. The schema is first-order: $(\mathrm{Grid}, \mathrm{context}) \to \mathrm{Optional}[\mathrm{Grid}]$, with context including training pairs for data-dependent selection. The full operator table is given in the appendix (derived from `dsl_primitives.py`, lines 356--596).
+
+\subsection{Bidirectional Induction Rule}
+
+Given training pair $(s,d)$, construct forward set $F = \{\kappa(f(s)) \mid f \in \mathcal{P}\}$ and backward set $B = \{\kappa(b(d)) \mid b \in \mathcal{P}^{-1}\}$. A meeting key $k \in F \cap B$ induces program $b \circ f$, verified on all pairs (`fits_all`). Complexity is $O(|P_{\mathrm{fwd}}| + |P_{\mathrm{inv}}| + |F \cap B| \cdot |\mathrm{train}|)$, bounded to $O(10^4)$ per task by `depth1_budget = 400` and `depth1_budget = 220` for bidirectional sets.
+
+\subsection{Depth-2 Beam Enumeration}
+
+Ordered pairs $\mathrm{right}(\mathrm{left}(x))$ with $\mathrm{left}$ drawn from structural + data-dependent operators (excluding single colour swaps) and $\mathrm{right}$ from the fast structural + colour-swap set (`primitive_fast_set`). Pair-0 exactness filter (`src0` vs `dst0`) provides $O(1)$ screening before full verification.
+
+\section{Experiments}
+
+\subsection{Training and Evaluation Metrics (Verified Artifacts)}
+
+Table 1 reports verified numbers from `04-.../outputs/eval_metrics_training.json` and `outputs/eval_metrics.json` (read 2026-10-22).
+
+\begin{table}[h]
+\centering
+\caption{Verified results from sibling-track artifacts.}
+\label{tab:results}
+\begin{tabular}{lrrr}
+\toprule
+Split & Tasks & Solved & Graded pass@1 \\
+\midrule
+Training (v2) & 150 & 41 (27.33\%) & 13 (8.67\%) \\
+Evaluation & 120 & 20 (16.7\%) & 0 (0.0\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Per-strategy precision (v1 `README_TRACK04.md`, retained for reference): depth-1 97.1\% (33/34), depth-2 92.3\% (12/13), cell_tree 9.8\% ($\sim$20/205), object_tree 2.3\% ($\sim$3/133), patch_lookup 4.3\% ($\sim$2/46). In v2 (`v2-object-beam-ranked`), the learned ranker (`program_ranker.py`) replaces per-family precision; the evaluation split reports 20/120 solved (16.67\%) with graded pass@1 = 0 (0.0\%).
+
+Fallback shape accuracy: 113/167 grids (67.7\%), giving miss rate 32.3\% (`README`, §Results, evaluation).
+
+\subsection{Ablation Study (Real Runs)}
+
+Table 2 reports results produced by `src/ablations.py` (executed 2026-10-22) and saved to `outputs/ablation_results.csv`.
+
+\begin{table}[h]
+\centering
+\caption{Ablation solve rates (n $\le$ 60, budget 8--15 s).}
+\label{tab:ablation}
+\begin{tabular}{lcccc}
+\toprule
+Label & Config & Tasks & Rate \\
+\midrule
+base\_full & depth-2 + learners & 60 train & 41.7\% (25) \\
+no\_depth2 & depth-1 + learners & 60 train & 40.0\% (24) \\
+symbolic\_only & depth-1/2, no learners & 60 train & 5.0\% (3) \\
+eval\_full\_30 & full cascade (eval) & 30 eval & 13.3\% (4) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Removing depth-2 drops rate by only 1.7 pp; removing learners collapses rate by $\sim$37 pp, confirming that learned families supply $\sim$90\% of fits.
+
+\section{Limitations}
+
+(1) Depth bound (`max_depth=2`) excludes multi-step compositions. (2) Canonicalisation complete for depth-1 / bidirectional depth-2 but incomplete for arbitrary-depth compositions with diverging intermediate symmetries. (3) Learned rules (`cell_tree`, `object_tree`) overfit few pairs (precision $<10$\%). (4) Graded pass@1 = 0\% on evaluation (`eval_metrics.json`) confirms that training fit is necessary but not sufficient.
+
+\section{Conclusion}
+
+The DSL + canonicalisation framework provides a sound, verifiable search space reduction under $G = D_4 \times B$, with bidirectional depth-2 induction. Real results confirm the expected ARC-AGI-2 regime: low symbolic coverage, high learned-family coverage, and zero graded evaluation generalisation despite 16.7\% training-fit rate.
+
+\vspace{1cm}
+\noindent\textbf{Verified artifacts:} `outputs/eval_metrics.json`, `outputs/eval_metrics_training.json`, `outputs/README_TRACK04.md`, `outputs/ablation_results.csv`, `outputs/CITATIONS.md`, `outputs/figures/fig01--fig06.png`, `outputs/cover_image.png`. All produced 2026-10-22; no Kaggle submission made.
+\noindent\textbf{Verified artifacts:} `outputs/eval_metrics.json`, `outputs/eval_metrics_training_v2.json`, `outputs/README_TRACK04.md`, `outputs/ablation_results.csv`, `outputs/CITATIONS.md`, `outputs/figures/fig01--fig06.png`, `outputs/cover_image.png`; public Kaggle score 0.00, checked 2026-10-31.
+
+\end{document}

@@ -1,0 +1,26 @@
+[   0.2s] pool 8699 real 2699 mirror 6000
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[   4.3s] tokenised (8699, 256)
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 4552.22it/s]
+[1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-0.5B-Instruct
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+`use_return_dict` is deprecated! Use `return_dict` instead!
+`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+trainable params: 8,814,336 || all params: 502,863,232 || trainable%: 1.7528
+[ 103.6s] step 100/1088 loss 3.4396 mem 1066MB
+[ 195.5s] step 200/1088 loss 2.7117 mem 1066MB
+[ 288.0s] step 300/1088 loss 2.8106 mem 1066MB
+[ 377.0s] step 400/1088 loss 1.9079 mem 1066MB
+[ 466.4s] step 500/1088 loss 2.1088 mem 1066MB
+[ 556.0s] step 600/1088 loss 2.0500 mem 1066MB
+[ 646.1s] step 700/1088 loss 2.0183 mem 1066MB
+[ 735.2s] step 800/1088 loss 1.9849 mem 1066MB
+[ 824.6s] step 900/1088 loss 1.6174 mem 1066MB
+[ 918.9s] step 1000/1088 loss 1.6587 mem 1066MB
+[ 998.9s] saved adapter to /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/deploy/lora_qwen05b files 7
+[ 998.9s] DONE

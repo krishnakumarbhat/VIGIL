@@ -1,0 +1,59 @@
+[{"stream_name":"stdout","time":0.804634743,"data":"ALL FILES: [\n"}
+,{"stream_name":"stdout","time":0.804686699,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804691474,"data":"  \"nfl-big-data-bowl-2027/players.csv\",\n"}
+,{"stream_name":"stdout","time":0.804694193,"data":"  47301\n"}
+,{"stream_name":"stdout","time":0.804696709,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804699067,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804701336,"data":"  \"nfl-big-data-bowl-2027/game_tracking_2023.csv\",\n"}
+,{"stream_name":"stdout","time":0.804711149,"data":"  335463637\n"}
+,{"stream_name":"stdout","time":0.804713827,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804716056,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804718248,"data":"  \"nfl-big-data-bowl-2027/game_tracking_2025.csv\",\n"}
+,{"stream_name":"stdout","time":0.804725109,"data":"  1022575093\n"}
+,{"stream_name":"stdout","time":0.804728951,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804731398,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804733578,"data":"  \"nfl-big-data-bowl-2027/game_tracking_2024.csv\",\n"}
+,{"stream_name":"stdout","time":0.804735903,"data":"  717952893\n"}
+,{"stream_name":"stdout","time":0.804738201,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804740364,"data":" [\n"}
+,{"stream_name":"stdout","time":0.80474252,"data":"  \"nfl-big-data-bowl-2027/combine_tracking.csv\",\n"}
+,{"stream_name":"stdout","time":0.804744988,"data":"  83788174\n"}
+,{"stream_name":"stdout","time":0.804748466,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804752247,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804754471,"data":"  \"nfl-big-data-bowl-2027/games.csv\",\n"}
+,{"stream_name":"stdout","time":0.804756781,"data":"  43174\n"}
+,{"stream_name":"stdout","time":0.804759101,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804761233,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804763392,"data":"  \"nfl-big-data-bowl-2027/player_career_successes.csv\",\n"}
+,{"stream_name":"stdout","time":0.804765719,"data":"  13801\n"}
+,{"stream_name":"stdout","time":0.804767947,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804770287,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804774556,"data":"  \"nfl-big-data-bowl-2027/combine_results.csv\",\n"}
+,{"stream_name":"stdout","time":0.804776971,"data":"  41020\n"}
+,{"stream_name":"stdout","time":0.804779253,"data":" ],\n"}
+,{"stream_name":"stdout","time":0.804781399,"data":" [\n"}
+,{"stream_name":"stdout","time":0.804783596,"data":"  \"nfl-big-data-bowl-2027/player_play.csv\",\n"}
+,{"stream_name":"stdout","time":0.804785937,"data":"  146879042\n"}
+,{"stream_name":"stdout","time":0.804788218,"data":" ]\n"}
+,{"stream_name":"stdout","time":0.804790618,"data":"]\n"}
+,{"stream_name":"stdout","time":0.824173118,"data":"copied nfl-big-data-bowl-2027/players.csv 47301\n"}
+,{"stream_name":"stdout","time":6.010047464,"data":"copied nfl-big-data-bowl-2027/game_tracking_2023.csv 335463637\n"}
+,{"stream_name":"stdout","time":6.976381597,"data":"copied nfl-big-data-bowl-2027/combine_tracking.csv 83788174\n"}
+,{"stream_name":"stdout","time":6.983671949,"data":"copied nfl-big-data-bowl-2027/games.csv 43174\n"}
+,{"stream_name":"stdout","time":6.988471445,"data":"copied nfl-big-data-bowl-2027/player_career_successes.csv 13801\n"}
+,{"stream_name":"stdout","time":6.999342238,"data":"copied nfl-big-data-bowl-2027/combine_results.csv 41020\n"}
+,{"stream_name":"stdout","time":8.714205222,"data":"copied nfl-big-data-bowl-2027/player_play.csv 146879042\n"}
+,{"stream_name":"stdout","time":8.714372487,"data":"HEAD combine_results.csv ['\"draft_year\",\"nfl_id\",\"combine_position\",\"combine_height\",\"combine_weight\",\"hand_size\",\"arm_length\",\"wing_span\",\"ten_yd_split\",\"forty\",\"vertical\",\"broad_jump\",\"three_cone\",\"short_shuttle\",\"bench_reps\",\"ngs_athleticism_score\",\"ngs_college_production_score\",\"ngs_final_score\"\\n', '2023,56040,\"TE\",77.875,245,10,32.25,79.75,1.6,4.84,38.5,125,NA,NA,NA,60,NA,NA\\n', '2023,56010,\"DB\",70.625,191,8.75,29.625,72.25,1.58,4.59,33.5,116,NA,NA,23,60,77,74\\n']\n"}
+,{"stream_name":"stdout","time":8.714484345,"data":"HEAD combine_tracking.csv ['draft_year,event_id,nfl_id,entity_type,time,drill_type,drill_name,attempt,x,y,s,a,dis,dir\\n', '2025,20250302100900_1740941802777_000,58286,PLAYER,2025-03-02T18:56:38.200,SKILL_DRILLS_OL,OL_PULL_DRILL_FOLD_BLOCK_RIGHT,4,44.78592428,28.28552755,0.220828156,0.682442751,0.011085185,250.2785762\\n', '2025,20250302100900_1740941802777_000,58286,PLAYER,2025-03-02T18:56:38.300,SKILL_DRILLS_OL,OL_PULL_DRILL_FOLD_BLOCK_RIGHT,4,44.72378031,28.29739126,0.332931499,0.619550768,0.003864436,257.3192055\\n']\n"}
+,{"stream_name":"stdout","time":8.714605161,"data":"HEAD game_tracking_2023.csv ['\"game_id\",\"play_id\",\"nfl_id\",\"time\",\"x\",\"y\",\"s\",\"a\",\"dis\",\"o\",\"dir\",\"event\"\\n', '2024010707,570,56450,\"2024-01-07T21:46:07.700\",42.17,25.29,0,0,0,290.97,213.26,NA\\n', '2024010707,570,56450,\"2024-01-07T21:46:07.800\",42.17,25.29,0,0,0,290.97,210.36,NA\\n']\n"}
+,{"stream_name":"stdout","time":8.714707767,"data":"HEAD games.csv ['\"game_id\",\"game_key\",\"season\",\"season_type\",\"week\",\"home_team_abbr\",\"visitor_team_abbr\"\\n', '2023090700,59173,2023,\"REG\",1,\"KC\",\"DET\"\\n', '2023091000,59174,2023,\"REG\",1,\"ATL\",\"CAR\"\\n']\n"}
+,{"stream_name":"stdout","time":8.714812322,"data":"HEAD player_career_successes.csv ['\"nfl_id\",\"career_offensive_snaps\",\"career_defensive_snaps\",\"career_special_teams_snaps\",\"career_games_active\",\"career_games_started\",\"ap_all_pro_1st_team\",\"ap_all_pro_2nd_team\",\"pro_bowl_original_ballot\"\\n', '55867,0,1884,92,51,44,1,0,1\\n', '55870,2802,0,169,47,43,0,0,0\\n']\n"}
+,{"stream_name":"stdout","time":8.714909476999999,"data":"HEAD player_play.csv ['\"game_id\",\"play_id\",\"team_abbr\",\"nfl_id\",\"lined_up_position\",\"play_description\",\"quarter\",\"down\",\"yards_to_go\",\"possession_team\",\"yardline_side\",\"yardline_number\",\"game_clock\",\"pre_snap_home_score\",\"pre_snap_visitor_score\",\"play_direction\",\"pre_snap_home_team_win_probability\",\"pre_snap_visitor_team_win_probability\",\"home_team_win_probability_added\",\"visitor_team_win_probility_added\",\"expected_points_added\",\"expected_points\",\"offense_formation\",\"receiver_alignment\",\"pass_result\",\"pass_length\",\"play_nullified_by_penalty\",\"penalty_yards\",\"pre_penalty_yards_gained\",\"yards_gained\",\"team_coverage_man_zone\",\"team_coverage_type\",\"in_motion_at_ball_snap\",\"target\",\"rec_yards\",\"rush_yards\",\"yards_after_catch\",\"fumble\",\"fumble_lost\",\"route_ran\",\"separation_at_pass_forward\",\"cushion\",\"expected_yards_after_catch\",\"dropback_duration\",\"extended_sack_allowed\",\"pass_rushers_encountered\",\"peak_pressure_probability_allowed\",\"pressure_allowed\",\"sack_allowed\",\"time_to_pressure_allowed\",\"quick_pressure\",\"unblocked_pressure\",\"blitzing\",\"player_get_off\",\"sack\",\"tackle\",\"assist\",\"caused_forced_fumble\",\"recovered_fumble\",\"tackle_for_loss\",\"time_to_pressure\",\"time_to_qb_hurry\",\"coverage_assignment\",\"coverage_assignment_at_snap\"\\n', '2025111610,2279,\"BAL\",57183,\"T\",\"(8:42) (Shotgun) L.Jackson pass incomplete deep left to D.Hopkins.\",3,1,10,\"BAL\",\"BAL\",45,\"08:42\",16,10,\"right\",0.488722234964371,0.511277765035629,0.0309602059423923,-0.0309602059423923,-0.510282370261848,2.7167631664779,\"SHOTGUN\",\"3x1\",\"I\",22,\"N\",NA,0,0,\"MAN_COVERAGE\",\"COVER_1_MAN\",FALSE,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,2.0789999961853,0,1,0.153333336114883,FALSE,0,NA,NA,NA,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA\\n', '2026011701,1626,\"SF\",58248,\"INTERIOR_LINE\",\"(3:48) (Shotgun) K.Walker left end to SEA 28 for 5 yards (S.Okuayinonu; M.Sigle).\",2,2,7,\"SEA\",\"SEA\",23,\"03:48\",17,6,\"left\",0.925716301426291,0.0742836985737085,-0.00236063823103905,0.00236063823103905,-0.0489634189289063,0.357381174108014,\"SHOTGUN\",\"2x1\",\"\",NA,\"N\",NA,5,5,\"ZONE_COVERAGE\",\"COVER_2_ZONE\",NA,FALSE,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA\\n']\n"}
+,{"stream_name":"stdout","time":8.715018395,"data":"HEAD players.csv ['\"nfl_id\",\"display_name\",\"draft_year\",\"nfl_position\",\"birth_date\",\"college_name\",\"college_conference\",\"draft_round\",\"draft_pick_within_round\",\"draft_overall_pick\"\\n', '55867,\"Will Anderson\",2023,\"DE\",\"2001-09-02\",\"Alabama\",\"Southeastern Conference\",1,3,3\\n', '55870,\"Paris Johnson\",2023,\"T\",\"2001-07-31\",\"Ohio State\",\"Big Ten Conference\",1,6,6\\n']\n"}
+,{"stream_name":"stderr","time":11.528982064000001,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":11.529020182,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":11.984865569,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":11.98489616,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":13.909712322,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":15.158985017,"data":"[NbConvertApp] Writing 278993 bytes to __results__.html\n"}
+]

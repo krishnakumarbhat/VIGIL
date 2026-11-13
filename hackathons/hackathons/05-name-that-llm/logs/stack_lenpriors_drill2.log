@@ -1,0 +1,20 @@
+[    5.9s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.0s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.1s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[    6.1s]   table REAL: max|P(c|b)-P(c)| = 0.0183
+[    6.1s]   table PERM: max|P(c|b)-P(c)| = 0.0096
+[   12.5s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   21.2s]   recall delta (rreal-anchor): claude=+0.111, claude=+0.025, claude=+0.035, claude=+0.004, claude=+0.020, gemini=+0.020, gemini=+0.104, gemini=+0.182, gemini=+0.137, glm=+0.196, glm=+0.218, gpt=+0.057, gpt=+0.112, gpt=+0.184, gpt=+0.116, gpt=+0.016, kimi=+0.083, qwen3.8=+0.024
+[   21.3s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   30.0s]   A4 r-PERMUTED-only C=32 -> 0.48836
+[   30.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   35.9s]   r-real-only m=5 C=32 -> 0.50113
+[   36.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   41.1s]   r-real-only m=10 C=32 -> 0.49992
+[   41.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   46.2s]   r-real-only m=40 C=32 -> 0.49958
+[   46.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   51.2s]   r-real-only m=200 C=32 -> 0.49098
+[   51.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.2s]   r-real-only m=1000 C=32 -> 0.45311
+[   56.2s] drill2 done

@@ -1,0 +1,4 @@
+track	metric	value	notes
+03-paper-track	ablation_base_full	0.4167	solved=25/60 budget=8.0s notes=read_only_import_from_04
+03-paper-track	ablation_symbolic_only	0.05	solved=3/60 budget=8.0s notes=no_learners
+03-paper-track	canonical_stats	d4=8;orbit_distinct=8	real_computation_on_12x12_sample

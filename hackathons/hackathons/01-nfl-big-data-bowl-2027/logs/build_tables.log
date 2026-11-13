@@ -1,0 +1,6 @@
+[    1.4s] combine_tracking loaded (431,094 PLAYER rows)
+[   30.4s] sessions=6,310 cuts=5,618 players=510
+[   40.2s] game_tracking loaded (3,665,443 rows) + player_play (314,197)
+[  128.6s] play_features=30,959 rows
+[  169.5s] derived_sep=7,268 rows
+[  169.5s] done

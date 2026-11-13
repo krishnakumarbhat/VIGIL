@@ -1,0 +1,61 @@
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    0.3s] real 2699 aux 17290
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/580 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/52.0 [00:00<?, ?B/s]
+spm.model: reconstructing file:   0%|          |  0.00B / 2.46MB            
+spm.model: downloading bytes:           |  0.00B            
+[   30.8s] tokenised (2699, 256) (17290, 256)
+pytorch_model.bin: reconstructing file:   0%|          |  0.00B /  874MB        
+pytorch_model.bin: downloading bytes:           |  0.00B            
+Loading weights:   0%|          | 0/390 [00:00<?, ?it/s]
+model.safetensors: reconstructing file:   0%|          |  0.00B /  874MB        
+model.safetensors: downloading bytes:           |  0.00B            
+[transformers] [1mDebertaV2ForSequenceClassification LOAD REPORT[0m from: microsoft/deberta-v3-large
+Key                                     | Status     | 
+----------------------------------------+------------+-
+lm_predictions.lm_head.bias             | UNEXPECTED | 
+mask_predictions.dense.weight           | UNEXPECTED | 
+mask_predictions.LayerNorm.bias         | UNEXPECTED | 
+mask_predictions.LayerNorm.weight       | UNEXPECTED | 
+mask_predictions.classifier.bias        | UNEXPECTED | 
+lm_predictions.lm_head.dense.bias       | UNEXPECTED | 
+lm_predictions.lm_head.LayerNorm.bias   | UNEXPECTED | 
+lm_predictions.lm_head.dense.weight     | UNEXPECTED | 
+mask_predictions.classifier.weight      | UNEXPECTED | 
+lm_predictions.lm_head.LayerNorm.weight | UNEXPECTED | 
+mask_predictions.dense.bias             | UNEXPECTED | 
+pooler.dense.weight                     | MISSING    | 
+pooler.dense.bias                       | MISSING    | 
+classifier.bias                         | MISSING    | 
+classifier.weight                       | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[   39.5s] model ready microsoft/deberta-v3-large mem 0.8 GB
+[   63.6s] fold0 ep0 step 100/2432 loss 2.8861
+[   85.2s] fold0 ep0 step 200/2432 loss 2.8672
+[  106.7s] fold0 ep0 step 300/2432 loss 2.8753
+[  128.2s] fold0 ep0 step 400/2432 loss 2.8353
+[  149.6s] fold0 ep0 step 500/2432 loss 2.9023
+[  171.1s] fold0 ep0 step 600/2432 loss 2.9360
+[  192.6s] fold0 ep0 step 700/2432 loss 2.8579
+[  214.0s] fold0 ep0 step 800/2432 loss 2.8999
+[  235.4s] fold0 ep0 step 900/2432 loss 2.8950
+[  256.8s] fold0 ep0 step 1000/2432 loss 2.8940
+[  278.2s] fold0 ep0 step 1100/2432 loss 2.9529
+[  299.6s] fold0 ep0 step 1200/2432 loss 2.8800
+[  321.0s] fold0 ep1 step 1300/2432 loss 2.9043
+[  342.4s] fold0 ep1 step 1400/2432 loss 2.8543
+[  363.7s] fold0 ep1 step 1500/2432 loss 2.9169
+[  385.2s] fold0 ep1 step 1600/2432 loss 3.0368
+[  406.6s] fold0 ep1 step 1700/2432 loss 2.9071

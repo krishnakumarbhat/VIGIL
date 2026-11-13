@@ -1,0 +1,13 @@
+name: code_analyzer_agent
+description: >
+  GG-SPV localization sub-agent. Uses the code graph tools to rank fault
+  candidates and report affected callers; emits a structured report only.
+model: gemma-4-12b-it-qat-w4a16-ct
+adapter: tool_lora
+instruction: !include ../prompts/analyzer.md
+tools:
+  - read_file
+  - search_similar_code
+  - get_code_neighbors
+  - get_code_subgraph
+generate_content_config: !include ../configs/sampling.yaml

@@ -1,0 +1,54 @@
+{
+ "members": {
+  "svm": {
+   "kind": "sgd",
+   "features": 238885,
+   "alpha": 3e-06,
+   "train_rows": 11699
+  },
+  "char": {
+   "kind": "sgd",
+   "features": 118885,
+   "alpha": 3e-06,
+   "train_rows": 11699
+  },
+  "word": {
+   "kind": "sgd",
+   "features": 200000,
+   "alpha": 3e-06,
+   "train_rows": 11699
+  },
+  "style": {
+   "kind": "sgd",
+   "features": 43,
+   "alpha": 0.0001,
+   "train_rows": 11699
+  },
+  "knn": {
+   "kind": "cosine_knn",
+   "k": 30,
+   "train_rows": 11699
+  }
+ },
+ "labels": [
+  "claude-fable-5",
+  "claude-opus-4-6",
+  "claude-opus-4-8",
+  "claude-opus-5",
+  "claude-sonnet-5",
+  "gemini-3.1-pro-preview",
+  "gemini-3.6-flash",
+  "gemini-3.7-flash",
+  "gemini-3.8-flash",
+  "glm-5.3",
+  "glm-5.3-flash",
+  "gpt-5.5",
+  "gpt-5.6-luna",
+  "gpt-5.6-sol",
+  "gpt-5.6-terra",
+  "gpt-6-astra",
+  "kimi-k3",
+  "qwen3.8-max"
+ ],
+ "note": "fit on real + mirror(9k); the same recipes produced the OOF matrices used to fit outputs/ensemble_recipe.json"
+}

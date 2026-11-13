@@ -1,0 +1,86 @@
+[{"stream_name":"stdout","time":7.891819529,"data":"[    0.0s] train /kaggle/input/competitions/name-that-llm/train.csv test /kaggle/input/competitions/name-that-llm/test.csv\n"}
+,{"stream_name":"stdout","time":8.342457278,"data":"[    0.5s] train (2699, 4) test (3, 2)\n"}
+,{"stream_name":"stdout","time":8.359499288,"data":"[    0.5s] labelled train rows 2699 prompts 150\n"}
+,{"stream_name":"stderr","time":28.15128176,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":33.080099865,"data":"\rLoading weights:   0%|          | 0/198 [00:00\u003c?, ?it/s]\rLoading weights:   2%|▏         | 3/198 [00:00\u003c00:15, 12.25it/s]\rLoading weights: 100%|██████████| 198/198 [00:00\u003c00:00, 779.77it/s]\n"}
+,{"stream_name":"stderr","time":34.509788704,"data":"[transformers] \u001b[1mDebertaV2ForSequenceClassification LOAD REPORT\u001b[0m from: microsoft/deberta-v3-base\n"}
+,{"stream_name":"stderr","time":34.509817928,"data":"Key                                     | Status     | \n"}
+,{"stream_name":"stderr","time":34.509823402,"data":"----------------------------------------+------------+-\n"}
+,{"stream_name":"stderr","time":34.509827734,"data":"mask_predictions.dense.bias             | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509832428,"data":"lm_predictions.lm_head.LayerNorm.weight | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509836805,"data":"lm_predictions.lm_head.LayerNorm.bias   | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509840718,"data":"mask_predictions.LayerNorm.bias         | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509844537,"data":"mask_predictions.dense.weight           | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509857496,"data":"mask_predictions.classifier.weight      | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509862088,"data":"lm_predictions.lm_head.dense.weight     | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509867008,"data":"lm_predictions.lm_head.dense.bias       | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509871198,"data":"mask_predictions.classifier.bias        | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509875498,"data":"lm_predictions.lm_head.bias             | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509879649,"data":"mask_predictions.LayerNorm.weight       | UNEXPECTED | \n"}
+,{"stream_name":"stderr","time":34.509883984,"data":"classifier.bias                         | MISSING    | \n"}
+,{"stream_name":"stderr","time":34.509888246,"data":"classifier.weight                       | MISSING    | \n"}
+,{"stream_name":"stderr","time":34.50989282,"data":"pooler.dense.bias                       | MISSING    | \n"}
+,{"stream_name":"stderr","time":34.5098971,"data":"pooler.dense.weight                     | MISSING    | \n"}
+,{"stream_name":"stderr","time":34.509901555,"data":"\n"}
+,{"stream_name":"stderr","time":34.509905597,"data":"Notes:\n"}
+,{"stream_name":"stderr","time":34.50990963,"data":"- UNEXPECTED:\tcan be ignored when loading from different task/architecture; not ok if you expect identical arch.\n"}
+,{"stream_name":"stderr","time":34.509914371,"data":"- MISSING:\tthose params were newly initialized because missing from the checkpoint. Consider training on your downstream task.\n"}
+,{"stream_name":"stdout","time":143.589258284,"data":"[  135.7s] fold 0 step 50/402 loss 2.8957\n"}
+,{"stream_name":"stdout","time":251.469133194,"data":"[  243.6s] fold 0 step 100/402 loss 2.7728\n"}
+,{"stream_name":"stdout","time":359.983954963,"data":"[  352.1s] fold 0 step 150/402 loss 2.4796\n"}
+,{"stream_name":"stdout","time":468.092872486,"data":"[  460.2s] fold 0 step 200/402 loss 2.3126\n"}
+,{"stream_name":"stdout","time":575.965327645,"data":"[  568.1s] fold 0 step 250/402 loss 2.1771\n"}
+,{"stream_name":"stdout","time":683.925083213,"data":"[  676.0s] fold 0 step 300/402 loss 2.0752\n"}
+,{"stream_name":"stdout","time":792.013962243,"data":"[  784.1s] fold 0 step 350/402 loss 2.0372\n"}
+,{"stream_name":"stdout","time":899.82879084,"data":"[  891.9s] fold 0 step 400/402 loss 2.0553\n"}
+,{"stream_name":"stdout","time":922.328492662,"data":"[  914.4s] FOLD 0 bal_acc 0.2537\n"}
+,{"stream_name":"stderr","time":923.30633353,"data":"\rWriting model shards:   0%|          | 0/1 [00:00\u003c?, ?it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.05it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.05it/s]\n"}
+,{"stream_name":"stdout","time":1031.83569562,"data":"[ 1023.9s] fold 1 step 50/402 loss 2.0441\n"}
+,{"stream_name":"stdout","time":1139.812537449,"data":"[ 1131.9s] fold 1 step 100/402 loss 2.0363\n"}
+,{"stream_name":"stdout","time":1248.183464918,"data":"[ 1240.3s] fold 1 step 150/402 loss 1.9324\n"}
+,{"stream_name":"stdout","time":1356.557938614,"data":"[ 1348.7s] fold 1 step 200/402 loss 1.8817\n"}
+,{"stream_name":"stdout","time":1464.392818927,"data":"[ 1456.5s] fold 1 step 250/402 loss 1.8118\n"}
+,{"stream_name":"stdout","time":1573.037674668,"data":"[ 1565.1s] fold 1 step 300/402 loss 1.7766\n"}
+,{"stream_name":"stdout","time":1681.077935596,"data":"[ 1673.2s] fold 1 step 350/402 loss 1.7134\n"}
+,{"stream_name":"stdout","time":1788.933889982,"data":"[ 1781.0s] fold 1 step 400/402 loss 1.6878\n"}
+,{"stream_name":"stdout","time":1811.480645365,"data":"[ 1803.6s] FOLD 1 bal_acc 0.3407\n"}
+,{"stream_name":"stderr","time":1812.424094871,"data":"\rWriting model shards:   0%|          | 0/1 [00:00\u003c?, ?it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.09it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.09it/s]\n"}
+,{"stream_name":"stdout","time":1920.863141548,"data":"[ 1913.0s] fold 2 step 50/402 loss 1.7979\n"}
+,{"stream_name":"stdout","time":2028.541533807,"data":"[ 2020.7s] fold 2 step 100/402 loss 1.7948\n"}
+,{"stream_name":"stdout","time":2136.584437577,"data":"[ 2128.7s] fold 2 step 150/402 loss 1.7195\n"}
+,{"stream_name":"stdout","time":2244.656677696,"data":"[ 2236.8s] fold 2 step 200/402 loss 1.6277\n"}
+,{"stream_name":"stdout","time":2352.59188535,"data":"[ 2344.7s] fold 2 step 250/402 loss 1.5586\n"}
+,{"stream_name":"stdout","time":2460.607100108,"data":"[ 2452.7s] fold 2 step 300/402 loss 1.5005\n"}
+,{"stream_name":"stdout","time":2568.79460576,"data":"[ 2560.9s] fold 2 step 350/402 loss 1.4374\n"}
+,{"stream_name":"stdout","time":2676.643079334,"data":"[ 2668.8s] fold 2 step 400/402 loss 1.4115\n"}
+,{"stream_name":"stdout","time":2699.15624443,"data":"[ 2691.3s] FOLD 2 bal_acc 0.3833\n"}
+,{"stream_name":"stderr","time":2700.108320597,"data":"\rWriting model shards:   0%|          | 0/1 [00:00\u003c?, ?it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.08it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.08it/s]\n"}
+,{"stream_name":"stdout","time":2808.46183572,"data":"[ 2800.6s] fold 3 step 50/405 loss 1.5521\n"}
+,{"stream_name":"stdout","time":2916.355032592,"data":"[ 2908.5s] fold 3 step 100/405 loss 1.5313\n"}
+,{"stream_name":"stdout","time":3024.316576111,"data":"[ 3016.4s] fold 3 step 150/405 loss 1.4603\n"}
+,{"stream_name":"stdout","time":3132.084650806,"data":"[ 3124.2s] fold 3 step 200/405 loss 1.3282\n"}
+,{"stream_name":"stdout","time":3239.9743731,"data":"[ 3232.1s] fold 3 step 250/405 loss 1.3096\n"}
+,{"stream_name":"stdout","time":3348.483020186,"data":"[ 3340.6s] fold 3 step 300/405 loss 1.1597\n"}
+,{"stream_name":"stdout","time":3456.417600192,"data":"[ 3448.5s] fold 3 step 350/405 loss 1.1248\n"}
+,{"stream_name":"stdout","time":3564.352805558,"data":"[ 3556.5s] fold 3 step 400/405 loss 1.1108\n"}
+,{"stream_name":"stdout","time":3593.410553863,"data":"[ 3585.5s] FOLD 3 bal_acc 0.4958\n"}
+,{"stream_name":"stderr","time":3594.435427308,"data":"\rWriting model shards:   0%|          | 0/1 [00:00\u003c?, ?it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.08it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.08it/s]\n"}
+,{"stream_name":"stdout","time":3702.733444193,"data":"[ 3694.8s] fold 4 step 50/402 loss 1.1291\n"}
+,{"stream_name":"stdout","time":3810.460274732,"data":"[ 3802.6s] fold 4 step 100/402 loss 1.3436\n"}
+,{"stream_name":"stdout","time":3918.468562226,"data":"[ 3910.6s] fold 4 step 150/402 loss 1.1871\n"}
+,{"stream_name":"stdout","time":4026.550773437,"data":"[ 4018.7s] fold 4 step 200/402 loss 1.0503\n"}
+,{"stream_name":"stdout","time":4134.397788159,"data":"[ 4126.5s] fold 4 step 250/402 loss 0.9676\n"}
+,{"stream_name":"stdout","time":4242.547911616,"data":"[ 4234.7s] fold 4 step 300/402 loss 0.9200\n"}
+,{"stream_name":"stdout","time":4350.553401253,"data":"[ 4342.7s] fold 4 step 350/402 loss 0.8390\n"}
+,{"stream_name":"stdout","time":4458.41047782,"data":"[ 4450.5s] fold 4 step 400/402 loss 0.8425\n"}
+,{"stream_name":"stdout","time":4480.977131763,"data":"[ 4473.1s] FOLD 4 bal_acc 0.5352\n"}
+,{"stream_name":"stderr","time":4482.013730857,"data":"\rWriting model shards:   0%|          | 0/1 [00:00\u003c?, ?it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.06it/s]\rWriting model shards: 100%|██████████| 1/1 [00:00\u003c00:00,  1.06it/s]\n"}
+,{"stream_name":"stdout","time":4482.036709175,"data":"[ 4474.1s] OOF bal_acc 0.40162813820531945 acc 0.4016302334197851\n"}
+,{"stream_name":"stdout","time":4482.142298356,"data":"[ 4474.3s] DONE\n"}
+,{"stream_name":"stderr","time":4487.766480765,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4487.766528872,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4487.990562993,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4487.990605991,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4489.539228443,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4490.493272754,"data":"[NbConvertApp] Writing 315669 bytes to __results__.html\n"}
+]

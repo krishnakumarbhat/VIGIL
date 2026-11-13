@@ -1,0 +1,15 @@
+{
+  "id": "krishnakumarbhat/ntl-deberta-offline",
+  "title": "NTL Deberta Offline",
+  "code_file": "main.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": ["name-that-llm"],
+  "kernel_sources": [],
+  "model_sources": ["kevinbnisch/microsoftdeberta-v3-base/transformers/default/1"]
+}

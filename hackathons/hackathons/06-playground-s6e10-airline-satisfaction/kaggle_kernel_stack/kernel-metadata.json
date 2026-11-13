@@ -1,0 +1,15 @@
+{
+  "id": "krishnakumarbhat/ps6e10-stack",
+  "title": "PS6E10 Stack",
+  "code_file": "kaggle_track06_stack.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": ["playground-series-s6e10"],
+  "kernel_sources": [],
+  "model_sources": []
+}

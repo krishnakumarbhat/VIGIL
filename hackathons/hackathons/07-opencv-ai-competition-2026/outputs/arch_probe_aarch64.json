@@ -1,0 +1,70 @@
+{
+  "schema": "vigil.arch_probe/1.0",
+  "environment": {
+    "timestamp_utc": "2026-10-22T03:23:55+00:00",
+    "machine": "aarch64",
+    "platform": "Linux-7.1.1-76070101-generic-aarch64-x86_64-with-glibc2.35",
+    "python": "3.11.17",
+    "opencv": "5.0.0",
+    "opencv_module": "/tmp/opencode/armlibs/cv2/__init__.py",
+    "numpy": "2.3.5",
+    "emulated": true,
+    "emulation_note": "QEMU user-mode aarch64; timings reflect translation overhead and are not Graviton performance. Functional equivalence only.",
+    "build_info_sha256": "4460ffe25568d7f4",
+    "baseline": [
+      "Baseline:                    NEON FP16"
+    ],
+    "dispatch": [
+      "Dispatched code generation:  NEON_DOTPROD NEON_FP16 NEON_BF16"
+    ],
+    "ipp": [],
+    "parallel": [
+      "Parallel framework:            pthreads"
+    ],
+    "opencl_available": false,
+    "threads": 1,
+    "load_average_1m": 1.89
+  },
+  "operators": {
+    "resize_2x": {
+      "optimized_ms": 41.196,
+      "baseline_ms": 37.61,
+      "dispatch_speedup": 0.913
+    },
+    "gaussian_blur_9": {
+      "optimized_ms": 44.66,
+      "baseline_ms": 44.076,
+      "dispatch_speedup": 0.987
+    },
+    "canny": {
+      "optimized_ms": 2.578,
+      "baseline_ms": 2.275,
+      "dispatch_speedup": 0.882
+    },
+    "laplacian": {
+      "optimized_ms": 11.774,
+      "baseline_ms": 10.637,
+      "dispatch_speedup": 0.903
+    },
+    "farneback": {
+      "optimized_ms": 871.994,
+      "baseline_ms": 891.377,
+      "dispatch_speedup": 1.022
+    }
+  },
+  "detection_yunet_640": {
+    "model": "face_detection_yunet_2023mar.onnx",
+    "images": 6,
+    "input_side": 640,
+    "p50_ms": 2886.217,
+    "p95_ms": 3052.695,
+    "mean_ms": 2909.32,
+    "fps": 0.34,
+    "detections_total": 6,
+    "detections_per_image": 1.0
+  },
+  "commands": {
+    "native": "python3 benchmarks/arch_probe.py --out outputs/arch_probe_<machine>.json",
+    "arm64_emulated": "bash scripts/run_arm64_emulated.sh"
+  }
+}

@@ -1,0 +1,26 @@
+[    6.5s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.5s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.6s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   13.6s] anchor 0.40863
+[   13.6s]   real-r: r_validation scale max|r|=0.281
+[   13.6s]   permuted-r: r_validation scale max|r|=0.281
+[   19.9s]   posthoc alpha=0.5 -> 0.40975
+[   19.9s]   posthoc alpha=1 -> 0.40929
+[   19.9s]   posthoc alpha=1.5 -> 0.40140
+[   20.0s]   posthoc alpha=2 -> 0.39932
+[   20.0s]   posthoc alpha=3 -> 0.39082
+[   20.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   28.8s]   A1_onehot_real C=32 m=10 -> 0.40593
+[   28.8s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   40.5s]   A1b_onehot_real C=1000 m=10 -> 0.40012
+[   40.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   45.9s]   A2_r_real C=32 m=10 -> 0.49992
+[   46.0s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   50.0s]   A3_onehot_perm C=32 m=10 -> 0.40544
+[   50.1s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   60.3s]   A3b_onehot_perm C=1000 m=10 -> 0.39948
+[   60.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   64.2s]   A5_r_real_m1e6 C=32 m=1e+06 -> 0.40815
+[   64.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   69.1s]   A1 fold BA [0.4205, 0.4174, 0.4084, 0.3939, 0.3896]
+[   69.1s] ablation done

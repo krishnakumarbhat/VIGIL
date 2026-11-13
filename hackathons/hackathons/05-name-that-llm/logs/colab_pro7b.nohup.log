@@ -1,0 +1,199 @@
+=== 2026-10-22T03:39:37Z PRO session pro7b-1792640377 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792640377'...
+[colab] Session READY.
+DNS ready -> 34.50.156.23
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T03:40:35Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     3.8s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[    75.3s] MODEL_INIT_ERROR ImportError('Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported')
+config.json:   0%|          | 0.00/684 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors: reconstructing file:   0%|          |  0.00B / 3.09GB        
+model.safetensors: downloading bytes:           |  0.00B            
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-1.5B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[    90.9s] FALLBACK_INIT_ERROR ImportError('Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported')
+[0;31m---------------------------------------------------------------------------[0m[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_661/2055639972.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    120[0m     )
+[0;32m--> 121[0;31m     [0mmodel[0m [0;34m=[0m [0mget_peft_model[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mlcfg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    122[0m     [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py[0m in [0;36mget_peft_model[0;34m(model, peft_config, adapter_name, mixed, autocast_adapter_dtype, revision, low_cpu_mem_usage)[0m
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[0m[1;32m    199[0m         [0mmodel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, **kwargs)[0m
+[1;32m   1840[0m         [0;31m# config is relevant for this, the `modules_to_save` attribute can follow later.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1841[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1842[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage)[0m
+[1;32m    176[0m             [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m                 [0mself[0m[0;34m.[0m[0mbase_model[0m [0;34m=[0m [0mcls[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0;34m{[0m[0madapter_name[0m[0;34m:[0m [0mpeft_config[0m[0;34m}[0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, low_cpu_mem_usage, state_dict)[0m
+[1;32m    343[0m         [0;32mif[0m [0mpeft_config[0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m [0;32mor[0m [0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 344[0;31m             [0mself[0m[0;34m.[0m[0minject_adapter[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mlow_cpu_mem_usage[0m[0;34m=[0m[0mlow_cpu_mem_usage[0m[0;34m,[0m [0mstate_dict[0m[0;34m=[0m[0mstate_dict[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    345[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36minject_adapter[0;34m(self, model, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage, state_dict)[0m
+[1;32m    977[0m                     [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m                         self._create_and_replace(
+[0m[1;32m    979[0m                             [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mtarget_name[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0mcurrent_key[0m[0;34m=[0m[0mkey[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_and_replace[0;34m(self, lora_config, adapter_name, target, target_name, parent, current_key, parameter_name)[0m
+[1;32m    388[0m             [0mdevice_map[0m [0;34m=[0m [0mget_device_map[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 389[0;31m             [0mnew_module[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_create_new_module[0m[0;34m([0m[0mlora_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    390[0m             [0;32mif[0m [0madapter_name[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mactive_adapters[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_new_module[0;34m(lora_config, adapter_name, target, **kwargs)[0m
+[1;32m    551[0m         [0;32mfor[0m [0mdispatcher[0m [0;32min[0m [0mdispatchers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m             [0mnew_module[0m [0;34m=[0m [0mdispatcher[0m[0;34m([0m[0mtarget[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mlora_config[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0;32mif[0m [0mnew_module[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# first match wins[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py[0m in [0;36mdispatch_torchao[0;34m(target, adapter_name, config, **kwargs)[0m
+[1;32m    159[0m [0;34m[0m[0m
+[0;32m--> 160[0;31m     [0;32mif[0m [0;32mnot[0m [0mis_torchao_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    161[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/import_utils.py[0m in [0;36mis_torchao_available[0;34m()[0m
+[1;32m    161[0m     [0;32mif[0m [0mtorchao_version[0m [0;34m<[0m [0mTORCHAO_MINIMUM_VERSION[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 162[0;31m         raise ImportError(
+[0m[1;32m    163[0m             [0;34mf"Found an incompatible version of torchao. Found version {torchao_version}, "[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported
+During handling of the above exception, another exception occurred:
+[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_661/2055639972.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    137[0m         lcfg = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, bias="none", task_type="SEQ_CLS",
+[1;32m    138[0m                           target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"])
+[0;32m--> 139[0;31m         [0mmodel[0m [0;34m=[0m [0mget_peft_model[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mlcfg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    140[0m         [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    141[0m         [0mmodel[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py[0m in [0;36mget_peft_model[0;34m(model, peft_config, adapter_name, mixed, autocast_adapter_dtype, revision, low_cpu_mem_usage)[0m
+[1;32m    196[0m         )
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[0m[1;32m    199[0m         [0mmodel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    200[0m         [0mpeft_config[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, **kwargs)[0m
+[1;32m   1839[0m         [0;31m# will be used to guard the target layer matching against matching `modules_to_save` layers. Only the[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1840[0m         [0;31m# config is relevant for this, the `modules_to_save` attribute can follow later.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1841[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1842[0m [0;34m[0m[0m
+[1;32m   1843[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mpeft_config[0m[0;34m,[0m [0;34m"modules_to_save"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage)[0m
+[1;32m    175[0m             [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    176[0m             [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m                 [0mself[0m[0;34m.[0m[0mbase_model[0m [0;34m=[0m [0mcls[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0;34m{[0m[0madapter_name[0m[0;34m:[0m [0mpeft_config[0m[0;34m}[0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m [0;34m[0m[0m
+[1;32m    179[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mbase_model[0m[0;34m,[0m [0;34m"_cast_adapter_dtype"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, low_cpu_mem_usage, state_dict)[0m
+[1;32m    342[0m         [0mself[0m[0;34m.[0m[0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    343[0m         [0;32mif[0m [0mpeft_config[0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m [0;32mor[0m [0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 344[0;31m             [0mself[0m[0;34m.[0m[0minject_adapter[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mlow_cpu_mem_usage[0m[0;34m=[0m[0mlow_cpu_mem_usage[0m[0;34m,[0m [0mstate_dict[0m[0;34m=[0m[0mstate_dict[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    345[0m [0;34m[0m[0m
+[1;32m    346[0m         [0mself[0m[0;34m.[0m[0m_post_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36minject_adapter[0;34m(self, model, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage, state_dict)[0m
+[1;32m    976[0m                     [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    977[0m                     [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m                         self._create_and_replace(
+[0m[1;32m    979[0m                             [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mtarget_name[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0mcurrent_key[0m[0;34m=[0m[0mkey[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    980[0m                         )
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_and_replace[0;34m(self, lora_config, adapter_name, target, target_name, parent, current_key, parameter_name)[0m
+[1;32m    387[0m                 )
+[1;32m    388[0m             [0mdevice_map[0m [0;34m=[0m [0mget_device_map[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 389[0;31m             [0mnew_module[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_create_new_module[0m[0;34m([0m[0mlora_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    390[0m             [0;32mif[0m [0madapter_name[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mactive_adapters[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    391[0m                 [0;31m# adding an additional adapter: it is not automatically trainable[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_new_module[0;34m(lora_config, adapter_name, target, **kwargs)[0m
+[1;32m    550[0m         [0mnew_module[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    551[0m         [0;32mfor[0m [0mdispatcher[0m [0;32min[0m [0mdispatchers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m             [0mnew_module[0m [0;34m=[0m [0mdispatcher[0m[0;34m([0m[0mtarget[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mlora_config[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0;32mif[0m [0mnew_module[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# first match wins[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    554[0m                 [0;32mbreak[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py[0m in [0;36mdispatch_torchao[0;34m(target, adapter_name, config, **kwargs)[0m
+[1;32m    158[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    159[0m [0;34m[0m[0m
+[0;32m--> 160[0;31m     [0;32mif[0m [0;32mnot[0m [0mis_torchao_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    161[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    162[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/import_utils.py[0m in [0;36mis_torchao_available[0;34m()[0m
+[1;32m    160[0m [0;34m[0m[0m
+[1;32m    161[0m     [0;32mif[0m [0mtorchao_version[0m [0;34m<[0m [0mTORCHAO_MINIMUM_VERSION[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 162[0;31m         raise ImportError(
+[0m[1;32m    163[0m             [0;34mf"Found an incompatible version of torchao. Found version {torchao_version}, "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    164[0m             [0;34mf"but only versions above {TORCHAO_MINIMUM_VERSION} are supported"[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== EXEC DONE 2026-10-22T03:42:38Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'pro7b-1792640377'...
+[colab] Session terminated.
+=== finished 2026-10-22T03:42:50Z ===

@@ -1,0 +1,733 @@
+=== 2026-10-21T19:10:31Z session track05-1792609831 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792609831'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-kkb-ass1a1-2diissrcdxhgc-a.asia-southeast1-1.prod.colab.dev -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all.parquet' to '/content/train_all.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_lora_train.py' to '/content/track05_lora_train.py'
+=== exec start 2026-10-21T19:11:21Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+Usage: colab.real exec [OPTIONS]
+Try 'colab.real exec -h' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Got unexpected extra argument(s) (Qwen/Qwen2.5-7B /content/train_all.parquet │
+│ /content/labels.json /content/out 5.2 384 2.0 4 4)                           │
+╰──────────────────────────────────────────────────────────────────────────────╯
+=== exec done 2026-10-21T19:11:21Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792609831'...
+[colab] Session terminated.
+=== finished 2026-10-21T19:11:25Z ===
+=== 2026-10-21T22:29:33Z session track05-1792621773 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792621773'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-usw1b0-516kfaw71xt7-b.us-west1.prod.r.colab.dev -> 8.232.217.190
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all.parquet' to '/content/train_all.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_lora_train.py' to '/content/track05_lora_train.py'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_wrapper.py' to '/content/track05_wrapper.py'
+=== exec start 2026-10-21T22:30:06Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+Usage: colab.real exec [OPTIONS]
+Try 'colab.real exec -h' for help.
+╭─ Error ──────────────────────────────────────────────────────────────────────╮
+│ Got unexpected extra argument(s) ()                                          │
+╰──────────────────────────────────────────────────────────────────────────────╯
+=== exec done 2026-10-21T22:30:07Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792621773'...
+[colab] Session terminated.
+=== finished 2026-10-21T22:30:11Z ===
+=== 2026-10-22T00:11:12Z session track05-1792627872 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792627872'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-ass1c1-wme75zyjt91i-c.asia-southeast1.prod.r.colab.dev -> 34.50.156.23
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_lora_train.py' to '/content/track05_lora_train.py'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_wrapper.py' to '/content/track05_wrapper.py'
+=== exec start 2026-10-22T00:11:34Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:146 in exec_command                       │
+│                                                                              │
+│   143 │   │   │   │   │   │   │   {"code": cell.source, "id": cell.id,       │
+│       "cell": cell}                                                          │
+│   144 │   │   │   │   │   │   )                                              │
+│   145 │   │   else:                                                          │
+│ ❱ 146 │   │   │   with open(file, "r") as f:                                 │
+│   147 │   │   │   │   code_blocks.append({"code": f.read(), "id": None})     │
+│   148 │   else:                                                              │
+│   149 │   │   if is_stdin_tty():                                             │
+╰──────────────────────────────────────────────────────────────────────────────╯
+FileNotFoundError: [Errno 2] No such file or directory: 
+'/content/track05_wrapper.py'
+=== exec done 2026-10-22T00:11:35Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792627872'...
+[colab] Session terminated.
+=== finished 2026-10-22T00:11:38Z ===
+=== 2026-10-22T00:13:17Z session track05-1792627997 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792627997'...
+[colab] Session READY.
+DNS ready -> 136.68.214.202
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T00:14:14.780808
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T00:14:15Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.7s] rows 51989 prompts 7190 classes 18
+[     3.9s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[    29.5s] MODEL_INIT_ERROR ImportError('Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>=0.46.1`')
+[0;31m---------------------------------------------------------------------------[0m[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_3913/3709613365.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m     95[0m     [0m_dt[0m [0;34m=[0m [0mtorch[0m[0;34m.[0m[0mbfloat16[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_bf16_supported[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0mtorch[0m[0;34m.[0m[0mfloat16[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     96[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 97[0;31m         model = AutoModelForSequenceClassification.from_pretrained(
+[0m[1;32m     98[0m             [0mMODEL_ID[0m[0;34m,[0m [0mnum_labels[0m[0;34m=[0m[0mlen[0m[0;34m([0m[0mlabels[0m[0;34m)[0m[0;34m,[0m [0mquantization_config[0m[0;34m=[0m[0mqcfg[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     99[0m             dtype=_dt, trust_remote_code=True, attn_implementation="sdpa")
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py[0m in [0;36mfrom_pretrained[0;34m(cls, pretrained_model_name_or_path, *model_args, **kwargs)[0m
+[1;32m    409[0m                 [0;32mif[0m [0mparent_quant[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    410[0m                     [0mconfig[0m[0;34m.[0m[0mquantization_config[0m [0;34m=[0m [0mparent_quant[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 411[0;31m             return model_class.from_pretrained(
+[0m[1;32m    412[0m                 [0mpretrained_model_name_or_path[0m[0;34m,[0m [0;34m*[0m[0mmodel_args[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mconfig[0m[0;34m,[0m [0;34m**[0m[0mhub_kwargs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    413[0m             )
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py[0m in [0;36mfrom_pretrained[0;34m(cls, pretrained_model_name_or_path, config, cache_dir, ignore_mismatched_sizes, force_download, local_files_only, token, revision, use_safetensors, weights_only, fusion_config, disable_mmap, *model_args, **kwargs)[0m
+[1;32m   4232[0m             [0mconfig[0m[0;34m.[0m[0m_experts_implementation[0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mpop[0m[0;34m([0m[0;34m"experts_implementation"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4233[0m [0;34m[0m[0m
+[0;32m-> 4234[0;31m         hf_quantizer, config, device_map = get_hf_quantizer(
+[0m[1;32m   4235[0m             [0mconfig[0m[0;34m,[0m [0mquantization_config[0m[0;34m,[0m [0mdevice_map[0m[0;34m,[0m [0mweights_only[0m[0;34m,[0m [0muser_agent[0m[0;34m,[0m [0mgguf_file[0m[0;34m=[0m[0mgguf_file[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4236[0m         )
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/quantizers/auto.py[0m in [0;36mget_hf_quantizer[0;34m(config, quantization_config, device_map, weights_only, user_agent, gguf_file)[0m
+[1;32m    376[0m                 [0;34m"you did not passed a `quantization_config` or that you did not load a quantized model from the Hub."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    377[0m             )
+[0;32m--> 378[0;31m         hf_quantizer.validate_environment(
+[0m[1;32m    379[0m             [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    380[0m             [0mweights_only[0m[0;34m=[0m[0mweights_only[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/quantizers/quantizer_bnb_4bit.py[0m in [0;36mvalidate_environment[0;34m(self, *args, **kwargs)[0m
+[1;32m     60[0m             )
+[1;32m     61[0m         [0;32mif[0m [0;32mnot[0m [0mis_bitsandbytes_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 62[0;31m             raise ImportError(
+[0m[1;32m     63[0m                 [0;34mf"Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>={BITSANDBYTES_MIN_VERSION}`"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     64[0m             )
+[0;31mImportError[0m: Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>=0.46.1`[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== MAIN EXEC DONE 2026-10-22T00:14:48Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: Cannot download a directory: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792627997'...
+[colab] Session terminated.
+=== finished 2026-10-22T00:14:52Z ===
+=== 2026-10-22T00:16:01Z session track05-1792628161 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628161'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T00:16:42.709744
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T00:16:43Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     4.0s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+=== 2026-10-22T00:18:32Z session track05-1792628312 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628312'...
+[colab] Session READY.
+DNS ready -> 34.50.156.23
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+=== 2026-10-22T00:18:50Z session track05-1792628330 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628330'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=480834ad_3b6e_42a1_a6df_a96fd
+6d0bc6c........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=480834ad_3b6e_42a1_a6df_a96fd
+6d0bc6c........&variant=GPU&accelerator=T4: Precondition Failed
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 40,434,688 || all params: 7,111,118,336 || trainable%: 0.5686
+[   197.1s] model ready Qwen/Qwen2.5-7B mem 5460 MB
+[   197.2s] === fold 0: train 41643 val 10346 opt_steps 5205
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[0;31m---------------------------------------------------------------------------[0m[0;31mValueError[0m                                Traceback (most recent call last)[0;32m/tmp/ipykernel_5971/220709844.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    199[0m             [0mb[0m [0;34m=[0m [0;34m{[0m[0mk[0m[0;34m:[0m [0mv[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m [0;32mfor[0m [0mk[0m[0;34m,[0m [0mv[0m [0;32min[0m [0mb[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    200[0m             [0;32mwith[0m [0mtorch[0m[0;34m.[0m[0mautocast[0m[0;34m([0m[0;34m"cuda"[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mtorch[0m[0;34m.[0m[0mbfloat16[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_bf16_supported[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0mtorch[0m[0;34m.[0m[0mfloat16[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 201[0;31m                 [0mout[0m [0;34m=[0m [0mmodel[0m[0;34m([0m[0;34m**[0m[0mb[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    202[0m             [0mloss[0m [0;34m=[0m [0mout[0m[0;34m.[0m[0mloss[0m [0;34m/[0m [0mACCUM[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    203[0m             [0;32mif[0m [0mscaler[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, inputs_embeds, labels, output_attentions, output_hidden_states, return_dict, task_ids, **kwargs)[0m
+[1;32m   1920[0m                 [0;32mif[0m [0mpeft_config[0m[0;34m.[0m[0mpeft_type[0m [0;34m==[0m [0mPeftType[0m[0;34m.[0m[0mPOLY[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1921[0m                     [0mkwargs[0m[0;34m[[0m[0;34m"task_ids"[0m[0;34m][0m [0;34m=[0m [0mtask_ids[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1922[0;31m                 return self.base_model(
+[0m[1;32m   1923[0m                     [0minput_ids[0m[0;34m=[0m[0minput_ids[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1924[0m                     [0mattention_mask[0m[0;34m=[0m[0mattention_mask[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36mforward[0;34m(self, *args, **kwargs)[0m
+[1;32m    357[0m [0;34m[0m[0m
+[1;32m    358[0m     [0;32mdef[0m [0mforward[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m:[0m [0mAny[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m:[0m [0mAny[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 359[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mmodel[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    360[0m [0;34m[0m[0m
+[1;32m    361[0m     [0;32mdef[0m [0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmodel[0m[0;34m:[0m [0mnn[0m[0;34m.[0m[0mModule[0m[0;34m,[0m [0mconfig[0m[0;34m:[0m [0mPeftConfig[0m[0;34m,[0m [0madapter_name[0m[0;34m:[0m [0mstr[0m[0;34m)[0m [0;34m->[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py[0m in [0;36mwrapper[0;34m(self, *args, **kwargs)[0m
+[1;32m    941[0m         [0;32mif[0m [0mreturn_dict_passed[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    942[0m             [0mreturn_dict[0m [0;34m=[0m [0mreturn_dict_passed[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 943[0;31m         [0moutput[0m [0;34m=[0m [0mfunc[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    944[0m         [0;32mif[0m [0;32mnot[0m [0mreturn_dict[0m [0;32mand[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0moutput[0m[0;34m,[0m [0mtuple[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    945[0m             [0moutput[0m [0;34m=[0m [0moutput[0m[0;34m.[0m[0mto_tuple[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, labels, use_cache, **kwargs)[0m
+[1;32m    157[0m [0;34m[0m[0m
+[1;32m    158[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mbatch_size[0m [0;34m!=[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 159[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Cannot handle batch sizes > 1 if no padding token is defined."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    160[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    161[0m             [0mlast_non_pad_token[0m [0;34m=[0m [0;34m-[0m[0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m: Cannot handle batch sizes > 1 if no padding token is defined.
+=== 2026-10-22T00:20:47Z session track05-1792628447 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628447'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=65f7fc62_8d5f_49e4_804d_a6cea
+63fe6e7........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=65f7fc62_8d5f_49e4_804d_a6cea
+63fe6e7........&variant=GPU&accelerator=T4: Precondition Failed
+=== 2026-10-22T02:34:37Z session track05-1792636477 ===
+colab account -> old (config: /home/pope/.config/colab-cli/sessions.old.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792636477'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T02:35:42.415355
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T02:35:43Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-3B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '5.2', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     4.0s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:216 in exec_command                       │
+│                                                                              │
+│   213 │   │   │   )                                                          │
+│   214 │   │   │   state.store.add(s)                                         │
+│   215 │   │   │                                                              │
+│ ❱ 216 │   │   │   outputs = runtime.execute_code(                            │
+│   217 │   │   │   │   code,                                                  │
+│   218 │   │   │   │   output_hook=lambda o: display_output(o, output_image), │
+│   219 │   │   │   │   timeout=timeout,                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/runtime.py:221 in execute_code                                  │
+│                                                                              │
+│   218 │   │   │   │   │   │   if idx < len(outputs):                         │
+│   219 │   │   │   │   │   │   │   output_hook(outputs[idx])                  │
+│   220 │   │   │                                                              │
+│ ❱ 221 │   │   │   reply = self.kernel_client.execute_interactive(            │
+│   222 │   │   │   │   code, output_hook=wrapped_output_hook, **kwargs        │
+│   223 │   │   │   )                                                          │
+│   224 │   │   │   # execute_interactive returns the raw reply message        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/client.py:364 in execute_interactive                │
+│                                                                              │
+│   361 │   │   │   The reply message for this request                         │
+│   362 │   │   """                                                            │
+│   363 │   │   self._set_variables(variables)                                 │
+│ ❱ 364 │   │   return self._manager.client.execute_interactive(               │
+│   365 │   │   │   code,                                                      │
+│   366 │   │   │   silent=silent,                                             │
+│   367 │   │   │   store_history=store_history,                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/wsclient.py:1097 in execute_interactive             │
+│                                                                              │
+│   1094 │   │   │   │   │   self.iopub_channel.msg_ready()                    │
+│   1095 │   │   │   │   │   or (allow_stdin and                               │
+│        self.stdin_channel.msg_ready())                                       │
+│   1096 │   │   │   │   ):                                                    │
+│ ❱ 1097 │   │   │   │   │   raise TimeoutError("Timeout waiting for output")  │
+│   1098 │   │   │   │                                                         │
+│   1099 │   │   │   │   if allow_stdin:                                       │
+│   1100 │   │   │   │   │   try:                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutError: Timeout waiting for output
+=== MAIN EXEC DONE 2026-10-22T07:35:46Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792636477'...
+
+To authorize colab-cli, visit this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fapplicationdefaultauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcolaboratory+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&state=bVCUJuBgoIooe6EQbrb6vGPoy4yNHp&code_challenge=T1LOReR6GEfffLWIf13BoSH2dZfJMg_y1ORkxLgcKY4&code_challenge_method=S256&prompt=consent&token_usage=remote&access_type=offline
+
+After approving, Google will display an authorization code.
+Enter the authorization code: 
+Aborted.
+=== finished 2026-10-22T07:36:18Z ===

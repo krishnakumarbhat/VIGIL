@@ -1,0 +1,74 @@
+=== 2026-10-22T11:59:17Z pro session arcpro_t4-1792670357 gpu=T4 model=Qwen/Qwen2.5-3B-Instruct script=/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/arc_llm_ttc_selfcontained.py ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcpro_t4-1792670357'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-kkb-usw1b0-1kc543pq3buu8-b.us-west1-0.prod.colab.dev -> 34.144.254.29
+=== EXEC START 2026-10-22T11:59:26Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s]
+[   92.6s] model loaded Qwen/Qwen2.5-3B-Instruct mem 5886 MB
+[   92.6s] zipped artifacts
+[   92.7s] tasks 120 evaluation
+[  368.7s]   sample 1/6; cands [0, 0, 0, 0]
+[  651.7s]   sample 2/6; cands [0, 1, 1, 1]
+[  935.2s]   sample 3/6; cands [2, 1, 3, 4]
+[ 1219.1s]   sample 4/6; cands [3, 1, 3, 5]
+[ 1502.7s]   sample 5/6; cands [4, 1, 3, 6]
+Terminated
+=== EXEC DONE 2026-10-22T12:29:07Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: [Errno 21] Is a directory: '/home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/outputs/pro_artifacts/'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/submission.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/eval_metrics.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/oof_by_source.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out/run_meta.json
+PRO SESSION KEPT ALIVE: arcpro_t4-1792670357 (no stop)
+=== finished 2026-10-22T12:29:49Z ===

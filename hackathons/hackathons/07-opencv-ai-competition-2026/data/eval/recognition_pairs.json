@@ -1,0 +1,364 @@
+{
+  "pairs": [
+    {
+      "a_id": "id07",
+      "b_id": "id07",
+      "genuine": true,
+      "index": 0
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id02",
+      "genuine": false,
+      "index": 1
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id02",
+      "genuine": true,
+      "index": 2
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id11",
+      "genuine": false,
+      "index": 3
+    },
+    {
+      "a_id": "id00",
+      "b_id": "id00",
+      "genuine": true,
+      "index": 4
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id09",
+      "genuine": false,
+      "index": 5
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 6
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id09",
+      "genuine": false,
+      "index": 7
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 8
+    },
+    {
+      "a_id": "id00",
+      "b_id": "id08",
+      "genuine": false,
+      "index": 9
+    },
+    {
+      "a_id": "id10",
+      "b_id": "id10",
+      "genuine": true,
+      "index": 10
+    },
+    {
+      "a_id": "id01",
+      "b_id": "id03",
+      "genuine": false,
+      "index": 11
+    },
+    {
+      "a_id": "id08",
+      "b_id": "id08",
+      "genuine": true,
+      "index": 12
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id01",
+      "genuine": false,
+      "index": 13
+    },
+    {
+      "a_id": "id09",
+      "b_id": "id09",
+      "genuine": true,
+      "index": 14
+    },
+    {
+      "a_id": "id10",
+      "b_id": "id09",
+      "genuine": false,
+      "index": 15
+    },
+    {
+      "a_id": "id05",
+      "b_id": "id05",
+      "genuine": true,
+      "index": 16
+    },
+    {
+      "a_id": "id00",
+      "b_id": "id10",
+      "genuine": false,
+      "index": 17
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id02",
+      "genuine": true,
+      "index": 18
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id12",
+      "genuine": false,
+      "index": 19
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id07",
+      "genuine": true,
+      "index": 20
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id12",
+      "genuine": false,
+      "index": 21
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id02",
+      "genuine": true,
+      "index": 22
+    },
+    {
+      "a_id": "id09",
+      "b_id": "id10",
+      "genuine": false,
+      "index": 23
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 24
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id01",
+      "genuine": false,
+      "index": 25
+    },
+    {
+      "a_id": "id09",
+      "b_id": "id09",
+      "genuine": true,
+      "index": 26
+    },
+    {
+      "a_id": "id04",
+      "b_id": "id00",
+      "genuine": false,
+      "index": 27
+    },
+    {
+      "a_id": "id01",
+      "b_id": "id01",
+      "genuine": true,
+      "index": 28
+    },
+    {
+      "a_id": "id11",
+      "b_id": "id02",
+      "genuine": false,
+      "index": 29
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 30
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id10",
+      "genuine": false,
+      "index": 31
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 32
+    },
+    {
+      "a_id": "id08",
+      "b_id": "id01",
+      "genuine": false,
+      "index": 33
+    },
+    {
+      "a_id": "id11",
+      "b_id": "id11",
+      "genuine": true,
+      "index": 34
+    },
+    {
+      "a_id": "id05",
+      "b_id": "id04",
+      "genuine": false,
+      "index": 35
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id07",
+      "genuine": true,
+      "index": 36
+    },
+    {
+      "a_id": "id12",
+      "b_id": "id03",
+      "genuine": false,
+      "index": 37
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id07",
+      "genuine": true,
+      "index": 38
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id01",
+      "genuine": false,
+      "index": 39
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id07",
+      "genuine": true,
+      "index": 40
+    },
+    {
+      "a_id": "id00",
+      "b_id": "id05",
+      "genuine": false,
+      "index": 41
+    },
+    {
+      "a_id": "id12",
+      "b_id": "id12",
+      "genuine": true,
+      "index": 42
+    },
+    {
+      "a_id": "id04",
+      "b_id": "id03",
+      "genuine": false,
+      "index": 43
+    },
+    {
+      "a_id": "id08",
+      "b_id": "id08",
+      "genuine": true,
+      "index": 44
+    },
+    {
+      "a_id": "id07",
+      "b_id": "id04",
+      "genuine": false,
+      "index": 45
+    },
+    {
+      "a_id": "id04",
+      "b_id": "id04",
+      "genuine": true,
+      "index": 46
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id07",
+      "genuine": false,
+      "index": 47
+    },
+    {
+      "a_id": "id06",
+      "b_id": "id06",
+      "genuine": true,
+      "index": 48
+    },
+    {
+      "a_id": "id09",
+      "b_id": "id11",
+      "genuine": false,
+      "index": 49
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id03",
+      "genuine": true,
+      "index": 50
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id07",
+      "genuine": false,
+      "index": 51
+    },
+    {
+      "a_id": "id11",
+      "b_id": "id11",
+      "genuine": true,
+      "index": 52
+    },
+    {
+      "a_id": "id12",
+      "b_id": "id04",
+      "genuine": false,
+      "index": 53
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id02",
+      "genuine": true,
+      "index": 54
+    },
+    {
+      "a_id": "id11",
+      "b_id": "id08",
+      "genuine": false,
+      "index": 55
+    },
+    {
+      "a_id": "id01",
+      "b_id": "id01",
+      "genuine": true,
+      "index": 56
+    },
+    {
+      "a_id": "id02",
+      "b_id": "id09",
+      "genuine": false,
+      "index": 57
+    },
+    {
+      "a_id": "id09",
+      "b_id": "id09",
+      "genuine": true,
+      "index": 58
+    },
+    {
+      "a_id": "id03",
+      "b_id": "id07",
+      "genuine": false,
+      "index": 59
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "id": "krishnakumarbhat/nfl2027-data-extract",
+  "title": "NFL2027 Data Extract",
+  "code_file": "code.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": ["nfl-big-data-bowl-2027"],
+  "kernel_sources": [],
+  "model_sources": []
+}

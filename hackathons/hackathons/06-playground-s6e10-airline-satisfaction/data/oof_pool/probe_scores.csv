@@ -1,0 +1,15 @@
+key,submitted_file,public_lb,round
+probeA,cand_asc_T225_r2.0.csv,0.96195,1
+probeB,cand_asc_A_r6.0.csv,0.96194,1
+r2_avg4_step2,c2_avg4_plus2.0.csv,0.96196,2
+r2_probeA_step1,c2_r2_plus1.0.csv,0.96195,2
+r2_avg_probes,c2_avg_r2_A6.csv,0.96195,2
+r3_best_step1,c3_best_ubar1.0.csv,0.96196,3
+r4_step05,p4_ub05.csv,0.96196,4
+r4_TE_plus05,p4_TE_plus05.csv,0.96196,4
+r4_TE_minus05,p4_TE_minus05.csv,0.96196,4
+r4_gperp05,p4_gperp05.csv,0.96196,4
+r4_step1_gperp05,p4_ub1_gperp05.csv,0.96196,4
+r4_TE_plus10,p4_TE_plus10.csv,0.96195,4
+r5_k6_step2,p5_u6_2.csv,0.96195,5
+r5_k7_step3,p5_u7_3.csv,0.96194,5

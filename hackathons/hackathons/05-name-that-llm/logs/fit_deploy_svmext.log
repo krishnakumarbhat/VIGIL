@@ -1,0 +1,5 @@
+/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/fit_deploy_svmext.py:38: FutureWarning: DataFrameGroupBy.apply operated on the grouping columns. This behavior is deprecated, and in a future version of pandas the grouping columns will be excluded from the operation. Either pass `include_groups=False` to exclude the groupings or explicitly select the grouping columns after groupby to silence this warning.
+  .apply(lambda g: g.sample(n=min(per, len(g)), random_state=42)).reset_index(drop=True))
+[   1.9s] pool 51695
+[ 182.2s] features (51695, 370000)
+[ 422.7s] saved /home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs/deploy/svmext.joblib

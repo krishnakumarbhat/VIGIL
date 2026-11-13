@@ -1,0 +1,29 @@
+{
+ "base_model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "labels": [
+  "claude-fable-5",
+  "claude-opus-4-6",
+  "claude-opus-4-8",
+  "claude-opus-5",
+  "claude-sonnet-5",
+  "gemini-3.1-pro-preview",
+  "gemini-3.6-flash",
+  "gemini-3.7-flash",
+  "gemini-3.8-flash",
+  "glm-5.3",
+  "glm-5.3-flash",
+  "gpt-5.5",
+  "gpt-5.6-luna",
+  "gpt-5.6-sol",
+  "gpt-5.6-terra",
+  "gpt-6-astra",
+  "kimi-k3",
+  "qwen3.8-max"
+ ],
+ "max_len": 256,
+ "steps": 1088,
+ "rows": 8699,
+ "mirror_rows": 6000,
+ "seed": 1337,
+ "note": "full-data refit of the local_qwen05b_s1337 OOF member"
+}

@@ -1,0 +1,1244 @@
+=== 2026-10-22T06:31:17Z old session arcsc3_old-1792650677 gpu=T4 model=Qwen/Qwen2.5-3B-Instruct script=/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/arc_llm_ttc_selfcontained.py ===
+colab account -> old (config: /home/pope/.config/colab-cli/sessions.old.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+
+To authorize colab-cli, visit this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fapplicationdefaultauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcolaboratory+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&state=NhPwuiN8X442zd3RjPzdX9VQHUvQMc&code_challenge=q1gj2T-EdcfPMXqoMy3sQdnLdF3s7jZ5c0XsSAzSM4s&code_challenge_method=S256&prompt=consent&token_usage=remote&access_type=offline
+
+After approving, Google will display an authorization code.
+Enter the authorization code: 
+Aborted.
+create failed (attempt 1); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+
+To authorize colab-cli, visit this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fapplicationdefaultauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcolaboratory+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&state=m73OX95IfW2IwJJqA8Q03KYKAeTDMB&code_challenge=Dx7LCOOYHfcETB6msNt6Y1pkmsW_b3RQTstTTfS8Oyg&code_challenge_method=S256&prompt=consent&token_usage=remote&access_type=offline
+
+After approving, Google will display an authorization code.
+Enter the authorization code: 
+Aborted.
+create failed (attempt 2); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=43b4720c_2895_4496_904a_110c4
+6944f29........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=43b4720c_2895_4496_904a_110c4
+6944f29........&variant=GPU&accelerator=T4: Precondition Failed
+create failed (attempt 3); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:239 in _new_conn                                    │
+│                                                                              │
+│    236 │   │   :return: New socket connection.                               │
+│    237 │   │   """                                                           │
+│    238 │   │   try:                                                          │
+│ ❱  239 │   │   │   sock = connection.create_connection(                      │
+│    240 │   │   │   │   (self._dns_host, self.port),                          │
+│    241 │   │   │   │   self.timeout,                                         │
+│    242 │   │   │   │   source_address=self.source_address,                   │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/connection.py:60 in create_connection                        │
+│                                                                              │
+│    57 │   except UnicodeError:                                               │
+│    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+│       from None                                                              │
+│    59 │                                                                      │
+│ ❱  60 │   for res in socket.getaddrinfo(host, port, family,                  │
+│       socket.SOCK_STREAM):                                                   │
+│    61 │   │   af, socktype, proto, canonname, sa = res                       │
+│    62 │   │   sock = None                                                    │
+│    63 │   │   try:                                                           │
+│                                                                              │
+│ /media/pope/projecteo/connect/.unsloth/uv-python/cpython-3.13.13-linux-x86_6 │
+│ 4-gnu/lib/python3.13/socket.py:977 in getaddrinfo                            │
+│                                                                              │
+│   974 │   # We override this function since we want to translate the numeric │
+│       family                                                                 │
+│   975 │   # and socket type values to enum constants.                        │
+│   976 │   addrlist = []                                                      │
+│ ❱ 977 │   for res in _socket.getaddrinfo(host, port, family, type, proto,    │
+│       flags):                                                                │
+│   978 │   │   af, socktype, proto, canonname, sa = res                       │
+│   979 │   │   addrlist.append((_intenum_converter(af, AddressFamily),        │
+│   980 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:793 in urlopen                                  │
+│                                                                              │
+│    790 │   │   │   response_conn = conn if not release_conn else None        │
+│    791 │   │   │                                                             │
+│    792 │   │   │   # Make the request on the HTTPConnection object           │
+│ ❱  793 │   │   │   response = self._make_request(                            │
+│    794 │   │   │   │   conn,                                                 │
+│    795 │   │   │   │   method,                                               │
+│    796 │   │   │   │   url,                                                  │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:494 in _make_request                            │
+│                                                                              │
+│    491 │   │   │   │   new_e, (OSError, NewConnectionError, TimeoutError,    │
+│        SSLError)                                                             │
+│    492 │   │   │   ) and (conn and conn.proxy and not                        │
+│        conn.has_connected_to_proxy):                                         │
+│    493 │   │   │   │   new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)   │
+│ ❱  494 │   │   │   raise new_e                                               │
+│    495 │   │                                                                 │
+│    496 │   │   # conn.request() calls http.client.*.request, not the method  │
+│        in                                                                    │
+│    497 │   │   # urllib3.request. It also calls makefile (recv) on the       │
+│        socket.                                                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:470 in _make_request                            │
+│                                                                              │
+│    467 │   │   try:                                                          │
+│    468 │   │   │   # Trigger any extra validation we need to do.             │
+│    469 │   │   │   try:                                                      │
+│ ❱  470 │   │   │   │   self._validate_conn(conn)                             │
+│    471 │   │   │   except (SocketTimeout, BaseSSLError) as e:                │
+│    472 │   │   │   │   self._raise_timeout(err=e, url=url,                   │
+│        timeout_value=conn.timeout)                                           │
+│    473 │   │   │   │   raise                                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:1125 in _validate_conn                          │
+│                                                                              │
+│   1122 │   │                                                                 │
+│   1123 │   │   # Force connect early to allow us to validate the connection. │
+│   1124 │   │   if conn.is_closed:                                            │
+│ ❱ 1125 │   │   │   conn.connect()                                            │
+│   1126 │   │                                                                 │
+│   1127 │   │   # TODO revise this, see                                       │
+│        https://github.com/urllib3/urllib3/issues/2791                        │
+│   1128 │   │   if not conn.is_verified and not conn.proxy_is_verified:       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:827 in connect                                      │
+│                                                                              │
+│    824 │   │                                                                 │
+│    825 │   │   try:                                                          │
+│    826 │   │   │   sock: socket.socket | ssl.SSLSocket                       │
+│ ❱  827 │   │   │   self.sock = sock = self._new_conn()                       │
+│    828 │   │   │   server_hostname: str = self.host                          │
+│    829 │   │   │   tls_in_tls = False                                        │
+│    830                                                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:246 in _new_conn                                    │
+│                                                                              │
+│    243 │   │   │   │   socket_options=self.socket_options,                   │
+│    244 │   │   │   )                                                         │
+│    245 │   │   except socket.gaierror as e:                                  │
+│ ❱  246 │   │   │   raise NameResolutionError(self.host, self, e) from e      │
+│    247 │   │   except SocketTimeout as e:                                    │
+│    248 │   │   │   raise ConnectTimeoutError(                                │
+│    249 │   │   │   │   self,                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+NameResolutionError: HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:696 in send                                          │
+│                                                                              │
+│   693 │   │   │   resolved_timeout = TimeoutSauce(connect=timeout,           │
+│       read=timeout)                                                          │
+│   694 │   │                                                                  │
+│   695 │   │   try:                                                           │
+│ ❱ 696 │   │   │   resp = conn.urlopen(                                       │
+│   697 │   │   │   │   method=request.method,                                 │
+│   698 │   │   │   │   url=url,                                               │
+│   699 │   │   │   │   body=request.body,  # type: ignore[arg-type]  #        │
+│       urllib3 stubs don't accept Iterable[bytes | str]                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:847 in urlopen                                  │
+│                                                                              │
+│    844 │   │   │   elif isinstance(new_e, (OSError, HTTPException)):         │
+│    845 │   │   │   │   new_e = ProtocolError("Connection aborted.", new_e)   │
+│    846 │   │   │                                                             │
+│ ❱  847 │   │   │   retries = retries.increment(                              │
+│    848 │   │   │   │   method, url, error=new_e, _pool=self,                 │
+│        _stacktrace=sys.exc_info()[2]                                         │
+│    849 │   │   │   )                                                         │
+│    850 │   │   │   retries.sleep()                                           │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/retry.py:555 in increment                                    │
+│                                                                              │
+│   552 │   │                                                                  │
+│   553 │   │   if new_retry.is_exhausted():                                   │
+│   554 │   │   │   reason = error or ResponseError(cause)                     │
+│ ❱ 555 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  #     │
+│       type: ignore[arg-type]                                                 │
+│   556 │   │                                                                  │
+│   557 │   │   log.debug("Incremented Retry for (url='%s'): %r", url,         │
+│       new_retry)                                                             │
+│   558                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+MaxRetryError: HTTPSConnectionPool(host='colab.research.google.com', port=443): 
+Max retries exceeded with url: 
+/tun/m/assign?nbh=7a7a3e6f_2935_40aa_bcb8_8e107a021443........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:232 in assign                                         │
+│                                                                              │
+│   229 │   │   variant: Optional[Variant] = None,                             │
+│   230 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   231 │   ) -> Union[PostAssignmentResponse, Assignment]:                    │
+│ ❱ 232 │   │   assignment = self._get_assignment(notebook_hash, variant,      │
+│       accelerator)                                                           │
+│   233 │   │   if isinstance(assignment, Assignment):                         │
+│   234 │   │   │   return assignment                                          │
+│   235                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:271 in _get_assignment                                │
+│                                                                              │
+│   268 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   269 │   ) -> Union[GetAssignmentResponse, Assignment]:                     │
+│   270 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│ ❱ 271 │   │   return self._issue_request(url,                                │
+│       schema=Union[GetAssignmentResponse, Assignment])                       │
+│   272 │                                                                      │
+│   273 │   def _post_assignment(                                              │
+│   274 │   │   self,                                                          │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:187 in _issue_request                                 │
+│                                                                              │
+│   184 │   │   self.logger.debug(f"Request: {method} {endpoint}")             │
+│   185 │   │   self.logger.debug(f"Params: {params}")                         │
+│   186 │   │                                                                  │
+│ ❱ 187 │   │   response = self.session.request(                               │
+│   188 │   │   │   method, endpoint, headers=request_headers, params=params,  │
+│       **kwargs                                                               │
+│   189 │   │   )                                                              │
+│   190                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/google/auth/transport/requests.py:629 in request                          │
+│                                                                              │
+│   626 │   │                                                                  │
+│   627 │   │   with TimeoutGuard(remaining_time) as guard:                    │
+│   628 │   │   │   _helpers.request_log(_LOGGER, method, url, data, headers)  │
+│ ❱ 629 │   │   │   response = super(AuthorizedSession, self).request(         │
+│   630 │   │   │   │   method,                                                │
+│   631 │   │   │   │   url,                                                   │
+│   632 │   │   │   │   data=data,                                             │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:651 in request                                       │
+│                                                                              │
+│   648 │   │   │   "allow_redirects": allow_redirects,                        │
+│   649 │   │   }                                                              │
+│   650 │   │   send_kwargs.update(settings)                                   │
+│ ❱ 651 │   │   resp = self.send(prep, **send_kwargs)                          │
+│   652 │   │                                                                  │
+│   653 │   │   return resp                                                    │
+│   654                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:784 in send                                          │
+│                                                                              │
+│   781 │   │   start = preferred_clock()                                      │
+│   782 │   │                                                                  │
+│   783 │   │   # Send the request                                             │
+│ ❱ 784 │   │   r = adapter.send(request, **kwargs)                            │
+│   785 │   │                                                                  │
+│   786 │   │   # Total elapsed time of the request (approximately)            │
+│   787 │   │   elapsed = preferred_clock() - start                            │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:729 in send                                          │
+│                                                                              │
+│   726 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+│   727 │   │   │   │   raise SSLError(e, request=request)                     │
+│   728 │   │   │                                                              │
+│ ❱ 729 │   │   │   raise ConnectionError(e, request=request)                  │
+│   730 │   │                                                                  │
+│   731 │   │   except ClosedPoolError as e:                                   │
+│   732 │   │   │   raise ConnectionError(e, request=request)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: HTTPSConnectionPool(host='colab.research.google.com', 
+port=443): Max retries exceeded with url: 
+/tun/m/assign?nbh=7a7a3e6f_2935_40aa_bcb8_8e107a021443........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+create failed (attempt 4); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=adf5324a_efc8_4973_af68_5b449
+8ef63a1........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=adf5324a_efc8_4973_af68_5b449
+8ef63a1........&variant=GPU&accelerator=T4: Precondition Failed
+create failed (attempt 5); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=1ac27c1c_c37a_470b_bfe6_a07c5
+74f6694........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=1ac27c1c_c37a_470b_bfe6_a07c5
+74f6694........&variant=GPU&accelerator=T4: Precondition Failed
+create failed (attempt 6); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=002086cb_229c_43cf_ba10_a482d
+132280d........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=002086cb_229c_43cf_ba10_a482d
+132280d........&variant=GPU&accelerator=T4: Precondition Failed
+create failed (attempt 7); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:237 in assign                                         │
+│                                                                              │
+│   234 │   │   │   return assignment                                          │
+│   235 │   │                                                                  │
+│   236 │   │   try:                                                           │
+│ ❱ 237 │   │   │   res = self._post_assignment(                               │
+│   238 │   │   │   │   notebook_hash, assignment.token, variant, accelerator  │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:282 in _post_assignment                               │
+│                                                                              │
+│   279 │   ) -> PostAssignmentResponse:                                       │
+│   280 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│   281 │   │   headers = {COLAB_XSRF_TOKEN_HEADER["key"]: xsrf_token}         │
+│ ❱ 282 │   │   return self._issue_request(                                    │
+│   283 │   │   │   url, method="POST", headers=headers,                       │
+│       schema=PostAssignmentResponse                                          │
+│   284 │   │   )                                                              │
+│   285                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:196 in _issue_request                                 │
+│                                                                              │
+│   193 │   │   self.logger.debug(f"Response Headers: {response.headers}")     │
+│   194 │   │   self.logger.debug(f"Response Body: {response.text}")           │
+│   195 │   │   if not response.ok:                                            │
+│ ❱ 196 │   │   │   raise ColabRequestError(                                   │
+│   197 │   │   │   │   f"Failed to issue request {method} {endpoint}:         │
+│       {response.reason}",                                                    │
+│   198 │   │   │   │   request=response.request,                              │
+│   199 │   │   │   │   response=response,                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ColabRequestError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=f9447c6d_7a05_40a6_9101_cc719
+5609e42........&variant=GPU&accelerator=T4: Precondition Failed
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:242 in assign                                         │
+│                                                                              │
+│   239 │   │   │   )                                                          │
+│   240 │   │   except ColabRequestError as e:                                 │
+│   241 │   │   │   if get_status_code(e) == 412:                              │
+│ ❱ 242 │   │   │   │   raise TooManyAssignmentsError(str(e))                  │
+│   243 │   │   │   raise e                                                    │
+│   244 │   │                                                                  │
+│   245 │   │   return res                                                     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TooManyAssignmentsError: Failed to issue request POST 
+https://colab.research.google.com/tun/m/assign?nbh=f9447c6d_7a05_40a6_9101_cc719
+5609e42........&variant=GPU&accelerator=T4: Precondition Failed
+create failed (attempt 8); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:239 in _new_conn                                    │
+│                                                                              │
+│    236 │   │   :return: New socket connection.                               │
+│    237 │   │   """                                                           │
+│    238 │   │   try:                                                          │
+│ ❱  239 │   │   │   sock = connection.create_connection(                      │
+│    240 │   │   │   │   (self._dns_host, self.port),                          │
+│    241 │   │   │   │   self.timeout,                                         │
+│    242 │   │   │   │   source_address=self.source_address,                   │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/connection.py:60 in create_connection                        │
+│                                                                              │
+│    57 │   except UnicodeError:                                               │
+│    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+│       from None                                                              │
+│    59 │                                                                      │
+│ ❱  60 │   for res in socket.getaddrinfo(host, port, family,                  │
+│       socket.SOCK_STREAM):                                                   │
+│    61 │   │   af, socktype, proto, canonname, sa = res                       │
+│    62 │   │   sock = None                                                    │
+│    63 │   │   try:                                                           │
+│                                                                              │
+│ /media/pope/projecteo/connect/.unsloth/uv-python/cpython-3.13.13-linux-x86_6 │
+│ 4-gnu/lib/python3.13/socket.py:977 in getaddrinfo                            │
+│                                                                              │
+│   974 │   # We override this function since we want to translate the numeric │
+│       family                                                                 │
+│   975 │   # and socket type values to enum constants.                        │
+│   976 │   addrlist = []                                                      │
+│ ❱ 977 │   for res in _socket.getaddrinfo(host, port, family, type, proto,    │
+│       flags):                                                                │
+│   978 │   │   af, socktype, proto, canonname, sa = res                       │
+│   979 │   │   addrlist.append((_intenum_converter(af, AddressFamily),        │
+│   980 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:793 in urlopen                                  │
+│                                                                              │
+│    790 │   │   │   response_conn = conn if not release_conn else None        │
+│    791 │   │   │                                                             │
+│    792 │   │   │   # Make the request on the HTTPConnection object           │
+│ ❱  793 │   │   │   response = self._make_request(                            │
+│    794 │   │   │   │   conn,                                                 │
+│    795 │   │   │   │   method,                                               │
+│    796 │   │   │   │   url,                                                  │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:494 in _make_request                            │
+│                                                                              │
+│    491 │   │   │   │   new_e, (OSError, NewConnectionError, TimeoutError,    │
+│        SSLError)                                                             │
+│    492 │   │   │   ) and (conn and conn.proxy and not                        │
+│        conn.has_connected_to_proxy):                                         │
+│    493 │   │   │   │   new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)   │
+│ ❱  494 │   │   │   raise new_e                                               │
+│    495 │   │                                                                 │
+│    496 │   │   # conn.request() calls http.client.*.request, not the method  │
+│        in                                                                    │
+│    497 │   │   # urllib3.request. It also calls makefile (recv) on the       │
+│        socket.                                                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:470 in _make_request                            │
+│                                                                              │
+│    467 │   │   try:                                                          │
+│    468 │   │   │   # Trigger any extra validation we need to do.             │
+│    469 │   │   │   try:                                                      │
+│ ❱  470 │   │   │   │   self._validate_conn(conn)                             │
+│    471 │   │   │   except (SocketTimeout, BaseSSLError) as e:                │
+│    472 │   │   │   │   self._raise_timeout(err=e, url=url,                   │
+│        timeout_value=conn.timeout)                                           │
+│    473 │   │   │   │   raise                                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:1125 in _validate_conn                          │
+│                                                                              │
+│   1122 │   │                                                                 │
+│   1123 │   │   # Force connect early to allow us to validate the connection. │
+│   1124 │   │   if conn.is_closed:                                            │
+│ ❱ 1125 │   │   │   conn.connect()                                            │
+│   1126 │   │                                                                 │
+│   1127 │   │   # TODO revise this, see                                       │
+│        https://github.com/urllib3/urllib3/issues/2791                        │
+│   1128 │   │   if not conn.is_verified and not conn.proxy_is_verified:       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:827 in connect                                      │
+│                                                                              │
+│    824 │   │                                                                 │
+│    825 │   │   try:                                                          │
+│    826 │   │   │   sock: socket.socket | ssl.SSLSocket                       │
+│ ❱  827 │   │   │   self.sock = sock = self._new_conn()                       │
+│    828 │   │   │   server_hostname: str = self.host                          │
+│    829 │   │   │   tls_in_tls = False                                        │
+│    830                                                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:246 in _new_conn                                    │
+│                                                                              │
+│    243 │   │   │   │   socket_options=self.socket_options,                   │
+│    244 │   │   │   )                                                         │
+│    245 │   │   except socket.gaierror as e:                                  │
+│ ❱  246 │   │   │   raise NameResolutionError(self.host, self, e) from e      │
+│    247 │   │   except SocketTimeout as e:                                    │
+│    248 │   │   │   raise ConnectTimeoutError(                                │
+│    249 │   │   │   │   self,                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+NameResolutionError: HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:696 in send                                          │
+│                                                                              │
+│   693 │   │   │   resolved_timeout = TimeoutSauce(connect=timeout,           │
+│       read=timeout)                                                          │
+│   694 │   │                                                                  │
+│   695 │   │   try:                                                           │
+│ ❱ 696 │   │   │   resp = conn.urlopen(                                       │
+│   697 │   │   │   │   method=request.method,                                 │
+│   698 │   │   │   │   url=url,                                               │
+│   699 │   │   │   │   body=request.body,  # type: ignore[arg-type]  #        │
+│       urllib3 stubs don't accept Iterable[bytes | str]                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:847 in urlopen                                  │
+│                                                                              │
+│    844 │   │   │   elif isinstance(new_e, (OSError, HTTPException)):         │
+│    845 │   │   │   │   new_e = ProtocolError("Connection aborted.", new_e)   │
+│    846 │   │   │                                                             │
+│ ❱  847 │   │   │   retries = retries.increment(                              │
+│    848 │   │   │   │   method, url, error=new_e, _pool=self,                 │
+│        _stacktrace=sys.exc_info()[2]                                         │
+│    849 │   │   │   )                                                         │
+│    850 │   │   │   retries.sleep()                                           │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/retry.py:555 in increment                                    │
+│                                                                              │
+│   552 │   │                                                                  │
+│   553 │   │   if new_retry.is_exhausted():                                   │
+│   554 │   │   │   reason = error or ResponseError(cause)                     │
+│ ❱ 555 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  #     │
+│       type: ignore[arg-type]                                                 │
+│   556 │   │                                                                  │
+│   557 │   │   log.debug("Incremented Retry for (url='%s'): %r", url,         │
+│       new_retry)                                                             │
+│   558                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+MaxRetryError: HTTPSConnectionPool(host='colab.research.google.com', port=443): 
+Max retries exceeded with url: 
+/tun/m/assign?nbh=bc118be7_caf9_4a8a_8caa_55639fbbdc8a........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:232 in assign                                         │
+│                                                                              │
+│   229 │   │   variant: Optional[Variant] = None,                             │
+│   230 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   231 │   ) -> Union[PostAssignmentResponse, Assignment]:                    │
+│ ❱ 232 │   │   assignment = self._get_assignment(notebook_hash, variant,      │
+│       accelerator)                                                           │
+│   233 │   │   if isinstance(assignment, Assignment):                         │
+│   234 │   │   │   return assignment                                          │
+│   235                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:271 in _get_assignment                                │
+│                                                                              │
+│   268 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   269 │   ) -> Union[GetAssignmentResponse, Assignment]:                     │
+│   270 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│ ❱ 271 │   │   return self._issue_request(url,                                │
+│       schema=Union[GetAssignmentResponse, Assignment])                       │
+│   272 │                                                                      │
+│   273 │   def _post_assignment(                                              │
+│   274 │   │   self,                                                          │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:187 in _issue_request                                 │
+│                                                                              │
+│   184 │   │   self.logger.debug(f"Request: {method} {endpoint}")             │
+│   185 │   │   self.logger.debug(f"Params: {params}")                         │
+│   186 │   │                                                                  │
+│ ❱ 187 │   │   response = self.session.request(                               │
+│   188 │   │   │   method, endpoint, headers=request_headers, params=params,  │
+│       **kwargs                                                               │
+│   189 │   │   )                                                              │
+│   190                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/google/auth/transport/requests.py:629 in request                          │
+│                                                                              │
+│   626 │   │                                                                  │
+│   627 │   │   with TimeoutGuard(remaining_time) as guard:                    │
+│   628 │   │   │   _helpers.request_log(_LOGGER, method, url, data, headers)  │
+│ ❱ 629 │   │   │   response = super(AuthorizedSession, self).request(         │
+│   630 │   │   │   │   method,                                                │
+│   631 │   │   │   │   url,                                                   │
+│   632 │   │   │   │   data=data,                                             │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:651 in request                                       │
+│                                                                              │
+│   648 │   │   │   "allow_redirects": allow_redirects,                        │
+│   649 │   │   }                                                              │
+│   650 │   │   send_kwargs.update(settings)                                   │
+│ ❱ 651 │   │   resp = self.send(prep, **send_kwargs)                          │
+│   652 │   │                                                                  │
+│   653 │   │   return resp                                                    │
+│   654                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:784 in send                                          │
+│                                                                              │
+│   781 │   │   start = preferred_clock()                                      │
+│   782 │   │                                                                  │
+│   783 │   │   # Send the request                                             │
+│ ❱ 784 │   │   r = adapter.send(request, **kwargs)                            │
+│   785 │   │                                                                  │
+│   786 │   │   # Total elapsed time of the request (approximately)            │
+│   787 │   │   elapsed = preferred_clock() - start                            │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:729 in send                                          │
+│                                                                              │
+│   726 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+│   727 │   │   │   │   raise SSLError(e, request=request)                     │
+│   728 │   │   │                                                              │
+│ ❱ 729 │   │   │   raise ConnectionError(e, request=request)                  │
+│   730 │   │                                                                  │
+│   731 │   │   except ClosedPoolError as e:                                   │
+│   732 │   │   │   raise ConnectionError(e, request=request)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: HTTPSConnectionPool(host='colab.research.google.com', 
+port=443): Max retries exceeded with url: 
+/tun/m/assign?nbh=bc118be7_caf9_4a8a_8caa_55639fbbdc8a........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+create failed (attempt 9); backoff 150s
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc3_old-1792650677'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:239 in _new_conn                                    │
+│                                                                              │
+│    236 │   │   :return: New socket connection.                               │
+│    237 │   │   """                                                           │
+│    238 │   │   try:                                                          │
+│ ❱  239 │   │   │   sock = connection.create_connection(                      │
+│    240 │   │   │   │   (self._dns_host, self.port),                          │
+│    241 │   │   │   │   self.timeout,                                         │
+│    242 │   │   │   │   source_address=self.source_address,                   │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/connection.py:60 in create_connection                        │
+│                                                                              │
+│    57 │   except UnicodeError:                                               │
+│    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+│       from None                                                              │
+│    59 │                                                                      │
+│ ❱  60 │   for res in socket.getaddrinfo(host, port, family,                  │
+│       socket.SOCK_STREAM):                                                   │
+│    61 │   │   af, socktype, proto, canonname, sa = res                       │
+│    62 │   │   sock = None                                                    │
+│    63 │   │   try:                                                           │
+│                                                                              │
+│ /media/pope/projecteo/connect/.unsloth/uv-python/cpython-3.13.13-linux-x86_6 │
+│ 4-gnu/lib/python3.13/socket.py:977 in getaddrinfo                            │
+│                                                                              │
+│   974 │   # We override this function since we want to translate the numeric │
+│       family                                                                 │
+│   975 │   # and socket type values to enum constants.                        │
+│   976 │   addrlist = []                                                      │
+│ ❱ 977 │   for res in _socket.getaddrinfo(host, port, family, type, proto,    │
+│       flags):                                                                │
+│   978 │   │   af, socktype, proto, canonname, sa = res                       │
+│   979 │   │   addrlist.append((_intenum_converter(af, AddressFamily),        │
+│   980 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:793 in urlopen                                  │
+│                                                                              │
+│    790 │   │   │   response_conn = conn if not release_conn else None        │
+│    791 │   │   │                                                             │
+│    792 │   │   │   # Make the request on the HTTPConnection object           │
+│ ❱  793 │   │   │   response = self._make_request(                            │
+│    794 │   │   │   │   conn,                                                 │
+│    795 │   │   │   │   method,                                               │
+│    796 │   │   │   │   url,                                                  │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:494 in _make_request                            │
+│                                                                              │
+│    491 │   │   │   │   new_e, (OSError, NewConnectionError, TimeoutError,    │
+│        SSLError)                                                             │
+│    492 │   │   │   ) and (conn and conn.proxy and not                        │
+│        conn.has_connected_to_proxy):                                         │
+│    493 │   │   │   │   new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)   │
+│ ❱  494 │   │   │   raise new_e                                               │
+│    495 │   │                                                                 │
+│    496 │   │   # conn.request() calls http.client.*.request, not the method  │
+│        in                                                                    │
+│    497 │   │   # urllib3.request. It also calls makefile (recv) on the       │
+│        socket.                                                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:470 in _make_request                            │
+│                                                                              │
+│    467 │   │   try:                                                          │
+│    468 │   │   │   # Trigger any extra validation we need to do.             │
+│    469 │   │   │   try:                                                      │
+│ ❱  470 │   │   │   │   self._validate_conn(conn)                             │
+│    471 │   │   │   except (SocketTimeout, BaseSSLError) as e:                │
+│    472 │   │   │   │   self._raise_timeout(err=e, url=url,                   │
+│        timeout_value=conn.timeout)                                           │
+│    473 │   │   │   │   raise                                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:1125 in _validate_conn                          │
+│                                                                              │
+│   1122 │   │                                                                 │
+│   1123 │   │   # Force connect early to allow us to validate the connection. │
+│   1124 │   │   if conn.is_closed:                                            │
+│ ❱ 1125 │   │   │   conn.connect()                                            │
+│   1126 │   │                                                                 │
+│   1127 │   │   # TODO revise this, see                                       │
+│        https://github.com/urllib3/urllib3/issues/2791                        │
+│   1128 │   │   if not conn.is_verified and not conn.proxy_is_verified:       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:827 in connect                                      │
+│                                                                              │
+│    824 │   │                                                                 │
+│    825 │   │   try:                                                          │
+│    826 │   │   │   sock: socket.socket | ssl.SSLSocket                       │
+│ ❱  827 │   │   │   self.sock = sock = self._new_conn()                       │
+│    828 │   │   │   server_hostname: str = self.host                          │
+│    829 │   │   │   tls_in_tls = False                                        │
+│    830                                                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:246 in _new_conn                                    │
+│                                                                              │
+│    243 │   │   │   │   socket_options=self.socket_options,                   │
+│    244 │   │   │   )                                                         │
+│    245 │   │   except socket.gaierror as e:                                  │
+│ ❱  246 │   │   │   raise NameResolutionError(self.host, self, e) from e      │
+│    247 │   │   except SocketTimeout as e:                                    │
+│    248 │   │   │   raise ConnectTimeoutError(                                │
+│    249 │   │   │   │   self,                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+NameResolutionError: HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:696 in send                                          │
+│                                                                              │
+│   693 │   │   │   resolved_timeout = TimeoutSauce(connect=timeout,           │
+│       read=timeout)                                                          │
+│   694 │   │                                                                  │
+│   695 │   │   try:                                                           │
+│ ❱ 696 │   │   │   resp = conn.urlopen(                                       │
+│   697 │   │   │   │   method=request.method,                                 │
+│   698 │   │   │   │   url=url,                                               │
+│   699 │   │   │   │   body=request.body,  # type: ignore[arg-type]  #        │
+│       urllib3 stubs don't accept Iterable[bytes | str]                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:847 in urlopen                                  │
+│                                                                              │
+│    844 │   │   │   elif isinstance(new_e, (OSError, HTTPException)):         │
+│    845 │   │   │   │   new_e = ProtocolError("Connection aborted.", new_e)   │
+│    846 │   │   │                                                             │
+│ ❱  847 │   │   │   retries = retries.increment(                              │
+│    848 │   │   │   │   method, url, error=new_e, _pool=self,                 │
+│        _stacktrace=sys.exc_info()[2]                                         │
+│    849 │   │   │   )                                                         │
+│    850 │   │   │   retries.sleep()                                           │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/retry.py:555 in increment                                    │
+│                                                                              │
+│   552 │   │                                                                  │
+│   553 │   │   if new_retry.is_exhausted():                                   │
+│   554 │   │   │   reason = error or ResponseError(cause)                     │
+│ ❱ 555 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  #     │
+│       type: ignore[arg-type]                                                 │
+│   556 │   │                                                                  │
+│   557 │   │   log.debug("Incremented Retry for (url='%s'): %r", url,         │
+│       new_retry)                                                             │
+│   558                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+MaxRetryError: HTTPSConnectionPool(host='colab.research.google.com', port=443): 
+Max retries exceeded with url: 
+/tun/m/assign?nbh=672e7f34_40e7_49f4_bacc_c1fb9a1c44d5........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:232 in assign                                         │
+│                                                                              │
+│   229 │   │   variant: Optional[Variant] = None,                             │
+│   230 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   231 │   ) -> Union[PostAssignmentResponse, Assignment]:                    │
+│ ❱ 232 │   │   assignment = self._get_assignment(notebook_hash, variant,      │
+│       accelerator)                                                           │
+│   233 │   │   if isinstance(assignment, Assignment):                         │
+│   234 │   │   │   return assignment                                          │
+│   235                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:271 in _get_assignment                                │
+│                                                                              │
+│   268 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   269 │   ) -> Union[GetAssignmentResponse, Assignment]:                     │
+│   270 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│ ❱ 271 │   │   return self._issue_request(url,                                │
+│       schema=Union[GetAssignmentResponse, Assignment])                       │
+│   272 │                                                                      │
+│   273 │   def _post_assignment(                                              │
+│   274 │   │   self,                                                          │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:187 in _issue_request                                 │
+│                                                                              │
+│   184 │   │   self.logger.debug(f"Request: {method} {endpoint}")             │
+│   185 │   │   self.logger.debug(f"Params: {params}")                         │
+│   186 │   │                                                                  │
+│ ❱ 187 │   │   response = self.session.request(                               │
+│   188 │   │   │   method, endpoint, headers=request_headers, params=params,  │
+│       **kwargs                                                               │
+│   189 │   │   )                                                              │
+│   190                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/google/auth/transport/requests.py:629 in request                          │
+│                                                                              │
+│   626 │   │                                                                  │
+│   627 │   │   with TimeoutGuard(remaining_time) as guard:                    │
+│   628 │   │   │   _helpers.request_log(_LOGGER, method, url, data, headers)  │
+│ ❱ 629 │   │   │   response = super(AuthorizedSession, self).request(         │
+│   630 │   │   │   │   method,                                                │
+│   631 │   │   │   │   url,                                                   │
+│   632 │   │   │   │   data=data,                                             │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:651 in request                                       │
+│                                                                              │
+│   648 │   │   │   "allow_redirects": allow_redirects,                        │
+│   649 │   │   }                                                              │
+│   650 │   │   send_kwargs.update(settings)                                   │
+│ ❱ 651 │   │   resp = self.send(prep, **send_kwargs)                          │
+│   652 │   │                                                                  │
+│   653 │   │   return resp                                                    │
+│   654                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:784 in send                                          │
+│                                                                              │
+│   781 │   │   start = preferred_clock()                                      │
+│   782 │   │                                                                  │
+│   783 │   │   # Send the request                                             │
+│ ❱ 784 │   │   r = adapter.send(request, **kwargs)                            │
+│   785 │   │                                                                  │
+│   786 │   │   # Total elapsed time of the request (approximately)            │
+│   787 │   │   elapsed = preferred_clock() - start                            │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:729 in send                                          │
+│                                                                              │
+│   726 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+│   727 │   │   │   │   raise SSLError(e, request=request)                     │
+│   728 │   │   │                                                              │
+│ ❱ 729 │   │   │   raise ConnectionError(e, request=request)                  │
+│   730 │   │                                                                  │
+│   731 │   │   except ClosedPoolError as e:                                   │
+│   732 │   │   │   raise ConnectionError(e, request=request)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: HTTPSConnectionPool(host='colab.research.google.com', 
+port=443): Max retries exceeded with url: 
+/tun/m/assign?nbh=672e7f34_40e7_49f4_bacc_c1fb9a1c44d5........&variant=GPU&accel
+erator=T4&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+create failed (attempt 10); backoff 150s
+SESSION_FAILED

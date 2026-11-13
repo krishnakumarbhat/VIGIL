@@ -1,0 +1,101 @@
+track	metric	value	notes
+07-opencv-ai-competition-2026	detection_roc_auc	0.5	stamp=2026-10-21T19:40:05Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	0.5839	stamp=2026-10-21T19:40:05Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	18.14	stamp=2026-10-21T19:40:05Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	42.49	stamp=2026-10-21T19:40:05Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T19:44:34Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T19:44:34Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	22.869	stamp=2026-10-21T19:44:34Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	32.51	stamp=2026-10-21T19:44:34Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T19:51:34Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T19:51:34Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	180.978	stamp=2026-10-21T19:51:34Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	5.31	stamp=2026-10-21T19:51:34Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T19:53:28Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T19:53:28Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	17.549	stamp=2026-10-21T19:53:28Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	44.38	stamp=2026-10-21T19:53:28Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T19:59:41Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T19:59:41Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	21.369	stamp=2026-10-21T19:59:41Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	34.18	stamp=2026-10-21T19:59:41Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T20:05:29Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T20:05:29Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	21.159	stamp=2026-10-21T20:05:29Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	33.74	stamp=2026-10-21T20:05:29Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-21T20:18:32Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-21T20:18:32Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	20.764	stamp=2026-10-21T20:18:32Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	35.03	stamp=2026-10-21T20:18:32Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T03:30:03Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T03:30:03Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	23.225	stamp=2026-10-22T03:30:03Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	31.15	stamp=2026-10-22T03:30:03Z
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T03:30:14Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.58	stamp=2026-10-22T03:30:14Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.182	stamp=2026-10-22T03:30:14Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.075	stamp=2026-10-22T03:30:14Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T03:30:14Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T03:30:14Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T03:33:56Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.58	stamp=2026-10-22T03:33:56Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.182	stamp=2026-10-22T03:33:56Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.075	stamp=2026-10-22T03:33:56Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T03:33:56Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T03:33:56Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T03:37:20Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T03:37:20Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	45.043	stamp=2026-10-22T03:37:20Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	20.22	stamp=2026-10-22T03:37:20Z
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T03:38:07Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.52	stamp=2026-10-22T03:38:07Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.0	stamp=2026-10-22T03:38:07Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.053	stamp=2026-10-22T03:38:07Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T03:38:07Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T03:38:07Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T03:50:08Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.52	stamp=2026-10-22T03:50:08Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.0	stamp=2026-10-22T03:50:08Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.053	stamp=2026-10-22T03:50:08Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T03:50:08Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T03:50:08Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T03:51:00Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.52	stamp=2026-10-22T03:51:00Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.0	stamp=2026-10-22T03:51:00Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.053	stamp=2026-10-22T03:51:00Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T03:51:00Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T03:51:00Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T04:17:49Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T04:17:49Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	22.365	stamp=2026-10-22T04:17:49Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	33.74	stamp=2026-10-22T04:17:49Z
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T04:23:54Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T04:23:54Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	20.572	stamp=2026-10-22T04:23:54Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	35.12	stamp=2026-10-22T04:23:54Z
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T04:24:17Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.579	stamp=2026-10-22T04:24:17Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.02	stamp=2026-10-22T04:24:17Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	2.955	stamp=2026-10-22T04:24:17Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T04:24:17Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T04:24:17Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T04:27:10Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T04:27:10Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	20.846	stamp=2026-10-22T04:27:10Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	33.83	stamp=2026-10-22T04:27:10Z
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T04:27:32Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.433	stamp=2026-10-22T04:27:32Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.029	stamp=2026-10-22T04:27:32Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	2.952	stamp=2026-10-22T04:27:32Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T04:27:32Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T04:27:32Z QEMU emulation, not Graviton
+07-opencv-ai-competition-2026	detection_roc_auc	0.9917	stamp=2026-10-22T14:03:19Z synthetic 100-image set
+07-opencv-ai-competition-2026	recognition_roc_auc	1.0	stamp=2026-10-22T14:03:19Z 60 pairs
+07-opencv-ai-competition-2026	full_agent_p50_ms	83.884	stamp=2026-10-22T14:03:19Z 640x360 demo, 4 pinned cores
+07-opencv-ai-competition-2026	full_agent_fps	10.32	stamp=2026-10-22T14:03:19Z
+07-opencv-ai-competition-2026	cool_status	unavailable	stamp=2026-10-22T14:05:22Z COOL unavailable; local levers measured; arm64 emulated
+07-opencv-ai-competition-2026	cool_dispatch_mean_speedup	1.262	stamp=2026-10-22T14:05:22Z interleaved A/B x86
+07-opencv-ai-competition-2026	cool_dispatch_median_speedup	1.102	stamp=2026-10-22T14:05:22Z median across 5 ops
+07-opencv-ai-competition-2026	cool_roi_latency_speedup	3.671	stamp=2026-10-22T14:05:22Z oracle 320 ROI vs full 640
+07-opencv-ai-competition-2026	cool_roi_recall_crop	1.0	stamp=2026-10-22T14:05:22Z labelled positives, IoU>=0.5
+07-opencv-ai-competition-2026	cool_arm64_emulated_detection_p50_ms	2886.217	stamp=2026-10-22T14:05:22Z QEMU emulation, not Graviton

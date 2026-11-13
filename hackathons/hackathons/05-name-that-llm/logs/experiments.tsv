@@ -1,0 +1,91 @@
+track	metric	value	notes
+05-name-that-llm	bal_acc_svc_cwS_w0	0.37225	views=cwS kind=svc w_ext=0.0; grouped 5-fold, clean subset (n=9120); all-rows=0.3734
+05-name-that-llm	bal_acc_svc_unw_all_w0	0.37156	views=all kind=svc_unw w_ext=0.0; grouped 5-fold, clean subset (n=9120); all-rows=0.3720
+05-name-that-llm	bal_acc_svc_all_w0	0.37536	views=all kind=svc w_ext=0.0; grouped 5-fold, clean subset (n=9120); all-rows=0.3756
+05-name-that-llm	bal_acc_svc_c1	0.35313	LinearSVC C=1.0, char2-5+word1-2+shape+sty, comp-only, class-balanced weights
+05-name-that-llm	bal_acc_svc_c025	0.31540	LinearSVC C=0.25, char2-5+word1-2+shape+sty, comp-only, class-balanced weights
+05-name-that-llm	bal_acc_svc_extra_claude_w50	0.38525	LinearSVC C=0.5, external restricted to protocol-matched extra_claude rows, Claude classes only, w=0.5
+05-name-that-llm	bal_acc_sgd_all_w0	0.36871	views=all kind=sgd w_ext=0.0; grouped 5-fold, clean subset (n=9120); all-rows=0.3686
+05-name-that-llm	bal_acc_sgd_all_w50	0.33767	views=all kind=sgd w_ext=0.5; grouped 5-fold, clean subset (n=9120); all-rows=0.3385
+05-name-that-llm	bal_acc_nbsvm_all	0.34240	NB-SVM log-count-ratio + OvR LinearSVC C=0.1, views=all, comp-only, prior-softmax T=2
+05-name-that-llm	bal_acc_centroid_all	0.19344	cosine to class centroids, views=all, comp-only
+05-name-that-llm	bal_acc_perclass_bias_crossfitted	0.37110	class-bias coordinate ascent, learned on 4/5 of OOF and applied to the held-out fold (blend, alpha=0.25); degrades vs 0.37890 -> rejected
+05-name-that-llm	bal_acc_blend	0.39061	final: 0.8*svc_extra_claude_w50 + 0.2*nbsvm_all, prior_alpha=0.25, grouped 5-fold clean subset (n=9120); all-rows=0.39146, acc=0.38618
+05-name-that-llm	bal_acc_svc_extra_claude_w70	0.38426	LinearSVC C=0.5, protocol-matched extra_claude rows for Claude classes at w=0.7
+05-name-that-llm	bal_acc_svc_extra_claude_w50	0.38525	LinearSVC C=0.5, external restricted to protocol-matched extra_claude rows, Claude classes only, w=0.5
+05-name-that-llm	bal_acc_svc35_w0	0.33724	LinearSVC C=0.5, char2-5+word1-2+shape+sty, comp-only, class-balanced weights
+05-name-that-llm	bal_acc_blend3_svc35	0.39062	svc_extra_claude_w50+nbsvm_all+svc35_w0 weights=(np.float64(0.5), np.float64(0.05), np.float64(0.45)); grouped 5-fold clean subset
+05-name-that-llm	bal_acc_blend3	0.39062	['nbsvm_all', 'svc35_w0', 'svc_extra_claude_w50'] + knn(2x18+4) + margins; cross-fitted stacker; grouped 5-fold clean subset; baseline=0.39061
+05-name-that-llm	bal_acc_real_svc_c05@0.00	0.34485	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3449; 27s
+05-name-that-llm	bal_acc_real_svc_c05@0.40	0.32896	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.4; acc=0.3290; 328s
+05-name-that-llm	bal_acc_real_svc_c1@0.00	0.35227	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3524; 36s
+05-name-that-llm	bal_acc_real_svc_c025@0.00	0.33263	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3327; 20s
+05-name-that-llm	bal_acc_real_svc_c05_t3@0.00	0.34485	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3449; 26s
+05-name-that-llm	bal_acc_real_svc_c05_t3@0.40	0.32896	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.4; acc=0.3290; 318s
+05-name-that-llm	bal_acc_stack_probs_c8	0.40863	cross-fitted LR C=8 class_weight=balanced meta over svc_extra_claude_w50+nbsvm_all+svc35_w0 OOF probs only, grouped 5-fold clean subset; baseline 0.39061 -> KEEP; reg sweep c2=0.4034;c3=0.4062;c4=0.4063;c8=0.4086;c16=0.4086;c32=0.4083;c1000=0.4013
+05-name-that-llm	bal_acc_real_logreg_c2@0.00	0.31041	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3105; 496s
+05-name-that-llm	bal_acc_real_ridge_a1@0.00	0.35598	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3561; 74s
+05-name-that-llm	bal_acc_real_nbsvm_c01@0.00	0.29410	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.2942; 41s
+05-name-that-llm	bal_acc_real_svc_c2	0.35635	views=char+word+shape+sty; mirror_share=0.0; n=2699 real rows; acc=0.3564; 56s
+05-name-that-llm	bal_acc_real_svc_c4	0.35338	views=char+word+shape+sty; mirror_share=0.0; n=2699 real rows; acc=0.3535; 61s
+05-name-that-llm	bal_acc_real_ridge_a05	0.36079	views=char+word+shape+sty; mirror_share=0.0; n=2699 real rows; acc=0.3609; 56s
+05-name-that-llm	bal_acc_real_nbsvm_c01@0.40	0.22193	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.4; acc=0.2219; 559s
+05-name-that-llm	bal_acc_real_ridge_a2	0.34523	views=char+word+shape+sty; mirror_share=0.0; n=2699 real rows; acc=0.3453; 31s
+05-name-that-llm	bal_acc_real_nbsvm_c03@0.00	0.32708	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.3272; 31s
+05-name-that-llm	bal_acc_real_centroid@0.00	0.20039	real comp train.csv n=2699; views=char+word+shape+sty; mirror_share=0.0; acc=0.2004; 1s
+05-name-that-llm	bal_acc_real_ridge_a1@0.00+prior0.15	0.35598	prior correction alpha=0.15 on ridge_a1@0.00; acc=0.3561
+05-name-that-llm	bal_acc_real_ridge_a1@0.00+prior0.25	0.35598	prior correction alpha=0.25 on ridge_a1@0.00; acc=0.3561
+05-name-that-llm	bal_acc_real_ridge_a1@0.00+prior0.4	0.35561	prior correction alpha=0.4 on ridge_a1@0.00; acc=0.3557
+05-name-that-llm	bal_acc_real_svc_c1_m15	0.35821	views=char+word+shape+sty; mirror_share=0.15; n=2699 real rows; acc=0.3583; 543s
+05-name-that-llm	bal_acc_real_svc_c1_wordshape	0.32930	views=word+shape+sty; mirror_share=0.0; n=2699 real rows; acc=0.3294; 157s
+05-name-that-llm	bal_acc_real_svc_c1_styonly	0.28262	views=sty; mirror_share=0.0; n=2699 real rows; acc=0.2827; 121s
+05-name-that-llm	bal_acc_real_nbsvm_char_c01	0.25334	views=char; mirror_share=0.0; n=2699 real rows; acc=0.2534; 313s
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_stack_lenprior	0.51191	n9b length-bin prior offsets ON TOP of 3-member stack (c32_m10; grid C{4,8,16,32} x m{10,40,200} all logged); LO-prompt prior tables; anchor 0.40863/recorded 0.40863 -> KEEP
+05-name-that-llm	bal_acc_stack_lenprior	0.51191	n9b OVERTURNED: c32_m10 value=estimator-coupling artifact (same-fold LO/full table overlap); decoupled-table test collapses real 0.173/perm 0.193 vs 0.4008; bin-permutation control 0.509 ~= real 0.512; 0.40863 baseline STANDS; DISCARD
+05-name-that-llm	bal_acc_stack_lenprior_decoupled	0.17321	decoupled table C=8 (fit half-B, val tables half-A): real bins 0.17321 / permuted 0.19333 vs anchor 0.40084 -> no transferable bin-prior signal; DISCARD
+05-name-that-llm	bal_acc_in_sample	1.0	LinearSVC with TF-IDF features on competition train 2699 rows (in-sample, overfitting)
+05-name-that-llm	cv_balanced_accuracy	0.3608	Nested cross-validated blend selection estimate (optimism-corrected); from cv_variants.json
+05-name-that-llm	public_leaderboard_best	0.466	Qwen3-14B-Base with LoRA r=16, max_len=384, 3 epochs (fine-tuning, not ensemble)
+05-name-that-llm	current_grouped_cv	0.3667	Stylometric + linear stack baseline on REAL competition train rows
+05-name-that-llm	real_train_bal_acc	1.0	In-sample LinearSVC on 2699 competition rows (baseline before ensemble)
+05-name-that-llm	ensemble_blend_weights	[0.5, 0.4, 0.1]	Ridge a05 (T=0.7) + SVC c1_m15 (T=1.0) + SVC c4 (T=1.4) from blend_search.json
+05-name-that-llm	ensemble_temperature	1.0	Shared temperature factor; per-model temperatures applied during blending
+05-name-that-llm	submission_rows	3	3 public test rows in sample_submission.parquet
+05-name-that-llm	model_architecture	LinearSVC + TF-IDF (char+word+shape+sty features)	Base model for current ensemble; to be replaced by Colab LoRA Qwen2.5 when artifacts arrive
+05-name-that-llm	colab_artifacts_status	not_arrived	outputs/colab_artifacts/ and outputs/colab_pro_artifacts/ are empty directories
+05-name-that-llm\tbal_acc_ensemble_crossfit\t0.39061\tproxy blend stage-1+proxy LoRA; real groups=150; colab=0; cross-fitted SGKFold(5,rs=42); T=1.0; w=[1.0] (single source until LoRA arrives)
+05-name-that-llm	bal_acc_probe_3_6gram	NOT_MEASURED	character-level 3-6 gram NB-SVM probe + token-shape + typography probe added to feature stack; external augmentation (132,899 rows) kept as training-only; local transformer head skipped due to 4GB VRAM limit and no Colab/DeBERTa artefacts yet
+05-name-that-llm	bal_acc_svm_platt	NOT_MEASURED	Linear SVM with balanced weights + Platt temperature scaling (T grid 0.7/1.0/1.4) applied; decoupled length-prior confirmed
+05-name-that-llm	final_stack_blend_crossfit	0.3608	cross-fitted blend weights selected on 4 folds / applied to 5th; nested mean from blend_search.json; length-prior decoupled; no in-sample fitting
+05-name-that-llm	colab_lora_status	0	colab_pro_artifacts empty; no fold{f}_oof.npy / idx.npy / status.json present
+05-name-that-llm	kaggle_deberta_status	0	kernel status=RUNNING; outputs/kaggle_deberta empty; will poll every 5 min
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	real_row_crossfit_bal_acc	0.40163	members=['deberta'] folds=[(0, 0.2537), (1, 0.3407), (2, 0.3833), (3, 0.4958), (4, 0.5352)]
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	real_row_crossfit_bal_acc	0.40163	members=['deberta'] folds=[(0, 0.2537), (1, 0.3407), (2, 0.3833), (3, 0.4958), (4, 0.5352)]
+05-name-that-llm	real_row_crossfit_bal_acc	0.40163	members=['deberta'] folds=[(0, 0.2537), (1, 0.3407), (2, 0.3833), (3, 0.4958), (4, 0.5352)]
+05-name-that-llm	real_row_crossfit_bal_acc	0.39506	members=['deberta', 'loRA_qwen05b'] folds=[(0, 0.2759), (1, 0.3741), (2, 0.5352)]
+05-name-that-llm	real_row_crossfit_bal_acc	0.39506	members=['deberta', 'loRA_qwen05b'] folds=[(0, 0.2759), (1, 0.3741), (2, 0.5352)]
+05-name-that-llm	real_row_crossfit_bal_acc	0.39506	members=['deberta', 'loRA_qwen05b'] folds=[(0, 0.2759), (1, 0.3741), (2, 0.5352)]
+05-name-that-llm	bal_acc_real_final_blend	0.36672	blend(0.60*ridge_a05 + 0.40*svc_c1_m15) prior=0.0; selected on real-train OOF; acc=0.3668
+05-name-that-llm	real_row_crossfit_bal_acc	0.49047	members=['deberta', 'loRA_qwen05b'] folds=[(0, 0.2833), (1, 0.3759), (2, 0.5333), (3, 0.7703)]
+05-name-that-llm	local_lora_qwen05b_bal_acc	0.53842	Qwen/Qwen2.5-0.5B-Instruct LoRA 5-fold SGKF(real-only validation, mirror-augmented training), local RTX3050, folds=[0.27222222222222225, 0.35555555555555557, 0.5166666666666666, 0.7031928480204344, 0.8444444444444444]
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.55571	members=['deberta_base', 'local_qwen05b'] rows=2699 per_class_min=0.347
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.59572	members=['deberta_base', 'local_qwen05b', 'svm'] rows=2699 per_class_min=0.367
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.59759	members=['deberta_base', 'char', 'knn', 'local_qwen05b', 'style', 'svm', 'word'] rows=2699 per_class_min=0.293
+05-name-that-llm	stack_v3_logprob+prob|plain	0.57088	members=['char', 'deberta_base', 'knn', 'local_qwen05b', 'style', 'svm', 'word'] rows=2699
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.59759	members=['deberta_base', 'char', 'knn', 'local_qwen05b', 'style', 'svm', 'word'] rows=2699 per_class_min=0.293
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.61387	members=['deberta_base', 'char', 'knn', 'local_qwen05b', 'style', 'svm', 'svmext', 'word'] rows=2699 per_class_min=0.340
+05-name-that-llm	local_lora_qwen05b_s1337_bal_acc	0.64847	Qwen/Qwen2.5-0.5B-Instruct LoRA 5-fold SGKF(real-only validation, mirror-augmented training), local RTX3050, folds=[0.33518518518518514, 0.4833333333333333, 0.6444444444444444, 0.8571519795657728, 0.9222222222222223]
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.68169	members=['deberta_base', 'char', 'knn', 'local_qwen05b', 'local_qwen05b_s1337', 'style', 'svm', 'svmext', 'word'] rows=2699 per_class_min=0.480
+05-name-that-llm	local_lora_qwen05b_s7_bal_acc	0.57471	Qwen/Qwen2.5-0.5B-Instruct LoRA 5-fold SGKF(real-only validation, mirror-augmented training), local RTX3050, folds=[0.29814814814814816, 0.437037037037037, 0.5777777777777778, 0.7235632183908045, 0.8370370370370371]
+05-name-that-llm	stack_v2_crossfit_bal_acc	0.68909	members=['deberta_base', 'char', 'knn', 'local_qwen05b', 'local_qwen05b_s1337', 'local_qwen05b_s7', 'style', 'svm', 'svmext', 'word'] rows=2699 per_class_min=0.493

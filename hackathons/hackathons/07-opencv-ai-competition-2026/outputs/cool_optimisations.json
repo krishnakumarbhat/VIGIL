@@ -1,0 +1,21 @@
+{
+  "use_optimized": {
+    "baseline_ms": 2.8527834999999557,
+    "optimized_ms": 2.3490099999999847,
+    "speedup": 1.2144620499699763
+  },
+  "quality_only": {
+    "median_ms": 0.22745600000007027
+  },
+  "kernel_order": {
+    "gray_then_resize_ms": 1.012169999999979,
+    "resize_then_gray_ms": 1.2132940000000314,
+    "speedup": 0.8342330877758835
+  },
+  "fused_chain": {
+    "median_ms": 5.269473999999885
+  },
+  "threads_1": {
+    "fps_est": 71.05
+  }
+}

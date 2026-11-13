@@ -1,0 +1,18 @@
+[    7.3s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    7.4s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    7.5s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   15.2s] anchor 0.40863
+[   15.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   25.1s]   saturation C=32 -> 0.51191
+[   25.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   36.0s]   saturation C=64 -> 0.54447
+[   36.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   46.9s]   saturation C=256 -> 0.59338
+[   47.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   60.8s]   saturation C=1000 -> 0.60417
+[   60.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   66.7s]   fold clean BA at C=32 m=10: [0.5468, 0.5511, 0.5424, 0.5268, 0.3933]
+[   66.7s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   72.4s]     fold0 sanity: bin hot ~ rows [375 748 421 326]
+[   78.0s]   negative control (permuted bins): [0.50889, 0.51691]  vs anchor 0.40863
+[   78.0s] verdict {'anchor': 0.40863471314451705, 'saturation': {'c32_m10': 0.5119128540305011, 'c64_m10': 0.5444705882352942, 'c256_m10': 0.5933841684822077, 'c1000_m10': 0.6041670297748729}, 'fold_ba_c32m10': [0.5468, 0.5511, 0.5424, 0.5268, 0.3933], 'negative_control': [0.50889, 0.51691], 'control_collapses_to_anchor': False, 'real_is_signal': False}

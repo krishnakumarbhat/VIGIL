@@ -1,0 +1,18 @@
+[{"stream_name":"stderr","time":0.962967996,"data":"/kaggle/src/script.py:2: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n"}
+,{"stream_name":"stderr","time":0.963043644,"data":"  print(\"PROBE_START\", datetime.datetime.utcnow().isoformat())\n"}
+,{"stream_name":"stdout","time":0.963065912,"data":"PROBE_START 2026-10-21T18:12:14.546893\n"}
+,{"stream_name":"stdout","time":0.963071433,"data":"python 3.13.15\n"}
+,{"stream_name":"stdout","time":10.547518065,"data":"torch 2.11.0+cu128 cuda_available True\n"}
+,{"stream_name":"stdout","time":10.596526556,"data":"gpu_name Tesla T4 vram_gb 14.56\n"}
+,{"stream_name":"stderr","time":11.180488258,"data":"/kaggle/src/script.py:16: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).\n"}
+,{"stream_name":"stderr","time":11.180521729,"data":"  print(\"PROBE_END\", datetime.datetime.utcnow().isoformat())\n"}
+,{"stream_name":"stdout","time":11.180543312,"data":"matmul_ok True sample -48167.977\n"}
+,{"stream_name":"stdout","time":11.180561269,"data":"gpu_mem_alloc_mb 24.1\n"}
+,{"stream_name":"stdout","time":11.180567533,"data":"PROBE_END 2026-10-21T18:12:24.775887\n"}
+,{"stream_name":"stderr","time":17.45218889,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":17.452220936,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":17.815718264,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":17.815747965,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":18.781575901,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":20.030456185,"data":"[NbConvertApp] Writing 277635 bytes to __results__.html\n"}
+]

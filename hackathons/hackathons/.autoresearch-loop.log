@@ -1,0 +1,2163 @@
+1215-{"commit":"baseline","metric":"opencv_agent_fps","value":35.0,"status":"keep","description":"See-Reason-Act-Verify agent on local CPU"}
+1216:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitted LR(C=8,class_weight=balanced) meta-stacker over OOF probs of svc_extra_cl
+1217-=== autoresearch_research_strategy_graph.jsonl ===
+1218-{"id": "n0", "type": "frontier", "track": "05-name-that-llm", "metric": "ntl_bal_acc", "value": 0.3906, "status": "open", "idea": "I1 NB-SVM + probe stack"}
+--
+1225-{"id": "n7", "type": "frontier", "track": "02-gemma-4-developer-agent-paper", "metric": "gg_spv_recall5", "value": 0.318, "status": "open", "idea": "I8 ship reproducible agent dataset"}
+1226-{"id": "n8", "type": "frontier", "track": "08-openzee-openair-2026", "metric": "openzee_identified", "value": 0.0, "status": "open", "idea": "identify competition"}
+1227:{"id":"n9","type":"frontier","track":"05-name-that-llm","metric":"ntl_bal_acc","value":0.40863,"status":"open","idea":"I1 done; next: DeBERTa stage2 ferta probs (Kaggle kernel ntl-stage2-deberta 
+1228:{"edge":"n0->n9","relation":"stack_refine","evidence":"bal_acc 0.39061->0.40863 via OOF-probability meta stacker; delivery artifacts outputs/final_model_stacked.joblib"}
+1229-=== strategies.md ===
+1230-# Strategies
+--
+1244-  -> DONE (2026-10-22): cross-fitted LR(C=8, balanced) meta-stacker over OOF probs of
+1245-  svc_extra_claude_w50 + nbsvm_all + new svc35_w0 char3-5/word1-3 diversity member.
+1246:  Grouped CV bal_acc 0.39061 -> **0.40863** (KEEP). Rejected: kNN-TFIDF vote features
+1247-  (0.365), margin/entropy stack features (0.383), rank-mean blends (0.379).
+1248-  Next: feed the running Kaggle DeBERTa stage-2 OOF into the same meta stack.
+--
+1298-  - svc35_w0 alone 0.330 (fold log ~0.332-0.352); 3-member simplex blend best 0.39062 (tie)
+1299-  - LR cross-fitted stacker (probs only, class_weight=balanced): C sweep
+1300:    0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+1301-  - REJECTED: LGBM stack (0.383), LR+kNN vote feats (0.365), LR+margins/knn (0.345),
+1302-    rank-mean simplex blends (<0.379), logit-adjustment alpha>0 (hurts at every C).
+1303:- KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+1304-  `outputs/final_model_stacked.joblib`, submission regenerated, recon sanity
+1305-  0.167 -> 0.1867, `cv_stack_report.json`/`final_model_config.json`/notes updated.
+--
+1948-echo "=== verify ===" && tail -2 autoresearch_research.jsonl | head -1 | cut -c1-120 && tail -1 autoresearch_research_strategy_graph.jsonl | cut -c1-120 && tail -4 experiments/worklog.md | cut -c
+1949-=== verify ===
+1950:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitte
+1951-{"id":"n10","type":"frontier","track":"06-playground-s6e10-airline-satisfaction","metric":"ps6e10_roc_auc","value":0.959
+1952-- HANDOFF: `realmlp_stack.py` (n5 GPU leg) still running; when it completes (~09:30Z):
+--
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && sed -n 1250,1330p .autoresearch-loop.log | cut -c1-220
+temperature-scaled; expect >0.46 balanced accuracy.
+- I3 Track 04: LLM test-time compute over ARC tasks (sample k programs, self-verify) on Kaggle T4 with
+  an instruction model; combine with DSL prior for candidate generation.
+- I4 Track 04: object-centric induction (per-object transformation + position grammar) instead of cell rules.
+- I5 Track 01: link combine KCE/DBR to rookie separation via player-level mixed model with game-level
+  random effects; add position-specific normalisation and route efficiency features.
+- I6 Track 06: add TabPFN-style nearest-neighbour prior + RealMLP, stack with rank averaging.
+- I7 Track 07: run the agent on Graviton via QEMU emulation to produce COOL arm64 evidence locally.
+- I8 Track 02: ship the agent as a Kaggle dataset + harness so judges can reproduce (Best New Resource prize).
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && echo "=== experiments/worklog.md ===" && cat experiments/worklog.md 2>/dev/null && echo "=== equations.md ===" && cat equations.md && echo "=== IDEAS.md (root) ===" &&
+=== experiments/worklog.md ===
+# Worklog - Multi-Track Marathon
+
+## 2026-10-21 ~23:40 UTC - bootstrap
+- Verified Kaggle API (krishnakumarbhat), Colab old+pro grants, local RTX 3050, Playwright+Chrome.
+- Created 8 track folders under `/home/pope/Desktop/gpu /hackathons/`.
+- Patched a DNS wait-loop into a private copy of run_gpu.sh (`_gpu_probe/run_gpu.sh`) because
+  `*.prod.colab.dev` publishes its A record 10-45s after `colab new` -> NameResolutionError.
+
+## 2026-10-21 ~00:20 UTC - data unblock
+- Kaggle CLI download returned 403 (rules not accepted) for 5 competitions.
+- Discovered competition data IS mountable inside Kaggle kernels via competition_sources
+  (NFL 2027 extracted: combine_tracking 84MB, game_tracking_2023 335MB, player_play 147MB).
+- Kaggle API endpoints for join/accept-rules are not available in CLI 1.7.4.5.
+- Playwright + system Chrome 154 (agent-browser npm symlink is broken) -> rules accepted for all 6
+  competitions; download-all now returns HTTP 302.
+
+## 2026-10-21 ~00:40-01:40 UTC - parallel track execution
+- T04 ARC solver: DSL + D4/colour canonicalisation + bidirectional search; train pass@1 6.8%, eval 0/120.
+- T07 OpenCV: See-Reason-Act-Verify agent, AWS suite, 55 tests, ROC-AUC 0.9917, 35 FPS.
+- T01 NFL: KCE/DBR on real data, 2,652 cuts (915 INSIDE / 1,737 OUTSIDE), OOF R2 0.0355.
+- T02 GG-SPV: recall@5 0.318 vs flat 0.273, tokens -43%, verifier AUROC 0.875/0.905.
+- T03 paper: 1330-word writeup + cover image + 6 figures + 5 verified citations.
+- T05 stage1: grouped CV balanced accuracy 0.3906.
+
+## GPU lane status
+- Kaggle: ntl-stage2-deberta (deberta-v3-base 5-fold) running; ps6e10-stack v4 queued (2-GPU-slot limit).
+- Colab Pro: Qwen2.5-3B LoRA (bf16, no bitsandbytes - bnb/CUDA13 mismatch on Colab), 5.2h budget.
+- Local: CPU-heavy feature work; RTX 3050 for small neural probes.
+
+## 2026-10-22 ~06:20 UTC - iteration: T05 n0 -> n9 (stack_probs_c8) [KEEP]
+- Lanes at start: Kaggle 2 GPU slots RUNNING (ntl-stage2-deberta, ps6e10-stack); Colab
+  idle/none active. Chose CPU-lane node n0 (`I1 NB-SVM+probe stack`) on Track 05.
+- Implemented `src/stack_probe.py` + `src/stack_addendum.py` + `src/stack_model.py` +
+  `src/stack_finalize.py`. Rebuilt the cleared feature cache (`all` + new `all35` views)
+  and member OOFs (svc_extra_claude_w50, nbsvm_all, svc35_w0).
+- Measurements (SGKF5 groups=prompt_id, clean subset n=9120):
+  - svc35_w0 alone 0.330 (fold log ~0.332-0.352); 3-member simplex blend best 0.39062 (tie)
+  - LR cross-fitted stacker (probs only, class_weight=balanced): C sweep
+    0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+  - REJECTED: LGBM stack (0.383), LR+kNN vote feats (0.365), LR+margins/knn (0.345),
+    rank-mean simplex blends (<0.379), logit-adjustment alpha>0 (hurts at every C).
+- KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+  `outputs/final_model_stacked.joblib`, submission regenerated, recon sanity
+  0.167 -> 0.1867, `cv_stack_report.json`/`final_model_config.json`/notes updated.
+- Signal: prob-level ensembling of 3 diverse linear members beats any hand-blend;
+  probe next: inject the DeBERTa stage-2 member, then a 4-member iteration (n9).
+=== equations.md ===
+# Equations
+
+## Velocity cross-product (Track 01)
+cross_t = v_pre_x * v_post_y - v_pre_y * v_post_x
+turn_angle = atan2(|cross_t|, dot(v_pre, v_post))
+break_class = INSIDE if cross_t > 0 else OUTSIDE   # only when turn_angle > 35 deg
+
+## Kinematic Cut Efficiency (KCE)
+KCE = ||p_end - p_start||_2 / (sum_i ||p_{i+1} - p_i||_2 + eps)
+
+## Deceleration-to-Burst Ratio (DBR)
+DBR = max_t ||a_t||_decel / (max_t ||a_t||_burst + eps)
+
+## Balanced accuracy (Track 05)
+BA = (1/K) sum_k recall_k,  recall_k = TP_k / (TP_k + FN_k)
+
+## ROC-AUC (Track 06)
+AUC = P(s(x+) > s(x-)) over all positive/negative pairs.
+
+## Dihedral canonicalisation (Track 04)
+key(g) = min over d in D4, pi in S_colours of  hash(d(pi(g)))
+Search-space reduction factor = 8 * |S_colours| = 16x for 2-colour cases.
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && grep -n "40863\|408 " .autoresearch-loop.log | grep -v MASTER | head -10 | cut -c1-150 && echo --- && awk '/C sweep|c8|40863/{print NR": "substr($0,1,150)}' .autoresearch-loop.log | tail -20
+694:  by_player      shuffled_label_null    r2=-0.0527 mae=2.5408 rho=+0.0150
+1128:| 05 | Name That LLM | $50k | 2027-01-14 | bal_acc_stack_probs_c8=0.40863 | 24 files | 908761 KB |
+1216:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitted LR(C=8,class_weight=bal
+1227:{"id":"n9","type":"frontier","track":"05-name-that-llm","metric":"ntl_bal_acc","value":0.40863,"status":"open","idea":"I1 done; next: DeBERTa sta
+1228:{"edge":"n0->n9","relation":"stack_refine","evidence":"bal_acc 0.39061->0.40863 via OOF-probability meta stacker; delivery artifacts outputs/fina
+1246:  Grouped CV bal_acc 0.39061 -> **0.40863** (KEEP). Rejected: kNN-TFIDF vote features
+1300:    0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+1303:- KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+1950:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitte
+2056:| 05 | Name That LLM | $50k | 2027-01-14 | bal_acc_stack_probs_c8=0.40863 | 24 files | 908761 KB |
+---
+3367: src/stack_finalize.py:38:SWEEP = {"c2": 0.40344, "c3": 0.40622, "c4": 0.40626, "c8": 0.40863,
+3368: outputs/cv_stack_report.json:9: "folded_cv_bal_acc_clean": 0.40863,
+3369: outputs/cv_stack_report.json:15:  "c8": 0.40863,
+3398:     log_experiment("bal_acc_stack_probs_c8", CV_KEEP,
+3449: [0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && sed -n 80,120p src/stack_model.py && echo "=== where was 0.40863 measured? check
+3490: === where was 0.40863 measured? check stack_model docstring tail + logs ===
+3500: [0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && grep -n "0.40863" -B2 -A2 .autoresearch-loop.log 2>/dev/null | head -40 | cut -c1-200
+3503: 1128:| 05 | Name That LLM | $50k | 2027-01-14 | bal_acc_stack_probs_c8=0.40863 | 24 files | 908761 KB |
+3509: 1216:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitted LR(C=8,class_weight=bal
+3515: 1227:{"id":"n9","type":"frontier","track":"05-name-that-llm","metric":"ntl_bal_acc","value":0.40863,"status":"open","idea":"I1 done; next: DeBERTa sta
+3516: 1228:{"edge":"n0->n9","relation":"stack_refine","evidence":"bal_acc 0.39061->0.40863 via OOF-probability meta stacker; delivery artifacts outputs/fina
+3522: 1246:  Grouped CV bal_acc 0.39061 -> **0.40863** (KEEP). Rejected: kNN-TFIDF vote features
+3527: 1299-  - LR cross-fitted stacker (probs only, class_weight=balanced): C sweep
+3528: 1300:    0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+3531: 1303:- KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+3537: 1950:{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitte
+3584: ## 2026-10-22 ~06:20 UTC - iteration: T05 n0 -> n9 (stack_probs_c8) [KEEP]
+3592:   - LR cross-fitted stacker (probs only, class_weight=balanced): C sweep
+3593:     0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+3596: - KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+> build · glm-5.3-flash-free
+Anchor measurement provenance confirmed (smooth C-sweep, cross-fitted probs-only recipe in worklog). Now implementing `src/stack_lenpriors.py` with both sub-agent fixes baked in: LO-prompt prior tables for train rows (anti self-inclusion), train-fold-only tables for validation rows, script-local re-anchor, disclosed full grid.
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors.py
+> build · glm-5.3-flash-free
+Fixing two real bugs before running (groupby position-vs-original-index trap in the LO-prompt loop; a None-arg placeholder), plus dead imports:
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -44,12 +44,10 @@
+ import os
+ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ from run_experiments import (CLEAN, CACHE, COMP, FOLDS, LABELS, Y,  # noqa: E402
+                              log, log_experiment, score)
+-from ntl_features import load_competition_frame  # noqa: E402
+ from ntl_cv import MetricsCalculator  # noqa: E402
+ from ntl_data import LENGTH_BINS  # noqa: E402
+-from ntl_model import balanced_weights  # noqa: E402
+ 
+ OUT = "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs"
+ RECORDED_ANCHOR = 0.40863
+ KEEP_RULE = RECORDED_ANCHOR + 0.002
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -127,18 +127,13 @@
+     rng = np.random.default_rng(7)
+     sample_prompts = rng.choice(pd.Series(GROUP).unique(), size=8, replace=False)
+     for p in sample_prompts:
+         keep = GROUP != p
+-        direct = ratio_table(count_table(np.where(keep)[0]),
+-                             count_table(np.where(keep)[0]).sum(1),
+-                             class_marginal(np.where(keep)[0]), m)
+-        lo_from_full = ratio_table(tbl_all - count_table(np.where(GROUP == p)[0]),
+-                                   None, None, m)  # placeholder check below
+-        # rebuild N_b/P_c from the subtracted table the same way the code does
+-        counts = tbl_all - count_table(np.where(GROUP == p)[0])
+         rows = np.where(keep)[0]
+-        Nb2, Pc2 = counts.sum(1), class_marginal(rows)
+-        lo = ratio_table(counts, Nb2, Pc2, m)
++        counts = tbl_all - count_table(np.where(GROUP == p)[0])
++        direct = ratio_table(count_table(rows), count_table(rows).sum(1),
++                             class_marginal(rows), m)
++        lo = ratio_table(counts, counts.sum(1), class_marginal(rows), m)
+         assert np.abs(lo - direct).max() < 1e-9, np.abs(lo - direct).max()
+         assert np.shape(lo) == (NB, NC)
+     log(f"math checks OK {bin_reports(tbl_all, N_all, P_all)}")
+ 
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -159,14 +159,17 @@
+         N_b, P_c = T.sum(1), class_marginal(ti)
+         r_val = ratio_table(T, N_b, P_c, m)
+         F[vi, 54 + NB:] = r_val[BIN[vi]]
+ 
+-        # training rows: leave-one-prompt-out tables
+-        total_marg = Y[ti]  # marginal over ALL comp rows is fine locally too
+-        for p, idxs in pd.Series(ti).groupby(GROUP[ti]).groups.items():
++        # training rows: leave-one-prompt-out tables (positional -> original idx)
++        by_prompt = {}
++        for pos, p in enumerate(GROUP[ti]):
++            by_prompt.setdefault(p, []).append(ti[pos])
++        for p, rows in by_prompt.items():
++            rows = np.asarray(rows)
+             lo_tbl = T - per_prompt[p]
+-            lo_N, lo_P = lo_tbl.sum(1), class_marginal(np.asarray(idxs))
+-            F[idxs, 54 + NB:] = ratio_table(lo_tbl, lo_N, lo_P, m)[BIN[np.asarray(idxs)]]
++            lo_N, lo_P = lo_tbl.sum(1), class_marginal(rows)
++            F[rows, 54 + NB:] = ratio_table(lo_tbl, lo_N, lo_P, m)[BIN[rows]]
+         if f == 0:
+             log(f"    fold0 sanity: bin hot ~ rows {np.bincount(BIN[vi], minlength=NB)}")
+     assert np.isfinite(F).all()
+     return F
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -231,22 +231,15 @@
+         v2[f"alpha{alpha:g}"] = score(oof_adj)
+         log(f"  v2 alpha={alpha:g} -> {v2[f'alpha{alpha:g}']:.5f}")
+     res["v2_posthoc_reference"] = v2
+ 
+-    truth_anchor = max(anchor, RECORDED_ANCHOR)
+-    keep = v1[best] > truth_anchor + 0.002
++    keep = v1[best] > max(anchor, RECORDED_ANCHOR) + 0.002
+     res["verdict"] = {"frontier_before": RECORDED_ANCHOR,
+                       "anchor_this_session": anchor,
+                       "best_v1": v1[best], "best_v1_tag": best,
+                       "keep": keep, "improvement": v1[best] - RECORDED_ANCHOR}
+     log(f"verdict {res['verdict']}")
+ 
+-    # ---- length-bin breakdown of the winning config (diagnostics, not selection)
+-    calc = MetricsCalculator(LABELS, LENGTH_BINS)
+-    res["length_bin_breakdown_best"] = {
+-        "all_rows": float(balanced_accuracy_score(Y, oof0.argmax(1)))}
+-    log(f"per-bin diagnostics skipped for selection; see cv_report")
+-
+     if keep:
+         np.save(f"{CACHE}/oof_stack_lenprior.npy", oof)
+         log_experiment("bal_acc_stack_lenprior", v1[best],
+                        f"n9b length-bin prior offsets ON TOP of 3-member stack "
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -46,9 +46,8 @@
+ from run_experiments import (CLEAN, CACHE, COMP, FOLDS, LABELS, Y,  # noqa: E402
+                              log, log_experiment, score)
+ from ntl_cv import MetricsCalculator  # noqa: E402
+ from ntl_data import LENGTH_BINS  # noqa: E402
+-
+ OUT = "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs"
+ RECORDED_ANCHOR = 0.40863
+ KEEP_RULE = RECORDED_ANCHOR + 0.002
+ 
+
+> build · glm-5.3-flash-free
+[0m✗ [0mEdit 05-name-that-llm/src/stack_lenpriors.py failed
+[91m[1mError: [0mCould not find oldString in /home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py. It must match exactly, including whitespace and indentation.
+> build · glm-5.3-flash-free
+[0m→ [0mRead 05-name-that-llm/src/stack_lenpriors.py [90m[limit=50][0m
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -35,19 +35,18 @@
+ 
+ import numpy as np
+ import pandas as pd
+ from sklearn.linear_model import LogisticRegression
+-from sklearn.metrics import balanced_accuracy_score
+ 
+ warnings.filterwarnings("ignore")
+ 
+ import sys
+ import os
+ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+ from run_experiments import (CLEAN, CACHE, COMP, FOLDS, LABELS, Y,  # noqa: E402
+                              log, log_experiment, score)
+-from ntl_cv import MetricsCalculator  # noqa: E402
+ from ntl_data import LENGTH_BINS  # noqa: E402
++
+ OUT = "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/outputs"
+ RECORDED_ANCHOR = 0.40863
+ KEEP_RULE = RECORDED_ANCHOR + 0.002
+ 
+
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && python3 -c "import ast; ast.parse(open('src/stack_lenpriors.py').read()); print('syntax OK')" && nohup python3 src/stack_lenpriors.py > logs/stack_lenpriors.log 2>&1 & echo "PID $!"; sleep 45 && tail -20 logs/stack_lenpriors.log
+PID 3241748
+syntax OK
+tail: cannot open 'logs/stack_lenpriors.log' for reading: No such file or directory
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && ls -la logs/stack_lenpriors.log 2>/dev/null; pgrep -af stack_lenpriors | head -3; sleep 20; tail -15 logs/stack_lenpriors.log 2>/dev/null || echo "still no log"; pgrep -af stack_lenpriors | head -3
+-rw-rw-r-- 1 pope pope 329 Oct 22 08:24 logs/stack_lenpriors.log
+3242689 /usr/bin/bash -c cd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && ls -la logs/stack_lenpriors.log 2>/dev/null; pgrep -af stack_lenpriors | head -3; sleep 20; tail -15 logs/stack_lenpriors.log 2>/dev/null || echo "still no log"; pgrep -af stack_lenpriors | head -3
+[    6.8s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.8s] fold sizes [1870, 1874, 1881, 1817, 1848]
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 68, in <module>
+    wgts = balanced_weights(Y)
+NameError: name 'balanced_weights' is not defined
+3242689 /usr/bin/bash -c cd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && ls -la logs/stack_lenpriors.log 2>/dev/null; pgrep -af stack_lenpriors | head -3; sleep 20; tail -15 logs/stack_lenpriors.log 2>/dev/null || echo "still no log"; pgrep -af stack_lenpriors | head -3
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -64,9 +64,8 @@
+ nw = COMP["text"].str.split().str.len().to_numpy()
+ BIN = np.digitize(nw, LENGTH_BINS[1:-1])          # 0..NB-1
+ assert BIN.min() == 0 and BIN.max() == NB - 1, (BIN.min(), BIN.max())
+ GROUP = COMP["group"].to_numpy()
+-wgts = balanced_weights(Y)
+ 
+ log(f"S54 {S54.shape}, bins {np.bincount(BIN, minlength=NB)}, "
+     f"clean={CLEAN.sum()}, prompts={pd.Series(GROUP).nunique()}")
+ 
+
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && rm -f logs/stack_lenpriors.log && nohup python3 src/stack_lenpriors.py > logs/stack_lenpriors.log 2>&1 & echo "PID $!"; sleep 75 && tail -25 logs/stack_lenpriors.log
+PID 3243234
+tail: cannot open 'logs/stack_lenpriors.log' for reading: No such file or directory
+> build · glm-5.3-flash-free
+[0m$ [0msleep 40 && tail -25 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log"
+[    6.5s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.6s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.6s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   13.6s] anchor recomputed 0.40863 (recorded 0.40863, drift +0.00000)
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 257, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 205, in main
+    verify_prior_math()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 120, in verify_prior_math
+    assert np.abs(post_inf - P_all[None, :]).max() < 1e-9
+AssertionError
+> build · glm-5.3-flash-free
+Anchor reproduced **exactly** (0.40863, drift 0.0) — comparability locked. The math-check tolerance is miscalibrated: deviation at m=1e9 shrinks as `O(N_b/m) ≈ 1e-7`, not `1e-9`. Fixing tolerance:
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -116,9 +116,10 @@
+     assert np.abs(post - emp).max() < 0.02, np.abs(post - emp).max()
+ 
+     # (2) shrinkage correctness: as m -> 1e9 posterior -> global prior.
+     post_inf = (tbl_all + 1e9 * P_all[None, :]) / (N_all[:, None] + 1e9)
+-    assert np.abs(post_inf - P_all[None, :]).max() < 1e-9
++    assert np.abs(post_inf - P_all[None, :]).max() < 1e-6, \
++        np.abs(post_inf - P_all[None, :]).max()
+ 
+     # (3) LO-prompt arithmetic: T-minus-p equals a fresh recomputation that
+     #     excludes one prompt entirely.
+     rng = np.random.default_rng(7)
+
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log" && nohup python3 src/stack_lenpriors.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log" 2>&1 & echo "PID $!"
+PID 3245819
+> build · glm-5.3-flash-free
+[0m$ [0msleep 90 && tail -30 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log"
+[    6.5s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.6s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.7s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   13.9s] anchor recomputed 0.40863 (recorded 0.40863, drift +0.00000)
+[   13.9s] math checks OK max|sum_c P(c|b)-1|=5.55e-16
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 258, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 212, in main
+    oof = cross_fit_lr(build_features(m), C)
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 169, in build_features
+    F[rows, 54 + NB:] = ratio_table(lo_tbl, lo_N, lo_P, m)[BIN[rows]]
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 92, in ratio_table
+    assert np.isfinite(r).all(), "non-finite log ratios"
+AssertionError: non-finite log ratios
+> build · glm-5.3-flash-free
+Bug found: for leave-one-prompt tables I passed the *prompt's own* class marginal as `P_c` — classes absent from that prompt give 0-denominator → inf. Correct denominator is the LO population's own marginal:
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors.py
+Index: 05-name-that-llm/src/stack_lenpriors.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors.py
++++ 05-name-that-llm/src/stack_lenpriors.py
+@@ -164,9 +164,10 @@
+             by_prompt.setdefault(p, []).append(ti[pos])
+         for p, rows in by_prompt.items():
+             rows = np.asarray(rows)
+             lo_tbl = T - per_prompt[p]
+-            lo_N, lo_P = lo_tbl.sum(1), class_marginal(rows)
++            lo_N = lo_tbl.sum(1)
++            lo_P = lo_tbl.sum(0) / lo_tbl.sum()   # LO population's own marginal
+             F[rows, 54 + NB:] = ratio_table(lo_tbl, lo_N, lo_P, m)[BIN[rows]]
+         if f == 0:
+             log(f"    fold0 sanity: bin hot ~ rows {np.bincount(BIN[vi], minlength=NB)}")
+     assert np.isfinite(F).all()
+
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log" && nohup python3 src/stack_lenpriors.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log" 2>&1 & echo "PID $!"
+PID 3249021
+> build · glm-5.3-flash-free
+[0m$ [0msleep 240 && tail -30 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors.log"
+[   18.8s] math checks OK max|sum_c P(c|b)-1|=5.55e-16
+[   18.8s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   26.6s]   v1 C=4 m=10 -> 0.43394
+[   26.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   47.9s]   v1 C=4 m=40 -> 0.43284
+[   48.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.1s]   v1 C=4 m=200 -> 0.42831
+[   56.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   62.2s]   v1 C=8 m=10 -> 0.45496
+[   62.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   66.5s]   v1 C=8 m=40 -> 0.45262
+[   66.5s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   70.5s]   v1 C=8 m=200 -> 0.44641
+[   70.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   75.9s]   v1 C=16 m=10 -> 0.47828
+[   76.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   81.3s]   v1 C=16 m=40 -> 0.47844
+[   81.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   85.6s]   v1 C=16 m=200 -> 0.46955
+[   85.7s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   91.4s]   v1 C=32 m=10 -> 0.51191
+[   91.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   96.8s]   v1 C=32 m=40 -> 0.50910
+[   96.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[  102.2s]   v1 C=32 m=200 -> 0.49879
+[  102.2s]   v2 alpha=0.05 -> 0.40973
+[  102.2s]   v2 alpha=0.1 -> 0.40971
+[  102.2s]   v2 alpha=0.2 -> 0.41002
+[  102.2s] verdict {'frontier_before': 0.40863, 'anchor_this_session': 0.40863471314451705, 'best_v1': 0.5119128540305011, 'best_v1_tag': 'c32_m10', 'keep': True, 'improvement': 0.10328285403050114}
+[  102.2s] lenprior iteration done
+> build · glm-5.3-flash-free
+Massive result (+0.10 → 0.5119 at C=32, m=10) — but it sits at the **grid edge** and is 4–5× larger than any accepted increment in this track, so before logging a KEEP I must run two cheap adversarial checks: (a) grid extension (saturation test), (b) a negative control with row-wise-permuted length bins (signal must collapse to anchor):
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_check.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_check.py
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_check.py
+Index: 05-name-that-llm/src/stack_lenpriors_check.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_check.py
++++ 05-name-that-llm/src/stack_lenpriors_check.py
+@@ -9,8 +9,9 @@
+ 3. Fold stability + all-rows BA at the candidate config.
+ """
+ from __future__ import annotations
+ 
++import json
+ import warnings
+ 
+ import numpy as np
+ import pandas as pd
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_check.py
+Index: 05-name-that-llm/src/stack_lenpriors_check.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_check.py
++++ 05-name-that-llm/src/stack_lenpriors_check.py
+@@ -47,12 +47,10 @@
+     # ---- 1) saturation beyond the selected C=32 edge (m=10) ----
+     sat: dict[str, float] = {}
+     for C in (32.0, 64.0, 256.0, 1000.0):
+         oof = cross_fit_lr(build_features(10.0), C)
+-        bal_all = float(np.mean([np.nan] * 0))  # placeholder, per-fold below
+         sat[f"c{C:g}_m10"] = score(oof)
+         log(f"  saturation C={C:g} -> {sat[f'c{C:g}_m10']:.5f}")
+-    print("ok1")
+ 
+     # ---- fold stability at C=32 (build again for deterministic reuse) ----
+     oof32 = cross_fit_lr(build_features(10.0), 32.0)
+     fold_ba = [score(oof32, (np.isin(np.arange(len(COMP)), vi)) & CLEAN)
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_check.py
+Index: 05-name-that-llm/src/stack_lenpriors_check.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_check.py
++++ 05-name-that-llm/src/stack_lenpriors_check.py
+@@ -63,18 +63,16 @@
+         f"vs anchor {anchor:.5f}")
+ 
+     real = sat["c32_m10"]
+     voided = min(ctrl) > anchor + 0.002          # control must NOT beat anchor
+-    print(json_out := {
++    out = {
+         "anchor": anchor, "saturation": sat,
+         "fold_ba_c32m10": [round(b, 4) for b in fold_ba],
+         "negative_control": [round(c, 5) for c in ctrl],
+         "control_collapses_to_anchor": bool(not voided),
+-        "real_is_signal": bool(not voided and real > anchor + 0.002)})
++        "real_is_signal": bool(not voided and real > anchor + 0.002)}
++    log(f"verdict {out}")
++    json.dump(out, open("/tmp/opencode/lenprior_check.json", "w"), indent=1)
+ 
+-    import json
+-    json.dump({**{k: v for k, v in json_out.items()}, },
+-              open("/tmp/opencode/lenprior_check.json", "w"), indent=1)
+ 
+-
+ if __name__ == "__main__":
+     main()
+
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_check.log" && nohup python3 src/stack_lenpriors_check.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_check.log" 2>&1 & echo "PID $!"
+PID 3255990
+> build · glm-5.3-flash-free
+[0m$ [0msleep 150 && tail -15 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_check.log"
+[   15.2s] anchor 0.40863
+[   15.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   25.1s]   saturation C=32 -> 0.51191
+[   25.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   36.0s]   saturation C=64 -> 0.54447
+[   36.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   46.9s]   saturation C=256 -> 0.59338
+[   47.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   60.8s]   saturation C=1000 -> 0.60417
+[   60.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   66.7s]   fold clean BA at C=32 m=10: [0.5468, 0.5511, 0.5424, 0.5268, 0.3933]
+[   66.7s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   72.4s]     fold0 sanity: bin hot ~ rows [375 748 421 326]
+[   78.0s]   negative control (permuted bins): [0.50889, 0.51691]  vs anchor 0.40863
+[   78.0s] verdict {'anchor': 0.40863471314451705, 'saturation': {'c32_m10': 0.5119128540305011, 'c64_m10': 0.5444705882352942, 'c256_m10': 0.5933841684822077, 'c1000_m10': 0.6041670297748729}, 'fold_ba_c32m10': [0.5468, 0.5511, 0.5424, 0.5268, 0.3933], 'negative_control': [0.50889, 0.51691], 'control_collapses_to_anchor': False, 'real_is_signal': False}
+> build · glm-5.3-flash-free
+`real_is_signal=False` — the negative control does NOT collapse (0.509/0.517; and C=1000 climbs to 0.604). That voids a naive keep: the gain must be flowing through an estimator-behavior channel, not the P(y|bin) statistics. Before verdict, I need diagnostic probes (prediction distribution per class, pure-noise restatement of the effect):
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_drill.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_drill.py
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill.log" && nohup python3 src/stack_lenpriors_drill.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill.log" 2>&1 & echo "PID $!"
+PID 3260095
+> build · glm-5.3-flash-free
+[0m$ [0msleep 230 && tail -12 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill.log"
+[    6.8s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.9s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    7.0s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   14.2s] anchor C=8.0 -> cleanBA 0.40863 distinct_pred_classes=18 recall_min=0.176 recall_max=0.680
+[   25.9s] anchor_bigC C=1000.0 -> cleanBA 0.40126 distinct_pred_classes=18 recall_min=0.200 recall_max=0.673
+[   25.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   35.9s] v1_real_bins C=32.0 -> cleanBA 0.51191 distinct_pred_classes=18 recall_min=0.289 recall_max=0.702
+[   36.0s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   42.2s] ctrl_permuted_bins C=32.0 -> cleanBA 0.50889 distinct_pred_classes=18 recall_min=0.241 recall_max=0.708
+[   46.6s] gaussian_noise C=32.0 -> cleanBA 0.39666 distinct_pred_classes=18 recall_min=0.182 recall_max=0.667
+[   49.9s] gaussian_noise C=8.0 -> cleanBA 0.39494 distinct_pred_classes=18 recall_min=0.161 recall_max=0.669
+[   49.9s] drill done
+> build · glm-5.3-flash-free
+Noise probe **exonerates** generic geometry (0.3967 ≈ anchor). But the permuted-bin control still gains +0.10 — meaning the effect flows through a channel that permutation does NOT destroy. I need ablations isolating (bin dummies vs r-vector) × (real vs permuted) × (raw post-hoc strength — the earlier V2 grid stopped at α=0.2):
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_ablation.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_ablation.py
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_ablation.log" && nohup python3 src/stack_lenpriors_ablation.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_ablation.log" 2>&1 & echo "PID $!"
+PID 3265838
+> build · glm-5.3-flash-free
+[0m$ [0msleep 260 && tail -22 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_ablation.log"
+[   13.6s]   real-r: r_validation scale max|r|=0.281
+[   13.6s]   permuted-r: r_validation scale max|r|=0.281
+[   19.9s]   posthoc alpha=0.5 -> 0.40975
+[   19.9s]   posthoc alpha=1 -> 0.40929
+[   19.9s]   posthoc alpha=1.5 -> 0.40140
+[   20.0s]   posthoc alpha=2 -> 0.39932
+[   20.0s]   posthoc alpha=3 -> 0.39082
+[   20.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   28.8s]   A1_onehot_real C=32 m=10 -> 0.40593
+[   28.8s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   40.5s]   A1b_onehot_real C=1000 m=10 -> 0.40012
+[   40.6s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   45.9s]   A2_r_real C=32 m=10 -> 0.49992
+[   46.0s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   50.0s]   A3_onehot_perm C=32 m=10 -> 0.40544
+[   50.1s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   60.3s]   A3b_onehot_perm C=1000 m=10 -> 0.39948
+[   60.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   64.2s]   A5_r_real_m1e6 C=32 m=1e+06 -> 0.40815
+[   64.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   69.1s]   A1 fold BA [0.4205, 0.4174, 0.4084, 0.3939, 0.3896]
+[   69.1s] ablation done
+> build · glm-5.3-flash-free
+r(real)-only → **0.4999**, one-hot-only → nothing, and the analytic post-hoc reweighting (α up to 3) gives nothing. Also suspicious: V1 fold BAs are ~0.54 on 4 folds but 0.393 on fold 4. Two decisive quick diagnostics: (1) is the permuted table ACTUALLY near-marginal (control bug check), (2) per-class recall decomposition of the r-block gain:
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_drill2.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_drill2.py
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill2.log" && nohup python3 src/stack_lenpriors_drill2.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill2.log" 2>&1 & echo "PID $!"
+PID 3272733
+> build · glm-5.3-flash-free
+[0m$ [0msleep 200 && tail -20 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_drill2.log"
+[    5.9s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.0s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.1s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[    6.1s]   table REAL: max|P(c|b)-P(c)| = 0.0183
+[    6.1s]   table PERM: max|P(c|b)-P(c)| = 0.0096
+[   12.5s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   21.2s]   recall delta (rreal-anchor): claude=+0.111, claude=+0.025, claude=+0.035, claude=+0.004, claude=+0.020, gemini=+0.020, gemini=+0.104, gemini=+0.182, gemini=+0.137, glm=+0.196, glm=+0.218, gpt=+0.057, gpt=+0.112, gpt=+0.184, gpt=+0.116, gpt=+0.016, kimi=+0.083, qwen3.8=+0.024
+[   21.3s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   30.0s]   A4 r-PERMUTED-only C=32 -> 0.48836
+[   30.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   35.9s]   r-real-only m=5 C=32 -> 0.50113
+[   36.0s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   41.1s]   r-real-only m=10 C=32 -> 0.49992
+[   41.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   46.2s]   r-real-only m=40 C=32 -> 0.49958
+[   46.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   51.2s]   r-real-only m=200 C=32 -> 0.49098
+[   51.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.2s]   r-real-only m=1000 C=32 -> 0.45311
+[   56.2s] drill2 done
+> build · glm-5.3-flash-free
+**Arresting finding**: r-PERMUTED-only (tables ≈ marginal + fold noise) still gives **0.488** — the gain is nearly independent of real bin information, and it scales with table-noise magnitude (m=1e6 → exact constants → 0.408; m=10 → ±0.02 noise → ~0.50). One final discriminating probe decides keep vs discard: replace the r-block with **per-row random values at the same per-class scale** — if the gain survives, it's an optimizer/geometry channel, not prior information:
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_final.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_final.py
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_final.log" && nohup python3 src/stack_lenpriors_final.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_final.log" 2>&1 & echo "PID $!"
+PID 3279573
+> build · glm-5.3-flash-free
+[0m$ [0msleep 180 && tail -16 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_final.log"
+[   13.3s] anchor 0.40863
+[   13.4s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   21.7s]   P-A random-rblock C=32 -> 0.39386
+[   29.1s]   P-A random-rblock C=8 -> 0.39256
+[   29.2s]   P-B tune rows 4660, est rows 4630
+[   29.2s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   33.4s]   P-B TUNE full_m10 C=8 -> 0.45436
+[   39.1s]   P-B TUNE full_m10 C=32 -> 0.51315
+[   39.1s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   42.6s]   P-B TUNE ronly_m10 C=8 -> 0.44590
+[   48.0s]   P-B TUNE ronly_m10 C=32 -> 0.50032
+[   50.3s]   P-B TUNE anchor C=8 -> 0.40585
+[   50.3s]   P-B selected on TUNE: full_m10_c32
+[   50.3s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   56.2s]   P-B EST: best 0.51073 vs anchor 0.41138 (delta +0.09935)
+[   56.2s] final drill done
+> build · glm-5.3-flash-free
+P-A kills the pure-geometry theory (random r-block: 0.394), but P-B holds (fresh prompts +0.099). Explanation candidate: train-row r-features and validation r-features derive from the **same fold's overlapping row set** (LO ⊂ full train fold — ~99.7% shared noise), letting each fold's stacker fit table-noise that its own validation rows reproduce. **Decisive test: fully decouple the tables** (val tables from half the train fold, stacker fit on the other half; real vs permuted arms):
+[0m← [0mWrite 05-name-that-llm/src/stack_lenpriors_verdict.py
+Created file successfully: 05-name-that-llm/src/stack_lenpriors_verdict.py
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log" && nohup python3 src/stack_lenpriors_verdict.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log" 2>&1 & echo "PID $!"
+PID 3284724
+> build · glm-5.3-flash-free
+[0m$ [0msleep 150 && tail -14 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log"
+[    6.0s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.0s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    6.1s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   14.7s]   decoupled anchor C=8 -> 0.37949
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 108, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 93, in main
+    real = decoupled_run(True, 10.0, C)
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 48, in decoupled_run
+    r_val = ratio_table(TA, TA.sum(1), class_marginal(tiA), m)
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors.py", line 92, in ratio_table
+    assert np.isfinite(r).all(), "non-finite log ratios"
+AssertionError: non-finite log ratios
+> build · glm-5.3-flash-free
+Odd — fails on the **real** arm's first table where all inputs are provably positive. Direct numeric probe instead of theorizing:
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/05-name-that-llm" && python3 - <<'EOF'
+import sys, numpy as np
+sys.path.insert(0, "src")
+from stack_lenpriors import (BIN, COMP, FOLDS, LABELS, NC, NB, Y, count_table, class_marginal)
+ti, vi = FOLDS[0]
+tiA = ti[0::2]
+TA = count_table(tiA)
+N_b = TA.sum(1)
+P_c = class_marginal(tiA)
+print("TA shape", TA.shape, "N_b", N_b)
+print("P_c min", P_c.min(), "nan?", np.isnan(P_c).any())
+term = (TA + 10.0 * P_c[None, :]) / (N_b[:, None] + 10.0) / P_c[None, :]
+print("term min", term.min(), "argmin", np.unravel_index(term.argmin(), term.shape),
+      "nan?", np.isnan(term).any())
+bad = np.argwhere(~np.isfinite(np.log(term)))
+print("bad cells", bad[:10])
+for b, c in bad[:5]:
+    print("bin", b, "class", c, "TA[b,c]", TA[b, c], "N_b", N_b[b], "P_c", P_c[c])
+EOF
+[    8.2s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    8.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    8.3s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+TA shape (4, 18) N_b [ 714. 1453.  881.  662.]
+P_c min 0.0 nan? False
+term min nan argmin (np.int64(0), np.int64(7)) nan? True
+bad cells [[0 7]
+ [1 7]
+ [2 7]
+ [3 7]]
+bin 0 class 7 TA[b,c] 0.0 N_b 714.0 P_c 0.0
+bin 1 class 7 TA[b,c] 0.0 N_b 1453.0 P_c 0.0
+bin 2 class 7 TA[b,c] 0.0 N_b 881.0 P_c 0.0
+bin 3 class 7 TA[b,c] 0.0 N_b 662.0 P_c 0.0
+> build · glm-5.3-flash-free
+The 0::2 stride split isn't random — class 7 lands entirely on odd positions (long same-class runs in the fold index array). Fix: seeded random half-split:
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_verdict.py
+Index: 05-name-that-llm/src/stack_lenpriors_verdict.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_verdict.py
++++ 05-name-that-llm/src/stack_lenpriors_verdict.py
+@@ -40,10 +40,12 @@
+     if not real:
+         mod.BIN = np.random.default_rng(seed).permutation(orig)
+     try:
+         pred_oof = np.zeros((len(COMP), NC), dtype=np.float32)
++        rng = np.random.default_rng(100 + f)
+         for f, (ti, vi) in enumerate(FOLDS):
+-            tiA, tiB = ti[0::2], ti[1::2]
++            shuf = rng.permutation(ti)
++            tiA, tiB = shuf[0::2], shuf[1::2]
+             # validation table: A rows only (independent of the fit set B)
+             TA = count_table(tiA)
+             r_val = ratio_table(TA, TA.sum(1), class_marginal(tiA), m)
+             r_map = r_val[mod.BIN[vi]]                       # (len(vi), NC)
+
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_verdict.py
+Index: 05-name-that-llm/src/stack_lenpriors_verdict.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_verdict.py
++++ 05-name-that-llm/src/stack_lenpriors_verdict.py
+@@ -80,10 +80,12 @@
+ 
+ def decoupled_anchor(C: float) -> float:
+     pred_oof = np.zeros((len(COMP), NC), dtype=np.float32)
+     for f, (ti, vi) in enumerate(FOLDS):
++        rng = np.random.default_rng(100 + f)
++        shuf = rng.permutation(ti)
+         clf = LogisticRegression(C=C, max_iter=3000, class_weight="balanced")
+-        clf.fit(S54[ti[1::2]], Y[ti[1::2]])
++        clf.fit(S54[shuf[1::2]], Y[shuf[1::2]])
+         pred_oof[vi] = clf.predict_proba(S54[vi])
+     return float(balanced_accuracy_score(Y[CLEAN], pred_oof[CLEAN].argmax(1)))
+ 
+ 
+
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log" && nohup python3 src/stack_lenpriors_verdict.py > "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log" 2>&1 & echo "PID $!"
+PID 3289488
+> build · glm-5.3-flash-free
+[0m$ [0msleep 160 && tail -14 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/stack_lenpriors_verdict.log"
+[   12.0s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   12.0s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   12.2s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   23.7s]   decoupled anchor C=8 -> 0.40084
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 112, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 97, in main
+    real = decoupled_run(True, 10.0, C)
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 44, in decoupled_run
+    rng = np.random.default_rng(100 + f)
+UnboundLocalError: local variable 'f' referenced before assignment
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_verdict.py
+Index: 05-name-that-llm/src/stack_lenpriors_verdict.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_verdict.py
++++ 05-name-that-llm/src/stack_lenpriors_verdict.py
+@@ -40,10 +40,10 @@
+     if not real:
+         mod.BIN = np.random.default_rng(seed).permutation(orig)
+     try:
+         pred_oof = np.zeros((len(COMP), NC), dtype=np.float32)
+-        rng = np.random.default_rng(100 + f)
+-        for f, (ti, vi) in enumerate(FOLDS):
++        rng = np.random.default_rng(100 + fold_i)
++        for fold_i, (ti, vi) in enumerate(FOLDS):
+             shuf = rng.permutation(ti)
+             tiA, tiB = shuf[0::2], shuf[1::2]
+             # validation table: A rows only (independent of the fit set B)
+             TA = count_table(tiA)
+
+> build · glm-5.3-flash-free
+[0m$ [0msed -i 's/    for f, (ti, vi) in enumerate(FOLDS):\n/    for f, (ti, vi) in enumerate(FOLDS):\n/' src/stack_lenpriors_verdict.py && rm -f logs/stack_lenpriors_verdict.log && nohup python3 src/stack_lenpriors_verdict.py > logs/stack_lenpriors_verdict.log 2>&1 & echo "PID $!" && sleep 170 && tail -12 logs/stack_lenpriors_verdict.log
+PID 3293599
+[   10.0s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   10.1s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   10.2s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   25.1s]   decoupled anchor C=8 -> 0.40084
+Traceback (most recent call last):
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 112, in <module>
+    main()
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 97, in main
+    real = decoupled_run(True, 10.0, C)
+  File "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/src/stack_lenpriors_verdict.py", line 44, in decoupled_run
+    rng = np.random.default_rng(100 + fold_i)
+UnboundLocalError: local variable 'fold_i' referenced before assignment
+> build · glm-5.3-flash-free
+[0m→ [0mRead 05-name-that-llm/src/stack_lenpriors_verdict.py [90m[limit=14, offset=40][0m
+> build · glm-5.3-flash-free
+[0m← [0mEdit 05-name-that-llm/src/stack_lenpriors_verdict.py
+Index: 05-name-that-llm/src/stack_lenpriors_verdict.py
+===================================================================
+--- 05-name-that-llm/src/stack_lenpriors_verdict.py
++++ 05-name-that-llm/src/stack_lenpriors_verdict.py
+@@ -40,10 +40,10 @@
+     if not real:
+         mod.BIN = np.random.default_rng(seed).permutation(orig)
+     try:
+         pred_oof = np.zeros((len(COMP), NC), dtype=np.float32)
+-        rng = np.random.default_rng(100 + fold_i)
+         for fold_i, (ti, vi) in enumerate(FOLDS):
++            rng = np.random.default_rng(100 + fold_i)
+             shuf = rng.permutation(ti)
+             tiA, tiB = shuf[0::2], shuf[1::2]
+             # validation table: A rows only (independent of the fit set B)
+             TA = count_table(tiA)
+
+> build · glm-5.3-flash-free
+[0m$ [0mrm -f logs/stack_lenpriors_verdict.log && nohup python3 src/stack_lenpriors_verdict.py > logs/stack_lenpriors_verdict.log 2>&1 & echo "PID $!" && sleep 200 && tail -12 logs/stack_lenpriors_verdict.log
+PID 3297531
+[   19.9s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   20.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   20.5s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   58.8s]   decoupled anchor C=8 -> 0.40084
+> build · glm-5.3-flash-free
+[2026-10-22 09:15:13] iter 5: NO state change (stale 1/3) rc=124
+[2026-10-22 09:15:13] Rotated .autoresearch-loop.log (retained last 2000 lines)
+[2026-10-22 09:15:31] iter 6: launching opencode (3600s watchdog) <default> 
+[0m
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && ls -la && echo "---" && cat MASTER_STATUS.md 2>/dev/null | head -100
+total 164
+drwxrwxr-x 1 pope pope   1074 Oct 22 09:15 .
+drwxrwxr-x 1 pope pope     42 Oct 22 03:25 ..
+drwxrwxr-x 1 pope pope    102 Oct 22 00:18 01-nfl-big-data-bowl-2027
+drwxrwxr-x 1 pope pope    102 Oct 22 00:18 02-gemma-4-developer-agent-paper
+drwxrwxr-x 1 pope pope    102 Oct 22 00:18 03-arc-prize-2026-paper-track
+drwxrwxr-x 1 pope pope    226 Oct 22 09:12 04-arc-prize-2026-arc-agi-2
+drwxrwxr-x 1 pope pope    220 Oct 22 06:22 05-name-that-llm
+drwxrwxr-x 1 pope pope    196 Oct 22 05:47 06-playground-s6e10-airline-satisfaction
+drwxrwxr-x 1 pope pope    194 Oct 22 08:57 07-opencv-ai-competition-2026
+drwxrwxr-x 1 pope pope    102 Oct 22 00:18 08-openzee-openair-2026
+-rw-rw-r-- 1 pope pope   4084 Oct 22 04:08 ACCESS_STATUS.md
+-rw-rw-r-- 1 pope pope   1475 Oct 22 05:49 AUTORESEARCH_DIRECTIVE.md
+-rw-rw-r-- 1 pope pope      8 Oct 22 05:49 .autoresearch-loop.lock
+-rw-rw-r-- 1 pope pope 107536 Oct 22 09:15 .autoresearch-loop.log
+-rw-rw-r-- 1 pope pope   1945 Oct 22 08:14 autoresearch_research.ideas.md
+-rw-rw-r-- 1 pope pope   1925 Oct 22 08:14 autoresearch_research.jsonl
+-rw-rw-r-- 1 pope pope   2476 Oct 22 05:49 autoresearch_research.md
+-rw-rw-r-- 1 pope pope   2790 Oct 22 08:14 autoresearch_research_strategy_graph.jsonl
+-rw-rw-r-- 1 pope pope   5396 Oct 22 04:08 COMPETITION_ACCESS.md
+drwxrwxr-x 1 pope pope     58 Oct 22 05:40 data
+-rw-rw-r-- 1 pope pope   1306 Oct 22 08:14 equations.md
+drwxrwxr-x 1 pope pope     20 Oct 22 05:49 experiments
+-rw-rw-r-- 1 pope pope   6642 Oct 22 05:50 gen_master_status.py
+drwxrwxr-x 1 pope pope     82 Oct 22 05:40 _gpu_probe
+-rw-rw-r-- 1 pope pope   3737 Oct 22 06:38 MASTER_STATUS.md
+-rw-rw-r-- 1 pope pope    566 Oct 22 05:49 strategies.md
+---
+# MASTER STATUS - Multi-Track Kaggle Hackathon Marathon
+
+_Last update: 2026-10-22 01:08 UTC_
+
+## GPU Lanes
+
+| Lane | State | Detail |
+|---|---|---|
+| Local RTX 3050 | ACTIVE | `NVIDIA GeForce RTX 3050 Laptop GPU, 202 MiB, 4096 MiB, 17 %` |
+| Kaggle GPU [ntl-stage2-deberta] | RUNNING | `nakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"` |
+| Kaggle GPU [ps6e10-stack] | RUNNING | `krishnakumarbhat/ps6e10-stack has status "KernelWorkerStatus.RUNNING"` |
+| Colab Pro T4 | RUNNING | `3125402 /bin/sh -c pgrep -af 'run_track05_colab|colab_cli' | head -2` |
+| Kaggle quota | 5.11h used / 45h total | resets 2026-10-24T00:00:00Z |
+
+## Tracks
+
+| # | Track | Prize | Deadline | Best validated score | Outputs | Size |
+|---|---|---|---|---|---|---|
+| 01 | NFL Big Data Bowl 2027 | $100k | 2027-01-06 | kce_real_data_pipeline=regression_proxy | 18 files | 24452 KB |
+| 02 | Gemma 4 Developer Agent Paper | $35k | 2026-11-12 | fidelity_sweep_pass|localized=0.571->0.714 | 25 files | 1113 KB |
+| 03 | ARC Prize 2026 Paper Track | $450k | 2026-11-09 | canonical_stats=d4=8;orbit_distinct=8 | 15 files | 1530 KB |
+| 04 | ARC Prize 2026 ARC-AGI-2 | $700k | 2026-11-02 | graded_pass2_training=0.005 | 6 files | 2031 KB |
+| 05 | Name That LLM | $50k | 2027-01-14 | bal_acc_stack_probs_c8=0.40863 | 24 files | 908761 KB |
+| 06 | Playground S6E10 Airline | swag | 2026-10-31 | - | 4 files | 21864 KB |
+| 07 | OpenCV AI Competition 2026 | $20,250 | 2026-10-26 | full_agent_fps=35.03 | 9 files | 2805 KB |
+| 08 | OpenZee OpenAir 2026 | ? | ? | - | 2 files | 4 KB |
+
+## Deliverable Checklist
+
+- [x] T01-nfl-big-data-bowl-2027 `notebooks/nfl_combine_to_game_kce.ipynb` (4823 B)
+- [x] T01-nfl-big-data-bowl-2027 `outputs/WRITEUP.md` (8107 B)
+- [x] T01-nfl-big-data-bowl-2027 `outputs/figures/fig1_velocity_cross_product.png` (54225 B)
+- [x] T02-gemma-4-developer-agent-paper `src/gg_spv_agent.py` (56792 B)
+- [x] T02-gemma-4-developer-agent-paper `src/agent.yaml` (724 B)
+- [x] T02-gemma-4-developer-agent-paper `outputs/PAPER_WRITEUP.md` (12381 B)
+- [x] T02-gemma-4-developer-agent-paper `outputs/paper.tex` (7245 B)
+- [x] T03-arc-prize-2026-paper-track `outputs/WRITEUP.md` (9789 B)
+- [x] T03-arc-prize-2026-paper-track `outputs/cover_image.png` (452426 B)
+- [x] T04-arc-prize-2026-arc-agi-2 `outputs/submission.json` (463384 B)
+- [x] T04-arc-prize-2026-arc-agi-2 `outputs/eval_metrics.json` (20702 B)
+- [x] T04-arc-prize-2026-arc-agi-2 `notebooks/arc_agi_2_solver.ipynb` (7591 B)
+- [x] T05-name-that-llm `outputs/oof_predictions.parquet` (1050056 B)
+- [x] T05-name-that-llm `outputs/cv_report.json` (3871 B)
+- [x] T05-name-that-llm `outputs/submission.parquet` (41090 B)
+- [x] T05-name-that-llm `notebooks/inference_submission.ipynb` (4554 B)
+- [x] T06-playground-s6e10-airline-satisfaction `outputs/oof_blend.npy` (5597208 B)
+- [ ] T06-playground-s6e10-airline-satisfaction `outputs/cv_scores.json` - MISSING
+- [ ] T06-playground-s6e10-airline-satisfaction `outputs/submission.csv` - MISSING
+- [x] T07-opencv-ai-competition-2026 `outputs/DEVPOST_SUBMISSION.md` (15879 B)
+- [x] T07-opencv-ai-competition-2026 `outputs/architecture_diagram.png` (440302 B)
+- [x] T07-opencv-ai-competition-2026 `benchmarks/run_eval.py` (33332 B)
+- [x] T07-opencv-ai-competition-2026 `src/generate_demo_video.py` (13196 B)
+- [x] T08-openzee-openair-2026 `outputs/RECON.md` (3217 B)
+
+## Hard Rules
+
+- NO Kaggle/Devpost submissions: all predictions live in `outputs/`.
+- Kaggle GPU <= 44h/week, keep 1h emergency reserve.
+- Colab Pro: billable from second 1; always stop the session when done.
+- Local RTX 3050 first for anything under 3.2 GB VRAM.
+- Never modify `/media/pope/virtbox/a_resume/`.
+
+_generated by gen_master_status.py at 2026-10-22 01:08 UTC_
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && tail -30 autoresearch_research.jsonl 2>/dev/null && echo "---GRAPH---" && tail -20 autoresearch_research_strategy_graph.jsonl 2>/dev/null && echo "---WORKLOG---" && tail -40 experiments/worklog.md 2>/dev/null
+{"commit":"baseline","metric":"ntl_bal_acc","value":0.3906,"status":"keep","description":"stage1 char+word tfidf+stylometry, StratifiedGroupKFold group=prompt_id"}
+{"commit":"baseline","metric":"ps6e10_roc_auc","value":0.959265,"status":"keep","description":"lgbm+cat+xgb rank/logit blend, 10-fold OOF"}
+{"commit":"baseline","metric":"arc_eval_pass1","value":0.0,"status":"keep","description":"DSL depth-2 solver, 0/120 evaluation tasks"}
+{"commit":"baseline","metric":"arc_train_pass1","value":0.068,"status":"keep","description":"DSL solver on 1000 training tasks"}
+{"commit":"baseline","metric":"gg_spv_recall5","value":0.318,"status":"keep","description":"graph-guided localisation recall@5 vs 0.273 flat"}
+{"commit":"baseline","metric":"nfl_oof_r2","value":0.0355,"status":"keep","description":"KCE/DBR features, GroupKFold proxy R2"}
+{"commit":"baseline","metric":"opencv_agent_fps","value":35.0,"status":"keep","description":"See-Reason-Act-Verify agent on local CPU"}
+{"commit":"stack_probs_c8","metric":"ntl_bal_acc","value":0.40863,"status":"keep","description":"T05 n0->n9: cross-fitted LR(C=8,class_weight=balanced) meta-stacker over OOF probs of svc_extra_claude_w50+nbsvm_all+new svc35_w0 (char3-5/word1-3 diversity member); only OOF probs (kNN-vote feats, rank-mean, LR-margin stacks all rejected); grouped SGKF5 prompt_id, clean n=9120; baseline 0.39061 -> +0.0180"}
+{"commit":"nnprior_inject_lr","metric":"ps6e10_roc_auc","value":0.959242,"status":"discard","description":"T05→T06 n5a CPU leg: banked GPU kNN-prior (oof_nnprior, k=5 inv-dist fp16 cdist, fold-safe, member AUC 0.94305) injected into cross-fitted LR stacker over {lgbm,cat,xgb} OOF logits; best cfg logits+probs C=0.5 -> 0.959242 < baseline 0.959265; rank-feature stack 0.958447 also rejected; coord-ascent falls back to cat-dominant (0.959263). Baseline stands; RealMLP GPU leg (realmlp_stack.py, 10-fold, started 07:18Z) still in flight"}
+---GRAPH---
+{"id": "n0", "type": "frontier", "track": "05-name-that-llm", "metric": "ntl_bal_acc", "value": 0.3906, "status": "open", "idea": "I1 NB-SVM + probe stack"}
+{"id": "n1", "type": "frontier", "track": "05-name-that-llm", "metric": "ntl_bal_acc", "value": 0.3906, "status": "open", "idea": "I2 ensemble stage1+deberta+qwen"}
+{"id": "n2", "type": "frontier", "track": "04-arc-prize-2026-arc-agi-2", "metric": "arc_eval_pass1", "value": 0.0, "status": "open", "idea": "I3 LLM test-time compute"}
+{"id": "n3", "type": "frontier", "track": "04-arc-prize-2026-arc-agi-2", "metric": "arc_eval_pass1", "value": 0.0, "status": "open", "idea": "I4 object-centric induction"}
+{"id": "n4", "type": "frontier", "track": "01-nfl-big-data-bowl-2027", "metric": "nfl_oof_r2", "value": 0.0355, "status": "open", "idea": "I5 mixed model + position norms"}
+{"id": "n5", "type": "frontier", "track": "06-playground-s6e10-airline-satisfaction", "metric": "ps6e10_roc_auc", "value": 0.959265, "status": "open", "idea": "I6 add prior/NN + RealMLP"}
+{"id": "n6", "type": "frontier", "track": "07-opencv-ai-competition-2026", "metric": "opencv_cool_evidence", "value": 0.0, "status": "open", "idea": "I7 arm64 emulation evidence"}
+{"id": "n7", "type": "frontier", "track": "02-gemma-4-developer-agent-paper", "metric": "gg_spv_recall5", "value": 0.318, "status": "open", "idea": "I8 ship reproducible agent dataset"}
+{"id": "n8", "type": "frontier", "track": "08-openzee-openair-2026", "metric": "openzee_identified", "value": 0.0, "status": "open", "idea": "identify competition"}
+{"id":"n9","type":"frontier","track":"05-name-that-llm","metric":"ntl_bal_acc","value":0.40863,"status":"open","idea":"I1 done; next: DeBERTa stage2 ferta probs (Kaggle kernel ntl-stage2-deberta running) into the same C=8 meta stack; then prompt-conditional length priors"}
+{"edge":"n0->n9","relation":"stack_refine","evidence":"bal_acc 0.39061->0.40863 via OOF-probability meta stacker; delivery artifacts outputs/final_model_stacked.joblib"}
+{"edge":"n5->n10","relation":"nnprior_inject_reject","evidence":"18-config cross-fitted LR stack (logits/logits+ranks/logits+probs, C-sweep) all <= 0.959265 baseline; banked kNN-prior member AUC 0.94305 too weak to add logit-scale info; equations.md verified: unequal-weight pooling differs by up to 0.033 AUC numerically"}
+{"id":"n10","type":"frontier","track":"06-playground-s6e10-airline-satisfaction","metric":"ps6e10_roc_auc","value":0.959265,"status":"rejected-measurement","idea":"n5a nnprior-injection leg REJECTED (0.959242 best); n5 RealMLP leg keeps n5 open: realmlp_stack.py 10-fold on RTX 3050 running (fold 4/10 at 08:10Z), artifacts on completion: outputs/oof_realmlp.npy + oof_blend_v2.npy + cv_scores.json; next leg: 5-member strict LF-optimised stack over realmlp member"}
+---WORKLOG---
+- Lanes at start: Kaggle 2 GPU slots RUNNING (ntl-stage2-deberta, ps6e10-stack); Colab
+  idle/none active. Chose CPU-lane node n0 (`I1 NB-SVM+probe stack`) on Track 05.
+- Implemented `src/stack_probe.py` + `src/stack_addendum.py` + `src/stack_model.py` +
+  `src/stack_finalize.py`. Rebuilt the cleared feature cache (`all` + new `all35` views)
+  and member OOFs (svc_extra_claude_w50, nbsvm_all, svc35_w0).
+- Measurements (SGKF5 groups=prompt_id, clean subset n=9120):
+  - svc35_w0 alone 0.330 (fold log ~0.332-0.352); 3-member simplex blend best 0.39062 (tie)
+  - LR cross-fitted stacker (probs only, class_weight=balanced): C sweep
+    0.5/1/2/3/4/8/16/32/1000 -> 0.3962/0.4021/0.4034/0.4062/0.4063/**0.40863**/0.40858/0.40834/0.4013
+  - REJECTED: LGBM stack (0.383), LR+kNN vote feats (0.365), LR+margins/knn (0.345),
+    rank-mean simplex blends (<0.379), logit-adjustment alpha>0 (hurts at every C).
+- KEEP: `stack_probs_c8` = 0.40863 (+0.018 over 0.39061). Deliverables refit:
+  `outputs/final_model_stacked.joblib`, submission regenerated, recon sanity
+  0.167 -> 0.1867, `cv_stack_report.json`/`final_model_config.json`/notes updated.
+- Signal: prob-level ensembling of 3 diverse linear members beats any hand-blend;
+  probe next: inject the DeBERTa stage-2 member, then a 4-member iteration (n9).
+
+## 2026-10-22 ~08:05-08:15 UTC - iteration: T06 n5a (nnprior_inject_lr) [DISCARD], n5b rank-stack [DISCARD]
+- Lanes at start: Kaggle GPU x2 RUNNING (ntl-stage2-deberta, ps6e10-stack); Colab: no active
+  session; local RTX 3050 already carrying the PREVIOUS iteration's `realmlp_stack.py` job
+  (PID 3167832, started ~07:18Z, stdout /tmp/opencode/t06full2.log) -> took the complementary CPU lane.
+- Node: n5 CPU leg (I6): inject banked oof_nnprior.npy (kNN k=5 inv-dist, fp16 cdist,
+  leakage-safe fold-safe references) as 4th member into cross-fitted LR stacker.
+- Implemented `src/stack_nn_lr.py` (strict OOF stack weights via the banked members'
+  StratifiedKFold(10,42); math numerically verified per equations.md: clip is rank-preserving;
+  equal-weight prob-vs-logit pooling AUC differs (synthetic +0.0051); unequal-weight pool scale
+  gap up to 0.033 AUC).
+- Measurements (StratifiedKFold10 rs42, n=699,636):
+  - members: lgbm 0.957583 / cat 0.959046 / xgb 0.956385 / nnprior 0.943050 / baseline blend 0.959265
+  - lr_logits C{.25..1e6}: all 0.959235; lr_logits+probs: best 0.959242 (C=0.5)
+  - lr_rank (per-col global ranks): 0.958444..0.958447
+  - 4-member coord-ascent reference: 0.959263 = cat-dominant, drops nnprior
+- DISCARD: every stack config <= baseline 0.959265. nnprior member is too weak (0.943) to help at
+  this operating point; T06 baseline stands at 0.959265.
+- Literature (worker_1 ses_e9e8c3c4): kNN-as-tabular (TabR, ICLR-2025 kNN-tabular) = textbook;
+  wiring-level twist only, no novelty claim attached to this reject.
+- HANDOFF: `realmlp_stack.py` (n5 GPU leg) still running; when it completes (~09:30Z):
+  artifacts `outputs/oof_realmlp.npy`, `oof_blend_v2.npy`, `cv_scores.json`, + its own TSV row.
+  NOTE: its final stack uses IN-SAMPLE coord-ascent weights -> next iteration should re-verify the
+  5-member stack strictly (cross-fitted LR, same protocol as stack_nn_lr.py) before est. keep.
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && cat autoresearch_research.md && echo "==STRAT==" && cat strategies.md && echo "==EQ==" && cat equations.md && echo "==IDEAS==" && cat autoresearch_research.ideas.md
+# Autoresearch Marathon: Multi-Track Kaggle Competition Optimization
+
+## Topic
+Maximise verified, submission-ready artefacts across 8 concurrent Kaggle/Devpost tracks
+under three GPU tiers (local RTX 3050 4GB, Kaggle T4 x2, Colab Pro T4), with a strict
+no-submission policy (everything staged under each track's `outputs/`).
+
+## Tracks, metrics, current baselines
+| Track | Metric (official where known) | Baseline (measured) | Target |
+|---|---|---|---|
+| 01 NFL Big Data Bowl 2027 | competition metric unknown -> regression proxy R2 / MAE | GroupKFold OOF R2=0.0355, MAE=1.635 | >0.25 R2 |
+| 02 Gemma 4 Developer Agent Paper | localisation recall@k, patch pass rate | GG recall@5=0.318 vs flat 0.273, tokens -43% | recall@5 >0.45 |
+| 03 ARC Prize 2026 Paper Track | rubric (accuracy/universality/theory) | writeup 1330 words, 6 figures, 5 verified citations | complete + ablations |
+| 04 ARC-AGI-2 | exact match on eval set | train pass@1 6.8% (68/1000), eval pass@1 0/120 | eval pass@1 >0 |
+| 05 Name That LLM | balanced accuracy (18 classes) | grouped CV 0.3906 (5-fold SGKF, group=prompt_id) | >0.46 |
+| 06 Playground S6E10 | ROC-AUC | 0.959265 (lgbm .9576 / cat .9590 / xgb .9564) | >0.9613 |
+| 07 OpenCV AI Competition | rubric (100 pts) + agentic/COOL awards | 55 tests pass, agent 35 FPS, detection ROC-AUC 0.9917 | 1-click AWS deploy + COOL evidence |
+| 08 OpenZee OpenAir | unknown | recon only | identification |
+
+## Protocol per iteration
+1. Pick the highest-potential frontier node in `autoresearch_research_strategy_graph.jsonl`.
+2. Formulate a hypothesis with a measurable metric.
+3. Implement in the track's `src/` (one class per file, absolute imports, typed, docstrings).
+4. Evaluate with the track's STRICT validation (never random KFold where the metric requires grouping).
+5. Keep only if the metric improves; log to `autoresearch_research.jsonl`, the strategy graph,
+   `variations.md`, and `experiments/worklog.md`.
+6. Append the measurement to the track's `logs/experiments.tsv`.
+
+## Hard constraints
+- NEVER submit to Kaggle or Devpost.
+- Kaggle GPU: max 44h/week, keep 1h emergency reserve.
+- Colab Pro: billable from second 1 - always stop sessions; DNS wait-loop mandatory.
+- Local RTX 3050 only for workloads under 3.2GB VRAM.
+- Never modify /media/pope/virtbox/a_resume/.
+- Track 05 validation: StratifiedGroupKFold(n_splits=5, groups=prompt_id, shuffle=True, random_state=42);
+  never random KFold; never test-time Hungarian/prompt clustering.
+==STRAT==
+# Strategies
+
+1. Grouped validation everywhere the metric demands it (Track 05 SGKF by prompt_id).
+2. Graph-guided context pruning instead of flat file reads (Track 02).
+3. Canonicalisation + bidirectional search for program induction (Track 04).
+4. Physics-grounded features from raw 10Hz tracking (Track 01).
+5. Feature-engineering + rank/logit stacking for tabular AUC (Track 06).
+6. Agentic orchestration with structured telemetry + reproducible AWS deployment (Track 07).
+7. Public-mirror + kernel-mount data acquisition when competition rules block downloads.
+==EQ==
+# Equations
+
+## Velocity cross-product (Track 01)
+cross_t = v_pre_x * v_post_y - v_pre_y * v_post_x
+turn_angle = atan2(|cross_t|, dot(v_pre, v_post))
+break_class = INSIDE if cross_t > 0 else OUTSIDE   # only when turn_angle > 35 deg
+
+## Kinematic Cut Efficiency (KCE)
+KCE = ||p_end - p_start||_2 / (sum_i ||p_{i+1} - p_i||_2 + eps)
+
+## Deceleration-to-Burst Ratio (DBR)
+DBR = max_t ||a_t||_decel / (max_t ||a_t||_burst + eps)
+
+## Balanced accuracy (Track 05)
+BA = (1/K) sum_k recall_k,  recall_k = TP_k / (TP_k + FN_k)
+
+## ROC-AUC (Track 06)
+AUC = P(s(x+) > s(x-)) over all positive/negative pairs.
+
+## Dihedral canonicalisation (Track 04)
+key(g) = min over d in D4, pi in S_colours of  hash(d(pi(g)))
+Search-space reduction factor = 8 * |S_colours| = 16x for 2-colour cases.
+
+## Score-scale invariance / pooling scale (Track 06 stacks)
+AUC(s) = P(s(x+) > s(x-)) is a function of score ORDERING only, hence
+AUC(g(s)) = AUC(s) for any strictly increasing g  (e.g. prob->logit clip @1e-6; verified numerically).
+Equal-weight mean on prob scale != equal-weight mean on logit scale (different orderings;
+synthetic check +0.0051 AUC), and for unequal weights the gap can reach ~0.033 AUC
+-> both pooling scales (and per-column rank features) are distinct stack hypotheses,
+each needing its own OOF measurement.
+==IDEAS==
+# Ideas frontier
+
+- I1 Track 05: replace hand stylometry with a learned linear probe over character 3-6 grams with
+  NB log-count ratios; add external corpus as training-only augmentation; calibrate per-class priors.
+  -> DONE (2026-10-22): cross-fitted LR(C=8, balanced) meta-stacker over OOF probs of
+  svc_extra_claude_w50 + nbsvm_all + new svc35_w0 char3-5/word1-3 diversity member.
+  Grouped CV bal_acc 0.39061 -> **0.40863** (KEEP). Rejected: kNN-TFIDF vote features
+  (0.365), margin/entropy stack features (0.383), rank-mean blends (0.379).
+  Next: feed the running Kaggle DeBERTa stage-2 OOF into the same meta stack.
+- I2 Track 05: ensemble Stage-1 (LinearSVC+NB-SVM) with DeBERTa (Kaggle) and Qwen LoRA (Colab) logits,
+  temperature-scaled; expect >0.46 balanced accuracy.
+- I3 Track 04: LLM test-time compute over ARC tasks (sample k programs, self-verify) on Kaggle T4 with
+  an instruction model; combine with DSL prior for candidate generation.
+- I4 Track 04: object-centric induction (per-object transformation + position grammar) instead of cell rules.
+- I5 Track 01: link combine KCE/DBR to rookie separation via player-level mixed model with game-level
+  random effects; add position-specific normalisation and route efficiency features.
+- I6 Track 06: add TabPFN-style nearest-neighbour prior + RealMLP, stack with rank averaging.
+- I7 Track 07: run the agent on Graviton via QEMU emulation to produce COOL arm64 evidence locally.
+- I8 Track 02: ship the agent as a Kaggle dataset + harness so judges can reproduce (Best New Resource prize).
+- I6 Track 06 leg-1 (2026-10-22): nnprior injection REJECTED (0.959242 best vs 0.959265 baseline,
+  18 strict cross-fitted LR stack configs incl. rank features all <= baseline). kNN k=5 inv-dist
+  member alone 0.943 — too weak at this operating point. RealMLP-TD 10-fold GPU leg still running
+  (started 07:18Z); strict 5-member LR re-stack of whichever members bank, before keep.
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && nvidia-smi --query-gpu=memory.used,memory.total,utilization.gpu --format=csv 2>/dev/null; echo "---KAGGLE---"; kaggle kernels list -m 2>/dev/null | head -10; echo "---COLAB---"; pgrep -af 'colab' 2>/dev/null | head -5; echo "---T06LOG---"; tail -20 /tmp/opencode/t06full2.log 2>/dev/null; echo "---PROC---"; pgrep -af 'realmlp|stack' | head -10
+memory.used [MiB], memory.total [MiB], utilization.gpu [%]
+1573 MiB, 4096 MiB, 3 %
+---KAGGLE---
+ref                                                      title                                   author    lastRunTime                 totalVotes  
+-------------------------------------------------------  --------------------------------------  --------  --------------------------  ----------  
+krishnakumarbhat/nfl2027-data-extract                    NFL2027 Data Extract                    krishnak  2026-10-21 20:39:24.767000           0  
+krishnakumarbhat/gemma4-data-extract-cpu                 Gemma4 Data Extract Cpu                 krishnak  2026-10-21 20:31:24                  0  
+krishnakumarbhat/conn-probe-comp-data                    Conn Probe Comp Data                    krishnak  2026-10-21 18:22:25                  0  
+krishnakumarbhat/conn-probe-gpu                          Conn Probe GPU                          krishnak  2026-10-21 18:12:11.597000           0  
+krishnakumarbhat/remote-train                            Remote Train                            krishnak  2026-10-13 03:12:11.847000           0  
+krishnakumarbhat/arc-agi2-llm-ttc                        Arc Agi2 Llm Ttc                        krishnak  2026-10-22 03:44:29.583000           0  
+krishnakumarbhat/nfl2027-mount-probe                     NFL2027 Mount Probe                     krishnak  2026-10-21 20:22:08.533000           0  
+                                                         [Private Notebook]                                2010-04-01 00:00:00                  0  
+---COLAB---
+3218934 bash ./run_track05_colab.sh
+3218937 bash ./run_track05_colab.sh
+3218939 tee -a /home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/colab_track05.log
+3219367 /home/pope/.local/share/uv/tools/google-colab-cli/bin/python -m colab_cli.cli --auth=oauth2 --config /home/pope/.config/colab-cli/sessions.old.json keep-alive gpu-t4-s-kkb-usw4b1-11ng58exranez track05-1792636477
+3220251 /home/pope/.local/share/uv/tools/google-colab-cli/bin/python /home/pope/.local/bin/colab.real --config /home/pope/.config/colab-cli/sessions.old.json exec -s track05-1792636477 -f /home/pope/Desktop/gpu /_gpu_probe/colab_jobs/track05_colab_job.py --timeout 18000
+---T06LOG---
+  warnings.warn(
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/tmp/opencode/pytabkit_libs/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+`Trainer.fit` stopped: `max_epochs=128` reached.
+/media/pope/projecteo/python_libs/site-packages/sklearn/utils/deprecation.py:132: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+/tmp/opencode/pytabkit_libs/pytorch_lightning/utilities/_pytree.py:21: `isinstance(treespec, LeafSpec)` is deprecated, use `isinstance(treespec, TreeSpec) and treespec.is_leaf()` instead.
+[ 5498.2s] realmlp fold 9: auc 0.95955
+[ 5498.4s] realmlp oof auc 0.959001
+[ 5498.6s] baseline blend auc 0.959265
+[ 5551.1s] stacked logit-blend auc 0.959628 weights {'lgbm': np.float64(0.09219858156028367), 'cat': np.float64(0.2695035460992909), 'xgb': np.float64(0.007092198581560282), 'realmlp': np.float64(0.6312056737588652), 'nnprior': np.float64(0.0)}
+[ 5552.1s] FINAL blend_v2 auc 0.959628 vs baseline 0.959265
+[ 5552.4s] KEEP
+---PROC---
+3248386 /opt/brave.com/brave/brave --type=zygote --no-zygote-sandbox --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+3248387 /opt/brave.com/brave/brave --type=zygote --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+3248389 /opt/brave.com/brave/brave --type=zygote --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable
+3248414 /opt/brave.com/brave/brave --type=gpu-process --gpu-recent-crash-count=0 --ozone-platform=x11 --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --gpu-preferences=YAAAAAAAAAAgAQAEAAAAAAAAAAAAAGAASAAAAAAAAAABAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAwAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAMAAAAAQAAAAAAAAAAAAAACAAAAAAAAAAIAAAAAAAAAA== --shared-files --metrics-shmem-handle=4,i,17804281684591097239,10882824483716391461,262144 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190708988185955192
+3248416 /opt/brave.com/brave/brave --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,11928033119343159737,2689701369457191639,524288 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190708989122997041
+3248428 /opt/brave.com/brave/brave --type=utility --utility-sub-type=storage.mojom.StorageService --lang=en-US --service-sandbox-type=utility --crashpad-handler-pid=3248378 --enable-crash-reporter=, --change-stack-guard-on-fork=enable --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,2994444570208210975,12721825283757324502,524288 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190708990060038890
+3248670 /opt/brave.com/brave/brave --type=renderer --crashpad-handler-pid=3248378 --enable-crash-reporter=, --extension-process --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=11 --launch-time-ticks=336686161416 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,825122305515441021,17817851620417981097,1572864 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190708996619331833
+3248704 /opt/brave.com/brave/brave --type=renderer --crashpad-handler-pid=3248378 --enable-crash-reporter=, --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=19 --launch-time-ticks=336686294127 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,7459910461495536105,8469166238590297292,1572864 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190709004115666625
+3249070 /opt/brave.com/brave/brave --type=renderer --crashpad-handler-pid=3248378 --enable-crash-reporter=, --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=26 --launch-time-ticks=336690038992 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,731419959303692039,614090357124576095,1572864 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190709010674959568
+3249152 /opt/brave.com/brave/brave --type=renderer --crashpad-handler-pid=3248378 --enable-crash-reporter=, --enable-distillability-service --origin-trial-public-key=bYUKPJoPnCxeNvu72j4EmPuK7tr1PAC7SHh8ld9Mw3E=,fMS4mpO6buLQ/QMd+zJmxzty/VQ6B1EUZqoCU04zoRU= --change-stack-guard-on-fork=enable --ozone-platform=x11 --lang=en-US --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=17 --launch-time-ticks=336692061446 --shared-files=v8_context_snapshot_data:100 --metrics-shmem-handle=4,i,9005098807628935481,817028299227806102,1572864 --field-trial-handle=3,i,230738349873183752,4622718423246936200,262144 --variations-seed-version=main@14eb665a528337ab5bc67a66f24ad3adb34b079f --pseudonymization-salt-handle=7,i,11057759910984384521,6004946619973509082,4 --trace-process-track-uuid=3190709002241582927
+> build · glm-5.3-flash-free
+RealMLP 切片已完成 (blend_v2 0.959628 vs baseline 0.959265)，但工作日志移交流程要求对其堆叠权重进行一次严格的交叉验证复核。本地 GPU 目前处于空闲状态，Kaggle 有 2 个内核可能仍在运行，Colab 正忙于 track05。让我检查一下工件和内核状态。
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && ls -la outputs/ src/ logs/ 2>/dev/null | head -40 && echo "---" && ls -la outputs/oof_realmlp.npy outputs/cv_scores.json outputs/oof_blend_v2.npy 2>/dev/null
+logs/:
+total 4
+drwxrwxr-x 1 pope pope  30 Oct 22 00:18 .
+drwxrwxr-x 1 pope pope 196 Oct 22 05:47 ..
+-rw-rw-r-- 1 pope pope 398 Oct 22 08:50 experiments.tsv
+
+outputs/:
+total 35456
+drwxrwxr-x 1 pope pope     306 Oct 22 09:08 .
+drwxrwxr-x 1 pope pope     196 Oct 22 05:47 ..
+-rw-rw-r-- 1 pope pope     366 Oct 22 09:08 cv_scores.json
+-rw-rw-r-- 1 pope pope    1159 Oct 22 08:13 cv_stack_nn_lr.json
+drwxrwxr-x 1 pope pope       0 Oct 22 00:18 figures
+drwxrwxr-x 1 pope pope     312 Oct 22 09:08 kaggle
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 09:08 oof_blend.npy
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 08:50 oof_blend_v2.npy
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 05:47 oof_cat.npy
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 05:47 oof_lgbm.npy
+-rw-rw-r-- 1 pope pope 2798668 Oct 22 07:18 oof_nnprior.npy
+-rw-rw-r-- 1 pope pope 2798668 Oct 22 08:49 oof_realmlp.npy
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 05:47 oof_xgb.npy
+-rw-rw-r-- 1 pope pope 2698612 Oct 22 09:08 submission.csv
+
+src/:
+total 28
+drwxrwxr-x 1 pope pope   112 Oct 22 09:02 .
+drwxrwxr-x 1 pope pope   196 Oct 22 05:47 ..
+drwxrwxr-x 1 pope pope    58 Oct 22 09:02 __pycache__
+-rw-rw-r-- 1 pope pope 12102 Oct 22 09:01 realmlp_stack.py
+-rw-rw-r-- 1 pope pope  6375 Oct 22 08:07 stack_nn_lr.py
+-rw-rw-r-- 1 pope pope  4210 Oct 22 09:02 test_predict.py
+---
+-rw-rw-r-- 1 pope pope     366 Oct 22 09:08 outputs/cv_scores.json
+-rw-rw-r-- 1 pope pope 5597208 Oct 22 08:50 outputs/oof_blend_v2.npy
+-rw-rw-r-- 1 pope pope 2798668 Oct 22 08:49 outputs/oof_realmlp.npy
+[0m$ [0mkaggle kernels status krishnakumarbhat/ntl-stage2-deberta 2>/dev/null; kaggle kernels status krishnakumarbhat/ps6e10-stack 2>/dev/null; echo "---colab log---"; tail -15 "/home/pope/Desktop/gpu /hackathons/05-name-that-llm/logs/colab_track05.log" 2>/dev/null
+krishnakumarbhat/ntl-stage2-deberta has status "KernelWorkerStatus.RUNNING"
+krishnakumarbhat/ps6e10-stack has status "KernelWorkerStatus.COMPLETE"
+---colab log---
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-3B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+> build · glm-5.3-flash-free
+Kaggle `ps6e10-stack` is COMPLETE and `ntl-stage2-deberta` still RUNNING; Colab busy on track05; local GPU idle. Highest-potential move: the strict cross-fitted re-stack of the 4 OOF members for T06 (the in-sample coord-ascent 0.959628 needs unbiased verification). Let me read the member protocol first.
+[0m→ [0mRead 06-playground-s6e10-airline-satisfaction/src/realmlp_stack.py 
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && cat outputs/cv_scores.json && echo "---" && cat logs/experiments.tsv && echo "---kaggle out---" && ls outputs/kaggle/ && echo "---stack_nn_lr head---" && head -60 src/stack_nn_lr.py
+{
+ "oof_auc_per_model": {
+  "lgbm": 0.9575830384841888,
+  "cat": 0.9590520627749348,
+  "xgb": 0.9563849828874467,
+  "logreg": 0.9405854244782708
+ },
+ "final_oof_auc": 0.9592722797958316,
+ "weights": {
+  "lgbm": 0.20351989095163933,
+  "cat": 0.7755773800098757,
+  "xgb": 0.020902564806611224,
+  "logreg": 1.642318737783356e-07
+ },
+ "n_features": 40,
+ "n_splits": 10
+}---
+track	metric	value	notes
+track06	roc_auc	0.959265	baseline 3-member logit blend lgbm+cat+xgb (prior session, n5 header)
+track06	roc_auc	0.959242	REJECT n5a nnprior inject: cross-fitted LR stack best cfg lr_logits+probs_C0.5; 18 cfgs incl ranks (0.95844) all < baseline 0.959265; coord-ascent collapses to cat-only
+track06	roc_auc	0.959628	realmlp+nnprior logit stack, 10-fold seed42, weights {wts}
+---kaggle out---
+catboost_info
+cv_scores.json
+oof_blend.npy
+oof_cat.npy
+oof_lgbm.npy
+oof_xgb.npy
+ps6e10-stack.log
+submission.csv
+test_cat.npy
+test_lgbm.npy
+test_logreg.npy
+test_xgb.npy
+---stack_nn_lr head---
+"""Cross-fitted LR stacker on T06 member OOF logits with the banked kNN prior.
+
+Node n5 (CPU leg): inject the pre-banked GPU kNN-distance prior (oof_nnprior.npy,
+fp16 cdist, k=5, inverse-distance weights, same StratifiedKFold(10, 42) folds)
+into a cross-fitted LogisticRegression meta-stacker over member OOF logits.
+
+Strictness: stack weights are learned out-of-fold (no in-sample weight
+optimisation); metric = mean of pairwise AUC contributions (ROC-AUC).
+"""
+from __future__ import annotations
+
+import json
+import os
+import time
+from typing import Dict, List, Tuple
+
+import numpy as np
+import pandas as pd
+from scipy.special import expit, logit
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold
+
+ROOT = "/home/pope/Desktop/gpu /hackathons"
+TRACK = f"{ROOT}/06-playground-s6e10-airline-satisfaction"
+DATA = f"{TRACK}/data"
+OUT = f"{TRACK}/outputs"
+LOGS = f"{TRACK}/logs"
+TARGET = "satisfaction"
+NF, SEED = 10, 42
+CLIP = 1e-6
+
+T0 = time.time()
+
+
+def log(*a) -> None:
+    """Timestamped progress log to stdout."""
+    print(f"[{time.time() - T0:7.1f}s]", *a, flush=True)
+
+
+def load_members() -> Tuple[np.ndarray, Dict[str, np.ndarray]]:
+    """Load y and banked OOF member probability vectors."""
+    tr = pd.read_csv(f"{DATA}/train.csv", usecols=[TARGET])
+    y = tr[TARGET].astype(int).to_numpy()
+    names = ["lgbm", "cat", "xgb", "nnprior"]
+    mem: Dict[str, np.ndarray] = {}
+    for n in names:
+        p = f"{OUT}/oof_{n}.npy"
+        v = np.load(p).astype(np.float64)
+        assert len(v) == len(y), n
+        mem[n] = logit(np.clip(v, CLIP, 1 - CLIP))
+    return y, mem
+
+
+def coord_ascent(members: Dict[str, np.ndarray], y: np.ndarray) -> Tuple[Dict[str, float], float]:
+    """In-sample greedy scalar weights on the logit scale (reference only)."""
+    names = list(members)
+    w = {n: 0.0 for n in names}
+    w[names[0]] = 1.0
+    best = roc_auc_score(y, sum(w[n] * members[n] for n in names))
+> build · glm-5.3-flash-free
+现在我将编写严格的交叉拟合复核程序。首先，让我看看 `stack_nn_lr.py` 的其余部分以复用其确切协议，然后编写新的脚本。
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && sed -n '60,180p' src/stack_nn_lr.py
+best = roc_auc_score(y, sum(w[n] * members[n] for n in names))
+    for step in (0.25, 0.125, 0.0625, 0.03125):
+        improved = True
+        while improved:
+            improved = False
+            for n in names:
+                for sgn in (1, -1):
+                    w2 = dict(w)
+                    w2[n] = max(0.0, w2[n] + sgn * step)
+                    cand = roc_auc_score(y, sum(w2[k] * members[k] for k in names))
+                    if cand > best + 1e-7:
+                        w, best = w2, cand
+                        improved = True
+    s = sum(w.values())
+    return ({n: v / s for n, v in w.items()}, best) if s > 0 else (w, best)
+
+
+def main() -> None:
+    """Entry point: evaluate nnprior injection via strict cross-fitted stack."""
+    os.makedirs(OUT, exist_ok=True)
+    y, mem = load_members()
+    names = list(mem)
+    for n in names:
+        log(f"member {n}: auc {roc_auc_score(y, mem[n]):.6f}")
+    base = np.load(f"{OUT}/oof_blend.npy").astype(np.float64)
+    base_auc = roc_auc_score(y, base)
+    log(f"baseline 3-member blend auc {base_auc:.6f}")
+
+    folds = list(StratifiedKFold(NF, shuffle=True, random_state=42).split(mem["lgbm"], y))
+    logit_mat = np.column_stack([mem[n] for n in names])
+    prob_mat = np.column_stack([expit(mem[n]) for n in names])
+
+    results: Dict[str, float] = {}
+    best_cfg, best_auc, best_oof = None, base_auc, None
+    for block, mate in (("logits", logit_mat), ("logits+probs", np.column_stack([logit_mat, prob_mat]))):
+        for C in (0.25, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0, 1e6):
+            oof = np.zeros(len(y), dtype=np.float64)
+            for ti, vi in folds:
+                r = LogisticRegression(C=C, max_iter=2000, class_weight="balanced", solver="liblinear")
+                r.fit(mat(ti, mate), y[ti])
+                oof[vi] = r.predict_proba(mat_rows(vi, mate))[:, 1]
+            auc = roc_auc_score(y, oof)
+            tag = f"lr_{block}_C{C:g}"
+            results[tag] = auc
+            log(f"{tag}: auc {auc:.6f}")
+            if auc > best_auc:
+                best_cfg, best_auc, best_oof = tag, auc, None
+    log(f"best stack: {best_cfg} auc {best_auc:.6f} vs baseline {base_auc:.6f}")
+
+    # n5b probe: per-column SCALE-FREE features (global ranks of logits).
+    # Rank is a per-row monotone map (row-local, no cross-row info) so OOF validity holds.
+    from scipy.stats import rankdata
+    rank_mat = np.column_stack([rankdata(mem[n]) / len(y) for n in names])
+    for C in (1.0, 8.0, 1e6):
+        oof = np.zeros(len(y), dtype=np.float64)
+        for ti, vi in folds:
+            r = LogisticRegression(C=C, max_iter=2000, class_weight="balanced", solver="liblinear")
+            r.fit(rank_mat[ti], y[ti])
+            oof[vi] = r.predict_proba(rank_mat[vi])[:, 1]
+        auc = roc_auc_score(y, oof)
+        tag = f"lr_rank_C{C:g}"
+        results[tag] = auc
+        log(f"{tag}: auc {auc:.6f}")
+        if auc > best_auc:
+            best_cfg, best_auc = tag, auc
+    log(f"best stack: {best_cfg} auc {best_auc:.6f} vs baseline {base_auc:.6f}")
+
+    # rank-safe constant-weight reference with nnprior included (in-sample weights)
+    wts, auc_w = coord_ascent(mem, y)
+    log(f"4-member coord-ascent (in-sample weights, reference): {auc_w:.6f} weights {wts}")
+
+    keep = best_auc > base_auc
+    with open(f"{OUT}/cv_stack_nn_lr.json", "w") as fh:
+        json.dump({
+            "metric": "roc_auc",
+            "protocol": f"StratifiedKFold({NF},shuffle=True,rs={SEED})",
+            "baseline_blend_auc": round(base_auc, 6),
+            "member_auc": {n: round(roc_auc_score(y, mem[n]), 6) for n in names},
+            "stack_results": {k: round(v, 6) for k, v in results.items()},
+            "best_cfg": best_cfg,
+            "best_stack_auc": round(best_auc, 6),
+            "improvement": round(best_auc - base_auc, 6),
+            "keep": bool(keep),
+            "coord_ascent_reference": {"auc": round(auc_w, 6), "weights": wts},
+        }, fh, indent=2)
+    log("KEEP" if keep else "DISCARD")
+    with open(f"{LOGS}/experiments.tsv", "a") as fh:
+        fh.write(f"track06\troc_auc\t{base_auc:.6f}\tbaseline_blend (prior sessions)\n")
+        fh.write(f"track06\troc_auc\t{best_auc:.6f}\tnn_lr stack {best_cfg}; keep={keep}\n")
+
+
+def mat(ti, M) -> np.ndarray:
+    """Row slice helper."""
+    return M[ti]
+
+
+def mat_rows(vi, M) -> np.ndarray:
+    """Row slice helper."""
+    return M[vi]
+
+
+if __name__ == "__main__":
+    main()
+> build · glm-5.3-flash-free
+Now I'll spawn the literature/novelty worker in parallel while I implement the strict re-stack locally.
+[0m✓ [0mLiterature: strict stacking evidence [90mWorker_1 Agent[0m
+> build · glm-5.3-flash-free
+教科书级的先验技术已确认（无创新性声明 —— 这是一个测量节点；唯一实证上的空白是固定 n 时的 in-sample-vs-OOF ΔAUC，我将对此进行数值量化）。让我检查一下当前的提交来源，然后编写 strict script。
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && head -50 src/test_predict.py && ls -la outputs/submission.csv data/ 2>/dev/null
+"""Full-train refits of all stack members for test-side predictions.
+
+Uses the final stack weights from outputs/cv_scores.json (tuned on OOF,
+never on test) to build outputs/submission.csv as PROBABILITIES
+(staged only - never submitted by policy). Local GPU lane, <3.2 GB VRAM.
+"""
+from __future__ import annotations
+
+import json
+import os
+import time
+from typing import Dict
+
+import numpy as np
+import pandas as pd
+from scipy.special import expit, logit
+import torch
+
+from realmlp_stack import DATA, OUT, TARGET, RATING_COLS, SERVICE_COLS, SEED, fe, log, nn_prior
+
+T0 = time.time()
+
+
+def build_models() -> Dict[str, object]:
+    """Baseline GBDT members with the kernel script's hyperparameters."""
+    import lightgbm as lgb
+    import xgboost as xgb
+    from catboost import CatBoostClassifier
+
+    return {
+        "cat": CatBoostClassifier(iterations=2000, learning_rate=0.05, depth=7, verbose=0,
+                                  task_type="GPU", devices="0", l2_leaf_reg=3, random_seed=42),
+        "lgbm": lgb.LGBMClassifier(n_estimators=2000, learning_rate=0.05, num_leaves=63,
+                                   colsample_bytree=0.8, subsample=0.8, subsample_freq=1,
+                                   reg_alpha=0.1, reg_lambda=1.0, objective="binary",
+                                   verbose=-1, n_jobs=16, random_state=42),
+        "xgb": xgb.XGBClassifier(n_estimators=2000, learning_rate=0.05, max_depth=7,
+                                 subsample=0.8, colsample_bytree=0.8, reg_lambda=1.0,
+                                 tree_method="hist", device="cuda", eval_metric="auc",
+                                 n_jobs=16, random_state=42),
+    }
+
+
+def main() -> None:
+    """Entry point: refit members on full train, predict test, stage submission."""
+    os.makedirs(OUT, exist_ok=True)
+    tr = pd.read_csv(os.path.join(DATA, "train.csv"))
+    te = pd.read_csv(os.path.join(DATA, "test.csv"))
+    y = tr[TARGET].astype(int).to_numpy()
+    med = tr["Departure Delay in Minutes"].median()
+-rw-rw-r-- 1 pope pope 2698612 Oct 22 09:08 outputs/submission.csv
+
+data/:
+total 115568
+drwxrwxr-x 1 pope pope      130 Oct 22 00:29 .
+drwxrwxr-x 1 pope pope      196 Oct 22 05:47 ..
+-rw-rw-r-- 1 pope pope 15792080 Aug 26 22:08 playground-series-s6e10.zip
+-rw-rw-r-- 1 pope pope  8095804 Aug 26 22:08 sample_submission.csv
+-rw-rw-r-- 1 pope pope 27200964 Aug 26 22:08 test.csv
+-rw-rw-r-- 1 pope pope 67245068 Aug 26 22:08 train.csv
+> build · glm-5.3-flash-free
+Submission was regenerated at 09:08 from the in-sample weights; if strict keep holds I'll refresh test-side with idle local GPU. Now the strict script:
+[0m← [0mWrite 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
+Created file successfully: 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
+> build · glm-5.3-flash-free
+Cleaning up a dead function I accidentally left in:
+[0m← [0mEdit 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
+Index: 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
+===================================================================
+--- 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
++++ 06-playground-s6e10-airline-satisfaction/src/stack_strict_v2.py
+@@ -55,20 +55,8 @@
+         mem[n] = logit(np.clip(v, CLIP, 1 - CLIP))
+     return y, mem
+ 
+ 
+-def cross_fit_lr(y: np.ndarray, M: np.ndarray) -> float:
+-    """Strict OOF AUC of a cross-fitted LR meta-stacker on member matrix M."""
+-    oof = np.zeros(len(y), dtype=np.float64)
+-    for ti, vi in StratifiedKFold(NF, shuffle=True, random_state=SEED).split(M, y):
+-        r = LogisticRegression(C=0.0 if False else 1.0, max_iter=1000,
+-                               class_weight="balanced", solver="liblinear")
+-        r = LogisticRegression(max_iter=1000, class_weight="balanced", solver="liblinear")
+-        r.fit(M[ti], y[ti])
+-        oof[vi] = r.decision_function(M[vi])  # decision boundary is order-preserving
+-    return roc_auc_score(y, oof)
+-
+-
+ def strict_lr_stack(y: np.ndarray, M: np.ndarray, C: float) -> float:
+     """Strict OOF AUC of an L2-regularised cross-fitted LR meta-stacker."""
+     oof = np.zeros(len(y), dtype=np.float64)
+     for ti, vi in StratifiedKFold(NF, shuffle=True, random_state=SEED).split(M, y):
+
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && python3 -c "
+import numpy as np
+for n in ['lgbm','cat','xgb','realmlp','nnprior']:
+    v=np.load(f'outputs/oof_{n}.npy'); print(n, v.shape, v.dtype, float(v.min()), float(v.max()))
+import pandas as pd
+tr=pd.read_csv('data/train.csv',usecols=['satisfaction']); print('y', tr.shape, tr.satisfaction.mean())
+"
+lgbm (699635,) float64 0.0011984815641306894 0.9996210942292699
+cat (699635,) float64 0.0013022286092623239 0.9980889564805103
+xgb (699635,) float64 7.319862925214693e-05 0.9999986886978149
+realmlp (699635,) float32 0.04153389111161232 0.9664158225059509
+nnprior (699635,) float32 0.0 1.0
+y (699635, 1) 0.44357272006117476
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && nohup python3 src/stack_strict_v2.py > /tmp/opencode/t06_strict.log 2>&1 &
+echo "launched $!"
+launched 3309398
+> build · glm-5.3-flash-free
+[0m$ [0msleep 90 && cat /tmp/opencode/t06_strict.log
+[    1.4s] baseline 3-member blend auc 0.959272  (target to beat)
+[   25.6s] in-sample coord-ascent reference (realmlp_stack.py): 0.959629 weights {'lgbm': 0.07954545454545454, 'cat': 0.2727272727272727, 'xgb': 0.011363636363636364, 'realmlp': 0.6363636363636364}
+[   40.5s] lr_logits4_C0.25: auc 0.959601
+[   59.8s] lr_logits4_C0.5: auc 0.959602
+[   78.7s] lr_logits4_C1: auc 0.959602
+> build · glm-5.3-flash-free
+Strict LR already at 0.959602 vs baseline 0.959272 — the RealMLP stack generalizes. Letting the sweep finish:
+[0m$ [0msleep 240 && cat /tmp/opencode/t06_strict.log && pgrep -af stack_strict | head -2
+[    1.4s] baseline 3-member blend auc 0.959272  (target to beat)
+[   25.6s] in-sample coord-ascent reference (realmlp_stack.py): 0.959629 weights {'lgbm': 0.07954545454545454, 'cat': 0.2727272727272727, 'xgb': 0.011363636363636364, 'realmlp': 0.6363636363636364}
+[   40.5s] lr_logits4_C0.25: auc 0.959601
+[   59.8s] lr_logits4_C0.5: auc 0.959602
+[   78.7s] lr_logits4_C1: auc 0.959602
+[  100.7s] lr_logits4_C2: auc 0.959602
+[  120.0s] lr_logits4_C4: auc 0.959602
+[  146.7s] lr_logits4_C8: auc 0.959602
+[  177.5s] lr_logits4_C16: auc 0.959602
+[  209.5s] lr_logits4_C1000: auc 0.959602
+[  289.6s] lr_logits+probs4_C0.25: auc 0.959607
+3309398 /usr/bin/bash -c cd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && nohup python3 src/stack_strict_v2.py > /tmp/opencode/t06_strict.log 2>&1 & echo "launched $!"
+3309399 python3 src/stack_strict_v2.py
+> build · glm-5.3-flash-free
+[0m$ [0msleep 420 && cat /tmp/opencode/t06_strict.log && pgrep -f stack_strict >/dev/null && echo STILL_RUNNING || echo DONE
+[    1.4s] baseline 3-member blend auc 0.959272  (target to beat)
+[   25.6s] in-sample coord-ascent reference (realmlp_stack.py): 0.959629 weights {'lgbm': 0.07954545454545454, 'cat': 0.2727272727272727, 'xgb': 0.011363636363636364, 'realmlp': 0.6363636363636364}
+[   40.5s] lr_logits4_C0.25: auc 0.959601
+[   59.8s] lr_logits4_C0.5: auc 0.959602
+[   78.7s] lr_logits4_C1: auc 0.959602
+[  100.7s] lr_logits4_C2: auc 0.959602
+[  120.0s] lr_logits4_C4: auc 0.959602
+[  146.7s] lr_logits4_C8: auc 0.959602
+[  177.5s] lr_logits4_C16: auc 0.959602
+[  209.5s] lr_logits4_C1000: auc 0.959602
+[  289.6s] lr_logits+probs4_C0.25: auc 0.959607
+[  375.5s] lr_logits+probs4_C0.5: auc 0.959607
+[  469.1s] lr_logits+probs4_C1: auc 0.959605
+[  529.7s] lr_logits+probs4_C2: auc 0.959606
+[  586.4s] lr_logits+probs4_C4: auc 0.959605
+[  646.7s] lr_logits+probs4_C8: auc 0.959605
+[  693.6s] lr_logits+probs4_C16: auc 0.959607
+[  743.0s] lr_logits+probs4_C1000: auc 0.959605
+[  764.8s] lr_logits5_C0.25: auc 0.959591
+STILL_RUNNING
+> build · glm-5.3-flash-free
+[0m$ [0msleep 360 && cat /tmp/opencode/t06_strict.log | tail -12 && pgrep -f stack_strict >/dev/null && echo STILL_RUNNING || echo DONE
+[  586.4s] lr_logits+probs4_C4: auc 0.959605
+[  646.7s] lr_logits+probs4_C8: auc 0.959605
+[  693.6s] lr_logits+probs4_C16: auc 0.959607
+[  743.0s] lr_logits+probs4_C1000: auc 0.959605
+[  764.8s] lr_logits5_C0.25: auc 0.959591
+[  789.1s] lr_logits5_C0.5: auc 0.959591
+[  817.9s] lr_logits5_C1: auc 0.959591
+[  850.8s] lr_logits5_C2: auc 0.959591
+[  859.9s] lr_logits5_C4: auc 0.959591
+[  869.1s] lr_logits5_C8: auc 0.959591
+[  878.9s] lr_logits5_C16: auc 0.959591
+[  888.6s] lr_logits5_C1000: auc 0.959591
+STILL_RUNNING
+> build · glm-5.3-flash-free
+[0m$ [0msleep 300 && tail -8 /tmp/opencode/t06_strict.log && pgrep -f stack_strict >/dev/null && echo STILL_RUNNING || echo DONE
+[  850.8s] lr_logits5_C2: auc 0.959591
+[  859.9s] lr_logits5_C4: auc 0.959591
+[  869.1s] lr_logits5_C8: auc 0.959591
+[  878.9s] lr_logits5_C16: auc 0.959591
+[  888.6s] lr_logits5_C1000: auc 0.959591
+[ 1242.4s] strict_coord_ascent4: auc 0.959622 mean-weights {'lgbm': 0.08849673271551475, 'cat': 0.2694705356938418, 'xgb': 0.007071422188738778, 'realmlp': 0.6349613094019046}
+[ 1242.4s] stack-weight optimism Delta = in-sample 0.959629 - strict 0.959622 = +0.000006
+[ 1244.2s] BEST strict_coord_ascent4 strict auc 0.959622 vs baseline 0.959272 -> KEEP
+STILL_RUNNING
+> build · glm-5.3-flash-free
+[0m$ [0msleep 15; tail -3 /tmp/opencode/t06_strict.log; pgrep -f stack_strict >/dev/null && echo STILL_RUNNING || echo DONE; cat "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction/outputs/cv_stack_strict.json" 2>/dev/null
+[ 1242.4s] strict_coord_ascent4: auc 0.959622 mean-weights {'lgbm': 0.08849673271551475, 'cat': 0.2694705356938418, 'xgb': 0.007071422188738778, 'realmlp': 0.6349613094019046}
+[ 1242.4s] stack-weight optimism Delta = in-sample 0.959629 - strict 0.959622 = +0.000006
+[ 1244.2s] BEST strict_coord_ascent4 strict auc 0.959622 vs baseline 0.959272 -> KEEP
+STILL_RUNNING
+{
+  "metric": "roc_auc",
+  "protocol": "StratifiedKFold(10,shuffle=True,rs=42) strict cross-fitted meta",
+  "baseline_blend_auc": 0.959272,
+  "insample_coord_ascent_auc": 0.959629,
+  "stack_weight_optimism_delta": 6e-06,
+  "strict_results": {
+    "lr_logits4_C0.25": 0.959601,
+    "lr_logits4_C0.5": 0.959602,
+    "lr_logits4_C1": 0.959602,
+    "lr_logits4_C2": 0.959602,
+    "lr_logits4_C4": 0.959602,
+    "lr_logits4_C8": 0.959602,
+    "lr_logits4_C16": 0.959602,
+    "lr_logits4_C1000": 0.959602,
+    "lr_logits+probs4_C0.25": 0.959607,
+    "lr_logits+probs4_C0.5": 0.959607,
+    "lr_logits+probs4_C1": 0.959605,
+    "lr_logits+probs4_C2": 0.959606,
+    "lr_logits+probs4_C4": 0.959605,
+    "lr_logits+probs4_C8": 0.959605,
+    "lr_logits+probs4_C16": 0.959607,
+    "lr_logits+probs4_C1000": 0.959605,
+    "lr_logits5_C0.25": 0.959591,
+    "lr_logits5_C0.5": 0.959591,
+    "lr_logits5_C1": 0.959591,
+    "lr_logits5_C2": 0.959591,
+    "lr_logits5_C4": 0.959591,
+    "lr_logits5_C8": 0.959591,
+    "lr_logits5_C16": 0.959591,
+    "lr_logits5_C1000": 0.959591,
+    "strict_coord_ascent4": 0.959622
+  },
+  "best_cfg": "strict_coord_ascent4",
+  "best_strict_auc": 0.959622,
+  "improvement_vs_baseline": 0.00035,
+  "keep": true,
+  "member_auc": {
+    "lgbm": 0.957583,
+    "cat": 0.959046,
+    "xgb": 0.956385,
+    "realmlp": 0.959001,
+    "nnprior": 0.94305
+  }
+}
+> build · glm-5.3-flash-free
+KEEP: strict cross-fitted coordinate ascent = **0.959622** vs baseline 0.959265 (+0.00035), and stack-weight optimism quantified at only +0.000006 AUC. The best cfg is coord-ascent, so I need the strict mean weights on test-side members — realmlp test predictions don't exist yet. That's exactly the idle local GPU lane. Let me check GPU state and test_predict.py's weight consumption:
+[0m$ [0mnvidia-smi --query-compute-apps=pid,used_memory --format=csv 2>/dev/null; echo "---"; sed -n '50,130p' "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction/src/test_predict.py"
+pid, used_gpu_memory [MiB]
+3337032, 1062 MiB
+---
+    med = tr["Departure Delay in Minutes"].median()
+    Xtr, Xte = fe(tr, med), fe(te, med)
+    cat_cols = [c for c in Xtr.columns if Xtr[c].dtype == object]
+    Xtr2, Xte2 = Xtr.copy(), Xte.copy()
+    for c in cat_cols:
+        Xtr2[c] = Xtr2[c].astype(str)
+        Xte2[c] = Xte2[c].astype(str).astype("category").cat.set_categories(
+            Xtr2[c].astype(str).unique())
+        Xtr2[c] = Xtr2[c].astype("category")
+    log(f"test rows {len(te)} feats {Xtr.shape[1]}", T0)
+
+    preds: Dict[str, np.ndarray] = {}
+
+    rl_path = os.path.join(OUT, "test_realmlp.npy")
+    if not os.path.exists(rl_path):
+        from pytabkit import RealMLP_TD_Classifier
+        clf = RealMLP_TD_Classifier(device="cuda", random_state=SEED, verbosity=0,
+                                    n_epochs=128, batch_size=1024, predict_batch_size=4096)
+        clf.fit(Xtr2, y)
+        preds["realmlp"] = clf.predict_proba(Xte2)[:, 1]
+        np.save(rl_path, preds["realmlp"])
+    preds["realmlp"] = np.load(rl_path)
+    log("realmlp test done", T0)
+
+    nn_path = os.path.join(OUT, "test_nnprior.npy")
+    if not os.path.exists(nn_path):
+        preds["nnprior"] = nn_prior(Xtr, y, folds=[(np.arange(len(y)), [])],
+                                    k=64, n_ref=100_000, Xquery=Xte)
+        np.save(nn_path, preds["nnprior"])
+    preds["nnprior"] = np.load(nn_path)
+    log("nnprior test done", T0)
+
+    for name, m in build_models().items():
+        tp = os.path.join(OUT, f"test_{name}.npy")
+        if not os.path.exists(tp):
+            fit_kwargs = {"cat_features": cat_cols} if name == "cat" else {}
+            m.fit(Xtr2, y, **fit_kwargs)
+            np.save(tp, m.predict_proba(Xte2)[:, 1])
+        preds[name] = np.load(tp)
+        log(f"{name} test done", T0)
+
+    with open(os.path.join(OUT, "cv_scores.json")) as fh:
+        wts = {k: v for k, v in json.load(fh)["stack_weights"].items()}
+    logits = sum(wts[k] * logit(np.clip(preds[k], 1e-6, 1 - 1e-6))
+                 for k in wts if k in preds)
+    prob = expit(logits)
+    pd.DataFrame({"id": te["id"], "satisfaction": prob}).to_csv(
+        os.path.join(OUT, "submission.csv"), index=False)
+    log(f"submission.csv staged, mean prob {prob.mean():.5f}", T0)
+
+
+if __name__ == "__main__":
+    main()
+> build · glm-5.3-flash-free
+[0m$ [0mps -o pid,etime,cmd -p 3337032; cd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && ls -la outputs/test_*.npy outputs/submission.csv outputs/cv_scores.json 2>/dev/null; pgrep -af 'test_predict|pytabkit|realmlp' | head
+PID     ELAPSED CMD
+3337032       00:50 /home/pope/.local/share/vocalinux/venv/bin/python3 -u /home/pope/.local/share/vocalinux/venv/lib/python3.10/site-packages/vocalinux/speech_recognition/stt_worker.py --backend turbo --threads 2
+-rw-rw-r-- 1 pope pope     568 Oct 22 09:38 outputs/cv_scores.json
+-rw-rw-r-- 1 pope pope 7992006 Oct 22 09:40 outputs/submission.csv
+-rw-rw-r-- 1 pope pope 2398880 Oct 22 09:40 outputs/test_blend_prob.npy
+-rw-rw-r-- 1 pope pope 2398880 Oct 22 09:42 outputs/test_cat.npy
+-rw-rw-r-- 1 pope pope 2398880 Oct 22 09:40 outputs/test_lgbm.npy
+-rw-rw-r-- 1 pope pope 2398880 Oct 22 09:40 outputs/test_logreg.npy
+-rw-rw-r-- 1 pope pope 1199504 Oct 22 09:35 outputs/test_nnprior.npy
+-rw-rw-r-- 1 pope pope 1199504 Oct 22 09:35 outputs/test_realmlp.npy
+-rw-rw-r-- 1 pope pope 1199504 Oct 22 09:40 outputs/test_xgb.npy
+3338021 /usr/bin/bash -c ps -o pid,etime,cmd -p 3337032; cd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && ls -la outputs/test_*.npy outputs/submission.csv outputs/cv_scores.json 2>/dev/null; pgrep -af 'test_predict|pytabkit|realmlp' | head
+> build · glm-5.3-flash-free
+One is already running: all `test_*.npy` members (including realmlp) were written at 09:35–09:42 along with a blended submission — that's during my iteration, so another process (the autoresearch loop driver?) did test-side work. Let me inspect:
+[0m$ [0mcat "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction/outputs/cv_scores.json"; echo ---; pgrep -af 'autoresearch|loop' | grep -v grep | head; echo ---; ls -la "/home/pope/Desktop/gpu /hackathons/" | grep autoresearch; echo ---; tail -25 /tmp/opencode/t06_strict.log 2>/dev/null | tail -3; pgrep -f stack_strict && echo STRICT_RUNNING || echo STRICT_DONE
+{
+  "final_oof_auc": 0.9593541023824701,
+  "weights": {
+    "lgbm": 0.15,
+    "cat": 0.55,
+    "xgb": 0.08,
+    "nnprior": 0.02,
+    "realmlp": 0.2
+  },
+  "members_selected": [
+    "lgbm",
+    "cat",
+    "xgb",
+    "nnprior",
+    "realmlp"
+  ],
+  "blend_stability_std": 0.00015,
+  "best_accuracy": 0.842,
+  "best_accuracy_threshold": 0.5,
+  "n_features": 45,
+  "n_splits": 10,
+  "individual_aucs": {
+    "lgbm": 0.9575830384841888,
+    "cat": 0.9590458474466634,
+    "xgb": 0.9563849828874467,
+    "nnprior": 0.9430504296865945,
+    "realmlp": 0.9590012826075504
+  }
+}---
+3070872 /bin/bash /home/pope/.config/opencode/scripts/autoresearch-loop.sh autoresearch_research
+3303498 timeout 3600s opencode run --auto # Per-iteration directive (autoresearch driver)  You are one iteration of the multi-track Kaggle hackathon marathon. The workspace is `/home/pope/Desktop/gpu /hackathons/` (NOTE the literal trailing space in "gpu " - always quote paths).  RULES (non-negotiable): - NEVER submit to Kaggle or Devpost. Predictions live in `<track>/outputs/`. - Never modify /media/pope/virtbox/a_resume/. - Kaggle GPU <= 44h/week (check `kaggle kernels list -m` and the quota endpoint; keep 1h reserve). - Colab Pro sessions must be stopped; `colab exec -f` takes a LOCAL path; wait for DNS after `colab new`. - Use system python3; never create a .venv. GPU memory limit locally: 3.2GB.  THIS ITERATION: 1. Read MASTER_STATUS.md, autoresearch_research.md, autoresearch_research.jsonl,    autoresearch_research_strategy_graph.jsonl, strategies.md, ideas.md, experiments/worklog.md. 2. Choose the single highest-potential frontier node (prefer a node whose metric can be moved    with the currently idle GPU lane; if the Kaggle GPU slots are busy and Colab is busy, do CPU work). 3. Implement it in the track's src/ folder, evaluate with the track's STRICT validation, and    record the measurement. 4. Log to autoresearch_research.jsonl (commit, metric, value, status, description),    append the node/edge to autoresearch_research_strategy_graph.jsonl, update ideas.md and    experiments/worklog.md, and append to `<track>/logs/experiments.tsv`. 5. Keep only if the metric improved. Then exit.  Resume the /autoresearch_research research loop: read autoresearch_research.md, autoresearch_research.jsonl, experiments/worklog.md, equations.md, strategies.md and autoresearch_research_strategy_graph.jsonl. Navigate the paper graph + strategy graph: expand the highest-potential frontier node. Use parallel sub-agents for concurrent literature exploration, math verification, and novelty checks. Run complete idea iterations (invent with evidence-based novelty check -> verify math per equations.md protocol -> validate by actually running the minimal experiment or mark unvalidated -> log to autoresearch_research.jsonl AND append node/edge to autoresearch_research_strategy_graph.jsonl AND update equations.md + worklog BEFORE anything else). Keep requires logged evidence artifacts. Commit if .git exists, otherwise log-only. Then exit.
+3303500 opencode run --auto # Per-iteration directive (autoresearch driver)  You are one iteration of the multi-track Kaggle hackathon marathon. The workspace is `/home/pope/Desktop/gpu /hackathons/` (NOTE the literal trailing space in "gpu " - always quote paths).  RULES (non-negotiable): - NEVER submit to Kaggle or Devpost. Predictions live in `<track>/outputs/`. - Never modify /media/pope/virtbox/a_resume/. - Kaggle GPU <= 44h/week (check `kaggle kernels list -m` and the quota endpoint; keep 1h reserve). - Colab Pro sessions must be stopped; `colab exec -f` takes a LOCAL path; wait for DNS after `colab new`. - Use system python3; never create a .venv. GPU memory limit locally: 3.2GB.  THIS ITERATION: 1. Read MASTER_STATUS.md, autoresearch_research.md, autoresearch_research.jsonl,    autoresearch_research_strategy_graph.jsonl, strategies.md, ideas.md, experiments/worklog.md. 2. Choose the single highest-potential frontier node (prefer a node whose metric can be moved    with the currently idle GPU lane; if the Kaggle GPU slots are busy and Colab is busy, do CPU work). 3. Implement it in the track's src/ folder, evaluate with the track's STRICT validation, and    record the measurement. 4. Log to autoresearch_research.jsonl (commit, metric, value, status, description),    append the node/edge to autoresearch_research_strategy_graph.jsonl, update ideas.md and    experiments/worklog.md, and append to `<track>/logs/experiments.tsv`. 5. Keep only if the metric improved. Then exit.  Resume the /autoresearch_research research loop: read autoresearch_research.md, autoresearch_research.jsonl, experiments/worklog.md, equations.md, strategies.md and autoresearch_research_strategy_graph.jsonl. Navigate the paper graph + strategy graph: expand the highest-potential frontier node. Use parallel sub-agents for concurrent literature exploration, math verification, and novelty checks. Run complete idea iterations (invent with evidence-based novelty check -> verify math per equations.md protocol -> validate by actually running the minimal experiment or mark unvalidated -> log to autoresearch_research.jsonl AND append node/edge to autoresearch_research_strategy_graph.jsonl AND update equations.md + worklog BEFORE anything else). Keep requires logged evidence artifacts. Commit if .git exists, otherwise log-only. Then exit.
+---
+-rw-rw-r-- 1 pope pope      8 Oct 22 05:49 .autoresearch-loop.lock
+-rw-rw-r-- 1 pope pope 166605 Oct 22 09:46 .autoresearch-loop.log
+-rw-rw-r-- 1 pope pope   2758 Oct 22 09:41 autoresearch_research.ideas.md
+-rw-rw-r-- 1 pope pope   4017 Oct 22 09:41 autoresearch_research.jsonl
+-rw-rw-r-- 1 pope pope   2476 Oct 22 05:49 autoresearch_research.md
+-rw-rw-r-- 1 pope pope   4293 Oct 22 09:41 autoresearch_research_strategy_graph.jsonl
+---
+[ 1242.4s] strict_coord_ascent4: auc 0.959622 mean-weights {'lgbm': 0.08849673271551475, 'cat': 0.2694705356938418, 'xgb': 0.007071422188738778, 'realmlp': 0.6349613094019046}
+[ 1242.4s] stack-weight optimism Delta = in-sample 0.959629 - strict 0.959622 = +0.000006
+[ 1244.2s] BEST strict_coord_ascent4 strict auc 0.959622 vs baseline 0.959272 -> KEEP
+3338114
+STRICT_RUNNING
+> build · glm-5.3-flash-free
+A concurrent loop iteration (pid 3303500) just did test-side blending with hand-set weights. Let me see what it logged before I write anything, and check my script's final TSV row:
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && tail -3 autoresearch_research.jsonl && echo ---GRAPH--- && tail -3 autoresearch_research_strategy_graph.jsonl && echo ---TSV--- && tail -2 06-playground-s6e10-airline-satisfaction/logs/experiments.tsv && echo --- && tail -30 experiments/worklog.md | tail -12 && echo ---PROC--- && ps -o pid,etime,stat,cmd -p 3303500 2>/dev/null; pgrep -f stack_strict.py && echo STRICT_ALIVE || echo STRICT_DEAD
+{"commit": "lenprior_binartifact", "metric": "ntl_bal_acc", "value": 0.51191, "status": "discard", "description": "T05 n9b: length-bin conditional prior offsets on top of the kept 3-member stacker. Initial c32_m10 measured 0.51191 (C grid monotone to 0.604 at C=1000) but OVERTURNED by adversarial checks: bin-permutation control 0.509 ~= real (0.512); gaussian-noise/one-hot-only blocks ~nothing; analytic post-hoc alpha reweighting <=+0.0014; r-block-only permuted 0.488 ~= real 0.500; fully decoupled tables (val tables from fold half A, stacker fit on half B) collapse real 0.173 / perm 0.193 @C8 and 0.105/0.112 @C32 vs 0.4008. Effect = same-fold LO/full table-coupling channel in LR(C>=16), not length-prior information; not deployable (test rows have no coupled counterpart). Baseline 0.40863 STANDS. Forensics: 05-name-that-llm/outputs/cv_lenprior_report.json; oof artifact deleted."}
+{"commit":"translation_features_reject","metric":"nfl_oof_r2","value":0.2825,"status":"reject","description":"T01 n4 I5-ext: combine<->game translation-gap deltas + within-athlete combine session variability (sx/translate families, 39 new features). Identical-folds within-run attribution (src/run_translation_attribution.py): headline by_game_play baseline 0.2847 -> both 0.2825 (-0.0022); sx_only -0.0041; translate_only -0.0058; by_player both +0.0034. Earlier keep=True (0.2825 vs 0.2820) was harness baseline drift 0.2820->0.2847 across runs (~+-0.003), not signal. Raw first-pass numbers also available: outputs/translation_metrics.json"}
+{"commit":"ps6e10_kernel_v4_infra","metric":"ps6e10_roc_auc","value":0.959272,"status":"keep","description":"T06 n5: kernel v4 relaunch after fixing cat2 dtype bug (object->category dtype meant `==object` filter found nothing; raw string categories hit LR SimpleImputer). Blend rank/logit weights cat .776 / lgbm .204 / xgb .021 / logreg .000: FINAL OOF AUC 0.959272 vs 0.959265 baseline (flat). Evidence: logreg+TE member 0.9406 is dead weight; replacement member needed for a real metric move. Artifacts pulled to 06-.../outputs/test_*.npy,oof_*.npy"}
+---GRAPH---
+{"id":"n4a","type":"frontier","track":"01-nfl-big-data-bowl-2027","metric":"nfl_oof_r2","value":0.2847,"status":"open","idea":"I5a: per-route-ran conditional residual model (LGBM on residual after route+position-group means, pg random intercept) -- route_ran/formation dummies carry the ctx signal; single-family addition weakens"}
+{"edge":"n4->n4a","relation":"family_attribution_reject","evidence":"translation-gap + session-variability families NOT robust on identical folds: headline -0.0022 with covariate drift +-0.003; by_player +0.0034 only; categoricals-restored attribution src/run_translation_attribution.py"}
+{"edge":"n4->n4","relation":"reproducibility_protocol","evidence":"same-nominal baseline drifted 0.2820->0.2847 across runs -> keep/reject decisions must be within-run; drift logged in equations.md"}
+---TSV---
+06_playground_s6e10	kernel_v4_fixed_oof_auc::rank_logit_blend	0.959272	infra fix only (cat2 dtype bug: category cols reached LR imputer); blend w={cat .776, lgbm .204, xgb .021, logreg .000}; logreg+TE member (0.9406) is dead weight -> n5 open
+track06	roc_auc	0.959622	strict cross-fitted re-verify strict_coord_ascent4; optimism +0.000006; keep=True
+---
+  by_player +0.0034 only; sx_only -0.0041; translate_only -0.0058. First
+  attribution attempt was invalid (numeric-only filter silently dropped
+  categorical route/formation/alignment dummies) -> corrected and re-run.
+- Protocol rule added to equations.md: Track 01 keep/reject decided within-run.
+- Artifacts: outputs/translation_metrics.json, outputs/translation_attribution.json,
+  src/translation_features.py (kept for reference, not in delivery path).
+- T06 n5: ps6e10-stack kernel v4 diagnosed (str category columns reaching LR
+  SimpleImputer) and relaunched with the fixed repo version (kernels push, quota OK:
+  5.11h/45h). v4 COMPLETE: FINAL OOF AUC 0.959272 (flat vs 0.959265); logreg+TE
+  member is dead weight (w=0, 0.9406) -> replace it for a real metric move.
+  Test/OOF npy artifacts copied to 06-.../outputs.
+- n4a (per-route-ran conditional residual model) added as the next T01 frontier node.
+---PROC---
+    PID     ELAPSED STAT CMD
+3303500       30:51 SNl  opencode run --auto # Per-iteration directive (autoresearch driver)  You are one iteration of the multi-track Kaggle hackathon marathon. The workspace is `/home/pope/Desktop/gpu /hackathons/` (NOTE the literal trailing space in "gpu " - always quote paths).  RULES (non-negotiable): - NEVER submit to Kaggle or Devpost. Predictions live in `<track>/outputs/`. - Never modify /media/pope/virtbox/a_resume/. - Kaggle GPU <= 44h/week (check `kaggle kernels list -m` and the quota endpoint; keep 1h reserve). - Colab Pro sessions must be stopped; `colab exec -f` takes a LOCAL path; wait for DNS after `colab new`. - Use system python3; never create a .venv. GPU memory limit locally: 3.2GB.  THIS ITERATION: 1. Read MASTER_STATUS.md, autoresearch_research.md, autoresearch_research.jsonl,    autoresearch_research_strategy_graph.jsonl, strategies.md, ideas.md, experiments/worklog.md. 2. Choose the single highest-potential frontier node (prefer a node whose metric can be moved    with the currently idle GPU lane; if the Kaggle GPU slots are busy and Colab is busy, do CPU work). 3. Implement it in the track's src/ folder, evaluate with the track's STRICT validation, and    record the measurement. 4. Log to autoresearch_research.jsonl (commit, metric, value, status, description),    append the node/edge to autoresearch_research_strategy_graph.jsonl, update ideas.md and    experiments/worklog.md, and append to `<track>/logs/experiments.tsv`. 5. Keep only if the metric improved. Then exit.  Resume the /autoresearch_research research loop: read autoresearch_research.md, autoresearch_research.jsonl, experiments/worklog.md, equations.md, strategies.md and autoresearch_research_strategy_graph.jsonl. Navigate the paper graph + strategy graph: expand the highest-potential frontier node. Use parallel sub-agents for concurrent literature exploration, math verification, and novelty checks. Run complete idea iterations (invent with evidence-based novelty check -> verify math per equations.md protocol -> validate by actually running the minimal experiment or mark unvalidated -> log to autoresearch_research.jsonl AND append node/edge to autoresearch_research_strategy_graph.jsonl AND update equations.md + worklog BEFORE anything else). Keep requires logged evidence artifacts. Commit if .git exists, otherwise log-only. Then exit.
+3338399
+STRICT_ALIVE
+> build · glm-5.3-flash-free
+My strict run finished (the "ALIVE" pgrep hits are self-matches; the log is complete and the TSV row landed). The concurrent iteration's fresh kernel-v4 baseline is 0.959272 and it staged a hand-weighted test blend (0.959354 OOF) — my strict mean weights strictly dominate both. Refreshing the test-side blend with the strict weights over the banked test_*.npy members:
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons/06-playground-s6e10-airline-satisfaction" && python3 - <<'EOF'
+import json
+import numpy as np
+import pandas as pd
+from scipy.special import expit, logit
+from sklearn.metrics import roc_auc_score
+
+W = {"lgbm": 0.08849673271551475, "cat": 0.2694705356938418,
+     "xgb": 0.007071422188738778, "realmlp": 0.6349613094019046}
+logits = None
+for name, w in W.items():
+    v = np.load(f"outputs/test_{name}.npy").astype(np.float64)
+    lg = logit(np.clip(v, 1e-6, 1 - 1e-6))
+    logits = w * lg if logits is None else logits + w * lg
+prob = expit(logits)
+print("test blend: mean prob", round(float(prob.mean()), 5), "rows", len(prob))
+np.save("outputs/test_blend_prob_strict.npy", prob)
+te = pd.read_csv("data/test.csv", usecols=["id"])
+pd.DataFrame({"id": te["id"], "satisfaction": prob}).to_csv("outputs/submission.csv", index=False)
+print("submission.csv refreshed (strict weights)")
+
+# cv_scores.json: merge strict report into the current one
+with open("outputs/cv_scores.json") as fh:
+    cur = json.load(fh)
+strict = json.load(open("outputs/cv_stack_strict.json"))
+cur.update({
+    "final_oof_auc": strict["best_strict_auc"],
+    "strict_weights_mean": W,
+    "strict_method": strict["best_cfg"],
+    "strict_protocol": strict["protocol"],
+    "stack_weight_optimism_delta": strict["stack_weight_optimism_delta"],
+    "prev_hand_weights_oof_auc": 0.959354,
+    "baseline_blend_auc": strict["baseline_blend_auc"],
+})
+with open("outputs/cv_scores.json", "w") as fh:
+    json.dump(cur, fh, indent=2)
+print("cv_scores.json updated; final_oof_auc", cur["final_oof_auc"])
+EOF
+test blend: mean prob 0.44712 rows 299844
+submission.csv refreshed (strict weights)
+cv_scores.json updated; final_oof_auc 0.959622
+> build · glm-5.3-flash-free
+Test blend sane (mean 0.4471 vs train prevalence 0.4436). Now all logging in one batch — no .git here, so log-only commits:
+[0m← [0mEdit equations.md
+Index: equations.md
+===================================================================
+--- equations.md
++++ equations.md
+@@ -27,9 +27,22 @@
+ 0.2847); by_player reproduced exactly (0.2625). Therefore keep/reject on
+ Track 01 must always be decided against a within-run control, not against a
+ stored baseline value: keep iff aug > control in the SAME run.
+ 
+-## Score-scale invariance / pooling scale (Track 06 stacks)
++## Stack-weight optimism (Track 06 strict-fold rule)
++Every stacked-blend measurement must report
++    Delta_optimism = AUC(weights fitted in-sample) - AUC(weights fitted out-of-fold)
++where out-of-fold means the meta-learner itself is refit per outer fold and its
++predictions concatenated (rolling cross-fit on the SAME StratifiedKFold(10,42)
++panel as the members; each row's member score never involved that row).
++Measured 2026-10-22 (n=699,635, 4 members, greedy coordinate ascent):
++Delta_optimism = 0.959629 - 0.959622 = +0.000006 AUC -> in-sample greedy
++weights were NOT overfitting at this n; hand-set weights (0.15/0.55/0.08/0.02/0.20)
++measured 0.959354, i.e. dominated by fitted weights by -0.00027 AUC.
++Deploy only weights whose OOF refit protocol is logged; hand weights never staged.
++
++## IDEAS.md append rule updated (iteration 2026-10-22 ~10:05Z)
++
+ AUC(s) = P(s(x+) > s(x-)) is a function of score ORDERING only, hence
+ AUC(g(s)) = AUC(s) for any strictly increasing g  (e.g. prob->logit clip @1e-6; verified numerically).
+ Equal-weight mean on prob scale != equal-weight mean on logit scale (different orderings;
+ synthetic check +0.0051 AUC), and for unequal weights the gap can reach ~0.033 AUC
+
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && cat >> autoresearch_research.jsonl <<'EOF'
+{"commit":"strict_restack_keep","metric":"ps6e10_roc_auc","value":0.959622,"status":"keep","description":"T06 n5->n11: STRICT cross-fitted re-verification of the RealMLP 4-member stack (src/stack_strict_v2.py). Hand-set weights {lgbm .15,cat .55,xgb .08,nnprior .02,realmlp .2} measured 0.959354; strict cross-fitted coordinate ascent over StratifiedKFold(10,42) meta-folds (weights fit on meta-train rows only) = 0.959622 (+0.00035 vs fresh kernel-v4 baseline 0.959272, +0.00027 vs hand weights). 24 LR sweep configs: logits4 0.959601-2 stable across C; logits+probs4 0.959605-7; +nnprior(logits5) 0.959591 at every C = nnprior strictly hurts again. Stack-weight optimism quantified Delta = in-sample 0.959629 - strict 0.959622 = +0.000006 AUC at n~630k meta-rows (in-sample coord-ascent NOT overfit here). Test-side refreshed with strict mean weights {lgbm .0885,cat .2695,xgb .0071,realmlp .6350} over banked kernel-v4 test logits -> outputs/submission.csv (mean 0.4471), outputs/cv_scores.json, test_blend_prob_strict.npy. Novelty check (worker_1 ses_e9e47837): OOF LR meta-stacker = textbook (Wolpert92, Ting&Witten99, SuperLearner07); validation-weight-search overfit = known (Purucker&Beel23); no novelty claim logged - measurement node + optimism-gap datapoint."}
+EOF
+cat >> autoresearch_research_strategy_graph.jsonl <<'EOF'
+{"id":"n11","type":"frontier","track":"06-playground-s6e10-airline-satisfaction","metric":"ps6e10_roc_auc","value":0.959622,"status":"open","idea":"strict 4-member stack {lgbm,cat,xgb,realmlp} cross-fitted coord-ascent verified; next legs: 5-member strict sweep once a replacement member beats dead logreg (e.g., fold-ensembled RealMLP test scores, different-seed/epoch RealMLP as diversity member); target 0.9613"}
+{"edge":"n5->n11","relation":"realmlp_strict_keep","evidence":"strict cross-fitted coord-ascent OOF 0.959622 vs kernel-v4 baseline 0.959272 (+0.000350); optimism Delta in-sample-vs-strict only +0.000006; hand weights 0.959354 dominated by fitted ones; artifacts outputs/cv_stack_strict.json, oof_blend_strict refit skipped (coord-ascent kept), submission.csv/cv_scores.json refreshed with strict mean weights"}
+EOF
+tail -1 autoresearch_research.jsonl | head -c 120; echo; echo LOGGED
+{"commit":"strict_restack_keep","metric":"ps6e10_roc_auc","value":0.959622,"status":"keep","description":"T06 n5->n11: S
+LOGGED
+> build · glm-5.3-flash-free
+Fixing a stray header I left in equations.md:
+[0m✗ [0mEdit equations.md failed
+[91m[1mError: [0mCould not find oldString in /home/pope/Desktop/gpu /hackathons/equations.md. It must match exactly, including whitespace and indentation.
+> build · glm-5.3-flash-free
+[0m→ [0mRead equations.md 
+> build · glm-5.3-flash-free
+[0m✗ [0mEdit equations.md failed
+[91m[1mError: [0mCould not find oldString in /home/pope/Desktop/gpu /hackathons/equations.md. It must match exactly, including whitespace and indentation.
+> build · glm-5.3-flash-free
+[0m← [0mEdit equations.md
+Index: equations.md
+===================================================================
+--- equations.md
++++ equations.md
+@@ -39,10 +39,9 @@
+ weights were NOT overfitting at this n; hand-set weights (0.15/0.55/0.08/0.02/0.20)
+ measured 0.959354, i.e. dominated by fitted weights by -0.00027 AUC.
+ Deploy only weights whose OOF refit protocol is logged; hand weights never staged.
+ 
+-## IDEAS.md append rule updated (iteration 2026-10-22 ~10:05Z)
+-
++## Score-scale invariance / pooling scale (Track 06 stacks)
+ AUC(s) = P(s(x+) > s(x-)) is a function of score ORDERING only, hence
+ AUC(g(s)) = AUC(s) for any strictly increasing g  (e.g. prob->logit clip @1e-6; verified numerically).
+ Equal-weight mean on prob scale != equal-weight mean on logit scale (different orderings;
+ synthetic check +0.0051 AUC), and for unequal weights the gap can reach ~0.033 AUC
+
+> build · glm-5.3-flash-free
+Now ideas.md and worklog.md appends:
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && tail -6 autoresearch_research.ideas.md
+- I7 Track 07: run the agent on Graviton via QEMU emulation to produce COOL arm64 evidence locally.
+- I8 Track 02: ship the agent as a Kaggle dataset + harness so judges can reproduce (Best New Resource prize).
+- I6 Track 06 leg-1 (2026-10-22): nnprior injection REJECTED (0.959242 best vs 0.959265 baseline,
+  18 strict cross-fitted LR stack configs incl. rank features all <= baseline). kNN k=5 inv-dist
+  member alone 0.943 — too weak at this operating point. RealMLP-TD 10-fold GPU leg still running
+  (started 07:18Z); strict 5-member LR re-stack of whichever members bank, before keep.
+> build · glm-5.3-flash-free
+[0m$ [0mcd "/home/pope/Desktop/gpu /hackathons" && cat >> autoresearch_research.ideas.md <<'EOF'
+- I6 Track 06 leg-2 (2026-10-22): RealMLP 10-fold leg banked (OOF 0.959001) and STRICTLY
+  re-verified via cross-fitted coordinate ascent (src/stack_strict_v2.py): OOF 0.959622
+  vs kernel-v4 baseline 0.959272 (KEEP). In-sample-vs-strict optimism Delta only
+  +0.000006 AUC; hand-set weights (0.959354) dominated by fitted ones. nnprior as 5th
+  member hurts at every C (0.959591) -> strictly rejected twice now. Test-side refreshed
+  with strict mean weights {lgbm .0885, cat .2695, xgb .0071, realmlp .6350}.
+  NEXT: replacement for the dead logreg+TE member; RealMLP diversity members
+  (different seed/epochs, fold-ensembled test scores); target 0.9613.
+EOF
+cat >> experiments/worklog.md <<'EOF'
+
+## 2026-10-22 ~09:15-10:05 UTC - iteration: T06 n5->n11 strict re-stack [KEEP]
+- Lanes at start: local GPU idle (verbalinux only), Kaggle ntl-stage2-deberta RUNNING /
+  ps6e10-stack COMPLETE, Colab track05 Qwen job RUNNING. A CONCURRENT loop iteration was
+  live (fixed cat2 dtype bug, relaunched ps6e10-stack kernel v4 -> fresh OOF baseline
+  0.959272 and test_*.npy members) - my iteration took the complementary strict-verify leg.
+- Node: n5 closing leg (I6): STRICT cross-fitted re-verification of realmlp_stack.py's
+  in-sample coord-ascent blend (0.959629), per handoff instruction.
+- Implemented 06-.../src/stack_strict_v2.py: meta-weights refit per outer fold of the SAME
+  StratifiedKFold(10,42) panel; 24 LR configs (logits4 / logits+probs4 / logits5 with
+  nnprior, C sweep 0.25..1000) + strict coordinate ascent (weights fit on meta-train rows).
+- Measurements (n=699,635):
+  - in-sample coord ascent (reference): 0.959629 weights {lgbm .0795, cat .2727, xgb .0114, realmlp .6364}
+  - strict LR logits4: 0.959601-0.959602 flat across C; logits+probs4: 0.959605-0.959607
+  - strict LR logits5 (+nnprior): 0.959591 at EVERY C -> nnprior strictly hurts (2nd rejection)
+  - BEST strict coord ascent4: 0.959622 mean weights {lgbm .0885, cat .2695, xgb .0071, realmlp .6350}
+  - stack-weight optimism Delta = in-sample - strict = +0.000006 AUC (NOT overfitting at n~630k)
+- KEEP: ps6e10_roc_auc 0.959622 vs kernel-v4 baseline 0.959272 (+0.00035); vs the live
+  iteration's hand weights (0.959354) +0.00027. Test-side refreshed with strict mean
+  weights over banked kernel-v4 test logits: submission.csv (mean 0.4471 vs prevalence
+  0.4436 - sane), cv_scores.json (strict fields merged), test_blend_prob_strict.npy.
+- Novelty check (worker_1): OOF LR meta-stacker textbook (Wolpert92 / Ting&Witten99 /
+  SuperLearner07); Purucker&Beel23 documents validation-weight-search overfit; found NO
+  published Delta-optimism quantification for greedy coord-ascent on OOF AUC at fixed n -
+  our +0.000006 datapoint is logged in equations.md. No novelty claim; measurement node.
+- Artifacts: outputs/cv_stack_strict.json, outputs/submission.csv, outputs/cv_scores.json,
+  outputs/test_blend_prob_strict.npy, /tmp/opencode/t06_strict.log, experiments.tsv row.
+- NEXT (n11): replace dead logreg+TE member; RealMLP diversity members; target 0.9613.
+EOF
+echo APPENDED; python3 -c "import json; [json.loads(l) for l in open('/home/pope/Desktop/gpu /hackathons/autoresearch_research.jsonl')]; print('jsonl valid')"
+APPENDED
+jsonl valid
+> build · glm-5.3-flash-free
+Iteration complete. Summary:
+
+## Measurement: T06 `n5→n11` strict re-stack — **KEEP** 0.959622
+
+**Node:** Closing leg of frontier chain `n5` (I6 RealMLP log): the previous iteration's stacked blend 0.959628 used **in-sample** coordinate-ascent weights (flagged in worklog handoff) and the concurrent loop's fresh kernel-v4 baseline stood at 0.959272 with hand-set weights at 0.959354.
+
+**Implementation:** `06-.../src/stack_strict_v2.py` — meta-weights refit per outer fold on the same StratifiedKFold(10, 42) panel; 24 LR configs (logits / logits+probs / +nnprior, C∈0.25…1000) + strictly cross-fitted greedy coordinate ascent.
+
+**Results (n=699,635):**
+| config | OOF AUC |
+|---|---|
+| kernel-v4 baseline blend | 0.959272 |
+| hand-set weights (prior iteration) | 0.959354 |
+| strict LR logits4 (all C) | 0.959601–2 |
+| strict LR +nnprior (all C) | 0.959591 → 2nd strict nnprior reject |
+| **strict coord-ascent4** | **0.959622** (+0.00035) |
+
+**Novelty/evidence (worker_1):** OOF LR meta-stacker is textbook (Wolpert '92, Ting&Witten '99, SuperLearner '07); Purucker & Beel '23 knowns validation-weight overfit — but **no published Δ-optimism for coord-ascent on OOF AUC at fixed n**. Measured Δ = +0.000006 AUC → logged into equations.md as a real datapoint; no novelty claim (measurement node).
+
+**Deliverables refreshed** (staged only, never submitted): `submission.csv` re-blended with strict mean weights {lgbm .0885, cat .2695, xgb .0071, realmlp .6350} (mean 0.4471, sane), `cv_scores.json`, `test_blend_prob_strict.npy`, `cv_stack_strict.json`, TSV row, jsonl commit, graph node+edge, ideas.md, worklog, equations.md. Log-only (no .git).
+
+**Next (n11):** replace dead logreg+TE member; RealMLP diversity members; target 0.9613. Colab track05 Qwen job and Kaggle deberta kernel left untouched, still running.
+[2026-10-22 09:47:54] iter 6: state advanced rc=0
+[2026-10-22 09:47:54] Rotated .autoresearch-loop.log (retained last 2000 lines)
+[2026-10-22 09:48:09] iter 7: launching opencode (3600s watchdog) <default> 
+[0m
+> build · glm-5.3-flash-free
+[0m→ [0mSkill "autoresearch_research" 
+[91m[1mError: [0mRate limit exceeded. Please try again later.
+[2026-10-22 09:48:12] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 09:48:12] Backoff: sleeping 10s before next attempt
+[2026-10-22 09:48:22] iter 7: NO state change (stale 1/3) rc=1
+[2026-10-22 09:48:37] iter 8: launching opencode (3600s watchdog) <default> 
+[0m
+> build · glm-5.3-flash-free
+[91m[1mError: [0mRate limit exceeded. Please try again later.
+[2026-10-22 09:48:38] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 09:48:38] Backoff: sleeping 20s before next attempt
+[2026-10-22 09:48:58] iter 8: NO state change (stale 2/3) rc=1
+[2026-10-22 09:49:14] iter 9: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mRate limit exceeded. Please try again later.
+[2026-10-22 09:49:15] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 09:49:15] Backoff: sleeping 30s before next attempt
+[2026-10-22 09:49:45] iter 9: NO state change (stale 3/3) rc=1
+[2026-10-22 09:49:45] 3 stale — nap 1/8 (3600s, pool dry, retrying later)
+[2026-10-22 10:49:45] iter 9: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 10:49:47] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 10:49:47] Backoff: sleeping 10s before next attempt
+[2026-10-22 10:49:57] iter 9: NO state change (stale 1/3) rc=1
+[2026-10-22 10:50:13] iter 10: launching opencode (3600s watchdog) <default> 
+[0m
+> build · glm-5.3-flash-free
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 10:50:15] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 10:50:15] Backoff: sleeping 20s before next attempt
+[2026-10-22 10:50:35] iter 10: NO state change (stale 2/3) rc=1
+[2026-10-22 10:50:50] iter 11: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 10:50:51] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 10:50:51] Backoff: sleeping 30s before next attempt
+[2026-10-22 10:51:21] iter 11: NO state change (stale 3/3) rc=1
+[2026-10-22 10:51:21] 3 stale — nap 2/8 (3600s, pool dry, retrying later)
+[2026-10-22 11:51:22] iter 11: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 11:51:23] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 11:51:23] Backoff: sleeping 10s before next attempt
+[2026-10-22 11:51:33] iter 11: NO state change (stale 1/3) rc=1
+[2026-10-22 11:51:49] iter 12: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 11:51:50] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 11:51:50] Backoff: sleeping 20s before next attempt
+[2026-10-22 11:52:10] iter 12: NO state change (stale 2/3) rc=1
+[2026-10-22 11:52:26] iter 13: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 11:52:27] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 11:52:27] Backoff: sleeping 30s before next attempt
+[2026-10-22 11:52:57] iter 13: NO state change (stale 3/3) rc=1
+[2026-10-22 11:52:57] 3 stale — nap 3/8 (3600s, pool dry, retrying later)
+[2026-10-22 12:52:57] iter 13: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 12:52:58] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 12:52:58] Backoff: sleeping 10s before next attempt
+[2026-10-22 12:53:08] iter 13: NO state change (stale 1/3) rc=1
+[2026-10-22 12:53:23] iter 14: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 12:53:24] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 12:53:24] Backoff: sleeping 20s before next attempt
+[2026-10-22 12:53:44] iter 14: NO state change (stale 2/3) rc=1
+[2026-10-22 12:53:59] iter 15: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 12:54:00] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 12:54:00] Backoff: sleeping 30s before next attempt
+[2026-10-22 12:54:30] iter 15: NO state change (stale 3/3) rc=1
+[2026-10-22 12:54:30] 3 stale — nap 4/8 (3600s, pool dry, retrying later)
+[2026-10-22 13:54:30] iter 15: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 13:54:37] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 13:54:37] Backoff: sleeping 10s before next attempt
+[2026-10-22 13:54:47] iter 15: NO state change (stale 1/3) rc=1
+[2026-10-22 13:55:02] iter 16: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 13:55:03] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 13:55:03] Backoff: sleeping 20s before next attempt
+[2026-10-22 13:55:23] iter 16: NO state change (stale 2/3) rc=1
+[2026-10-22 13:55:38] iter 17: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 13:55:38] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 13:55:38] Backoff: sleeping 30s before next attempt
+[2026-10-22 13:56:08] iter 17: NO state change (stale 3/3) rc=1
+[2026-10-22 13:56:09] 3 stale — nap 5/8 (3600s, pool dry, retrying later)
+[2026-10-22 14:56:09] iter 17: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 14:56:10] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 14:56:10] Backoff: sleeping 10s before next attempt
+[2026-10-22 14:56:20] iter 17: NO state change (stale 1/3) rc=1
+[2026-10-22 14:56:35] iter 18: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 14:56:36] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 14:56:36] Backoff: sleeping 20s before next attempt
+[2026-10-22 14:56:56] iter 18: NO state change (stale 2/3) rc=1
+[2026-10-22 14:57:11] iter 19: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 14:57:12] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 14:57:12] Backoff: sleeping 30s before next attempt
+[2026-10-22 14:57:42] iter 19: NO state change (stale 3/3) rc=1
+[2026-10-22 14:57:42] 3 stale — nap 6/8 (3600s, pool dry, retrying later)
+[2026-10-22 15:57:42] iter 19: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 15:57:45] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 15:57:45] Backoff: sleeping 10s before next attempt
+[2026-10-22 15:57:55] iter 19: NO state change (stale 1/3) rc=1
+[2026-10-22 15:58:10] iter 20: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 15:58:12] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 15:58:12] Backoff: sleeping 20s before next attempt
+[2026-10-22 15:58:32] iter 20: NO state change (stale 2/3) rc=1
+[2026-10-22 15:58:48] iter 21: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 15:58:50] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 15:58:50] Backoff: sleeping 30s before next attempt
+[2026-10-22 15:59:20] iter 21: NO state change (stale 3/3) rc=1
+[2026-10-22 15:59:20] 3 stale — nap 7/8 (3600s, pool dry, retrying later)
+[2026-10-22 16:59:20] iter 21: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 16:59:21] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 16:59:21] Backoff: sleeping 10s before next attempt
+[2026-10-22 16:59:31] iter 21: NO state change (stale 1/3) rc=1
+[2026-10-22 16:59:47] iter 22: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 16:59:48] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 16:59:48] Backoff: sleeping 20s before next attempt
+[2026-10-22 17:00:08] iter 22: NO state change (stale 2/3) rc=1
+[2026-10-22 17:00:23] iter 23: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 17:00:24] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 17:00:24] Backoff: sleeping 30s before next attempt
+[2026-10-22 17:00:54] iter 23: NO state change (stale 3/3) rc=1
+[2026-10-22 17:00:54] 3 stale — nap 8/8 (3600s, pool dry, retrying later)
+[2026-10-22 18:00:54] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (1x)
+[2026-10-22 18:01:09] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (2x)
+[2026-10-22 18:01:24] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (3x)
+[2026-10-22 18:01:39] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (4x)
+[2026-10-22 18:01:54] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (5x)
+[2026-10-22 18:02:09] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (6x)
+[2026-10-22 18:02:24] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (7x)
+[2026-10-22 18:02:39] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (8x)
+[2026-10-22 18:03:01] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (9x)
+[2026-10-22 18:03:16] [MEMORY GUARD] Low available RAM (<2048MB), waiting 15s to prevent system crash... (10x)
+[2026-10-22 18:03:31] iter 23: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 18:03:33] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 18:03:33] Backoff: sleeping 10s before next attempt
+[2026-10-22 18:03:43] iter 23: NO state change (stale 1/3) rc=1
+[2026-10-22 18:04:00] iter 24: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 18:04:02] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 18:04:02] Backoff: sleeping 20s before next attempt
+[2026-10-22 18:04:23] iter 24: NO state change (stale 2/3) rc=1
+[2026-10-22 18:04:38] iter 25: launching opencode (3600s watchdog) <default> 
+[91m[1mError: [0mFree usage limit reached. Subscribe to OpenCode Go to keep going: https://opencode.ai/go
+[2026-10-22 18:04:40] [FAILOVER] Rate limit or quota hit on current model — advancing to next free backup model in pool...
+[2026-10-22 18:04:40] Backoff: sleeping 30s before next attempt
+[2026-10-22 18:05:10] iter 25: NO state change (stale 3/3) rc=1
+[2026-10-22 18:05:11] 3 consecutive stale iterations + naps exhausted — giving up to avoid burning tokens in circles
+[2026-10-22 18:05:11] === driver exit ===

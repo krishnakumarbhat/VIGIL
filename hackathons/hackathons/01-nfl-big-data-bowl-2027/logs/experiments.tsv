@@ -1,0 +1,486 @@
+track	metric	value	notes
+research	kaggle_api_competition_list	401	auth required; data endpoints 403/404 for our token (rules not accepted); NOT bypassed
+research	hf_datasets_search_nfl	50	no dataset contains 2027 combine tracking
+research	hf_datasets_search_combine_tracking	0	empty result
+research	github_repo_search_bdb_tracking	76	repos; 0 public data mirrors (code search API 401 without auth)
+research	discussion_fetch_749574	shell_only	client-rendered JS shell (~5.9KB); quote recovered via search-index snippet: "Combine x/y is a normal frame where a positive cross product means a left turn"
+research	discussion_fetch_747720	shell_only	client-rendered JS shell; NO verbatim body text retrievable; not fabricated
+research	competition_metric	judged_writeup_viz	"Writeup Score (20%)" + "Data Visualization Score (20%)"; "Does not award Points or Medals"; no public leaderboard metric -> PROXY used
+kce_pipeline	synthetic_attempts	800	200 prospects x 4 attempts, seed 42, 10 drill names, 79970 tracking rows
+kce_pipeline	synthetic_cut_events	1015	detected with >35 deg direction change, speeds >0.5 yd/s (kce_features.py)
+kce_pipeline	synthetic_player_drill_rows	701	aggregates: n_cuts, mean/max KCE, mean DBR, mean turn rate, peak speed, route_win_proxy
+kce_pipeline	break_side_counts	OUTSIDE 544 / INSIDE 471	sign(cross) x alignment-side mapping
+kce_pipeline	mean_kce_inside	0.8890	INSIDE breaks n=471
+kce_pipeline	mean_kce_outside	0.8875	OUTSIDE breaks n=544
+kce_pipeline	mean_dbr_median	0.742	per player-drill mean_dbr; max 5.03 -> BURST_FLOOR=1.0 required
+kce_pipeline	dbr_burst_floor	1.0	early runs hit per-player mean DBR ~135 (divide by tiny burst); floor in kce_features.py BURST_FLOOR
+kce_pipeline	drill_kce_means	0.869-0.927	POST_CORNER 0.869 (angle 52.5) < CORNER 0.888 < COMEBACK 0.889 < DAGGER 0.908 < SPEED_OUT 0.927 (angle 44.9): KCE tracks cut sharpness
+kce_model	proxy_cv_r2_boosted	0.8088	GroupKFold 5 by nfl_id on career_success_score (SYNTHETIC, 0.7*ability+0.3*noise); PROXY (competition is judged)
+kce_model	proxy_cv_mae_boosted	0.0847	same run
+kce_model	proxy_cv_spearman_boosted	0.8977	same run
+kce_model	proxy_cv_r2_mean_dummy	-0.0049	baseline bracket, same folds
+kce_model	proxy_cv_mae_mean_dummy	0.1995	baseline bracket, same folds
+kce_model	null_target_cv_r2	-0.3465	shuffled-label target; model scores below dummy -> no false signal
+kce_model	null_target_cv_mae	0.2241	shuffled-label target
+kce_model	notebook_variant_cv_r2	0.7301	notebook feature set (n_cuts..route_win_proxy only) vs run_analysis one-hot+geometry set
+kce_model	mixedlm_kce_converged	1	mean_kce ~ align + drill_base, random intercept per nfl_id
+kce_model	mixedlm_kce_align_beta	-0.0022	p=0.201: null side effect on synthetic data (honest null)
+kce_model	mixedlm_kce_drill_speedout	+0.038	SPEED_OUT vs COMEBACK reference; POST_CORNER -0.020, DAGGER +0.019, CORNER -0.0003
+kce_model	pearson_r_peak_speed	0.869	vs career_success_score (strongest feature)
+kce_model	pearson_r_approach_speed	0.868	vs career_success_score
+kce_model	pearson_r_route_win_proxy	0.723	vs career_success_score
+kce_model	pearson_r_mean_kce	0.067	vs career_success_score: KCE alone weak on synthetic target (reported, not tuned)
+environment	runner	system python3 3.10	matplotlib 3.10.8, pandas 2.3.3, scikit-learn, statsmodels available; NO lightgbm/catboost -> both boosted slots fall back to HistGradientBoostingRegressor (identical scores)
+environment	earlier_sandbox_attempt	superseded	a previous pass had no shell/python exec and wrote SVG figures from a JS re-implementation; all figures are now real matplotlib PNGs (150 dpi), SVG drafts removed
+deliverables	figures_written	6	PNG 150dpi: fig1_velocity_cross_product, fig2_kce_by_break_side, fig3_kce_vs_dbr_by_position, fig4_kce_dbr_by_drill, fig5_feature_target_correlations, fig6_oof_pred_vs_actual (6 of 9 permitted)
+01_nfl_big_data_bowl	kce_real_data_pipeline	regression_proxy	1.6351741716406505	target=separation_at_pass_forward, nplayers=497
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	0	rows=None
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	NA	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	nan	folds_converged=0
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	translation_aug::by_game_play::lightgbm	0.2825	baseline=0.282 keep=True n_new=39
+01_nfl_big_data_bowl	translation_aug::by_game_play::hist_gb	0.2793	baseline=0.282 keep=True n_new=39
+01_nfl_big_data_bowl	translation_aug::by_player::lightgbm	0.2659	baseline=0.2613 keep=True n_new=39
+01_nfl_big_data_bowl	translation_aug::by_player::hist_gb	0.2639	baseline=0.2613 keep=True n_new=39
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_catch_proxy_validation_pearson	0.0141	rows=3159 derived@catch vs official sep; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	0	rows=None
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	0.00118	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	-0.3463	folds_converged=5 fallback=0
+01_nfl_big_data_bowl	learning_curve_r2::sep_gain	0.6213	frac=0.2 rows=1752 groups=1622 mae=1.4145 grouping=by_game_play
+01_nfl_big_data_bowl	learning_curve_r2::sep_gain	0.6453	frac=0.4 rows=3486 groups=3243 mae=1.3956 grouping=by_game_play
+01_nfl_big_data_bowl	learning_curve_r2::sep_gain	0.6425	frac=0.6 rows=5239 groups=4865 mae=1.3768 grouping=by_game_play
+01_nfl_big_data_bowl	learning_curve_r2::sep_gain	0.6511	frac=0.8 rows=6965 groups=6486 mae=1.3624 grouping=by_game_play
+01_nfl_big_data_bowl	learning_curve_r2::sep_gain	0.6561	frac=1.0 rows=8715 groups=8108 mae=1.3503 grouping=by_game_play
+01_nfl_big_data_bowl	per_position_r2::sep_gain::by_player::SKILL	0.6463	n=8715 mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	per_position_r2::sep_gain::by_game_play::SKILL	0.6561	n=8715 mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::lightgbm	-0.1263	mae=0.3544 spearman=0.3007
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::hist_gb	-0.2374	mae=0.3653 spearman=0.2751
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::shuffled_label_null	-0.3945	mae=0.4163 spearman=-0.0632
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::lightgbm	0.0756	mae=2.2792 spearman=0.3180
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::hist_gb	0.0793	mae=2.2686 spearman=0.3275
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::shuffled_label_null	-0.0602	mae=2.5490 spearman=0.0027
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::lightgbm	0.1074	mae=2.2383 spearman=0.3558
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::hist_gb	0.1099	mae=2.2285 spearman=0.3602
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::shuffled_label_null	-0.0669	mae=2.5601 spearman=0.0025
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::lightgbm	0.0129	mae=7.9649 spearman=0.2315
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::hist_gb	0.01	mae=7.9738 spearman=0.2301
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::mean_dummy	-0.0078	mae=8.2038 spearman=-0.1092
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::shuffled_label_null	-0.1064	mae=8.6003 spearman=0.0164
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::lightgbm	-0.0582	mae=4.6050 spearman=0.2197
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::hist_gb	-0.0861	mae=4.6395 spearman=0.2185
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::mean_dummy	-0.0085	mae=4.6304 spearman=-0.1565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::shuffled_label_null	-0.1257	mae=4.9673 spearman=0.0281
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::lightgbm	0.0457	mae=4.2897 spearman=0.3565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::hist_gb	0.0248	mae=4.3477 spearman=0.3319
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::mean_dummy	-0.0021	mae=4.5978 spearman=-0.0457
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::shuffled_label_null	-0.145	mae=4.9439 spearman=0.0315
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	sep_gain_cushion_ablation_r2	0.6561	with cushion vs without=0.1074 (by_game_play, lightgbm)
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_catch_proxy_validation_pearson	0.0141	rows=3159 derived@catch vs official sep; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	1	rows=8697
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	0.00118	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	-0.3463	folds_converged=5 fallback=0
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::lightgbm	-0.1263	mae=0.3544 spearman=0.3007
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::hist_gb	-0.2374	mae=0.3653 spearman=0.2751
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::shuffled_label_null	-0.3945	mae=0.4163 spearman=-0.0632
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::lightgbm	0.0756	mae=2.2792 spearman=0.3180
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::hist_gb	0.0793	mae=2.2686 spearman=0.3275
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::shuffled_label_null	-0.0602	mae=2.5490 spearman=0.0027
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::lightgbm	0.1074	mae=2.2383 spearman=0.3558
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::hist_gb	0.1099	mae=2.2285 spearman=0.3602
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::shuffled_label_null	-0.0669	mae=2.5601 spearman=0.0025
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::lightgbm	0.0129	mae=7.9649 spearman=0.2315
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::hist_gb	0.01	mae=7.9738 spearman=0.2301
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::mean_dummy	-0.0078	mae=8.2038 spearman=-0.1092
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::shuffled_label_null	-0.1064	mae=8.6003 spearman=0.0164
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::lightgbm	-0.0582	mae=4.6050 spearman=0.2197
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::hist_gb	-0.0861	mae=4.6395 spearman=0.2185
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::mean_dummy	-0.0085	mae=4.6304 spearman=-0.1565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::shuffled_label_null	-0.1257	mae=4.9673 spearman=0.0281
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::lightgbm	0.0457	mae=4.2897 spearman=0.3565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::hist_gb	0.0248	mae=4.3477 spearman=0.3319
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::mean_dummy	-0.0021	mae=4.5978 spearman=-0.0457
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::shuffled_label_null	-0.145	mae=4.9439 spearman=0.0315
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	sep_gain_cushion_ablation_r2	0.6561	with cushion vs without=0.1074 (by_game_play, lightgbm)
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_catch_proxy_validation_pearson	0.0141	rows=3159 derived@catch vs official sep; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	1	rows=8697
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	0.00118	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	-0.2165	folds_converged=5 fallback=0
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::lightgbm	-0.1263	mae=0.3544 spearman=0.3007
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::hist_gb	-0.2374	mae=0.3653 spearman=0.2751
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::shuffled_label_null	-0.3945	mae=0.4163 spearman=-0.0632
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::lightgbm	0.0756	mae=2.2792 spearman=0.3180
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::hist_gb	0.0793	mae=2.2686 spearman=0.3275
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::shuffled_label_null	-0.0602	mae=2.5490 spearman=0.0027
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::lightgbm	0.1074	mae=2.2383 spearman=0.3558
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::hist_gb	0.1099	mae=2.2285 spearman=0.3602
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::shuffled_label_null	-0.0669	mae=2.5601 spearman=0.0025
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::lightgbm	0.0129	mae=7.9649 spearman=0.2315
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::hist_gb	0.01	mae=7.9738 spearman=0.2301
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::mean_dummy	-0.0078	mae=8.2038 spearman=-0.1092
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::shuffled_label_null	-0.1064	mae=8.6003 spearman=0.0164
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::lightgbm	-0.0582	mae=4.6050 spearman=0.2197
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::hist_gb	-0.0861	mae=4.6395 spearman=0.2185
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::mean_dummy	-0.0085	mae=4.6304 spearman=-0.1565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::shuffled_label_null	-0.1257	mae=4.9673 spearman=0.0281
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::lightgbm	0.0457	mae=4.2897 spearman=0.3565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::hist_gb	0.0248	mae=4.3477 spearman=0.3319
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::mean_dummy	-0.0021	mae=4.5978 spearman=-0.0457
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::shuffled_label_null	-0.145	mae=4.9439 spearman=0.0315
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	sep_gain_cushion_ablation_r2	0.6561	with cushion vs without=0.1074 (by_game_play, lightgbm)
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_catch_proxy_validation_pearson	0.0141	rows=3159 derived@catch vs official sep; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	1	rows=8697
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	0.88225	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	0.1869	folds_converged=5 fallback=0
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::lightgbm	-0.1263	mae=0.3544 spearman=0.3007
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::hist_gb	-0.2374	mae=0.3653 spearman=0.2751
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::shuffled_label_null	-0.3945	mae=0.4163 spearman=-0.0632
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::lightgbm	0.0756	mae=2.2792 spearman=0.3180
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::hist_gb	0.0793	mae=2.2686 spearman=0.3275
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::shuffled_label_null	-0.0602	mae=2.5490 spearman=0.0027
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::lightgbm	0.1074	mae=2.2383 spearman=0.3558
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::hist_gb	0.1099	mae=2.2285 spearman=0.3602
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::shuffled_label_null	-0.0669	mae=2.5601 spearman=0.0025
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::lightgbm	0.0129	mae=7.9649 spearman=0.2315
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::hist_gb	0.01	mae=7.9738 spearman=0.2301
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::mean_dummy	-0.0078	mae=8.2038 spearman=-0.1092
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::shuffled_label_null	-0.1064	mae=8.6003 spearman=0.0164
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::lightgbm	-0.0582	mae=4.6050 spearman=0.2197
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::hist_gb	-0.0861	mae=4.6395 spearman=0.2185
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::mean_dummy	-0.0085	mae=4.6304 spearman=-0.1565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::shuffled_label_null	-0.1257	mae=4.9673 spearman=0.0281
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::lightgbm	0.0457	mae=4.2897 spearman=0.3565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::hist_gb	0.0248	mae=4.3477 spearman=0.3319
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::mean_dummy	-0.0021	mae=4.5978 spearman=-0.0457
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::shuffled_label_null	-0.145	mae=4.9439 spearman=0.0315
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	sep_gain_cushion_ablation_r2	0.6561	with cushion vs without=0.1074 (by_game_play, lightgbm)
+01_nfl_big_data_bowl	derived_proxy_validation_pearson	0.0334	rows=4078 derived vs official sep at pass_forward; REJECTED
+01_nfl_big_data_bowl	derived_catch_proxy_validation_pearson	0.0141	rows=3159 derived@catch vs official sep; REJECTED
+01_nfl_big_data_bowl	mixedlm_player_ri_converged	1	rows=8697
+01_nfl_big_data_bowl	mixedlm_kce_align_beta	0.00801	KCE ~ cut_angle + align_side + drill_base; alignment side is a FEATURE
+01_nfl_big_data_bowl	mixedlm_population_oof_r2	0.1869	folds_converged=5 fallback=0
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::lightgbm	0.2613	mae=1.4092 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::hist_gb	0.2633	mae=1.4089 spearman=0.4678
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_player::shuffled_label_null	-0.057	mae=1.7548 spearman=0.0021
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::lightgbm	0.282	mae=1.3864 spearman=0.4901
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::hist_gb	0.2786	mae=1.3936 spearman=0.4845
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::mean_dummy	-0.0002	mae=1.7060 spearman=-0.0142
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward::by_game_play::shuffled_label_null	-0.0656	mae=1.7533 spearman=0.0049
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::lightgbm	0.1155	mae=1.5901 spearman=0.2578
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::hist_gb	0.1134	mae=1.5930 spearman=0.2508
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_kinematics_only::by_player::shuffled_label_null	-0.0576	mae=1.7546 spearman=0.0107
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::lightgbm	0.0927	mae=1.5813 spearman=0.3389
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::hist_gb	0.0861	mae=1.5833 spearman=0.3377
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::mean_dummy	-0.0006	mae=1.7064 spearman=-0.0217
+01_nfl_big_data_bowl	cv_r2::sep_at_pass_forward_presnap_only::by_player::shuffled_label_null	-0.0556	mae=1.7484 spearman=-0.0059
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::lightgbm	-0.0717	mae=0.3519 spearman=0.2249
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::hist_gb	-0.1006	mae=0.3565 spearman=0.2307
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep::by_player::shuffled_label_null	-0.2084	mae=0.3809 spearman=0.1237
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::lightgbm	-0.1263	mae=0.3544 spearman=0.3007
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::hist_gb	-0.2374	mae=0.3653 spearman=0.2751
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::mean_dummy	-0.0268	mae=0.3474 spearman=-0.1505
+01_nfl_big_data_bowl	cv_r2::player_mean_sep_preregistered::by_player::shuffled_label_null	-0.3945	mae=0.4163 spearman=-0.0632
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::lightgbm	0.6463	mae=1.3776 spearman=0.8185
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::hist_gb	0.6471	mae=1.3744 spearman=0.8198
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_player::shuffled_label_null	-0.0527	mae=2.5408 spearman=0.0150
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::lightgbm	0.6561	mae=1.3503 spearman=0.8254
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::hist_gb	0.6576	mae=1.3513 spearman=0.8272
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain::by_game_play::shuffled_label_null	-0.0634	mae=2.5576 spearman=0.0064
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::lightgbm	0.0756	mae=2.2792 spearman=0.3180
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::hist_gb	0.0793	mae=2.2686 spearman=0.3275
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::mean_dummy	-0.0007	mae=2.4881 spearman=-0.0326
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_player::shuffled_label_null	-0.0602	mae=2.5490 spearman=0.0027
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::lightgbm	0.1074	mae=2.2383 spearman=0.3558
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::hist_gb	0.1099	mae=2.2285 spearman=0.3602
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::mean_dummy	-0.0001	mae=2.4871 spearman=-0.0090
+01_nfl_big_data_bowl	cv_r2::sep_gain_no_cushion::by_game_play::shuffled_label_null	-0.0669	mae=2.5601 spearman=0.0025
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::lightgbm	0.0502	mae=7.1198 spearman=0.2608
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::hist_gb	0.0531	mae=7.1359 spearman=0.2629
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::mean_dummy	-0.0078	mae=7.4935 spearman=-0.1112
+01_nfl_big_data_bowl	cv_r2::derived_sep_pf::by_player::shuffled_label_null	-0.1098	mae=7.8296 spearman=-0.0175
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::lightgbm	0.5979	mae=1.1806 spearman=0.7602
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::hist_gb	0.57	mae=1.2042 spearman=0.7464
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::mean_dummy	-0.0042	mae=2.8914 spearman=-0.0744
+01_nfl_big_data_bowl	cv_r2::career_snaps_log::by_player::shuffled_label_null	-0.1372	mae=2.8849 spearman=0.0623
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::lightgbm	-0.1105	mae=1.3129 spearman=0.1926
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::hist_gb	-0.1163	mae=1.3419 spearman=0.1800
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::mean_dummy	-0.0165	mae=1.2831 spearman=-0.1108
+01_nfl_big_data_bowl	cv_r2::player_mean_yac::by_player::shuffled_label_null	-0.3207	mae=1.4771 spearman=-0.0619
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::lightgbm	0.0129	mae=7.9649 spearman=0.2315
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::hist_gb	0.01	mae=7.9738 spearman=0.2301
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::mean_dummy	-0.0078	mae=8.2038 spearman=-0.1092
+01_nfl_big_data_bowl	cv_r2::derived_sep_catch::by_player::shuffled_label_null	-0.1064	mae=8.6003 spearman=0.0164
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::lightgbm	-0.0582	mae=4.6050 spearman=0.2197
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::hist_gb	-0.0861	mae=4.6395 spearman=0.2185
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::mean_dummy	-0.0085	mae=4.6304 spearman=-0.1565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_player::shuffled_label_null	-0.1257	mae=4.9673 spearman=0.0281
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::lightgbm	0.0457	mae=4.2897 spearman=0.3565
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::hist_gb	0.0248	mae=4.3477 spearman=0.3319
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::mean_dummy	-0.0021	mae=4.5978 spearman=-0.0457
+01_nfl_big_data_bowl	cv_r2::yards_after_catch::by_game_play::shuffled_label_null	-0.145	mae=4.9439 spearman=0.0315
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::lightgbm	-0.0027	mae=1.6844 spearman=0.0377
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::hist_gb	0.0006	mae=1.6808 spearman=0.0434
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::mean_dummy	-0.0008	mae=1.6881 spearman=-0.0320
+01_nfl_big_data_bowl	cv_r2::legacy_player_features_on_play_target::by_player::shuffled_label_null	-0.003	mae=1.6949 spearman=0.0007
+01_nfl_big_data_bowl	headline_target	sep_gain::by_game_play	oof_r2=0.6561 (prior run 0.0355)
+01_nfl_big_data_bowl	sep_gain_cushion_ablation_r2	0.6561	with cushion vs without=0.1074 (by_game_play, lightgbm)
+01_nfl_big_data_bowl	notebook_executed	0_failed_cells	8/8 code cells executed, notebooks/nfl_combine_to_game_kce.ipynb
+01_nfl_big_data_bowl	writeup_final_words	1876	outputs/WRITEUP.md (<2000), results from model_metrics.json
+01_nfl_big_data_bowl	figures_written_final	8	fig1-cross-product fig2-kce fig3-dbr fig4-turn fig5-importance fig6-oof fig7-learning fig8-position
+01_nfl_big_data_bowl	translation_attrib::sx_only	0.249	headline_delta=-0.0357 by_player=0.2288 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_attrib::translate_only	0.249	headline_delta=-0.0357 by_player=0.2207 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_attrib::both	0.2471	headline_delta=-0.0376 by_player=0.2312 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_attrib::sx_only	0.2806	headline_delta=-0.0041 by_player=0.2631 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_attrib::translate_only	0.2789	headline_delta=-0.0058 by_player=0.2587 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_attrib::both	0.2825	headline_delta=-0.0022 by_player=0.2659 (lgbm, identical folds)
+01_nfl_big_data_bowl	translation_final::by_game_play::lightgbm	0.2825	REJECTED: within-run corrected control baseline=0.2847 (identical folds/harness); delta=-0.0022; earlier keep=True was baseline reproducibility drift
+01_nfl_big_data_bowl	translation_attrib::sx_only::lgbm	0.2806	within-run: baseline 0.2847 -> 0.2806 (headline) 0.2625->0.2631 by_player; family NOT robust
+01_nfl_big_data_bowl	translation_attrib::translate_only::lgbm	0.2789	within-run: baseline 0.2847 -> 0.2789 (headline) 0.2587 by_player; family HURTS both groupings
+01_nfl_big_data_bowl	translation_attrib::both::lgbm	0.2825	corrected (categoricals restored): families individually negative; marginal by_player +0.0034

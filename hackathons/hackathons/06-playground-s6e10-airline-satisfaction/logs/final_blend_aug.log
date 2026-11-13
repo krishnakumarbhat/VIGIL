@@ -1,0 +1,12 @@
+[    3.7s] X (699635, 43) Xo (129880, 43) Xte (299844, 43)
+[  461.4s] aug fold 5/10 auc 0.95877
+[  865.4s] aug fold 10/10 auc 0.95784
+[  865.5s] aug OOF AUC 0.9579174318643995
+[  976.2s] test prediction done (299844,)
+[  976.3s] member lgbm_base: oof auc 0.957673
+[  976.4s] member lgbm_aug: oof auc 0.957917
+[  976.6s] member cat: oof auc 0.959052
+[  976.7s] member xgb: oof auc 0.956385
+[ 1072.6s] weights {'lgbm_base': 0.0945, 'lgbm_aug': 0.1725, 'cat': 0.733, 'xgb': 0.0} FINAL OOF AUC 0.9593552776462286
+[ 1073.0s] submission written (299844, 2) prob range 0.0027 0.9968
+[ 1073.5s] DONE

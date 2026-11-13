@@ -1,0 +1,44 @@
+[   0.2s] real (2699, 5) mirror (9000, 10)
+[   0.2s] folds built [540, 540, 540, 539, 540]
+[   0.2s] building stylometric matrix
+[   4.2s] style features (11699, 43)
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[   6.6s]   style fold 0 0.2056
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[   8.7s]   style fold 1 0.2278
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  10.9s]   style fold 2 0.2519
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  12.9s]   style fold 3 0.2299
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  15.1s]   style fold 4 0.2185
+[  15.1s] style: OOF bal_acc 0.2267 folds [0.2056, 0.2278, 0.2519, 0.2299, 0.2185]
+[  15.1s] fit char tf-idf
+[  32.1s] char (11699, 120740)
+[  44.7s]   char fold 0 0.3648
+[  57.8s]   char fold 1 0.3870
+[  70.4s]   char fold 2 0.3481
+[  81.3s]   char fold 3 0.3483
+[  91.8s]   char fold 4 0.3611
+[  91.8s] char: OOF bal_acc 0.3619 folds [0.3648, 0.387, 0.3481, 0.3483, 0.3611]
+[  91.8s] fit word tf-idf
+[  98.9s] word (11699, 200000)
+[ 101.5s]   word fold 0 0.3389
+[ 104.6s]   word fold 1 0.3870
+[ 107.5s]   word fold 2 0.3704
+[ 110.7s]   word fold 3 0.3521
+[ 113.7s]   word fold 4 0.3481
+[ 113.7s] word: OOF bal_acc 0.3593 folds [0.3389, 0.387, 0.3704, 0.3521, 0.3481]
+[ 113.7s] kNN member
+[ 119.2s]   knn fold 0 0.2389
+[ 122.9s]   knn fold 1 0.2222
+[ 127.0s]   knn fold 2 0.2278
+[ 133.2s]   knn fold 3 0.1889
+[ 141.6s]   knn fold 4 0.2259
+[ 141.6s] knn: OOF bal_acc 0.2208 folds [0.2389, 0.2222, 0.2278, 0.1889, 0.2259]
+[ 141.6s] DONE {"style": 0.2267, "char": 0.3619, "word": 0.3593, "knn": 0.2208}

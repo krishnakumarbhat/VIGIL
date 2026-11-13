@@ -1,0 +1,2044 @@
+{
+ "solver": "v2-object-beam-ranked",
+ "split": "training",
+ "tasks": 150,
+ "solved": 41,
+ "solve_rate": 0.2733,
+ "wall_seconds": 55.36,
+ "runtime_mean_s": 4.2927,
+ "runtime_median_s": 3.6853,
+ "runtime_max_s": 13.075,
+ "by_signature": {
+  "down|large|ntr=2": {
+   "tasks": 3,
+   "solved": 1,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.3333,
+   "pass1_rate": 0.3333,
+   "pass2_rate": 0.3333
+  },
+  "down|large|ntr=3": {
+   "tasks": 7,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "down|medium|ntr=2": {
+   "tasks": 2,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "down|medium|ntr=3": {
+   "tasks": 7,
+   "solved": 1,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.1429,
+   "pass1_rate": 0.1429,
+   "pass2_rate": 0.1429
+  },
+  "down|medium|ntr=4": {
+   "tasks": 5,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "down|medium|ntr=5": {
+   "tasks": 4,
+   "solved": 1,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.25,
+   "pass1_rate": 0.25,
+   "pass2_rate": 0.25
+  },
+  "down|small|ntr=2": {
+   "tasks": 1,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "down|small|ntr=3": {
+   "tasks": 3,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "down|small|ntr=5": {
+   "tasks": 3,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|large|ntr=2": {
+   "tasks": 5,
+   "solved": 4,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.8,
+   "pass1_rate": 0.2,
+   "pass2_rate": 0.2
+  },
+  "same|large|ntr=3": {
+   "tasks": 11,
+   "solved": 1,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0909,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|large|ntr=4": {
+   "tasks": 2,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|medium|ntr=2": {
+   "tasks": 11,
+   "solved": 5,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.4545,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|medium|ntr=3": {
+   "tasks": 29,
+   "solved": 6,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.2069,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|medium|ntr=4": {
+   "tasks": 10,
+   "solved": 2,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.2,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "same|medium|ntr=5": {
+   "tasks": 5,
+   "solved": 1,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.2,
+   "pass1_rate": 0.2,
+   "pass2_rate": 0.2
+  },
+  "same|small|ntr=2": {
+   "tasks": 4,
+   "solved": 2,
+   "pass1": 1,
+   "pass2": 1,
+   "rate": 0.5,
+   "pass1_rate": 0.25,
+   "pass2_rate": 0.25
+  },
+  "same|small|ntr=3": {
+   "tasks": 21,
+   "solved": 12,
+   "pass1": 4,
+   "pass2": 4,
+   "rate": 0.5714,
+   "pass1_rate": 0.1905,
+   "pass2_rate": 0.1905
+  },
+  "same|small|ntr=4": {
+   "tasks": 6,
+   "solved": 5,
+   "pass1": 3,
+   "pass2": 3,
+   "rate": 0.8333,
+   "pass1_rate": 0.5,
+   "pass2_rate": 0.5
+  },
+  "same|small|ntr=5": {
+   "tasks": 1,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "up|small|ntr=2": {
+   "tasks": 1,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "up|small|ntr=3": {
+   "tasks": 4,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "up|small|ntr=4": {
+   "tasks": 4,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  },
+  "up|small|ntr=5": {
+   "tasks": 1,
+   "solved": 0,
+   "pass1": 0,
+   "pass2": 0,
+   "rate": 0.0,
+   "pass1_rate": 0.0,
+   "pass2_rate": 0.0
+  }
+ },
+ "by_method": {
+  "cell_tree": 28,
+  "depth1": 6,
+  "patch_lookup": 5,
+  "connect": 3,
+  "recolour_rule": 1,
+  "move_all": 1
+ },
+ "by_family": {
+  "cell_tree": {
+   "candidates": 28,
+   "correct": 2,
+   "loo": 0,
+   "precision": 0.0714,
+   "loo_rate": 0.0
+  },
+  "connect": {
+   "candidates": 3,
+   "correct": 3,
+   "loo": 0,
+   "precision": 1.0,
+   "loo_rate": 0.0
+  },
+  "depth1": {
+   "candidates": 6,
+   "correct": 6,
+   "loo": 0,
+   "precision": 1.0,
+   "loo_rate": 0.0
+  },
+  "move_all": {
+   "candidates": 1,
+   "correct": 1,
+   "loo": 0,
+   "precision": 1.0,
+   "loo_rate": 0.0
+  },
+  "patch_lookup": {
+   "candidates": 5,
+   "correct": 0,
+   "loo": 0,
+   "precision": 0.0,
+   "loo_rate": 0.0
+  },
+  "recolour_rule": {
+   "candidates": 1,
+   "correct": 1,
+   "loo": 0,
+   "precision": 1.0,
+   "loo_rate": 0.0
+  }
+ },
+ "candidate_oracle_pass1": 13,
+ "candidate_oracle_rate": 0.0867,
+ "ranker_top1_correct": 13,
+ "ranker_top1_rate": 0.3171,
+ "graded_tasks": 150,
+ "graded_pass1": 13,
+ "graded_pass2": 13,
+ "graded_pass1_rate": 0.0867,
+ "graded_pass2_rate": 0.0867,
+ "ranker": {},
+ "config": {
+  "time_budget": 9.0,
+  "beam_budget": 3.0,
+  "object_budget": 3.0,
+  "learner_budget": 1.5,
+  "max_candidates": 16,
+  "enable_beam": true,
+  "enable_objects": true,
+  "enable_learners": true,
+  "enable_object_tree": false,
+  "enable_mlp": false
+ },
+ "per_task": {
+  "00576224": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.3382,
+   "signature": "up|small|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "007bbfb7": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.3677,
+   "signature": "up|small|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "009d5c81": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.3518,
+   "signature": "same|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "00d62c1b": {
+   "solved": true,
+   "method": "depth1+cell_tree",
+   "runtime_s": 12.0354,
+   "signature": "same|medium|ntr=5",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 2,
+   "families": [
+    "depth1",
+    "cell_tree"
+   ]
+  },
+  "00dbd492": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 10.4304,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "017c7c7b": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.3334,
+   "signature": "up|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "025d127b": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 11.1758,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "03560426": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 10.355,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "045e512c": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.4666,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0520fde7": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 9.5681,
+   "signature": "down|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "05269061": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 12.3534,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "05a7bcf2": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 11.8216,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "05f2a901": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.8031,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0607ce86": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 7.4793,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0692e18c": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.1627,
+   "signature": "up|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "06df4c85": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 10.3936,
+   "signature": "same|large|ntr=3",
+   "notes": "deadline_before_beam",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "070dd51e": {
+   "solved": true,
+   "method": "connect",
+   "runtime_s": 4.616,
+   "signature": "same|large|ntr=2",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "connect"
+   ]
+  },
+  "08ed6ac7": {
+   "solved": true,
+   "method": "recolour_rule",
+   "runtime_s": 2.0713,
+   "signature": "same|small|ntr=2",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "recolour_rule"
+   ]
+  },
+  "09629e4f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 12.8492,
+   "signature": "same|medium|ntr=4",
+   "notes": "deadline_before_beam",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0962bcdd": {
+   "solved": true,
+   "method": "patch_lookup",
+   "runtime_s": 3.8675,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "patch_lookup"
+   ]
+  },
+  "09c534e7": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.0438,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0a1d4ef5": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 6.4907,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0a2355a6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.0067,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0a938d79": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.0522,
+   "signature": "same|large|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0b148d64": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.9477,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0b17323b": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.6619,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0bb8deee": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.0665,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0becf7df": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.7559,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "0c786b71": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.3224,
+   "signature": "up|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0c9aba6e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.4579,
+   "signature": "down|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0ca9ddb6": {
+   "solved": true,
+   "method": "cell_tree+patch_lookup",
+   "runtime_s": 4.0012,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 2,
+   "families": [
+    "cell_tree",
+    "patch_lookup"
+   ]
+  },
+  "0d3d703e": {
+   "solved": true,
+   "method": "depth1+cell_tree",
+   "runtime_s": 1.3867,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 2,
+   "families": [
+    "depth1",
+    "cell_tree"
+   ]
+  },
+  "0d87d2a6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.738,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0e206a2e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.5795,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0e671a1a": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.9101,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "0f63c0b9": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.3011,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "103eff5b": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 3.9405,
+   "signature": "same|large|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "10fcaaa3": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0204,
+   "signature": "up|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "11852cab": {
+   "solved": true,
+   "method": "patch_lookup",
+   "runtime_s": 4.4818,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "patch_lookup"
+   ]
+  },
+  "1190bc91": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.1886,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1190e5a7": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0163,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "11dc524f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.6184,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "11e1fe23": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.9647,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "12422b43": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.3934,
+   "signature": "same|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "12997ef3": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.3343,
+   "signature": "down|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "12eac192": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 3.7326,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "13713586": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.7087,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "137eaa0f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.2297,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "137f0df0": {
+   "solved": true,
+   "method": "patch_lookup",
+   "runtime_s": 3.3821,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "patch_lookup"
+   ]
+  },
+  "13f06aa5": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.4776,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "140c817e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.701,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "14754a24": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 7.6041,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1478ab18": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.8699,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "14b8e18c": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 2.7498,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "150deff5": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 1.1921,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "15113be4": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 13.075,
+   "signature": "same|large|ntr=3",
+   "notes": "deadline_before_beam",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "15660dd6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.1138,
+   "signature": "down|large|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "15663ba9": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.4169,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "15696249": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.238,
+   "signature": "up|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "17829a00": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.0403,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "178fcbfb": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.5212,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "17b80ad2": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.9591,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "17b866bd": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 7.1106,
+   "signature": "same|large|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "17cae0c1": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 0.885,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "18286ef8": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.7151,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "182e5d0f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.8657,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "18419cfa": {
+   "solved": true,
+   "method": "patch_lookup",
+   "runtime_s": 2.2237,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "patch_lookup"
+   ]
+  },
+  "18447a8d": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.3508,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "184a9768": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 6.2191,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "195ba7dc": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.868,
+   "signature": "down|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1990f7a8": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.0552,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "19bb5feb": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 0.9722,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1a07d186": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 3.8313,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1a244afd": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.2572,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1a2e2828": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 0.9683,
+   "signature": "down|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1a6449f1": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.6032,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1acc24af": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.7423,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1b2d62fb": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0309,
+   "signature": "down|small|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1b59e163": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.4233,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1b60fb0c": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 1.3231,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1b8318e3": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.5038,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1be83260": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.4921,
+   "signature": "down|large|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1bfc4729": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0267,
+   "signature": "same|small|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1c02dbbe": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.2391,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1c0d0a4b": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.1226,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1c56ad9f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.1179,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1c786137": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.9891,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1caeab9d": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 2.5613,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1cf80156": {
+   "solved": true,
+   "method": "depth1",
+   "runtime_s": 0.5285,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "depth1"
+   ]
+  },
+  "1d0a4b61": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 12.5831,
+   "signature": "same|large|ntr=3",
+   "notes": "deadline_before_beam",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1d398264": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.7142,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1d61978c": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 6.8307,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1da012fc": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.8159,
+   "signature": "same|large|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1e0a9b12": {
+   "solved": true,
+   "method": "depth1",
+   "runtime_s": 3.6619,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "depth1"
+   ]
+  },
+  "1e32b0e9": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.7203,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1e5d6875": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 3.0351,
+   "signature": "same|small|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "1e81d6f9": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 6.3907,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1efba499": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.2001,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1f0c79e5": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.5814,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1f642eb9": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.904,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1f85a75f": {
+   "solved": true,
+   "method": "depth1",
+   "runtime_s": 4.8349,
+   "signature": "down|large|ntr=2",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "depth1"
+   ]
+  },
+  "1f876c06": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.3766,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "1fad071e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.3263,
+   "signature": "down|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2013d3e2": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.5332,
+   "signature": "down|small|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2037f2c7": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.1342,
+   "signature": "down|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2072aba6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.5464,
+   "signature": "up|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "20818e16": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0317,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "20981f0e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.7966,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "20fb2937": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.5829,
+   "signature": "down|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "212895b5": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 9.0088,
+   "signature": "same|medium|ntr=3",
+   "notes": "deadline_before_learners",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "21f83797": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.4007,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2204b7a8": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 4.7322,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "22168020": {
+   "solved": true,
+   "method": "connect",
+   "runtime_s": 5.7591,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "connect"
+   ]
+  },
+  "22208ba4": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.3741,
+   "signature": "same|large|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "22233c11": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.5593,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "22425bda": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.7326,
+   "signature": "down|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "22806e14": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.3415,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2281f1f4": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.05,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "228f6490": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.3824,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "22a4bbc2": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.8298,
+   "signature": "same|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "22eb0ac0": {
+   "solved": true,
+   "method": "connect",
+   "runtime_s": 4.334,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "connect"
+   ]
+  },
+  "230f2e48": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 4.8213,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "234bbc79": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.7689,
+   "signature": "down|medium|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "23581191": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.1864,
+   "signature": "same|small|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "239be575": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.5449,
+   "signature": "down|small|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "23b5c85d": {
+   "solved": true,
+   "method": "depth1",
+   "runtime_s": 3.2565,
+   "signature": "down|medium|ntr=5",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "depth1"
+   ]
+  },
+  "25094a63": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 9.0509,
+   "signature": "same|large|ntr=2",
+   "notes": "deadline_before_learners",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "252143c9": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 6.174,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "253bf280": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.7767,
+   "signature": "same|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2546ccf6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 7.7753,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "256b0a75": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 7.7787,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "25c199f5": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.3156,
+   "signature": "down|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "25d487eb": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.7114,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "25d8a9c8": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 2.0512,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "25e02866": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.2297,
+   "signature": "down|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "25ff71a9": {
+   "solved": true,
+   "method": "move_all",
+   "runtime_s": 0.755,
+   "signature": "same|small|ntr=4",
+   "notes": "",
+   "pass1": true,
+   "pass2": true,
+   "n_candidates": 1,
+   "families": [
+    "move_all"
+   ]
+  },
+  "2601afb7": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 2.818,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "264363fd": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 6.3695,
+   "signature": "same|large|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2685904e": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 5.9048,
+   "signature": "same|small|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "2697da3f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.6428,
+   "signature": "up|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "272f95fa": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 2.0368,
+   "signature": "same|medium|ntr=2",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "2753e76c": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.8206,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "278e5215": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.5188,
+   "signature": "down|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "27a28665": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.2268,
+   "signature": "down|small|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "27a77e38": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 3.7154,
+   "signature": "same|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  },
+  "27f8ce4f": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 3.0117,
+   "signature": "up|small|ntr=4",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "281123b4": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 2.6072,
+   "signature": "down|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "28bf18c6": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 1.0753,
+   "signature": "down|small|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "28e73c20": {
+   "solved": false,
+   "method": "fallback",
+   "runtime_s": 0.1896,
+   "signature": "same|medium|ntr=5",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 0,
+   "families": []
+  },
+  "292dd178": {
+   "solved": true,
+   "method": "cell_tree",
+   "runtime_s": 1.1126,
+   "signature": "same|medium|ntr=3",
+   "notes": "",
+   "pass1": false,
+   "pass2": false,
+   "n_candidates": 1,
+   "families": [
+    "cell_tree"
+   ]
+  }
+ },
+ "generated_at": "2026-10-22T09:05:56",
+ "workers": 12,
+ "unfinished": 0,
+ "ranker_model": null
+}

@@ -1,0 +1,138 @@
+=== 2026-10-22T00:16:01Z session track05-1792628161 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792628161'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T00:16:42.709744
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T00:16:43Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     4.0s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 40,434,688 || all params: 7,111,118,336 || trainable%: 0.5686
+[   197.1s] model ready Qwen/Qwen2.5-7B mem 5460 MB
+[   197.2s] === fold 0: train 41643 val 10346 opt_steps 5205
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[0;31m---------------------------------------------------------------------------[0m[0;31mValueError[0m                                Traceback (most recent call last)[0;32m/tmp/ipykernel_5971/220709844.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    199[0m             [0mb[0m [0;34m=[0m [0;34m{[0m[0mk[0m[0;34m:[0m [0mv[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m [0;32mfor[0m [0mk[0m[0;34m,[0m [0mv[0m [0;32min[0m [0mb[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    200[0m             [0;32mwith[0m [0mtorch[0m[0;34m.[0m[0mautocast[0m[0;34m([0m[0;34m"cuda"[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mtorch[0m[0;34m.[0m[0mbfloat16[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_bf16_supported[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0mtorch[0m[0;34m.[0m[0mfloat16[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 201[0;31m                 [0mout[0m [0;34m=[0m [0mmodel[0m[0;34m([0m[0;34m**[0m[0mb[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    202[0m             [0mloss[0m [0;34m=[0m [0mout[0m[0;34m.[0m[0mloss[0m [0;34m/[0m [0mACCUM[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    203[0m             [0;32mif[0m [0mscaler[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, inputs_embeds, labels, output_attentions, output_hidden_states, return_dict, task_ids, **kwargs)[0m
+[1;32m   1920[0m                 [0;32mif[0m [0mpeft_config[0m[0;34m.[0m[0mpeft_type[0m [0;34m==[0m [0mPeftType[0m[0;34m.[0m[0mPOLY[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1921[0m                     [0mkwargs[0m[0;34m[[0m[0;34m"task_ids"[0m[0;34m][0m [0;34m=[0m [0mtask_ids[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1922[0;31m                 return self.base_model(
+[0m[1;32m   1923[0m                     [0minput_ids[0m[0;34m=[0m[0minput_ids[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1924[0m                     [0mattention_mask[0m[0;34m=[0m[0mattention_mask[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36mforward[0;34m(self, *args, **kwargs)[0m
+[1;32m    357[0m [0;34m[0m[0m
+[1;32m    358[0m     [0;32mdef[0m [0mforward[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m:[0m [0mAny[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m:[0m [0mAny[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 359[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mmodel[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    360[0m [0;34m[0m[0m
+[1;32m    361[0m     [0;32mdef[0m [0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmodel[0m[0;34m:[0m [0mnn[0m[0;34m.[0m[0mModule[0m[0;34m,[0m [0mconfig[0m[0;34m:[0m [0mPeftConfig[0m[0;34m,[0m [0madapter_name[0m[0;34m:[0m [0mstr[0m[0;34m)[0m [0;34m->[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py[0m in [0;36mwrapper[0;34m(self, *args, **kwargs)[0m
+[1;32m    941[0m         [0;32mif[0m [0mreturn_dict_passed[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    942[0m             [0mreturn_dict[0m [0;34m=[0m [0mreturn_dict_passed[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 943[0;31m         [0moutput[0m [0;34m=[0m [0mfunc[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    944[0m         [0;32mif[0m [0;32mnot[0m [0mreturn_dict[0m [0;32mand[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0moutput[0m[0;34m,[0m [0mtuple[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    945[0m             [0moutput[0m [0;34m=[0m [0moutput[0m[0;34m.[0m[0mto_tuple[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, labels, use_cache, **kwargs)[0m
+[1;32m    157[0m [0;34m[0m[0m
+[1;32m    158[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mbatch_size[0m [0;34m!=[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 159[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Cannot handle batch sizes > 1 if no padding token is defined."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    160[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    161[0m             [0mlast_non_pad_token[0m [0;34m=[0m [0;34m-[0m[0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m: Cannot handle batch sizes > 1 if no padding token is defined.

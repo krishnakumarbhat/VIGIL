@@ -1,0 +1,83 @@
+=== 2026-10-22T03:41:55Z PRO ARC session proarc-1792640515 gpu=T4 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'proarc-1792640515'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-usw4a0-30nbkk4axy9dx-a.us-west4-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJDblRnWWcifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItdXN3NGEwLTMwbmJrazRheHk5ZHgiLCAiZXhwIjoxNzkyNjQ0MTI2LCAicG9ydCI6ODA4MH0.4RM5L4dBWiuXfaPW5tNhCQTK1d4S3CfgXsmvvDRxFuYIQAPc4nZg_WR4kl9fyBkrNPQst8oW2l6RzeFvwYnJCA
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-usw4a0-30nbkk4axy9dx-a.us-west4-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJDblRnWWcifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItdXN3NGEwLTMwbmJrazRheHk5ZHgiLCAiZXhwIjoxNzkyNjQ0MTI2LCAicG9ydCI6ODA4MH0.4RM5L4dBWiuXfaPW5tNhCQTK1d4S3CfgXsmvvDRxFuYIQAPc4nZg_WR4kl9fyBkrNPQst8oW2l6RzeFvwYnJCA
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-usw4a0-30nbkk4axy9dx-a.us-west4-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJDblRnWWcifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItdXN3NGEwLTMwbmJrazRheHk5ZHgiLCAiZXhwIjoxNzkyNjQ0MTI2LCAicG9ydCI6ODA4MH0.4RM5L4dBWiuXfaPW5tNhCQTK1d4S3CfgXsmvvDRxFuYIQAPc4nZg_WR4kl9fyBkrNPQst8oW2l6RzeFvwYnJCA
+=== EXEC START 2026-10-22T03:42:31Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s]
+[   91.9s] model loaded Qwen/Qwen2.5-3B-Instruct mem 5886 MB
+[0;31m---------------------------------------------------------------------------[0m[0;31mFileNotFoundError[0m                         Traceback (most recent call last)[0;32m/tmp/ipykernel_1704/3126848466.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    215[0m [0;34m[0m[0m
+[1;32m    216[0m [0mt0[0m [0;34m=[0m [0mtime[0m[0;34m.[0m[0mtime[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 217[0;31m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m/tmp/ipykernel_1704/3126848466.py[0m in [0;36mmain[0;34m()[0m
+[1;32m    162[0m [0;34m[0m[0m
+[1;32m    163[0m [0;32mdef[0m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 164[0;31m     [0mtasks[0m [0;34m=[0m [0mload_tasks[0m[0;34m([0m[0mSPLIT[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    165[0m     [0;32mif[0m [0mLIMIT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    166[0m         [0mtasks[0m [0;34m=[0m [0mtasks[0m[0;34m[[0m[0;34m:[0m[0mLIMIT[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_1704/3126848466.py[0m in [0;36mload_tasks[0;34m(split)[0m
+[1;32m     49[0m     [0md[0m [0;34m=[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0mTASKS_ROOT[0m[0;34m,[0m [0msplit[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     50[0m     [0mout[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 51[0;31m     [0;32mfor[0m [0mfn[0m [0;32min[0m [0msorted[0m[0;34m([0m[0mos[0m[0;34m.[0m[0mlistdir[0m[0;34m([0m[0md[0m[0;34m)[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     52[0m         [0;32mif[0m [0mfn[0m[0;34m.[0m[0mendswith[0m[0;34m([0m[0;34m".json"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     53[0m             [0;32mwith[0m [0mopen[0m[0;34m([0m[0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mjoin[0m[0;34m([0m[0md[0m[0;34m,[0m [0mfn[0m[0;34m)[0m[0;34m)[0m [0;32mas[0m [0mfh[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/content/arc/evaluation'
+=== EXEC DONE 2026-10-22T03:44:21Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'proarc-1792640515'...
+[colab] Session terminated.
+=== finished 2026-10-22T03:44:30Z ===

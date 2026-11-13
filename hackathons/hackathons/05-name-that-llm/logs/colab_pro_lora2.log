@@ -1,0 +1,66 @@
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:185 in exec_command                       │
+│                                                                              │
+│   182 │   │   │   )                                                          │
+│   183 │   │   │   state.prune_session(name)                                  │
+│   184 │   │   │   raise typer.Exit(1)                                        │
+│ ❱ 185 │   │   raise e                                                        │
+│   186 │                                                                      │
+│   187 │   try:                                                               │
+│   188 │   │   is_nb = file and file.endswith(".ipynb")                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/execution.py:175 in exec_command                       │
+│                                                                              │
+│   172 │   )                                                                  │
+│   173 │   try:                                                               │
+│   174 │   │   # Ensure we are in /content which is the standard Colab        │
+│       working directory                                                      │
+│ ❱ 175 │   │   runtime.execute_code(                                          │
+│   176 │   │   │   "import os; os.makedirs('/content', exist_ok=True);        │
+│       os.chdir('/content')"                                                  │
+│   177 │   │   )                                                              │
+│   178 │   except Exception as e:                                             │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/runtime.py:227 in execute_code                                  │
+│                                                                              │
+│   224 │   │   │   # execute_interactive returns the raw reply message        │
+│   225 │   │   │   reply_content = reply["content"] if reply else {"status":  │
+│       "error"}                                                               │
+│   226 │   │   else:                                                          │
+│ ❱ 227 │   │   │   reply = self.kernel_client.execute(code, **kwargs)         │
+│   228 │   │   │   if not reply:                                              │
+│   229 │   │   │   │   return []                                              │
+│   230 │   │   │   outputs = reply.get("outputs", [])                         │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/client.py:287 in execute                            │
+│                                                                              │
+│   284 │   │   """                                                            │
+│   285 │   │   outputs = []                                                   │
+│   286 │   │   self._set_variables(variables)                                 │
+│ ❱ 287 │   │   reply = self._manager.client.execute_interactive(              │
+│   288 │   │   │   code,                                                      │
+│   289 │   │   │   silent=silent,                                             │
+│   290 │   │   │   store_history=store_history,                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/jupyter_kernel_client/wsclient.py:1097 in execute_interactive             │
+│                                                                              │
+│   1094 │   │   │   │   │   self.iopub_channel.msg_ready()                    │
+│   1095 │   │   │   │   │   or (allow_stdin and                               │
+│        self.stdin_channel.msg_ready())                                       │
+│   1096 │   │   │   │   ):                                                    │
+│ ❱ 1097 │   │   │   │   │   raise TimeoutError("Timeout waiting for output")  │
+│   1098 │   │   │   │                                                         │
+│   1099 │   │   │   │   if allow_stdin:                                       │
+│   1100 │   │   │   │   │   try:                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+TimeoutError: Timeout waiting for output

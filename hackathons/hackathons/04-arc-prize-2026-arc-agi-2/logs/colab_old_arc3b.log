@@ -1,0 +1,177 @@
+=== 2026-10-22T06:01:43Z old session arc3b-1792648903 gpu=T4 model=Qwen/Qwen2.5-3B-Instruct script=/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/arc_llm_ttc.py ===
+colab account -> old (config: /home/pope/.config/colab-cli/sessions.old.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arc3b-1792648903'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 1 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 2 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 3 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 4 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 5 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 1 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_solutions.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 2 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_solutions.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 3 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_solutions.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 4 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_solutions.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/eval_sol.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 5 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_evaluation_solutions.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 1 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_test_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 2 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_test_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 3 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_test_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 4 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_test_challenges.json
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Upload failed: 500 Server Error: Internal Server Error for url: https://8080-gpu-t4-s-kkb-ass1c0-2e6femv83m3zq-c.asia-southeast1-0.prod.colab.dev/api/contents/content/arc/test_ch.json?authuser=0&colab-runtime-proxy-token=eyJhbGciOiJFUzI1NiIsICJraWQiOiJOb0NIU3cifQ.eyJhdWQiOiJncHUtdDQtcy1ra2ItYXNzMWMwLTJlNmZlbXY4M20zenEiLCAiZXhwIjoxNzkyNjUyNTEwLCAicG9ydCI6ODA4MH0.dOlHZqmZajSUWr1zkQGEkrPr-kCDWH5GrBPkuTSJ9JQTzVR_zxCZGyt_yIQ7XULcyps9phh64NlkXY7SaA4-xQ
+upload retry 5 for /home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/data/competition/arc-agi_test_challenges.json
+=== EXEC START 2026-10-22T06:08:45Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s]
+[   98.6s] model loaded Qwen/Qwen2.5-3B-Instruct mem 5886 MB
+[   98.6s] zipped artifacts
+[0;31m---------------------------------------------------------------------------[0m[0;31mFileNotFoundError[0m                         Traceback (most recent call last)[0;32m/tmp/ipykernel_5007/269991059.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    231[0m [0;34m[0m[0m
+[1;32m    232[0m [0mt0[0m [0;34m=[0m [0mtime[0m[0;34m.[0m[0mtime[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 233[0;31m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m/tmp/ipykernel_5007/269991059.py[0m in [0;36mmain[0;34m()[0m
+[1;32m    175[0m [0;34m[0m[0m
+[1;32m    176[0m [0;32mdef[0m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m     [0mtasks[0m [0;34m=[0m [0mload_tasks[0m[0;34m([0m[0mSPLIT[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m     [0;32mif[0m [0mLIMIT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    179[0m         [0mtasks[0m [0;34m=[0m [0mtasks[0m[0;34m[[0m[0;34m:[0m[0mLIMIT[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_5007/269991059.py[0m in [0;36mload_tasks[0;34m(split)[0m
+[1;32m     61[0m     [0;32mif[0m [0;32mnot[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0mexists[0m[0;34m([0m[0mpath[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     62[0m         [0mcands[0m [0;34m=[0m [0;34m[[0m[0mf[0m [0;32mfor[0m [0mf[0m [0;32min[0m [0mos[0m[0;34m.[0m[0mlistdir[0m[0;34m([0m[0mTASKS_ROOT[0m[0;34m)[0m [0;32mif[0m [0mf[0m[0;34m.[0m[0mendswith[0m[0;34m([0m[0;34m".json"[0m[0;34m)[0m[0;34m][0m [0;32mif[0m [0mos[0m[0;34m.[0m[0mpath[0m[0;34m.[0m[0misdir[0m[0;34m([0m[0mTASKS_ROOT[0m[0;34m)[0m [0;32melse[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 63[0;31m         [0;32mraise[0m [0mFileNotFoundError[0m[0;34m([0m[0;34mf"{path} missing; available: {cands}"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     64[0m     [0;32mwith[0m [0mopen[0m[0;34m([0m[0mpath[0m[0;34m)[0m [0;32mas[0m [0mfh[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     65[0m         [0mdata[0m [0;34m=[0m [0mjson[0m[0;34m.[0m[0mload[0m[0;34m([0m[0mfh[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mFileNotFoundError[0m: /content/arc/eval_ch.json missing; available: []
+=== EXEC DONE 2026-10-22T06:10:39Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: [Errno 21] Is a directory: '/home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/outputs/pro_artifacts/'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: Cannot download a directory: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'arc3b-1792648903'...
+[colab] Session terminated.
+=== finished 2026-10-22T06:10:43Z ===

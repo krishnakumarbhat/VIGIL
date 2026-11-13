@@ -1,0 +1,39 @@
+{
+ "oof_auc_per_model": {
+  "lgbm_base": 0.9576727323118643,
+  "lgbm_aug": 0.9579174318643995,
+  "cat": 0.9590520627749348,
+  "xgb": 0.9563849828874467,
+  "lgb_aug_full": 0.9579174318643995
+ },
+ "final_oof_auc": 0.959665946852307,
+ "weights": {
+  "lgbm_base": 0.0944961138151113,
+  "lgbm_aug": 0.17249022960767588,
+  "cat": 0.7329963838475254,
+  "xgb": 1.727272968740561e-05
+ },
+ "n_features": 43,
+ "n_splits": 10,
+ "original_dataset_augmented_rows": 129880,
+ "previous_final_oof_auc": 0.959622,
+ "ensemble_weights": {
+  "cat": 0.26982107303118136,
+  "lgbm": 0.05162419332208647,
+  "xgb": 0.00021317001785914154,
+  "lgbm_base": 0.03815712828506038,
+  "lgbm_aug": 0.04179738842877337,
+  "realmlp": 0.5951303143857071,
+  "nnprior": 0.0032567325293323076
+ },
+ "member_auc": {
+  "cat": 0.9590520627749348,
+  "lgbm": 0.9575830384841888,
+  "xgb": 0.9563849828874467,
+  "lgbm_base": 0.9576727323118643,
+  "lgbm_aug": 0.9579174318643995,
+  "realmlp": 0.9590012826075504,
+  "nnprior": 0.9430504296865945
+ },
+ "protocol": "StratifiedKFold(10, shuffle=True, random_state=42) OOF, logit blend, Nelder-Mead"
+}

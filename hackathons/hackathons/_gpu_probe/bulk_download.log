@@ -1,0 +1,7 @@
++ for c in arc-prize-2026-arc-agi-2 arc-prize-2026-paper-track gemma-4-developer-agent-paper nfl-big-data-bowl-2027
++ d=data/comp_arc-prize-2026-arc-agi-2
++ mkdir -p data/comp_arc-prize-2026-arc-agi-2
++ timeout 3000 kaggle competitions download -c arc-prize-2026-arc-agi-2 -p data/comp_arc-prize-2026-arc-agi-2
+Downloading arc-prize-2026-arc-agi-2.zip to data/comp_arc-prize-2026-arc-agi-2
+  0%|          | 0.00/487k [00:00<?, ?B/s]100%|██████████| 487k/487k [00:00<00:00, 1.79GB/s]
+

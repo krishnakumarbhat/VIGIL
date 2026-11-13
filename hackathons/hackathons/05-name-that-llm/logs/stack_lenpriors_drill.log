@@ -1,0 +1,12 @@
+[    6.8s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.9s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[    7.0s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   14.2s] anchor C=8.0 -> cleanBA 0.40863 distinct_pred_classes=18 recall_min=0.176 recall_max=0.680
+[   25.9s] anchor_bigC C=1000.0 -> cleanBA 0.40126 distinct_pred_classes=18 recall_min=0.200 recall_max=0.673
+[   25.9s]     fold0 sanity: bin hot ~ rows [352 747 428 343]
+[   35.9s] v1_real_bins C=32.0 -> cleanBA 0.51191 distinct_pred_classes=18 recall_min=0.289 recall_max=0.702
+[   36.0s]     fold0 sanity: bin hot ~ rows [342 734 445 349]
+[   42.2s] ctrl_permuted_bins C=32.0 -> cleanBA 0.50889 distinct_pred_classes=18 recall_min=0.241 recall_max=0.708
+[   46.6s] gaussian_noise C=32.0 -> cleanBA 0.39666 distinct_pred_classes=18 recall_min=0.182 recall_max=0.667
+[   49.9s] gaussian_noise C=8.0 -> cleanBA 0.39494 distinct_pred_classes=18 recall_min=0.161 recall_max=0.669
+[   49.9s] drill done

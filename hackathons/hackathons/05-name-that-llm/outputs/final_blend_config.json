@@ -1,0 +1,32 @@
+{
+  "track": "05-name-that-llm",
+  "date": "2026-10-22 20:00:09",
+  "target_beat": 0.4086,
+  "public_lb_target": 0.466,
+  "stage1_bal_acc_real": 0.3667,
+  "blend_search_nested_mean": 0.3608,
+  "blend_weights": {
+    "ridge_a05": 0.5,
+    "svc_c1_m15": 0.4,
+    "svc_c4": 0.1
+  },
+  "temperatures": {
+    "ridge_a05": 1.0,
+    "svc_c1_m15": 1.0,
+    "svc_c4": 1.0
+  },
+  "lora_oof_rows_filled": 0,
+  "deberta_oof_shape": null,
+  "colab_pro_artifacts_dir_empty": false,
+  "kaggle_kernel_status": "running (poll every 5 min)",
+  "length_prior_decoupled": true,
+  "source_row_counts": {
+    "real": 2699,
+    "mirror": 9290,
+    "external": 40000
+  },
+  "real_rows": 2699,
+  "real_prompts": 150,
+  "stage1_per_class_recall": {},
+  "stage1_length_bin_accuracy": {}
+}

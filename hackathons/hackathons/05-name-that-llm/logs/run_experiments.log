@@ -1,0 +1,30 @@
+[   11.1s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   11.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   23.4s] svc_cwS_w0: clean 0.3722 all 0.3734
+[   23.4s] svc_unw_all_w0: clean 0.3716 all 0.3720
+[   23.4s] svc_all_w0: clean 0.3754 all 0.3756
+[   53.6s]   sgd w=0.0 fold0 n_tr=7420 bal=0.3745
+[   82.4s]   sgd w=0.0 fold1 n_tr=7416 bal=0.3770
+[  111.4s]   sgd w=0.0 fold2 n_tr=7409 bal=0.3751
+[  139.7s]   sgd w=0.0 fold3 n_tr=7473 bal=0.3595
+[  170.2s]   sgd w=0.0 fold4 n_tr=7442 bal=0.3565
+[  170.2s] sgd_all_w0: clean 0.3687 all 0.3686
+[  346.0s]   sgd w=0.5 fold0 n_tr=28684 bal=0.3479
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  519.2s]   sgd w=0.5 fold1 n_tr=28680 bal=0.3480
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  690.0s]   sgd w=0.5 fold2 n_tr=28673 bal=0.3299
+/media/pope/projecteo/python_libs/site-packages/sklearn/linear_model/_stochastic_gradient.py:726: ConvergenceWarning: Maximum number of iteration reached before convergence. Consider increasing max_iter to improve the fit.
+  warnings.warn(
+[  859.1s]   sgd w=0.5 fold3 n_tr=28737 bal=0.3313
+[ 1013.2s]   sgd w=0.5 fold4 n_tr=28706 bal=0.3353
+[ 1013.3s] sgd_all_w50: clean 0.3377 all 0.3385
+[ 1037.2s]   nbsvm w=0.0 fold0 bal=0.3520
+[ 1060.5s]   nbsvm w=0.0 fold1 bal=0.3601
+[ 1081.4s]   nbsvm w=0.0 fold2 bal=0.3351
+[ 1101.1s]   nbsvm w=0.0 fold3 bal=0.3365
+[ 1120.8s]   nbsvm w=0.0 fold4 bal=0.3302
+[ 1120.8s] nbsvm_all: {'bal_acc_clean': 0.34240377632534497, 'bal_acc_all': 0.3428250058131828}
+[ 1123.7s] variants done

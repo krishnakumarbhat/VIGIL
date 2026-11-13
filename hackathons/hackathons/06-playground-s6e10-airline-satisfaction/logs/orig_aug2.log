@@ -1,0 +1,9 @@
+[    0.9s] orig rows 129880 pos rate 0.43446258084385586
+[    2.8s] X (699635, 43) Xo (129880, 43)
+[    2.9s] base loaded from cache 0.9576727323118643
+[  477.4s]   augmented fold 5/10 running auc 0.95877
+[  907.6s]   augmented fold 10/10 running auc 0.95784
+[  907.7s] augmented OOF AUC 0.957917
+[  907.7s] BASE 0.957673  AUGMENTED 0.957917  DELTA +0.000245
+[  910.2s] blend base/aug best auc 0.958075 at w_aug=0.60
+[  910.2s] DONE

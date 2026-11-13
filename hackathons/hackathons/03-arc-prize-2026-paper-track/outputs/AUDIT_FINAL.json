@@ -1,0 +1,122 @@
+{
+  "seed": 20261106,
+  "replicates": 5000,
+  "invariance_checks": 34992,
+  "original_rotation_counterexample": {
+    "input": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "transform": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "shape_collision": {
+    "input_a": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "input_b": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "latencies_s": {
+    "16b78196": 924.1,
+    "221dfab4": 1302.0,
+    "4c416de3": 587.7,
+    "62593bfd": 1262.6,
+    "64efde09": 886.6,
+    "6e4f6532": 602.9,
+    "80a900e0": 500.8,
+    "8f3a5a89": 283.7,
+    "b10624e5": 678.6,
+    "b6f77b65": 600.7,
+    "cb2d8a2c": 1144.0,
+    "eee78d87": 219.4
+  },
+  "mean_s": 749.4249999999998,
+  "median_s": 640.75,
+  "nearest_rank_p90_s": 1262.6,
+  "scenario_results": [
+    {
+      "latency_multiplier": 1.0,
+      "median_completed": 226.0,
+      "p05_completed": 215.0,
+      "p95_completed": 237.0
+    },
+    {
+      "latency_multiplier": 1.25,
+      "median_completed": 180.0,
+      "p05_completed": 170.0,
+      "p95_completed": 190.0
+    },
+    {
+      "latency_multiplier": 1.5,
+      "median_completed": 150.0,
+      "p05_completed": 141.0,
+      "p95_completed": 159.0
+    }
+  ],
+  "metrics": {
+    "eval_metrics_training_v2.json": {
+      "tasks": 150,
+      "solved": 41,
+      "graded_pass1": 13,
+      "graded_pass2": 13
+    },
+    "eval_metrics_evaluation.json": {
+      "tasks": 120,
+      "solved": 20,
+      "graded_pass1": 0,
+      "graded_pass2": 0
+    }
+  },
+  "validation": {
+    "rows": 18,
+    "pass1": 1,
+    "pass2": 3,
+    "task_normalized_pass2": 0.19444444444444442,
+    "fully_solved_tasks_selected": 2,
+    "tasks_selected": 12
+  },
+  "checks": "34992 invariance assertions; shape and scheduling boundary assertions; metric recounts",
+  "source_sha256": {
+    "outputs/arc_nvarc_validation_v3/out/arc-nvarc-validated.log": "56f62651a23ae25ce04d808f41cd2f07037ca23b21999eb5b6771f152ec02632",
+    "outputs/arc_nvarc_validation_v3/out/validation_result.json": "0c531a323f9053e9fc72f836774d4278d59d8a1da253b1e52c9484043ad478f2",
+    "src/canonical.py": "bf8a394e4a6c299350f556d6346f338d3e870cfbf88a0cf4e42e5948024e5325",
+    "src/search.py": "127e853fcb7cd3abebb27df44a3495292e79c7f7750380a2f96b05203309dfde",
+    "src/solver_v2.py": "010456682d30690a3d08dad6437f7774e7df868f990327ae8ead04b91256817a"
+  }
+}

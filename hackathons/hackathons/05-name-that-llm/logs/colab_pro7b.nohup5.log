@@ -1,0 +1,226 @@
+=== 2026-10-22T04:53:21Z PRO session pro7b-1792644801 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792644801'...
+[colab] Session READY.
+dns wait 1
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T04:54:44Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[     0.0s] CONFIG {'MODEL_ID': 'Qwen/Qwen2.5-3B', 'DATA_PATH': '/content/train_all_v2.parquet', 'LABELS_PATH': '/content/labels.json', 'OUT_DIR': '/content/out', 'JOB_HOURS': '4.2', 'MAX_LEN': '384', 'EPOCHS': '1.0', 'BATCH': '8', 'ACCUM': '4', 'USE_4BIT': '0', 'SAMPLE_PER_FOLD': '11000', 'TOKENIZERS_PARALLELISM': 'false'}
+[    13.4s] labels 18
+[    14.2s] rows 51989 prompts 7190 classes 18
+[    16.4s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[    44.7s] pad token <|endoftext|> 151643
+[    44.7s] fallback model Qwen/Qwen2.5-1.5B
+config.json:   0%|          | 0.00/684 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors: reconstructing file:   0%|          |  0.00B / 3.09GB        
+model.safetensors: downloading bytes:           |  0.00B            
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-1.5B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 18,492,416 || all params: 1,562,234,368 || trainable%: 1.1837
+[    67.1s] model ready Qwen/Qwen2.5-1.5B 4bit False mem 3016 MB
+[    67.2s] fold 0: subsampled train -> 10999 rows
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[   156.6s] fold 0 step 50/1374 loss 4.6187 mem 3194MB
+[   243.8s] fold 0 step 100/1374 loss 2.5467 mem 3194MB
+[   331.9s] fold 0 step 150/1374 loss 2.0209 mem 3194MB
+[   419.4s] fold 0 step 200/1374 loss 1.8363 mem 3194MB
+[   543.9s] fold 0 CHECKPOINT step 200 val_bal_acc 0.2439
+[   632.6s] fold 0 step 250/1374 loss 1.8131 mem 3194MB
+[   720.3s] fold 0 step 300/1374 loss 1.7024 mem 3194MB
+[   808.3s] fold 0 step 350/1374 loss 1.6044 mem 3194MB
+[   895.6s] fold 0 step 400/1374 loss 1.3588 mem 3194MB
+[  1020.1s] fold 0 CHECKPOINT step 400 val_bal_acc 0.3009
+[  1107.5s] fold 0 step 450/1374 loss 1.3163 mem 3194MB
+[  1195.1s] fold 0 step 500/1374 loss 1.2994 mem 3194MB
+[  1282.8s] fold 0 step 550/1374 loss 1.2677 mem 3194MB
+[  1370.3s] fold 0 step 600/1374 loss 1.2474 mem 3194MB
+[  1494.7s] fold 0 CHECKPOINT step 600 val_bal_acc 0.3347
+[  1583.2s] fold 0 step 650/1374 loss 1.2117 mem 3194MB
+[  1670.9s] fold 0 step 700/1374 loss 1.0838 mem 3194MB
+[  1760.2s] fold 0 step 750/1374 loss 0.5663 mem 3194MB
+[  1848.5s] fold 0 step 800/1374 loss 0.5338 mem 3194MB
+[  1972.9s] fold 0 CHECKPOINT step 800 val_bal_acc 0.3386
+[  2061.1s] fold 0 step 850/1374 loss 0.5327 mem 3194MB
+[  2148.5s] fold 0 step 900/1374 loss 0.5159 mem 3194MB
+[  2236.2s] fold 0 step 950/1374 loss 0.5044 mem 3194MB
+[  2323.3s] fold 0 step 1000/1374 loss 0.4794 mem 3194MB
+[  2447.7s] fold 0 CHECKPOINT step 1000 val_bal_acc 0.3568
+[  2535.4s] fold 0 step 1050/1374 loss 0.3253 mem 3194MB
+[  2622.9s] fold 0 step 1100/1374 loss 0.0989 mem 3194MB
+[  2710.4s] fold 0 step 1150/1374 loss 0.0647 mem 3194MB
+[  2798.0s] fold 0 step 1200/1374 loss 0.0693 mem 3194MB
+[  2922.4s] fold 0 CHECKPOINT step 1200 val_bal_acc 0.3583
+[  3010.4s] fold 0 step 1250/1374 loss 0.0637 mem 3194MB
+[  3099.9s] fold 0 step 1300/1374 loss 0.0667 mem 3194MB
+[  3188.2s] fold 0 step 1350/1374 loss 0.0691 mem 3194MB
+[  3354.7s] fold 0 CHECKPOINT step 1374 val_bal_acc 0.3608
+[  3355.1s] fold 1: subsampled train -> 11001 rows
+[  3443.0s] fold 1 step 50/1375 loss 0.7453 mem 3194MB
+[  3532.2s] fold 1 step 100/1375 loss 0.6765 mem 3194MB
+[  3623.7s] fold 1 step 150/1375 loss 0.6326 mem 3194MB
+[  3711.3s] fold 1 step 200/1375 loss 0.6057 mem 3194MB
+[  3839.1s] fold 1 CHECKPOINT step 200 val_bal_acc 0.4422
+[  3927.4s] fold 1 step 250/1375 loss 0.6344 mem 3194MB
+[  4018.0s] fold 1 step 300/1375 loss 0.6773 mem 3194MB
+[  4105.7s] fold 1 step 350/1375 loss 0.5911 mem 3194MB
+[  4193.5s] fold 1 step 400/1375 loss 0.1883 mem 3194MB
+[  4321.3s] fold 1 CHECKPOINT step 400 val_bal_acc 0.4649
+[  4409.2s] fold 1 step 450/1375 loss 0.2229 mem 3194MB
+[  4496.8s] fold 1 step 500/1375 loss 0.2322 mem 3194MB
+[  4585.2s] fold 1 step 550/1375 loss 0.2505 mem 3194MB
+[  4672.8s] fold 1 step 600/1375 loss 0.2659 mem 3194MB
+[  4800.8s] fold 1 CHECKPOINT step 600 val_bal_acc 0.4690
+[  4892.1s] fold 1 step 650/1375 loss 0.2076 mem 3194MB
+[  4980.8s] fold 1 step 700/1375 loss 0.1813 mem 3194MB
+[  5068.6s] fold 1 step 750/1375 loss 0.0577 mem 3194MB
+[  5156.2s] fold 1 step 800/1375 loss 0.0542 mem 3194MB
+[  5284.0s] fold 1 CHECKPOINT step 800 val_bal_acc 0.4700
+[  5372.4s] fold 1 step 850/1375 loss 0.0619 mem 3194MB
+[  5460.9s] fold 1 step 900/1375 loss 0.0431 mem 3194MB
+[  5552.3s] fold 1 step 950/1375 loss 0.0447 mem 3194MB
+[  5640.8s] fold 1 step 1000/1375 loss 0.0361 mem 3194MB
+[  5768.7s] fold 1 CHECKPOINT step 1000 val_bal_acc 0.4776
+[  5858.8s] fold 1 step 1050/1375 loss 0.0226 mem 3194MB
+[  5948.2s] fold 1 step 1100/1375 loss 0.0093 mem 3194MB
+[  6038.0s] fold 1 step 1150/1375 loss 0.0108 mem 3194MB
+[  6127.2s] fold 1 step 1200/1375 loss 0.0042 mem 3194MB
+[  6255.1s] fold 1 CHECKPOINT step 1200 val_bal_acc 0.4784
+[  6344.4s] fold 1 step 1250/1375 loss 0.0107 mem 3194MB
+[  6433.1s] fold 1 step 1300/1375 loss 0.0151 mem 3194MB
+[  6522.3s] fold 1 step 1350/1375 loss 0.0068 mem 3194MB
+[  6694.6s] fold 1 CHECKPOINT step 1375 val_bal_acc 0.4800
+[  6695.0s] fold 2: subsampled train -> 11002 rows
+[  6784.2s] fold 2 step 50/1375 loss 0.0798 mem 3194MB
+[  6872.5s] fold 2 step 100/1375 loss 0.1433 mem 3194MB
+[  6960.6s] fold 2 step 150/1375 loss 0.1995 mem 3194MB
+[  7049.7s] fold 2 step 200/1375 loss 0.1920 mem 3194MB
+[  7172.3s] fold 2 CHECKPOINT step 200 val_bal_acc 0.4784
+[  7261.3s] fold 2 step 250/1375 loss 0.2018 mem 3194MB
+[  7350.2s] fold 2 step 300/1375 loss 0.2418 mem 3194MB
+[  7439.8s] fold 2 step 350/1375 loss 0.2002 mem 3194MB
+[  7529.5s] fold 2 step 400/1375 loss 0.0967 mem 3194MB
+[  7652.1s] fold 2 CHECKPOINT step 400 val_bal_acc 0.4834
+[  7741.0s] fold 2 step 450/1375 loss 0.1206 mem 3194MB
+[  7830.4s] fold 2 step 500/1375 loss 0.1229 mem 3194MB
+[  7918.9s] fold 2 step 550/1375 loss 0.1023 mem 3194MB
+[  8008.0s] fold 2 step 600/1375 loss 0.1182 mem 3194MB
+[  8130.6s] fold 2 CHECKPOINT step 600 val_bal_acc 0.4708
+[  8220.7s] fold 2 step 650/1375 loss 0.1125 mem 3194MB
+[  8310.6s] fold 2 step 700/1375 loss 0.0933 mem 3194MB
+[  8400.7s] fold 2 step 750/1375 loss 0.0289 mem 3194MB
+[  8489.7s] fold 2 step 800/1375 loss 0.0399 mem 3194MB
+[  8612.3s] fold 2 CHECKPOINT step 800 val_bal_acc 0.4877
+[  8701.4s] fold 2 step 850/1375 loss 0.0340 mem 3194MB
+[  8790.7s] fold 2 step 900/1375 loss 0.0227 mem 3194MB
+[  8879.7s] fold 2 step 950/1375 loss 0.0238 mem 3194MB
+[  8968.8s] fold 2 step 1000/1375 loss 0.0246 mem 3194MB
+[  9091.5s] fold 2 CHECKPOINT step 1000 val_bal_acc 0.4889
+[  9181.0s] fold 2 step 1050/1375 loss 0.0126 mem 3194MB
+[  9270.0s] fold 2 step 1100/1375 loss 0.0077 mem 3194MB
+[  9358.9s] fold 2 step 1150/1375 loss 0.0064 mem 3194MB
+[  9447.8s] fold 2 step 1200/1375 loss 0.0068 mem 3194MB
+[  9570.4s] fold 2 CHECKPOINT step 1200 val_bal_acc 0.5012
+[  9659.8s] fold 2 step 1250/1375 loss 0.0027 mem 3194MB
+[  9748.3s] fold 2 step 1300/1375 loss 0.0087 mem 3194MB
+[  9836.7s] fold 2 step 1350/1375 loss 0.0060 mem 3194MB
+[ 10004.0s] fold 2 CHECKPOINT step 1375 val_bal_acc 0.5004
+[ 10004.5s] fold 3: subsampled train -> 10999 rows
+[ 10094.0s] fold 3 step 50/1374 loss 0.0306 mem 3194MB
+[ 10182.8s] fold 3 step 100/1374 loss 0.0576 mem 3194MB
+[ 10271.0s] fold 3 step 150/1374 loss 0.1254 mem 3194MB
+[ 10360.0s] fold 3 step 200/1374 loss 0.1543 mem 3194MB
+[ 10485.3s] fold 3 CHECKPOINT step 200 val_bal_acc 0.4697
+[ 10574.1s] fold 3 step 250/1374 loss 0.1527 mem 3194MB
+[ 10662.9s] fold 3 step 300/1374 loss 0.1504 mem 3194MB
+[ 10752.5s] fold 3 step 350/1374 loss 0.1455 mem 3194MB
+[ 10842.2s] fold 3 step 400/1374 loss 0.0903 mem 3194MB
+[ 10967.4s] fold 3 CHECKPOINT step 400 val_bal_acc 0.4917
+[ 11057.0s] fold 3 step 450/1374 loss 0.1193 mem 3194MB
+[ 11146.5s] fold 3 step 500/1374 loss 0.0990 mem 3194MB
+[ 11236.3s] fold 3 step 550/1374 loss 0.1015 mem 3194MB
+[ 11326.5s] fold 3 step 600/1374 loss 0.1082 mem 3194MB
+[ 11451.8s] fold 3 CHECKPOINT step 600 val_bal_acc 0.4858
+[ 11540.3s] fold 3 step 650/1374 loss 0.0713 mem 3194MB
+[ 11629.2s] fold 3 step 700/1374 loss 0.0921 mem 3194MB
+[ 11718.2s] fold 3 step 750/1374 loss 0.0337 mem 3194MB
+[ 11807.2s] fold 3 step 800/1374 loss 0.0347 mem 3194MB
+[ 11932.4s] fold 3 CHECKPOINT step 800 val_bal_acc 0.4855
+[ 12021.4s] fold 3 step 850/1374 loss 0.0185 mem 3194MB
+[ 12109.8s] fold 3 step 900/1374 loss 0.0316 mem 3194MB
+[ 12198.4s] fold 3 step 950/1374 loss 0.0199 mem 3194MB
+[ 12287.1s] fold 3 step 1000/1374 loss 0.0200 mem 3194MB
+[ 12412.3s] fold 3 CHECKPOINT step 1000 val_bal_acc 0.5058
+[ 12501.9s] fold 3 step 1050/1374 loss 0.0158 mem 3194MB
+[ 12591.0s] fold 3 step 1100/1374 loss 0.0080 mem 3194MB
+[ 12679.8s] fold 3 step 1150/1374 loss 0.0046 mem 3194MB
+[ 12768.8s] fold 3 step 1200/1374 loss 0.0074 mem 3194MB
+[ 12894.0s] fold 3 CHECKPOINT step 1200 val_bal_acc 0.5063
+[ 12983.3s] fold 3 step 1250/1374 loss 0.0040 mem 3194MB
+[ 13072.2s] fold 3 step 1300/1374 loss 0.0091 mem 3194MB
+[ 13161.0s] fold 3 step 1350/1374 loss 0.0037 mem 3194MB
+[ 13328.7s] fold 3 CHECKPOINT step 1374 val_bal_acc 0.5063
+[ 13329.1s] fold 4: subsampled train -> 10998 rows
+[ 13418.3s] fold 4 step 50/1374 loss 0.0092 mem 3194MB
+[ 13507.1s] fold 4 step 100/1374 loss 0.0870 mem 3194MB
+[ 13595.6s] fold 4 step 150/1374 loss 0.1474 mem 3194MB
+[ 13684.9s] fold 4 step 200/1374 loss 0.1724 mem 3194MB
+[ 13811.2s] fold 4 CHECKPOINT step 200 val_bal_acc 0.4825
+[ 13901.2s] fold 4 step 250/1374 loss 0.1671 mem 3194MB
+[ 13990.4s] fold 4 step 300/1374 loss 0.1509 mem 3194MB
+[ 14079.5s] fold 4 step 350/1374 loss 0.1521 mem 3194MB
+[ 14169.1s] fold 4 step 400/1374 loss 0.0615 mem 3194MB
+[ 14295.3s] fold 4 CHECKPOINT step 400 val_bal_acc 0.4954
+[ 14384.9s] fold 4 step 450/1374 loss 0.0843 mem 3194MB
+[ 14474.8s] fold 4 step 500/1374 loss 0.1105 mem 3194MB
+[ 14564.2s] fold 4 step 550/1374 loss 0.0932 mem 3194MB
+[ 14654.4s] fold 4 step 600/1374 loss 0.0970 mem 3194MB
+[ 14780.6s] fold 4 CHECKPOINT step 600 val_bal_acc 0.5007
+[ 14871.3s] fold 4 step 650/1374 loss 0.0945 mem 3194MB
+[ 14961.8s] fold 4 step 700/1374 loss 0.0856 mem 3194MB
+[ 15051.2s] fold 4 step 750/1374 loss 0.0431 mem 3194MB
+[ 15121.3s] TIME BUDGET reached in fold 4
+[ 15121.3s] stopping after fold 4 due to time budget
+[ 15121.3s] OVERALL OOF bal_acc 0.46967864718720903 coverage 51989 / 51989
+[ 15142.2s] DONE - artifacts zipped at /content/out.zip

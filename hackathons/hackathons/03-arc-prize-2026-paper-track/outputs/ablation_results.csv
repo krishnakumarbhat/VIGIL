@@ -1,0 +1,7 @@
+label,split,limit,budget_s,wall_s,solved,solved_rate,by_method,notes
+base_full,training,60,8.0,35.05,25,0.4167,"{""fallback"": 35, ""object_tree+patch_lookup"": 1, ""depth1+cell_tree"": 2, ""cell_tree+mlp"": 4, ""object_tree"": 6, ""mlp"": 4, ""patch_lookup"": 2, ""depth2"": 1, ""cell_tree+object_tree"": 2, ""cell_tree"": 2, ""object_tree+mlp"": 1}",source=ablation_runner; compares_to_track04_logs
+no_depth2,training,60,8.0,37.05,24,0.4,"{""fallback"": 36, ""object_tree+patch_lookup"": 1, ""depth1+cell_tree"": 2, ""cell_tree+mlp"": 4, ""object_tree"": 5, ""mlp"": 4, ""patch_lookup"": 2, ""object_tree+mlp"": 2, ""cell_tree+object_tree"": 2, ""cell_tree"": 2}",source=ablation_runner; compares_to_track04_logs
+symbolic_only,training,60,8.0,5.17,3,0.05,"{""fallback"": 57, ""depth1"": 2, ""depth2"": 1}",source=ablation_runner; compares_to_track04_logs
+symbolic_depth2_only,training,60,8.0,5.38,3,0.05,"{""fallback"": 57, ""depth1"": 2, ""depth2"": 1}",source=ablation_runner; compares_to_track04_logs
+eval_full_30,evaluation,30,15.0,18.36,4,0.1333,"{""fallback"": 26, ""cell_tree+patch_lookup"": 2, ""object_tree"": 1, ""cell_tree+mlp"": 1}",source=ablation_runner; compares_to_track04_logs
+canonical_stats,training,12x12,0,0,8,0,0,d4_elements=8; orbit_distinct_keys=8; present_colors=10; canonical_colors_unique=10; notes=real_computation_on_sample_grid

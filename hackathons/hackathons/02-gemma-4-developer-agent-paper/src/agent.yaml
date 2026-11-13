@@ -1,0 +1,23 @@
+name: gg_spv_agent
+description: >
+  GG-SPV: Graph-Guided hierarchical fault localization with Speculative Patch
+  Verification. Locates faults with search_similar_code + 2-hop
+  get_code_subgraph pruning, verifies candidate patches against the affected
+  caller neighbourhood, and only then calls submit_patch.
+model: gemma-4-12b-it-qat-w4a16-ct
+adapter: main_lora
+instruction: !include prompts/system.md
+tools:
+  - run_command
+  - read_file
+  - edit_file
+  - write_file
+  - get_status
+  - submit_patch
+  - get_code_neighbors
+  - search_similar_code
+  - get_code_subgraph
+  - agent_tool:
+      config_path: sub_agents/code_analyzer.yaml
+      skip_summarization: true
+generate_content_config: !include configs/sampling.yaml

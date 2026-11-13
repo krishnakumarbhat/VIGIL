@@ -1,0 +1,17 @@
+{
+  "competition": "gemma-4-developer-agent",
+  "kernel": "krishnakumarbhat/gemma-4-gg-spv-agent-submission",
+  "kernel_version": 1,
+  "submission_ref": 57870300,
+  "status_at_2026-11-01": "pending",
+  "archive": "submission.zip",
+  "validated": {
+    "zip_integrity": true,
+    "root_agent_yaml": true,
+    "adapter_base_model": "google/gemma-4-31b-it-qat-w4a16-ct",
+    "safe_relative_paths": true,
+    "allowed_extensions": true,
+    "archive_size_under_3_gib": true
+  },
+  "note": "Scoring is still pending; local checks validate packaging only, not hidden-task repair quality."
+}

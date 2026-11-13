@@ -1,0 +1,42 @@
+[    6.3s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.4s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[  177.2s] built all: (9290, 280711) 19782830 / (21264, 280711) 52053408
+[  344.9s] built all35: (9290, 280711) 17692383 / (21264, 280711) 47042694
+[  353.3s] extra_claude rows 4877 (of 21264)
+[  401.5s]   extra_claude fold0 bal=0.4034
+[  449.4s]   extra_claude fold1 bal=0.3916
+[  504.2s]   extra_claude fold2 bal=0.3789
+[  555.1s]   extra_claude fold3 bal=0.3831
+[  610.9s]   extra_claude fold4 bal=0.3747
+[  610.9s] svc member ready 266s
+[  634.4s]   nbsvm w=0.0 fold0 bal=0.3520
+[  659.0s]   nbsvm w=0.0 fold1 bal=0.3601
+[  682.3s]   nbsvm w=0.0 fold2 bal=0.3351
+[  718.4s]   nbsvm w=0.0 fold3 bal=0.3365
+[  753.6s]   nbsvm w=0.0 fold4 bal=0.3302
+[  766.8s]   svc35_w0 fold0 bal=0.3329
+[  782.7s]   svc35_w0 fold1 bal=0.3522
+[  797.2s]   svc35_w0 fold2 bal=0.3416
+[  811.2s]   svc35_w0 fold3 bal=0.3353
+[  822.9s]   svc35_w0 fold4 bal=0.3257
+[  823.4s] 3-member blend best (0.39062018881626726, (np.float64(0.5), np.float64(0.05), np.float64(0.45)))
+[  833.5s]   knn fold0 neighbours=31
+[  843.1s]   knn fold1 neighbours=31
+[  853.6s]   knn fold2 neighbours=31
+[  863.7s]   knn fold3 neighbours=31
+[  875.8s]   knn fold4 neighbours=31
+[  876.3s] stacker input S (9290, 102)
+[  885.9s]   stack[lr] fold0 bal=0.3518
+[  892.9s]   stack[lr] fold1 bal=0.3424
+[  898.0s]   stack[lr] fold2 bal=0.3450
+[  903.8s]   stack[lr] fold3 bal=0.3403
+[  910.4s]   stack[lr] fold4 bal=0.3373
+[  968.0s]   stack[lgbm] fold0 bal=0.3949
+[ 1020.6s]   stack[lgbm] fold1 bal=0.3787
+[ 1105.3s]   stack[lgbm] fold2 bal=0.3833
+[ 1156.1s]   stack[lgbm] fold3 bal=0.3839
+[ 1293.5s]   stack[lgbm] fold4 bal=0.3769
+[ 1293.5s] results {'blend3': {'bal_acc_clean': 0.39062018881626726}, 'stack_lr': {'bal_acc_clean': 0.34464197530864193, 'bal_acc_all': 0.3433603510510452, 'acc': 0.34464197530864193}, 'stack_lgbm': {'bal_acc_clean': 0.38336238198983297, 'bal_acc_all': 0.38349626000465054}}
+[ 1293.5s] BEST=blend3 val=0.39062 keep=True
+[ 1293.5s] stack iteration done
+EXIT=0

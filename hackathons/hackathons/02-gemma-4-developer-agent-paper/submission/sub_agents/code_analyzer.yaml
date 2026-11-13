@@ -1,0 +1,13 @@
+name: code_analyzer_agent
+description: >
+  Independently ranks likely fault locations from code search and graph context;
+  returns evidence and callers but never edits files.
+model: gemma-4-31b-it-qat-w4a16-ct
+adapter: tool_lora
+instruction: !include analyzer.md
+tools:
+  - read_file
+  - search_similar_code
+  - get_code_neighbors
+  - get_code_subgraph
+generate_content_config: !include configs/sampling.yaml

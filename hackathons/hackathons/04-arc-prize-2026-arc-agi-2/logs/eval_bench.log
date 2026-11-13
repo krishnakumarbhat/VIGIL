@@ -1,0 +1,40 @@
+[run_v2] 5/120 elapsed=11s
+[run_v2] 10/120 elapsed=12s
+[run_v2] 15/120 elapsed=15s
+[run_v2] 20/120 elapsed=18s
+[run_v2] 25/120 elapsed=22s
+[run_v2] 30/120 elapsed=26s
+[run_v2] 35/120 elapsed=30s
+[run_v2] 40/120 elapsed=33s
+[run_v2] 45/120 elapsed=36s
+[run_v2] 50/120 elapsed=40s
+[run_v2] 55/120 elapsed=44s
+[run_v2] 60/120 elapsed=48s
+[run_v2] 65/120 elapsed=50s
+[run_v2] 70/120 elapsed=57s
+[run_v2] 75/120 elapsed=57s
+[run_v2] 80/120 elapsed=62s
+[run_v2] 85/120 elapsed=64s
+[run_v2] 90/120 elapsed=69s
+[run_v2] 95/120 elapsed=71s
+[run_v2] 100/120 elapsed=75s
+[run_v2] 105/120 elapsed=79s
+[run_v2] 110/120 elapsed=83s
+[run_v2] 115/120 elapsed=84s
+[run_v2] 120/120 elapsed=89s
+{
+  "split": "evaluation",
+  "tasks": 120,
+  "solved": 7,
+  "solve_rate": 0.0583,
+  "wall_seconds": 88.85,
+  "by_method": {
+    "patch_lookup": 7
+  },
+  "candidate_oracle_rate": 0.0,
+  "ranker_top1_rate": 0.0,
+  "graded_pass1": 0,
+  "graded_pass2": 0,
+  "graded_pass1_rate": 0.0,
+  "graded_pass2_rate": 0.0
+}

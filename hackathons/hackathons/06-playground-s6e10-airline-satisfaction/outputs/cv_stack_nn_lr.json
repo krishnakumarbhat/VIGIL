@@ -1,0 +1,45 @@
+{
+  "metric": "roc_auc",
+  "protocol": "StratifiedKFold(10,shuffle=True,rs=42)",
+  "baseline_blend_auc": 0.959265,
+  "member_auc": {
+    "lgbm": 0.957583,
+    "cat": 0.959046,
+    "xgb": 0.956385,
+    "nnprior": 0.94305
+  },
+  "stack_results": {
+    "lr_logits_C0.25": 0.959235,
+    "lr_logits_C0.5": 0.959235,
+    "lr_logits_C1": 0.959235,
+    "lr_logits_C2": 0.959235,
+    "lr_logits_C4": 0.959235,
+    "lr_logits_C8": 0.959235,
+    "lr_logits_C16": 0.959235,
+    "lr_logits_C1e+06": 0.959235,
+    "lr_logits+probs_C0.25": 0.959242,
+    "lr_logits+probs_C0.5": 0.959245,
+    "lr_logits+probs_C1": 0.959242,
+    "lr_logits+probs_C2": 0.959243,
+    "lr_logits+probs_C4": 0.959242,
+    "lr_logits+probs_C8": 0.95924,
+    "lr_logits+probs_C16": 0.959241,
+    "lr_logits+probs_C1e+06": 0.959242,
+    "lr_rank_C1": 0.958444,
+    "lr_rank_C8": 0.958446,
+    "lr_rank_C1e+06": 0.958447
+  },
+  "best_cfg": null,
+  "best_stack_auc": 0.959265,
+  "improvement": 0.0,
+  "keep": false,
+  "coord_ascent_reference": {
+    "auc": 0.959263,
+    "weights": {
+      "lgbm": 0.2222222222222222,
+      "cat": 0.7777777777777778,
+      "xgb": 0.0,
+      "nnprior": 0.0
+    }
+  }
+}

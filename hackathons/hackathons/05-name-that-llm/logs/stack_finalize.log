@@ -1,0 +1,5 @@
+fitting StackedNTLModel ...
+in-sample meta clean=0.42351
+reconstruction pool: 1902 complete 18-model prompt groups
+submission rows=2700 recon_bal_acc=0.1867
+EXIT=0

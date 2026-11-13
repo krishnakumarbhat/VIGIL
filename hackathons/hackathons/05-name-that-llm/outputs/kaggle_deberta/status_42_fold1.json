@@ -1,0 +1,1 @@
+{"model": "microsoft/deberta-v3-base", "seed": 42, "fold": 1, "bal_acc": 0.3407407407407408, "max_len": 320, "epochs": 3.0}

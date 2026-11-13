@@ -1,0 +1,82 @@
+{
+ "verdict": "DISCARD - overturned. Meta value was an estimator-coupling artifact, not length-prior signal.",
+ "recipe": "54 member probs + 4 length-bin one-hot + 18 shrinkage log-prior-ratio features (LO-prompt tables for train rows), cross-fitted LR class_weight=balanced, SGKF5 seed 42",
+ "length_bins": [
+  0,
+  60,
+  120,
+  180,
+  1000
+ ],
+ "anchor_recomputed": 0.40863471314451705,
+ "anchor_recorded": 0.40863,
+ "anchor_drift": 0.0,
+ "math_checks": "bayes-simplex + shrinkage-limit + LO-prompt parity: OK",
+ "initial_measurement_v1_best_c32_m10": 0.51191,
+ "forensics": {
+  "saturation_c_grid": {
+   "c32_m10": 0.5119128540305011,
+   "c64_m10": 0.5444705882352942,
+   "c256_m10": 0.5933841684822077,
+   "c1000_m10": 0.6041670297748729
+  },
+  "negative_control_bin_permutation": [
+   0.50889,
+   0.51691
+  ],
+  "gaussian_noise_block": {
+   "c32": 0.39666,
+   "c8": 0.39494
+  },
+  "onehot_only": {
+   "real_c32": 0.40593,
+   "real_c1000": 0.40012,
+   "perm_c32": 0.40544,
+   "perm_c1000": 0.39948
+  },
+  "r_block_only": {
+   "real_c32": 0.49992,
+   "perm_c32": 0.48836,
+   "real_m1e6_c32": 0.40815,
+   "real_m_sweep_c32": {
+    "m5": 0.50113,
+    "m10": 0.49992,
+    "m40": 0.49958,
+    "m200": 0.49098,
+    "m1000": 0.45311
+   }
+  },
+  "posthoc_alpha_real_tables": {
+   "a0.5": 0.40975,
+   "a1.0": 0.40929,
+   "a1.5": 0.4014,
+   "a2.0": 0.39932,
+   "a3.0": 0.39082
+  },
+  "prompt_split_tune_est": {
+   "tuned": "full_m10_c32",
+   "tune_ba": 0.51315,
+   "est_ba": 0.51073,
+   "est_anchor": 0.41138,
+   "est_delta": 0.09935
+  },
+  "decoupled_table_test": {
+   "protocol": "val tables from half A of the fold, stacker fit only on half B with LO-within-B tables",
+   "anchor_half_fit": {
+    "c8": 0.40084,
+    "c32": 0.40081
+   },
+   "real": {
+    "c8": 0.17321,
+    "c32": 0.10525
+   },
+   "permuted": {
+    "c8": 0.19333,
+    "c32": 0.11173
+   }
+  }
+ },
+ "mechanism": "The LO-table r-block for fit rows and the full-fold r-table for validation rows derive from the same fold's overlapping row set (~99.7% shared rows). In that coupled regime LR(C>=16) fits per-bin offsets that its own fold's validation rows reproduce (+0.10 BA, all folds). Under fully decoupled tables the effect INVERTS (-0.29). Real vs permuted bins are statistically indistinguishable in every arm (A4/m-sweep/decoupled), analytic post-hoc reweighting adds nothing, and per-row random scale-match blocks add nothing. Conclusion: zero deployable length-prior signal.",
+ "oof_artifact_removed": "outputs/cache/oof_stack_lenprior.npy deleted",
+ "baseline_stands": 0.40863
+}

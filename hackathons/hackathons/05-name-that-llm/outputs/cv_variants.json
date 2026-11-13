@@ -1,0 +1,41 @@
+{
+ "svc_cwS_w0": {
+  "bal_acc_clean": 0.3722469135802469,
+  "bal_acc_all": 0.37339870719161333
+ },
+ "svc_unw_all_w0": {
+  "bal_acc_clean": 0.3715642701525054,
+  "bal_acc_all": 0.37195364774502837
+ },
+ "svc_all_w0": {
+  "bal_acc_clean": 0.37536092955700795,
+  "bal_acc_all": 0.3756332131580034
+ },
+ "sgd_all_w0": {
+  "bal_acc_clean": 0.36871169208424104,
+  "bal_acc_all": 0.36864263812013626
+ },
+ "sgd_all_w50": {
+  "bal_acc_clean": 0.33767465504720406,
+  "bal_acc_all": 0.3384881921762166
+ },
+ "nbsvm_all": {
+  "bal_acc_clean": 0.34240377632534497,
+  "bal_acc_all": 0.3428250058131828
+ },
+ "centroid_all": {
+  "bal_acc_clean": 0.19343645606390705
+ },
+ "svc_c1": {
+  "bal_acc_clean": 0.35312563543936093,
+  "bal_acc_all": 0.3533972946425273
+ },
+ "svc_c025": {
+  "bal_acc_clean": 0.3153986928104575,
+  "bal_acc_all": 0.31565230430218993
+ },
+ "svc_extra_claude_w50": {
+  "bal_acc_clean": 0.38524909222948445,
+  "bal_acc_all": 0.38636444635681855
+ }
+}

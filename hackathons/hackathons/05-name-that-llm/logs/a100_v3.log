@@ -1,0 +1,67 @@
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    0.3s] payload (29989, 5) {'external': 18000, 'mirror': 9290, 'real': 2699}
+[    0.4s] real 2699 mirror 9290 external 18000 prompts 150
+[   10.8s] tokenised (2699, 320) (9290, 320) (18000, 320)
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[0;31m---------------------------------------------------------------------------[0m[0;31mOutOfMemoryError[0m                          Traceback (most recent call last)[0;32m/tmp/ipykernel_1570/2316773663.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    109[0m [0;31m# activation memory. Matching the base model's bf16 removes both the upcast and the OOM.[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    110[0m [0mmodel[0m [0;34m=[0m [0mmodel[0m[0;34m.[0m[0mto[0m[0;34m([0m[0mtorch[0m[0;34m.[0m[0mbfloat16[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 111[0;31m [0mmodel[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    112[0m [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    113[0m [0mlog[0m[0;34m([0m[0;34m"model ready"[0m[0;34m,[0m [0mMODEL_ID[0m[0;34m,[0m [0;34m"ckpt"[0m[0;34m,[0m [0mCKPT[0m[0;34m,[0m [0;34m"mem"[0m[0;34m,[0m [0mround[0m[0;34m([0m[0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mmemory_allocated[0m[0;34m([0m[0;34m)[0m [0;34m/[0m [0;36m2[0m[0;34m**[0m[0;36m30[0m[0;34m,[0m [0;36m1[0m[0;34m)[0m[0;34m,[0m [0;34m"GB"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36mcuda[0;34m(self, device)[0m
+[1;32m   1095[0m             [0mModule[0m[0;34m:[0m [0mself[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1096[0m         """
+[0;32m-> 1097[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0;32mlambda[0m [0mt[0m[0;34m:[0m [0mt[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0mdevice[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1098[0m [0;34m[0m[0m
+[1;32m   1099[0m     [0;32mdef[0m [0mipu[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdevice[0m[0;34m:[0m [0mint[0m [0;34m|[0m [0mdevice[0m [0;34m|[0m [0;32mNone[0m [0;34m=[0m [0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mSelf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_apply[0;34m(self, fn, recurse)[0m
+[1;32m    932[0m         [0;32mif[0m [0mrecurse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    933[0m             [0;32mfor[0m [0mmodule[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mchildren[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 934[0;31m                 [0mmodule[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0mfn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    935[0m [0;34m[0m[0m
+[1;32m    936[0m         [0;32mfrom[0m [0mtorch[0m[0;34m.[0m[0m_subclasses[0m[0;34m.[0m[0mfake_tensor[0m [0;32mimport[0m [0mFakeTensor[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_apply[0;34m(self, fn, recurse)[0m
+[1;32m    932[0m         [0;32mif[0m [0mrecurse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    933[0m             [0;32mfor[0m [0mmodule[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mchildren[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 934[0;31m                 [0mmodule[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0mfn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    935[0m [0;34m[0m[0m
+[1;32m    936[0m         [0;32mfrom[0m [0mtorch[0m[0;34m.[0m[0m_subclasses[0m[0;34m.[0m[0mfake_tensor[0m [0;32mimport[0m [0mFakeTensor[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_apply[0;34m(self, fn, recurse)[0m
+[1;32m    932[0m         [0;32mif[0m [0mrecurse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    933[0m             [0;32mfor[0m [0mmodule[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mchildren[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 934[0;31m                 [0mmodule[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0mfn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    935[0m [0;34m[0m[0m
+[1;32m    936[0m         [0;32mfrom[0m [0mtorch[0m[0;34m.[0m[0m_subclasses[0m[0;34m.[0m[0mfake_tensor[0m [0;32mimport[0m [0mFakeTensor[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_apply[0;34m(self, fn, recurse)[0m
+[1;32m    932[0m         [0;32mif[0m [0mrecurse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    933[0m             [0;32mfor[0m [0mmodule[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mchildren[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 934[0;31m                 [0mmodule[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0mfn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    935[0m [0;34m[0m[0m
+[1;32m    936[0m         [0;32mfrom[0m [0mtorch[0m[0;34m.[0m[0m_subclasses[0m[0;34m.[0m[0mfake_tensor[0m [0;32mimport[0m [0mFakeTensor[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_apply[0;34m(self, fn, recurse)[0m
+[1;32m    963[0m             [0;31m# `with torch.no_grad():`[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    964[0m             [0;32mwith[0m [0mtorch[0m[0;34m.[0m[0mno_grad[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 965[0;31m                 [0mparam_applied[0m [0;34m=[0m [0mfn[0m[0;34m([0m[0mparam[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    966[0m             [0mp_should_use_set_data[0m [0;34m=[0m [0mcompute_should_use_set_data[0m[0;34m([0m[0mparam[0m[0;34m,[0m [0mparam_applied[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    967[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m<lambda>[0;34m(t)[0m
+[1;32m   1095[0m             [0mModule[0m[0;34m:[0m [0mself[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1096[0m         """
+[0;32m-> 1097[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_apply[0m[0;34m([0m[0;32mlambda[0m [0mt[0m[0;34m:[0m [0mt[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0mdevice[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1098[0m [0;34m[0m[0m
+[1;32m   1099[0m     [0;32mdef[0m [0mipu[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mdevice[0m[0;34m:[0m [0mint[0m [0;34m|[0m [0mdevice[0m [0;34m|[0m [0;32mNone[0m [0;34m=[0m [0;32mNone[0m[0;34m)[0m [0;34m->[0m [0mSelf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;31mOutOfMemoryError[0m: CUDA out of memory. Tried to allocate 1.02 GiB. GPU 0 has a total capacity of 39.49 GiB of which 31.44 MiB is free. Including non-PyTorch memory, this process has 39.45 GiB memory in use. Of the allocated memory 37.95 GiB is allocated by PyTorch, and 1.01 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

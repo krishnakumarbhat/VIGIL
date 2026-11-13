@@ -1,0 +1,79 @@
+=== 2026-10-22T06:13:14Z old session arcsc_old-1792649594 gpu=T4 model=Qwen/Qwen2.5-1.5B-Instruct script=/home/pope/Desktop/gpu /_gpu_probe/colab_jobs/arc_llm_ttc_selfcontained.py ===
+colab account -> old (config: /home/pope/.config/colab-cli/sessions.old.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'arcsc_old-1792649594'...
+[colab] Session READY.
+DNS ready 8080-gpu-t4-s-kkb-usw1b1-18amrgtt4vk5q-b.us-west1-1.prod.colab.dev -> 34.144.254.29
+=== EXEC START 2026-10-22T06:13:35Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/661 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/35.6k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/434 [00:00<?, ?it/s]
+generation_config.json:   0%|          | 0.00/242 [00:00<?, ?B/s]
+[   90.5s] model loaded Qwen/Qwen2.5-3B-Instruct mem 5886 MB
+[   90.5s] zipped artifacts
+[0;31m---------------------------------------------------------------------------[0m[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)[0;32m/tmp/ipykernel_2738/877552929.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    332[0m [0;34m[0m[0m
+[1;32m    333[0m [0mt0[0m [0;34m=[0m [0mtime[0m[0;34m.[0m[0mtime[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 334[0;31m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[0;32m/tmp/ipykernel_2738/877552929.py[0m in [0;36mmain[0;34m()[0m
+[1;32m    273[0m [0;34m[0m[0m
+[1;32m    274[0m [0;32mdef[0m [0mmain[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 275[0;31m     [0mtasks[0m [0;34m=[0m [0mload_tasks[0m[0;34m([0m[0mSPLIT[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    276[0m     [0;32mif[0m [0mLIMIT[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    277[0m         [0mtasks[0m [0;34m=[0m [0mtasks[0m[0;34m[[0m[0;34m:[0m[0mLIMIT[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_2738/877552929.py[0m in [0;36mload_tasks[0;34m(split)[0m
+[1;32m    130[0m     [0;32mif[0m [0mUSE_EMBEDDED[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    131[0m         [0;32mif[0m [0m_EMB[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 132[0;31m             [0;32mfrom[0m [0marc_embedded_data[0m [0;32mimport[0m [0mload[0m [0;32mas[0m [0m_load_emb[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    133[0m             [0m_EMB[0m [0;34m=[0m [0m_load_emb[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    134[0m         [0mkey[0m [0;34m=[0m [0;34m{[0m[0;34m"evaluation"[0m[0;34m:[0m [0;34m"eval_ch"[0m[0;34m,[0m [0;34m"test"[0m[0;34m:[0m [0;34m"test_ch"[0m[0;34m}[0m[0;34m[[0m[0msplit[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;31mModuleNotFoundError[0m: No module named 'arc_embedded_data'[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== EXEC DONE 2026-10-22T06:15:19Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: [Errno 21] Is a directory: '/home/pope/Desktop/gpu /hackathons/04-arc-prize-2026-arc-agi-2/outputs/pro_artifacts/'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: Cannot download a directory: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'arcsc_old-1792649594'...
+[colab] Session terminated.
+=== finished 2026-10-22T06:15:32Z ===

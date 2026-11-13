@@ -1,0 +1,187 @@
+{
+  "mode": "validation",
+  "duration_s": 3014.9,
+  "solver_budget_s": 6900.0,
+  "source_version": 1,
+  "smoke_benchmark": true,
+  "not_unbiased_heldout": true,
+  "selected_val_ids": [
+    "16b78196",
+    "221dfab4",
+    "4c416de3",
+    "62593bfd",
+    "64efde09",
+    "6e4f6532",
+    "80a900e0",
+    "8f3a5a89",
+    "b10624e5",
+    "b6f77b65",
+    "cb2d8a2c",
+    "eee78d87"
+  ],
+  "no_accuracy_claim": "public model may have trained on evaluation tasks; rank not guaranteed",
+  "invalid_entries": 0,
+  "submission_task_count": 120,
+  "n_prediction_bundles": 180,
+  "model_test_rows_with_bundles": [
+    "16b78196_0",
+    "221dfab4_0",
+    "221dfab4_1",
+    "4c416de3_0",
+    "62593bfd_0",
+    "62593bfd_1",
+    "64efde09_0",
+    "80a900e0_0",
+    "8f3a5a89_0",
+    "b10624e5_0",
+    "b6f77b65_0",
+    "b6f77b65_1",
+    "b6f77b65_2",
+    "cb2d8a2c_0",
+    "cb2d8a2c_1",
+    "eee78d87_0"
+  ],
+  "per_test_rows": [
+    {
+      "task_id": "16b78196",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "221dfab4",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "221dfab4",
+      "test_index": 1,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "4c416de3",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "62593bfd",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "62593bfd",
+      "test_index": 1,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "64efde09",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "6e4f6532",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "6e4f6532",
+      "test_index": 1,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "80a900e0",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "8f3a5a89",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": true
+    },
+    {
+      "task_id": "b10624e5",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "b6f77b65",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "b6f77b65",
+      "test_index": 1,
+      "pass1": true,
+      "pass2": true
+    },
+    {
+      "task_id": "b6f77b65",
+      "test_index": 2,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "cb2d8a2c",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "cb2d8a2c",
+      "test_index": 1,
+      "pass1": false,
+      "pass2": false
+    },
+    {
+      "task_id": "eee78d87",
+      "test_index": 0,
+      "pass1": false,
+      "pass2": true
+    }
+  ],
+  "n_test_rows_selected": 18,
+  "n_pass1": 1,
+  "n_pass2": 3,
+  "pass1_fraction": 0.05555555555555555,
+  "pass2_fraction": 0.16666666666666666,
+  "task_normalized_pass2": 0.19444444444444442,
+  "tasks_with_all_test_row_bundles": [
+    "16b78196",
+    "221dfab4",
+    "4c416de3",
+    "62593bfd",
+    "64efde09",
+    "80a900e0",
+    "8f3a5a89",
+    "b10624e5",
+    "b6f77b65",
+    "cb2d8a2c",
+    "eee78d87"
+  ],
+  "n_tasks_with_all_test_row_bundles": 11,
+  "tasks_with_nonfallback_candidates": [
+    "16b78196",
+    "221dfab4",
+    "4c416de3",
+    "62593bfd",
+    "64efde09",
+    "80a900e0",
+    "8f3a5a89",
+    "b10624e5",
+    "b6f77b65",
+    "cb2d8a2c",
+    "eee78d87"
+  ]
+}

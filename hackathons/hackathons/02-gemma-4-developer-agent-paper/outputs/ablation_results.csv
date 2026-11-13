@@ -1,0 +1,13 @@
+configuration,model_id,simulated_model,fidelity,strategy,hops,use_verifier,n_tasks,n_symbol_gt,recall_at_1,recall_at_3,recall_at_5,file_recall_at_5,mean_tokens_read,median_tokens_read,mean_tokens_to_recall_5,patch_pass_rate,verifier_accept_rate,mean_tool_calls,wall_time_s
+flat_baseline,gemma-4-12b-it-qat-w4a16-ct,True,0.8,flat,,False,40,22,0.0455,0.2273,0.2727,0.375,3691.2,3168.5,3960.3,0.025,0.55,12.18,16.51
+gg_hops0,gemma-4-12b-it-qat-w4a16-ct,True,0.8,gg,0,False,40,22,0.1818,0.2727,0.3182,0.35,2101.6,1759.5,2176.1,0.1,0.55,3.48,17.65
+gg_hops1,gemma-4-12b-it-qat-w4a16-ct,True,0.8,gg,1,False,40,22,0.1818,0.2727,0.3182,0.35,3022.7,2500.0,3109,0.1,0.55,3.48,17.66
+gg_spv_noverify,gemma-4-12b-it-qat-w4a16-ct,True,0.8,gg,2,False,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.55,3.48,17.83
+gg_spv_e2b,gemma-4-e2b-it-qat-w4a16-ct,True,0.45,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.125,4.75,17.84
+gg_spv_e4b,gemma-4-e4b-it-qat-w4a16-ct,True,0.62,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.125,4.75,17.83
+gg_spv_12b,gemma-4-12b-it-qat-w4a16-ct,True,0.8,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.125,0.15,4.7,19.09
+gg_spv_31b,gemma-4-31b-it-qat-w4a16-ct,True,0.9,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.125,0.15,4.7,17.79
+sensitivity_f30,gemma-4-12b-it-qat-w4a16-ct,True,0.3,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.125,4.75,17.97
+sensitivity_f50,gemma-4-12b-it-qat-w4a16-ct,True,0.5,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.125,4.75,17.88
+sensitivity_f70,gemma-4-12b-it-qat-w4a16-ct,True,0.7,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.1,0.125,4.75,17.9
+sensitivity_f100,gemma-4-12b-it-qat-w4a16-ct,True,1.0,gg,2,True,40,22,0.1818,0.2727,0.3182,0.35,3031.7,2500.0,3125.4,0.125,0.15,4.7,17.85

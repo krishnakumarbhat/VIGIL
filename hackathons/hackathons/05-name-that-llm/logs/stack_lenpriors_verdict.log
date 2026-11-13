@@ -1,0 +1,10 @@
+[   19.9s] comp (9290, 12) clean=9120 ext (21264, 15)
+[   20.2s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   20.5s] S54 (9290, 54), bins [1818 3672 2123 1677], clean=9120, prompts=510
+[   58.8s]   decoupled anchor C=8 -> 0.40084
+[  211.9s]   decoupled REAL C=8 -> 0.17321 (delta -0.22763)
+[  211.9s]   decoupled PERM C=8 -> 0.19333 (delta -0.20751)
+[  232.3s]   decoupled anchor C=32 -> 0.40081
+[  417.3s]   decoupled REAL C=32 -> 0.10525 (delta -0.29556)
+[  417.3s]   decoupled PERM C=32 -> 0.11173 (delta -0.28908)
+[  417.3s] verdict test done

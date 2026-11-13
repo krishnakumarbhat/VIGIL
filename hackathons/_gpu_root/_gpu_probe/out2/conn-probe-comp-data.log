@@ -1,0 +1,18 @@
+[{"stream_name":"stdout","time":0.579930335,"data":"PROBE2_START 2026-10-21T18:22:27.689562+00:00\n"}
+,{"stream_name":"stdout","time":0.579975611,"data":"--- listing /kaggle/input ---\n"}
+,{"stream_name":"stdout","time":0.581125452,"data":"  /kaggle/input dirs= ['competitions'] nfiles= 0\n"}
+,{"stream_name":"stdout","time":0.581215456,"data":"  /kaggle/input/competitions dirs= ['gemma-4-developer-agent'] nfiles= 0\n"}
+,{"stream_name":"stdout","time":0.582045433,"data":"  /kaggle/input/competitions/gemma-4-developer-agent dirs= ['sample_submission', 'docker', 'snapshots', 'wheels', 'graphs', 'embeddings', 'sandbox'] nfiles= 2\n"}
+,{"stream_name":"stdout","time":0.5821289,"data":"     HARNESS_README.md 55940\n"}
+,{"stream_name":"stdout","time":0.582135596,"data":"     tasks.jsonl 1984455\n"}
+,{"stream_name":"stdout","time":1.242341436,"data":"--- listing /kaggle/working ---\n"}
+,{"stream_name":"stdout","time":1.242372107,"data":"  /kaggle/working dirs= [] nfiles= 0\n"}
+,{"stream_name":"stdout","time":6.887241927,"data":"torch 2.11.0+cu128 cuda True Tesla T4\n"}
+,{"stream_name":"stdout","time":6.887273094,"data":"PROBE2_END 2026-10-21T18:22:33.997466+00:00\n"}
+,{"stream_name":"stderr","time":10.960024229,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":10.960056424,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":11.213246958,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":11.213279611,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":12.105730459,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":13.027648576,"data":"[NbConvertApp] Writing 278772 bytes to __results__.html\n"}
+]

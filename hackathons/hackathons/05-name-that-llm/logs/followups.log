@@ -1,0 +1,19 @@
+[    6.6s] comp (9290, 12) clean=9120 ext (21264, 15)
+[    6.7s] fold sizes [1870, 1874, 1881, 1817, 1848]
+[   23.2s]   svc_c1 fold0 bal=0.3518
+[   37.2s]   svc_c1 fold1 bal=0.3568
+[   49.8s]   svc_c1 fold2 bal=0.3614
+[   61.5s]   svc_c1 fold3 bal=0.3498
+[   73.4s]   svc_c1 fold4 bal=0.3469
+[   81.6s]   svc_c025 fold0 bal=0.3176
+[   89.8s]   svc_c025 fold1 bal=0.3272
+[   98.6s]   svc_c025 fold2 bal=0.3218
+[  107.1s]   svc_c025 fold3 bal=0.3189
+[  115.4s]   svc_c025 fold4 bal=0.2924
+[  121.5s] extra_claude rows 4877 (of 21264)
+[  175.2s]   extra_claude fold0 bal=0.4034
+[  229.3s]   extra_claude fold1 bal=0.3916
+[  282.6s]   extra_claude fold2 bal=0.3789
+[  334.3s]   extra_claude fold3 bal=0.3831
+[  383.7s]   extra_claude fold4 bal=0.3747
+[  383.7s] follow-ups done

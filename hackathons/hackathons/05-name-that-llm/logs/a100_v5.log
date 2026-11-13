@@ -1,0 +1,74 @@
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[    0.3s] payload (19989, 5) {'external': 8000, 'mirror': 9290, 'real': 2699}
+[    0.3s] real 2699 mirror 9290 external 8000 prompts 150
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+config.json:   0%|          | 0.00/663 [00:00<?, ?B/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+tokenizer_config.json:   0%|          | 0.00/7.30k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[   28.5s] tokenised (2699, 256) (9290, 256) (8000, 256)
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B-Instruct
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 80,804,864 || all params: 7,151,488,512 || trainable%: 1.1299
+[   80.4s] model ready Qwen/Qwen2.5-7B-Instruct ckpt True mem 13.3 GB
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[  200.5s] fold0 s1-aux step 50/1033 loss 5.7329
+[  318.3s] fold0 s1-aux step 100/1033 loss 2.3390
+[  436.4s] fold0 s1-aux step 150/1033 loss 1.8211
+[  554.4s] fold0 s1-aux step 200/1033 loss 2.8195
+[  672.3s] fold0 s1-aux step 250/1033 loss 1.5102
+[  790.5s] fold0 s1-aux step 300/1033 loss 1.9770
+[  908.3s] fold0 s1-aux step 350/1033 loss 0.6600
+[ 1026.4s] fold0 s1-aux step 400/1033 loss 1.6996
+[ 1144.5s] fold0 s1-aux step 450/1033 loss 1.6084
+[ 1262.5s] fold0 s1-aux step 500/1033 loss 1.3834
+[ 1380.8s] fold0 s1-aux step 550/1033 loss 1.1480
+[ 1498.7s] fold0 s1-aux step 600/1033 loss 0.8795
+[ 1617.0s] fold0 s2-mirror step 650/1033 loss 1.1107
+[ 1735.1s] fold0 s2-mirror step 700/1033 loss 1.0397
+[ 1853.1s] fold0 s2-mirror step 750/1033 loss 1.1932
+[ 1971.2s] fold0 s2-mirror step 800/1033 loss 1.4838
+[ 2089.1s] fold0 s2-mirror step 850/1033 loss 0.9275
+[ 2207.2s] fold0 s2-mirror step 900/1033 loss 1.4434
+[ 2325.2s] fold0 s2-mirror step 950/1033 loss 1.1021
+[ 2443.7s] fold0 s3-real step 1000/1033 loss 1.1329
+[ 2532.7s] FOLD 0 bal_acc 0.4759 acc 0.4759 steps 1033
+[ 2651.0s] fold1 s1-aux step 50/1033 loss 0.7686
+[ 2769.6s] fold1 s1-aux step 100/1033 loss 0.8318
+[ 2888.1s] fold1 s1-aux step 150/1033 loss 1.0024
+[ 3006.3s] fold1 s1-aux step 200/1033 loss 0.9143
+[ 3124.9s] fold1 s1-aux step 250/1033 loss 0.5141
+[ 3243.4s] fold1 s1-aux step 300/1033 loss 0.7421
+[ 3361.7s] fold1 s1-aux step 350/1033 loss 0.7912
+[ 3479.7s] fold1 s1-aux step 400/1033 loss 0.8530
+[ 3598.0s] fold1 s1-aux step 450/1033 loss 0.4617
+[ 3716.6s] fold1 s1-aux step 500/1033 loss 0.6897
+[ 3835.1s] fold1 s1-aux step 550/1033 loss 0.8330
+[ 3953.9s] fold1 s1-aux step 600/1033 loss 0.5347
+[ 4072.4s] fold1 s2-mirror step 650/1033 loss 0.9802
+[ 4191.0s] fold1 s2-mirror step 700/1033 loss 0.7155
+[ 4309.5s] fold1 s2-mirror step 750/1033 loss 0.5019
+[ 4427.7s] fold1 s2-mirror step 800/1033 loss 0.7538
+[ 4546.0s] fold1 s2-mirror step 850/1033 loss 0.6668
+[ 4664.0s] fold1 s2-mirror step 900/1033 loss 0.8789

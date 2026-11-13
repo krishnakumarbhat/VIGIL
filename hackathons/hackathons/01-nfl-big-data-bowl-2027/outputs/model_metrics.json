@@ -1,0 +1,4762 @@
+{
+  "track": "01_nfl_big_data_bowl",
+  "data_source": "REAL kaggle_nfl/nfl_data (no synthetic rows anywhere)",
+  "model_notes": "Savitzky-Golay position differentiation (window=11, poly=3, 10 Hz) for all kinematics; `a` column is unsigned and unused",
+  "proxy_explicit": true,
+  "cv": "GroupKFold 5 splits; no athlete / game_play leaks across folds",
+  "boosters": "lightgbm 4.7.0 (primary) + sklearn HistGradientBoostingRegressor",
+  "generated_at": "2026-10-22 08:34:36",
+  "sep_at_pass_forward": {
+    "target": "separation_at_pass_forward",
+    "rows": 9359,
+    "players": 51,
+    "n_features": 134,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.261273,
+            "mae": 1.409154,
+            "rmse": 1.866487,
+            "spearman": 0.467757,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.2133,
+              0.2935,
+              0.2535,
+              0.248,
+              0.2882
+            ],
+            "fold_mae": [
+              1.3777,
+              1.3672,
+              1.4377,
+              1.4034,
+              1.4597
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 729.6,
+              "a_long_at_pf": 515.0,
+              "lateral_displacement": 432.4,
+              "frac_above_80pct_peak": 411.2,
+              "speed_at_pf": 408.8,
+              "peak_decel": 388.4,
+              "max_turn_rate": 386.0,
+              "mean_turn_rate": 369.4,
+              "path_efficiency": 359.8,
+              "mean_jerk": 358.4,
+              "snap_to_pf_s": 354.6,
+              "p95_jerk": 351.8,
+              "total_turn_deg": 351.2,
+              "peak_accel": 337.4,
+              "release_burst": 334.0,
+              "moving_frac": 308.6,
+              "net_displacement": 297.2,
+              "mean_speed": 288.8,
+              "max_speed": 283.4,
+              "path_length": 270.8,
+              "time_to_peak_speed": 268.8,
+              "yards_to_go": 244.6,
+              "p95_speed": 227.0,
+              "quarter": 105.8,
+              "down": 103.4
+            }
+          },
+          "hist_gb": {
+            "r2": 0.263278,
+            "mae": 1.408852,
+            "rmse": 1.863953,
+            "spearman": 0.467767,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.2216,
+              0.2922,
+              0.2506,
+              0.2581,
+              0.2851
+            ],
+            "fold_mae": [
+              1.3694,
+              1.3725,
+              1.4406,
+              1.3969,
+              1.4648
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000593,
+            "mae": 1.706393,
+            "rmse": 2.172259,
+            "spearman": -0.021725,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0066,
+              -0.0007,
+              -0.0002,
+              -0.0,
+              -0.0012
+            ],
+            "fold_mae": [
+              1.6665,
+              1.6759,
+              1.7234,
+              1.6903,
+              1.7758
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.05702,
+            "mae": 1.754819,
+            "rmse": 2.23267,
+            "spearman": 0.002119,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0702,
+              -0.0381,
+              -0.054,
+              -0.0719,
+              -0.0537
+            ],
+            "fold_mae": [
+              1.7397,
+              1.7367,
+              1.7172,
+              1.7632,
+              1.8174
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 585.2,
+              "a_long_at_pf": 490.4,
+              "lateral_displacement": 478.0,
+              "max_turn_rate": 468.4,
+              "frac_above_80pct_peak": 459.4,
+              "peak_decel": 449.6,
+              "mean_jerk": 435.0,
+              "speed_at_pf": 426.2,
+              "path_efficiency": 413.0,
+              "p95_jerk": 407.0,
+              "mean_turn_rate": 392.0,
+              "peak_accel": 390.4,
+              "total_turn_deg": 374.8,
+              "moving_frac": 367.8,
+              "mean_speed": 322.4,
+              "time_to_peak_speed": 275.2,
+              "release_burst": 265.8,
+              "max_speed": 252.2,
+              "yards_to_go": 248.6,
+              "path_length": 227.2,
+              "p95_speed": 226.4,
+              "net_displacement": 223.0,
+              "snap_to_pf_s": 222.4,
+              "quarter": 131.6,
+              "release_time_s": 91.0
+            }
+          }
+        }
+      },
+      "by_game_play": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.282029,
+            "mae": 1.386365,
+            "rmse": 1.840079,
+            "spearman": 0.490069,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.2898,
+              0.2719,
+              0.2504,
+              0.289,
+              0.3066
+            ],
+            "fold_mae": [
+              1.376,
+              1.3844,
+              1.4144,
+              1.3488,
+              1.4083
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 713.4,
+              "a_long_at_pf": 476.8,
+              "lateral_displacement": 395.0,
+              "frac_above_80pct_peak": 394.0,
+              "speed_at_pf": 390.8,
+              "max_turn_rate": 383.2,
+              "mean_turn_rate": 377.4,
+              "path_efficiency": 372.6,
+              "snap_to_pf_s": 368.0,
+              "peak_decel": 364.0,
+              "mean_jerk": 362.6,
+              "p95_jerk": 360.2,
+              "peak_accel": 342.4,
+              "total_turn_deg": 334.2,
+              "release_burst": 314.2,
+              "moving_frac": 298.0,
+              "net_displacement": 288.6,
+              "mean_speed": 283.0,
+              "max_speed": 275.0,
+              "path_length": 262.0,
+              "time_to_peak_speed": 258.0,
+              "yards_to_go": 232.2,
+              "p95_speed": 210.4,
+              "mean_pre_pass_dbr": 103.4,
+              "quarter": 103.2
+            }
+          },
+          "hist_gb": {
+            "r2": 0.278585,
+            "mae": 1.393583,
+            "rmse": 1.844487,
+            "spearman": 0.484517,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.2804,
+              0.2718,
+              0.2561,
+              0.2827,
+              0.2994
+            ],
+            "fold_mae": [
+              1.3839,
+              1.3914,
+              1.4211,
+              1.3558,
+              1.4157
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000176,
+            "mae": 1.70599,
+            "rmse": 2.171807,
+            "spearman": -0.014169,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0002,
+              -0.0003,
+              -0.0018,
+              -0.0,
+              -0.0001
+            ],
+            "fold_mae": [
+              1.6824,
+              1.6997,
+              1.7265,
+              1.6626,
+              1.7588
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.065621,
+            "mae": 1.753308,
+            "rmse": 2.241735,
+            "spearman": 0.004871,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.087,
+              -0.0649,
+              -0.0512,
+              -0.0615,
+              -0.0666
+            ],
+            "fold_mae": [
+              1.7514,
+              1.7815,
+              1.7565,
+              1.7298,
+              1.7473
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 591.0,
+              "a_long_at_pf": 481.6,
+              "lateral_displacement": 445.8,
+              "frac_above_80pct_peak": 445.0,
+              "max_turn_rate": 439.4,
+              "peak_decel": 432.4,
+              "path_efficiency": 402.6,
+              "p95_jerk": 397.2,
+              "speed_at_pf": 396.8,
+              "mean_jerk": 393.4,
+              "mean_turn_rate": 390.4,
+              "peak_accel": 354.8,
+              "total_turn_deg": 352.4,
+              "moving_frac": 337.8,
+              "mean_speed": 329.6,
+              "release_burst": 297.8,
+              "max_speed": 269.6,
+              "time_to_peak_speed": 256.6,
+              "yards_to_go": 240.8,
+              "net_displacement": 232.0,
+              "path_length": 230.6,
+              "p95_speed": 229.8,
+              "snap_to_pf_s": 228.8,
+              "quarter": 127.2,
+              "cmb_moving_frac": 99.0
+            }
+          }
+        }
+      }
+    },
+    "name": "sep_at_pass_forward",
+    "seconds": 66.3
+  },
+  "sep_at_pass_forward_kinematics_only": {
+    "target": "separation_at_pass_forward",
+    "rows": 9359,
+    "players": 51,
+    "n_features": 91,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.1155,
+            "mae": 1.590087,
+            "rmse": 2.042358,
+            "spearman": 0.257771,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0673,
+              0.166,
+              0.0942,
+              0.1117,
+              0.1296
+            ],
+            "fold_mae": [
+              1.5697,
+              1.5177,
+              1.6407,
+              1.5655,
+              1.6566
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "a_long_at_pf": 571.6,
+              "lateral_displacement": 508.0,
+              "path_efficiency": 505.0,
+              "max_turn_rate": 501.4,
+              "p95_jerk": 485.6,
+              "frac_above_80pct_peak": 483.2,
+              "speed_at_pf": 475.4,
+              "peak_decel": 471.6,
+              "mean_turn_rate": 463.0,
+              "peak_accel": 461.4,
+              "mean_jerk": 446.4,
+              "total_turn_deg": 427.0,
+              "release_burst": 410.8,
+              "moving_frac": 374.2,
+              "snap_to_pf_s": 373.4,
+              "mean_speed": 356.8,
+              "max_speed": 325.0,
+              "time_to_peak_speed": 312.2,
+              "net_displacement": 283.2,
+              "path_length": 279.6,
+              "p95_speed": 274.8,
+              "mean_pre_pass_dbr": 116.2,
+              "release_time_s": 107.2,
+              "cmb_time_to_peak_speed": 94.0,
+              "mean_pre_pass_kce": 90.0
+            }
+          },
+          "hist_gb": {
+            "r2": 0.113394,
+            "mae": 1.592957,
+            "rmse": 2.044788,
+            "spearman": 0.25076,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0785,
+              0.1725,
+              0.0804,
+              0.1046,
+              0.1238
+            ],
+            "fold_mae": [
+              1.5631,
+              1.5143,
+              1.6496,
+              1.5626,
+              1.6748
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000593,
+            "mae": 1.706393,
+            "rmse": 2.172259,
+            "spearman": -0.021725,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0066,
+              -0.0007,
+              -0.0002,
+              -0.0,
+              -0.0012
+            ],
+            "fold_mae": [
+              1.6665,
+              1.6759,
+              1.7234,
+              1.6903,
+              1.7758
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.057559,
+            "mae": 1.754565,
+            "rmse": 2.233239,
+            "spearman": 0.010666,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0745,
+              -0.0305,
+              -0.062,
+              -0.0608,
+              -0.0628
+            ],
+            "fold_mae": [
+              1.7427,
+              1.738,
+              1.7245,
+              1.753,
+              1.8146
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "a_long_at_pf": 589.6,
+              "lateral_displacement": 578.4,
+              "max_turn_rate": 543.6,
+              "frac_above_80pct_peak": 537.2,
+              "peak_decel": 517.0,
+              "mean_jerk": 492.4,
+              "path_efficiency": 489.6,
+              "mean_turn_rate": 482.2,
+              "p95_jerk": 480.0,
+              "speed_at_pf": 461.0,
+              "peak_accel": 461.0,
+              "moving_frac": 429.6,
+              "total_turn_deg": 426.0,
+              "mean_speed": 388.8,
+              "release_burst": 343.6,
+              "time_to_peak_speed": 312.8,
+              "max_speed": 303.2,
+              "p95_speed": 298.8,
+              "path_length": 270.4,
+              "snap_to_pf_s": 250.0,
+              "net_displacement": 240.2,
+              "release_time_s": 107.2,
+              "cmb_moving_frac": 94.6,
+              "cmb_time_to_peak_speed": 84.6,
+              "cmb_mean_speed_retention": 84.6
+            }
+          }
+        }
+      }
+    },
+    "name": "sep_at_pass_forward_kinematics_only",
+    "seconds": 27.0
+  },
+  "sep_at_pass_forward_presnap_only": {
+    "target": "separation_at_pass_forward",
+    "rows": 9359,
+    "players": 51,
+    "n_features": 93,
+    "feature_columns": [
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.092715,
+            "mae": 1.581315,
+            "rmse": 2.068496,
+            "spearman": 0.338875,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.1057,
+              0.1006,
+              0.0955,
+              0.0715,
+              0.0868
+            ],
+            "fold_mae": [
+              1.5094,
+              1.5586,
+              1.596,
+              1.5758,
+              1.6667
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 3082.0,
+              "yards_to_go": 1228.2,
+              "quarter": 637.6,
+              "down": 517.2,
+              "play_direction_left": 315.6,
+              "receiver_alignment_3x1": 245.0,
+              "receiver_alignment_2x2": 216.0,
+              "lined_up_position_SLOT_WR": 186.6,
+              "cmb_mean_speed_retention": 177.6,
+              "lined_up_position_WR": 175.8,
+              "cmb_time_to_peak_speed": 165.2,
+              "cmb_moving_frac": 151.2,
+              "cmb_peak_accel": 149.4,
+              "offense_formation_SHOTGUN": 147.6,
+              "cmb_mean_speed": 141.6,
+              "in_motion_at_ball_snap_False": 134.6,
+              "cmb_max_speed": 126.0,
+              "cmb_max_dbr": 125.6,
+              "cmb_lateral_displacement": 122.4,
+              "cmb_mean_kce_inside": 121.4,
+              "cmb_mean_dbr": 120.8,
+              "cmb_mean_decel_peak": 118.4,
+              "cmb_ngs_college_production_score": 117.4,
+              "cmb_mean_dbr_inside": 115.0,
+              "offense_formation_SINGLEBACK": 114.0
+            }
+          },
+          "hist_gb": {
+            "r2": 0.086114,
+            "mae": 1.583286,
+            "rmse": 2.076008,
+            "spearman": 0.337717,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0866,
+              0.0872,
+              0.0898,
+              0.0764,
+              0.0857
+            ],
+            "fold_mae": [
+              1.5264,
+              1.5572,
+              1.6048,
+              1.5664,
+              1.6616
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000593,
+            "mae": 1.706393,
+            "rmse": 2.172259,
+            "spearman": -0.021725,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0066,
+              -0.0007,
+              -0.0002,
+              -0.0,
+              -0.0012
+            ],
+            "fold_mae": [
+              1.6665,
+              1.6759,
+              1.7234,
+              1.6903,
+              1.7758
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.055564,
+            "mae": 1.748396,
+            "rmse": 2.231132,
+            "spearman": -0.005922,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0634,
+              -0.0505,
+              -0.0389,
+              -0.0525,
+              -0.0734
+            ],
+            "fold_mae": [
+              1.7325,
+              1.743,
+              1.693,
+              1.7411,
+              1.8324
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 3341.8,
+              "yards_to_go": 1216.0,
+              "quarter": 677.0,
+              "down": 477.0,
+              "play_direction_left": 342.0,
+              "receiver_alignment_3x1": 242.8,
+              "receiver_alignment_2x2": 230.4,
+              "lined_up_position_SLOT_WR": 187.8,
+              "cmb_time_to_peak_speed": 171.6,
+              "cmb_mean_speed": 171.2,
+              "offense_formation_SHOTGUN": 169.6,
+              "cmb_mean_speed_retention": 151.8,
+              "cmb_moving_frac": 150.6,
+              "cmb_peak_accel": 147.2,
+              "in_motion_at_ball_snap_False": 138.6,
+              "cmb_mean_kce_inside": 131.0,
+              "lined_up_position_WR": 127.4,
+              "cmb_mean_kce_align_right": 122.4,
+              "cmb_mean_dbr_outside": 119.4,
+              "cmb_mean_dbr_inside": 117.8,
+              "cmb_lateral_displacement": 112.6,
+              "cmb_ngs_athleticism_score": 110.6,
+              "cmb_n_frames": 110.0,
+              "cmb_max_speed": 106.4,
+              "cmb_max_dbr": 106.2
+            }
+          }
+        }
+      }
+    },
+    "name": "sep_at_pass_forward_presnap_only",
+    "seconds": 20.9
+  },
+  "player_mean_sep": {
+    "target": "player_mean_sep",
+    "rows": 145,
+    "players": 145,
+    "n_features": 62,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "moving_frac",
+      "mean_kce",
+      "max_kce",
+      "mean_dbr",
+      "max_dbr",
+      "mean_cut_turn_deg",
+      "max_cut_turn_deg",
+      "mean_speed_retention",
+      "mean_decel_peak",
+      "mean_burst_peak",
+      "n_frames",
+      "stop_count",
+      "start_count",
+      "duration_s",
+      "n_cuts",
+      "n_inside",
+      "n_outside",
+      "n_sessions",
+      "draft_year_x",
+      "n_inside_cuts",
+      "mean_kce_inside",
+      "mean_dbr_inside",
+      "n_outside_cuts",
+      "mean_kce_outside",
+      "mean_dbr_outside",
+      "n_align_left",
+      "mean_kce_align_left",
+      "n_align_right",
+      "mean_kce_align_right",
+      "frac_breaks_outside",
+      "inside_outside_kce_gap",
+      "draft_year_y",
+      "combine_height",
+      "combine_weight",
+      "hand_size",
+      "arm_length",
+      "wing_span",
+      "ten_yd_split",
+      "forty",
+      "vertical",
+      "broad_jump",
+      "three_cone",
+      "short_shuttle",
+      "bench_reps",
+      "ngs_athleticism_score",
+      "ngs_college_production_score",
+      "ngs_final_score"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": -0.071727,
+            "mae": 0.351907,
+            "rmse": 0.481963,
+            "spearman": 0.22487,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.3079,
+              -0.611,
+              0.0588,
+              -0.1424,
+              -0.0342
+            ],
+            "fold_mae": [
+              0.3182,
+              0.3898,
+              0.4006,
+              0.2969,
+              0.3541
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "arm_length": 293.8,
+              "time_to_peak_speed": 280.8,
+              "max_speed": 181.2,
+              "mean_speed": 175.6,
+              "mean_kce_align_right": 167.6,
+              "p95_speed": 153.2,
+              "path_length": 151.8,
+              "mean_speed_retention": 149.2,
+              "n_frames": 135.8,
+              "mean_burst_peak": 135.6,
+              "inside_outside_kce_gap": 135.2,
+              "wing_span": 135.0,
+              "hand_size": 132.0,
+              "mean_kce_align_left": 131.8,
+              "peak_accel": 118.6,
+              "mean_kce_inside": 117.2,
+              "combine_weight": 117.0,
+              "max_dbr": 115.2,
+              "max_turn_rate": 114.6,
+              "ngs_college_production_score": 112.4,
+              "frac_above_80pct_peak": 107.6,
+              "net_displacement": 104.6,
+              "moving_frac": 102.8,
+              "mean_decel_peak": 97.0,
+              "mean_kce_outside": 94.8
+            }
+          },
+          "hist_gb": {
+            "r2": -0.100565,
+            "mae": 0.356542,
+            "rmse": 0.488405,
+            "spearman": 0.23072,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0009,
+              -0.702,
+              0.0387,
+              -0.4395,
+              -0.0718
+            ],
+            "fold_mae": [
+              0.2695,
+              0.3966,
+              0.4144,
+              0.3524,
+              0.3499
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.02677,
+            "mae": 0.347379,
+            "rmse": 0.471746,
+            "spearman": -0.150526,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0084,
+              -0.0987,
+              -0.0048,
+              -0.1029,
+              -0.1722
+            ],
+            "fold_mae": [
+              0.3022,
+              0.3177,
+              0.4064,
+              0.2968,
+              0.4138
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.208397,
+            "mae": 0.380878,
+            "rmse": 0.511772,
+            "spearman": 0.123717,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.1965,
+              -0.1601,
+              -0.9909,
+              0.0344,
+              -0.286
+            ],
+            "fold_mae": [
+              0.4442,
+              0.3926,
+              0.4013,
+              0.2961,
+              0.3702
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "arm_length": 330.4,
+              "time_to_peak_speed": 255.6,
+              "ten_yd_split": 254.4,
+              "wing_span": 246.6,
+              "combine_height": 219.0,
+              "mean_dbr_inside": 217.4,
+              "moving_frac": 185.2,
+              "mean_decel_peak": 181.0,
+              "mean_turn_rate": 178.0,
+              "three_cone": 157.4,
+              "hand_size": 152.2,
+              "mean_speed_retention": 133.6,
+              "ngs_athleticism_score": 123.4,
+              "lateral_displacement": 119.2,
+              "vertical": 115.2,
+              "peak_decel": 109.6,
+              "frac_above_80pct_peak": 105.6,
+              "max_speed": 101.0,
+              "mean_kce_align_left": 97.8,
+              "ngs_final_score": 97.8,
+              "mean_kce_inside": 96.6,
+              "forty": 95.6,
+              "max_kce": 95.2,
+              "mean_dbr_outside": 93.4,
+              "max_dbr": 91.8
+            }
+          }
+        }
+      }
+    },
+    "name": "player_mean_sep",
+    "seconds": 7.5
+  },
+  "player_mean_sep_preregistered": {
+    "target": "player_mean_sep",
+    "rows": 145,
+    "players": 145,
+    "n_features": 17,
+    "feature_columns": [
+      "forty",
+      "three_cone",
+      "short_shuttle",
+      "ten_yd_split",
+      "vertical",
+      "broad_jump",
+      "bench_reps",
+      "ngs_athleticism_score",
+      "combine_height",
+      "combine_weight",
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "path_efficiency",
+      "peak_accel",
+      "mean_turn_rate",
+      "n_cuts"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": -0.126259,
+            "mae": 0.354388,
+            "rmse": 0.494073,
+            "spearman": 0.300716,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0763,
+              -0.6839,
+              0.0243,
+              -0.3104,
+              -0.2511
+            ],
+            "fold_mae": [
+              0.2704,
+              0.4011,
+              0.4063,
+              0.34,
+              0.3541
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "mean_speed": 600.4,
+              "peak_accel": 471.8,
+              "combine_height": 439.8,
+              "path_efficiency": 434.0,
+              "max_speed": 424.0,
+              "ngs_athleticism_score": 380.0,
+              "forty": 374.0,
+              "mean_turn_rate": 368.8,
+              "combine_weight": 328.2,
+              "p95_speed": 326.8,
+              "vertical": 312.4,
+              "broad_jump": 283.4,
+              "ten_yd_split": 250.0,
+              "n_cuts": 228.6,
+              "short_shuttle": 147.0,
+              "bench_reps": 122.8,
+              "three_cone": 108.0
+            }
+          },
+          "hist_gb": {
+            "r2": -0.237384,
+            "mae": 0.365294,
+            "rmse": 0.517874,
+            "spearman": 0.275146,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.1757,
+              -0.9537,
+              -0.005,
+              -0.3437,
+              -0.3807
+            ],
+            "fold_mae": [
+              0.3017,
+              0.4251,
+              0.3953,
+              0.3274,
+              0.3769
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.02677,
+            "mae": 0.347379,
+            "rmse": 0.471746,
+            "spearman": -0.150526,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0084,
+              -0.0987,
+              -0.0048,
+              -0.1029,
+              -0.1722
+            ],
+            "fold_mae": [
+              0.3022,
+              0.3177,
+              0.4064,
+              0.2968,
+              0.4138
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.394531,
+            "mae": 0.416305,
+            "rmse": 0.549776,
+            "spearman": -0.063151,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.3922,
+              -0.2427,
+              -0.7435,
+              -0.5557,
+              -0.4277
+            ],
+            "fold_mae": [
+              0.4962,
+              0.4161,
+              0.3781,
+              0.4017,
+              0.3895
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "combine_height": 553.0,
+              "mean_turn_rate": 523.8,
+              "ten_yd_split": 468.8,
+              "peak_accel": 433.6,
+              "ngs_athleticism_score": 419.0,
+              "vertical": 389.8,
+              "combine_weight": 388.8,
+              "path_efficiency": 379.6,
+              "mean_speed": 348.8,
+              "forty": 302.8,
+              "broad_jump": 296.0,
+              "max_speed": 286.8,
+              "p95_speed": 280.6,
+              "n_cuts": 211.6,
+              "three_cone": 165.6,
+              "short_shuttle": 85.2,
+              "bench_reps": 66.2
+            }
+          }
+        }
+      }
+    },
+    "name": "player_mean_sep_preregistered",
+    "seconds": 7.0
+  },
+  "sep_gain": {
+    "target": "sep_gain",
+    "rows": 8715,
+    "players": 50,
+    "n_features": 129,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.64633,
+            "mae": 1.377637,
+            "rmse": 1.827636,
+            "spearman": 0.818473,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.632,
+              0.682,
+              0.6588,
+              0.6283,
+              0.6264
+            ],
+            "fold_mae": [
+              1.4089,
+              1.3314,
+              1.3532,
+              1.3751,
+              1.4194
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 842.6,
+              "a_long_at_pf": 482.6,
+              "frac_above_80pct_peak": 424.2,
+              "lateral_displacement": 402.8,
+              "snap_to_pf_s": 401.2,
+              "speed_at_pf": 394.8,
+              "mean_turn_rate": 373.6,
+              "path_efficiency": 373.2,
+              "peak_decel": 372.8,
+              "p95_jerk": 370.8,
+              "max_turn_rate": 360.8,
+              "mean_jerk": 357.0,
+              "peak_accel": 353.2,
+              "total_turn_deg": 333.6,
+              "release_burst": 328.0,
+              "mean_speed": 317.2,
+              "moving_frac": 311.4,
+              "path_length": 301.2,
+              "net_displacement": 285.0,
+              "max_speed": 280.8,
+              "yards_to_go": 254.8,
+              "time_to_peak_speed": 240.4,
+              "p95_speed": 212.0,
+              "mean_pre_pass_dbr": 112.0,
+              "down": 109.0
+            }
+          },
+          "hist_gb": {
+            "r2": 0.647126,
+            "mae": 1.374418,
+            "rmse": 1.825575,
+            "spearman": 0.819805,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.6347,
+              0.6834,
+              0.6537,
+              0.6277,
+              0.6318
+            ],
+            "fold_mae": [
+              1.3984,
+              1.3393,
+              1.3507,
+              1.3761,
+              1.4075
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000682,
+            "mae": 2.48809,
+            "rmse": 3.074244,
+            "spearman": -0.032589,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0013,
+              -0.0007,
+              -0.0032,
+              -0.0045,
+              -0.0
+            ],
+            "fold_mae": [
+              2.5144,
+              2.5633,
+              2.4966,
+              2.3936,
+              2.4727
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.052669,
+            "mae": 2.540845,
+            "rmse": 3.153088,
+            "spearman": 0.014954,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0367,
+              -0.0649,
+              -0.0644,
+              -0.0496,
+              -0.0475
+            ],
+            "fold_mae": [
+              2.4734,
+              2.5102,
+              2.6406,
+              2.5494,
+              2.5311
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 588.6,
+              "frac_above_80pct_peak": 480.4,
+              "a_long_at_pf": 476.8,
+              "max_turn_rate": 450.2,
+              "peak_decel": 445.6,
+              "mean_jerk": 417.0,
+              "mean_turn_rate": 415.4,
+              "lateral_displacement": 406.8,
+              "total_turn_deg": 398.8,
+              "speed_at_pf": 398.0,
+              "p95_jerk": 396.8,
+              "path_efficiency": 394.6,
+              "peak_accel": 364.0,
+              "moving_frac": 331.4,
+              "mean_speed": 309.8,
+              "release_burst": 295.6,
+              "max_speed": 282.4,
+              "p95_speed": 258.0,
+              "path_length": 239.6,
+              "yards_to_go": 239.6,
+              "net_displacement": 227.6,
+              "time_to_peak_speed": 218.8,
+              "snap_to_pf_s": 204.2,
+              "quarter": 154.6,
+              "down": 94.4
+            }
+          }
+        }
+      },
+      "by_game_play": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.656062,
+            "mae": 1.35029,
+            "rmse": 1.802314,
+            "spearman": 0.825441,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.6497,
+              0.6496,
+              0.6719,
+              0.6685,
+              0.6411
+            ],
+            "fold_mae": [
+              1.4077,
+              1.3526,
+              1.3053,
+              1.3336,
+              1.3523
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 823.4,
+              "a_long_at_pf": 493.6,
+              "speed_at_pf": 415.2,
+              "frac_above_80pct_peak": 402.4,
+              "lateral_displacement": 388.2,
+              "mean_turn_rate": 376.8,
+              "snap_to_pf_s": 373.2,
+              "peak_decel": 348.6,
+              "max_turn_rate": 345.6,
+              "path_efficiency": 344.8,
+              "p95_jerk": 337.8,
+              "release_burst": 331.8,
+              "mean_jerk": 331.4,
+              "moving_frac": 319.6,
+              "total_turn_deg": 318.4,
+              "mean_speed": 316.4,
+              "peak_accel": 314.0,
+              "net_displacement": 289.0,
+              "path_length": 281.0,
+              "max_speed": 265.4,
+              "yards_to_go": 237.0,
+              "time_to_peak_speed": 232.0,
+              "p95_speed": 210.6,
+              "mean_pre_pass_dbr": 109.6,
+              "down": 105.8
+            }
+          },
+          "hist_gb": {
+            "r2": 0.657571,
+            "mae": 1.351309,
+            "rmse": 1.798356,
+            "spearman": 0.827166,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.6505,
+              0.6537,
+              0.6712,
+              0.6672,
+              0.6456
+            ],
+            "fold_mae": [
+              1.409,
+              1.3446,
+              1.3077,
+              1.339,
+              1.3562
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -9.4e-05,
+            "mae": 2.487101,
+            "rmse": 3.073341,
+            "spearman": -0.009036,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0007,
+              -0.0,
+              -0.0004,
+              -0.0002,
+              -0.0
+            ],
+            "fold_mae": [
+              2.573,
+              2.5011,
+              2.4279,
+              2.469,
+              2.4645
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.063411,
+            "mae": 2.557569,
+            "rmse": 3.169135,
+            "spearman": 0.006383,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.078,
+              -0.0378,
+              -0.0693,
+              -0.075,
+              -0.0575
+            ],
+            "fold_mae": [
+              2.5485,
+              2.5217,
+              2.622,
+              2.5956,
+              2.5001
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 592.8,
+              "frac_above_80pct_peak": 448.2,
+              "max_turn_rate": 444.8,
+              "peak_decel": 442.2,
+              "a_long_at_pf": 430.2,
+              "mean_jerk": 426.6,
+              "mean_turn_rate": 412.0,
+              "path_efficiency": 402.2,
+              "p95_jerk": 398.6,
+              "lateral_displacement": 388.4,
+              "speed_at_pf": 387.8,
+              "total_turn_deg": 378.0,
+              "peak_accel": 365.8,
+              "release_burst": 314.2,
+              "moving_frac": 310.0,
+              "mean_speed": 301.6,
+              "max_speed": 261.2,
+              "p95_speed": 255.6,
+              "path_length": 249.2,
+              "yards_to_go": 240.4,
+              "time_to_peak_speed": 225.0,
+              "net_displacement": 207.4,
+              "snap_to_pf_s": 200.6,
+              "quarter": 127.0,
+              "cmb_frac_above_80pct_peak": 106.6
+            }
+          }
+        }
+      }
+    },
+    "name": "sep_gain",
+    "seconds": 57.3,
+    "cushion_ablation": "sep_gain_no_cushion",
+    "algebraic_note": "cushion is a term of this target (sep_gain = separation_at_pass_forward - cushion); read the headline R2 together with sep_gain_no_cushion"
+  },
+  "sep_gain_no_cushion": {
+    "target": "sep_gain",
+    "rows": 8715,
+    "players": 50,
+    "n_features": 128,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.075556,
+            "mae": 2.279233,
+            "rmse": 2.954817,
+            "spearman": 0.318015,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0786,
+              0.0901,
+              0.0918,
+              0.0544,
+              0.0553
+            ],
+            "fold_mae": [
+              2.3017,
+              2.3118,
+              2.2668,
+              2.2221,
+              2.2937
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "frac_above_80pct_peak": 495.6,
+              "a_long_at_pf": 481.4,
+              "max_turn_rate": 455.2,
+              "lateral_displacement": 448.4,
+              "p95_jerk": 431.2,
+              "mean_turn_rate": 425.4,
+              "peak_decel": 418.6,
+              "mean_jerk": 415.2,
+              "speed_at_pf": 409.6,
+              "path_efficiency": 407.6,
+              "mean_speed": 370.2,
+              "total_turn_deg": 356.0,
+              "peak_accel": 343.2,
+              "release_burst": 330.4,
+              "path_length": 320.6,
+              "net_displacement": 313.0,
+              "moving_frac": 304.0,
+              "time_to_peak_speed": 271.2,
+              "snap_to_pf_s": 266.4,
+              "max_speed": 262.2,
+              "yards_to_go": 239.8,
+              "p95_speed": 238.2,
+              "release_time_s": 113.0,
+              "quarter": 109.0,
+              "down": 104.0
+            }
+          },
+          "hist_gb": {
+            "r2": 0.079262,
+            "mae": 2.268578,
+            "rmse": 2.948888,
+            "spearman": 0.327453,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0891,
+              0.0931,
+              0.1038,
+              0.0532,
+              0.0491
+            ],
+            "fold_mae": [
+              2.2918,
+              2.2968,
+              2.2457,
+              2.2179,
+              2.2906
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000682,
+            "mae": 2.48809,
+            "rmse": 3.074244,
+            "spearman": -0.032589,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0013,
+              -0.0007,
+              -0.0032,
+              -0.0045,
+              -0.0
+            ],
+            "fold_mae": [
+              2.5144,
+              2.5633,
+              2.4966,
+              2.3936,
+              2.4727
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.060182,
+            "mae": 2.548962,
+            "rmse": 3.16432,
+            "spearman": 0.002728,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0482,
+              -0.0705,
+              -0.0696,
+              -0.061,
+              -0.0515
+            ],
+            "fold_mae": [
+              2.4885,
+              2.5022,
+              2.6478,
+              2.5675,
+              2.5393
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "max_turn_rate": 508.8,
+              "frac_above_80pct_peak": 493.0,
+              "mean_jerk": 478.0,
+              "a_long_at_pf": 474.8,
+              "total_turn_deg": 460.8,
+              "peak_decel": 442.6,
+              "mean_turn_rate": 433.6,
+              "path_efficiency": 431.8,
+              "lateral_displacement": 419.8,
+              "p95_jerk": 412.2,
+              "peak_accel": 393.2,
+              "speed_at_pf": 387.8,
+              "mean_speed": 332.4,
+              "moving_frac": 326.6,
+              "release_burst": 326.6,
+              "max_speed": 306.2,
+              "p95_speed": 266.4,
+              "path_length": 259.8,
+              "yards_to_go": 255.0,
+              "time_to_peak_speed": 240.2,
+              "net_displacement": 231.4,
+              "snap_to_pf_s": 214.8,
+              "quarter": 173.6,
+              "down": 109.0,
+              "cmb_mean_speed_retention": 91.2
+            }
+          }
+        }
+      },
+      "by_game_play": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.107383,
+            "mae": 2.238316,
+            "rmse": 2.903506,
+            "spearman": 0.355848,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0844,
+              0.1028,
+              0.109,
+              0.1303,
+              0.1115
+            ],
+            "fold_mae": [
+              2.3496,
+              2.2564,
+              2.2032,
+              2.1935,
+              2.1888
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "frac_above_80pct_peak": 479.4,
+              "a_long_at_pf": 462.4,
+              "max_turn_rate": 440.6,
+              "peak_decel": 419.4,
+              "p95_jerk": 415.8,
+              "lateral_displacement": 404.6,
+              "mean_jerk": 399.8,
+              "mean_turn_rate": 391.2,
+              "speed_at_pf": 390.0,
+              "path_efficiency": 388.0,
+              "mean_speed": 372.0,
+              "total_turn_deg": 356.0,
+              "peak_accel": 355.2,
+              "release_burst": 322.4,
+              "path_length": 319.0,
+              "net_displacement": 307.6,
+              "moving_frac": 289.4,
+              "snap_to_pf_s": 286.0,
+              "time_to_peak_speed": 265.8,
+              "max_speed": 253.4,
+              "yards_to_go": 233.0,
+              "p95_speed": 216.8,
+              "release_time_s": 109.8,
+              "quarter": 108.8,
+              "down": 107.4
+            }
+          },
+          "hist_gb": {
+            "r2": 0.109905,
+            "mae": 2.228496,
+            "rmse": 2.899403,
+            "spearman": 0.360204,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0832,
+              0.1072,
+              0.1086,
+              0.1219,
+              0.1302
+            ],
+            "fold_mae": [
+              2.3483,
+              2.2339,
+              2.1956,
+              2.2049,
+              2.1598
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -9.4e-05,
+            "mae": 2.487101,
+            "rmse": 3.073341,
+            "spearman": -0.009036,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0007,
+              -0.0,
+              -0.0004,
+              -0.0002,
+              -0.0
+            ],
+            "fold_mae": [
+              2.573,
+              2.5011,
+              2.4279,
+              2.469,
+              2.4645
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.066865,
+            "mae": 2.560128,
+            "rmse": 3.174278,
+            "spearman": 0.002521,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0868,
+              -0.0509,
+              -0.0598,
+              -0.0751,
+              -0.0634
+            ],
+            "fold_mae": [
+              2.5665,
+              2.5376,
+              2.6062,
+              2.5831,
+              2.5073
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "max_turn_rate": 502.8,
+              "a_long_at_pf": 472.0,
+              "frac_above_80pct_peak": 466.0,
+              "mean_jerk": 465.4,
+              "peak_decel": 447.6,
+              "path_efficiency": 434.0,
+              "mean_turn_rate": 429.2,
+              "p95_jerk": 427.0,
+              "lateral_displacement": 420.6,
+              "total_turn_deg": 415.2,
+              "speed_at_pf": 406.4,
+              "peak_accel": 376.8,
+              "moving_frac": 330.8,
+              "release_burst": 325.2,
+              "mean_speed": 318.6,
+              "max_speed": 293.8,
+              "path_length": 258.2,
+              "time_to_peak_speed": 244.4,
+              "p95_speed": 244.2,
+              "yards_to_go": 242.6,
+              "net_displacement": 228.2,
+              "snap_to_pf_s": 209.4,
+              "quarter": 151.4,
+              "cmb_mean_speed_retention": 108.2,
+              "down": 100.4
+            }
+          }
+        }
+      }
+    },
+    "name": "sep_gain_no_cushion",
+    "seconds": 57.3
+  },
+  "sep_gain_cushion_ablation": {
+    "with_cushion_by_game_play": {
+      "r2": 0.656062,
+      "mae": 1.35029,
+      "spearman": 0.825441
+    },
+    "without_cushion_by_game_play": {
+      "r2": 0.107383,
+      "mae": 2.238316,
+      "spearman": 0.355848
+    },
+    "with_cushion_by_player": {
+      "r2": 0.64633,
+      "mae": 1.377637,
+      "spearman": 0.818473
+    },
+    "without_cushion_by_player": {
+      "r2": 0.075556,
+      "mae": 2.279233,
+      "spearman": 0.318015
+    }
+  },
+  "derived_sep_pf": {
+    "target": "derived_sep_pf",
+    "rows": 4105,
+    "players": 50,
+    "n_features": 129,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.050173,
+            "mae": 7.119768,
+            "rmse": 8.867124,
+            "spearman": 0.260776,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0025,
+              0.0461,
+              0.042,
+              0.0492,
+              0.0502
+            ],
+            "fold_mae": [
+              7.4174,
+              7.4277,
+              6.5135,
+              7.1496,
+              7.096
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 613.4,
+              "a_long_at_pf": 491.2,
+              "max_turn_rate": 470.0,
+              "p95_jerk": 424.6,
+              "path_efficiency": 401.6,
+              "frac_above_80pct_peak": 399.4,
+              "total_turn_deg": 399.2,
+              "mean_turn_rate": 384.6,
+              "peak_decel": 383.0,
+              "peak_accel": 360.0,
+              "speed_at_pf": 355.2,
+              "mean_jerk": 354.4,
+              "moving_frac": 354.2,
+              "lateral_displacement": 353.0,
+              "path_length": 310.2,
+              "mean_speed": 295.6,
+              "net_displacement": 293.2,
+              "release_burst": 288.2,
+              "max_speed": 277.8,
+              "time_to_peak_speed": 256.8,
+              "yards_to_go": 249.6,
+              "p95_speed": 247.8,
+              "snap_to_pf_s": 210.2,
+              "quarter": 138.6,
+              "down": 112.6
+            }
+          },
+          "hist_gb": {
+            "r2": 0.053088,
+            "mae": 7.135916,
+            "rmse": 8.853507,
+            "spearman": 0.262905,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0212,
+              0.0333,
+              0.0584,
+              0.0419,
+              0.048
+            ],
+            "fold_mae": [
+              7.3307,
+              7.5185,
+              6.4741,
+              7.2427,
+              7.1201
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.007826,
+            "mae": 7.493479,
+            "rmse": 9.133838,
+            "spearman": -0.111225,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0089,
+              -0.0,
+              -0.028,
+              -0.0009,
+              -0.0754
+            ],
+            "fold_mae": [
+              7.5801,
+              7.7501,
+              6.8644,
+              7.6083,
+              7.6694
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.109809,
+            "mae": 7.829614,
+            "rmse": 9.584838,
+            "spearman": -0.017498,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.092,
+              -0.1512,
+              -0.0898,
+              -0.0992,
+              -0.1278
+            ],
+            "fold_mae": [
+              7.7688,
+              7.8237,
+              7.7174,
+              7.9746,
+              7.8648
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 575.4,
+              "lateral_displacement": 472.6,
+              "a_long_at_pf": 459.4,
+              "max_turn_rate": 459.4,
+              "frac_above_80pct_peak": 448.4,
+              "p95_jerk": 446.0,
+              "peak_decel": 442.8,
+              "path_efficiency": 429.0,
+              "mean_turn_rate": 426.6,
+              "mean_jerk": 419.2,
+              "speed_at_pf": 415.8,
+              "peak_accel": 384.4,
+              "total_turn_deg": 371.4,
+              "moving_frac": 330.8,
+              "mean_speed": 302.0,
+              "release_burst": 280.0,
+              "path_length": 260.4,
+              "max_speed": 254.0,
+              "net_displacement": 247.0,
+              "time_to_peak_speed": 244.2,
+              "p95_speed": 229.6,
+              "snap_to_pf_s": 193.0,
+              "yards_to_go": 187.6,
+              "quarter": 117.8,
+              "cmb_mean_dbr_inside": 94.2
+            }
+          }
+        }
+      }
+    },
+    "name": "derived_sep_pf",
+    "seconds": 25.0,
+    "validation_vs_official": {
+      "rows": 4078,
+      "pearson": 0.033387,
+      "spearman": 0.006367,
+      "derived_mean_yd": 16.269496,
+      "official_mean_yd": 3.135155,
+      "status": "REJECTED as target: fails validation against the official field (game_tracking tracks only 1.6 athletes/play, so the nearest *tracked* opponent is usually not the covering defender)"
+    },
+    "eligible_for_headline": false
+  },
+  "derived_sep_pf_validation_vs_official": {
+    "rows": 4078,
+    "pearson": 0.033387,
+    "spearman": 0.006367,
+    "derived_mean_yd": 16.269496,
+    "official_mean_yd": 3.135155,
+    "status": "REJECTED as target: fails validation against the official field (game_tracking tracks only 1.6 athletes/play, so the nearest *tracked* opponent is usually not the covering defender)"
+  },
+  "career_snaps_log": {
+    "target": "career_snaps_log",
+    "rows": 510,
+    "players": 510,
+    "n_features": 62,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "moving_frac",
+      "mean_kce",
+      "max_kce",
+      "mean_dbr",
+      "max_dbr",
+      "mean_cut_turn_deg",
+      "max_cut_turn_deg",
+      "mean_speed_retention",
+      "mean_decel_peak",
+      "mean_burst_peak",
+      "n_frames",
+      "stop_count",
+      "start_count",
+      "duration_s",
+      "n_cuts",
+      "n_inside",
+      "n_outside",
+      "n_sessions",
+      "draft_year_x",
+      "n_inside_cuts",
+      "mean_kce_inside",
+      "mean_dbr_inside",
+      "n_outside_cuts",
+      "mean_kce_outside",
+      "mean_dbr_outside",
+      "n_align_left",
+      "mean_kce_align_left",
+      "n_align_right",
+      "mean_kce_align_right",
+      "frac_breaks_outside",
+      "inside_outside_kce_gap",
+      "draft_year_y",
+      "combine_height",
+      "combine_weight",
+      "hand_size",
+      "arm_length",
+      "wing_span",
+      "ten_yd_split",
+      "forty",
+      "vertical",
+      "broad_jump",
+      "three_cone",
+      "short_shuttle",
+      "bench_reps",
+      "ngs_athleticism_score",
+      "ngs_college_production_score",
+      "ngs_final_score"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.597917,
+            "mae": 1.180648,
+            "rmse": 1.95189,
+            "spearman": 0.760237,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.5633,
+              0.6062,
+              0.5136,
+              0.7178,
+              0.5668
+            ],
+            "fold_mae": [
+              1.2487,
+              1.2144,
+              1.2198,
+              0.9519,
+              1.2685
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "lateral_displacement": 203.2,
+              "ngs_final_score": 193.0,
+              "frac_above_80pct_peak": 168.2,
+              "mean_dbr_inside": 152.0,
+              "mean_speed_retention": 141.8,
+              "ngs_college_production_score": 139.4,
+              "mean_kce_align_right": 139.2,
+              "n_frames": 136.6,
+              "time_to_peak_speed": 136.4,
+              "max_dbr": 135.0,
+              "max_kce": 134.6,
+              "arm_length": 133.2,
+              "mean_burst_peak": 132.6,
+              "mean_decel_peak": 130.8,
+              "wing_span": 129.4,
+              "moving_frac": 124.6,
+              "mean_turn_rate": 123.2,
+              "peak_decel": 120.4,
+              "mean_speed": 117.2,
+              "mean_dbr": 110.8,
+              "combine_height": 110.0,
+              "mean_kce_inside": 109.2,
+              "path_efficiency": 104.4,
+              "vertical": 101.4,
+              "peak_accel": 100.8
+            }
+          },
+          "hist_gb": {
+            "r2": 0.570034,
+            "mae": 1.204217,
+            "rmse": 2.018433,
+            "spearman": 0.746376,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.5191,
+              0.4848,
+              0.5181,
+              0.6992,
+              0.6049
+            ],
+            "fold_mae": [
+              1.2448,
+              1.3843,
+              1.2139,
+              0.9599,
+              1.2181
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.004246,
+            "mae": 2.89142,
+            "rmse": 3.084734,
+            "spearman": -0.074356,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0055,
+              -0.0029,
+              -0.0073,
+              -0.008,
+              -0.0338
+            ],
+            "fold_mae": [
+              2.782,
+              2.9227,
+              2.8214,
+              2.9282,
+              3.0028
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.137176,
+            "mae": 2.884888,
+            "rmse": 3.282551,
+            "spearman": 0.06228,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.1636,
+              -0.1015,
+              -0.151,
+              -0.1927,
+              -0.1064
+            ],
+            "fold_mae": [
+              2.8297,
+              2.8218,
+              2.923,
+              3.0646,
+              2.7853
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "mean_speed_retention": 199.8,
+              "peak_accel": 193.4,
+              "max_dbr": 178.6,
+              "frac_above_80pct_peak": 175.4,
+              "time_to_peak_speed": 160.2,
+              "mean_burst_peak": 158.8,
+              "arm_length": 151.4,
+              "lateral_displacement": 151.2,
+              "peak_decel": 148.8,
+              "moving_frac": 146.6,
+              "hand_size": 137.6,
+              "max_cut_turn_deg": 137.0,
+              "ngs_college_production_score": 134.2,
+              "max_speed": 132.6,
+              "combine_height": 132.2,
+              "mean_turn_rate": 130.4,
+              "mean_dbr": 129.2,
+              "max_turn_rate": 125.6,
+              "mean_jerk": 123.4,
+              "n_frames": 123.4,
+              "wing_span": 123.4,
+              "mean_decel_peak": 121.4,
+              "path_efficiency": 119.8,
+              "p95_jerk": 116.8,
+              "ngs_athleticism_score": 116.2
+            }
+          }
+        }
+      }
+    },
+    "name": "career_snaps_log",
+    "seconds": 14.0
+  },
+  "player_mean_yac": {
+    "target": "player_mean_yac",
+    "rows": 122,
+    "players": 122,
+    "n_features": 62,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "moving_frac",
+      "mean_kce",
+      "max_kce",
+      "mean_dbr",
+      "max_dbr",
+      "mean_cut_turn_deg",
+      "max_cut_turn_deg",
+      "mean_speed_retention",
+      "mean_decel_peak",
+      "mean_burst_peak",
+      "n_frames",
+      "stop_count",
+      "start_count",
+      "duration_s",
+      "n_cuts",
+      "n_inside",
+      "n_outside",
+      "n_sessions",
+      "draft_year_x",
+      "n_inside_cuts",
+      "mean_kce_inside",
+      "mean_dbr_inside",
+      "n_outside_cuts",
+      "mean_kce_outside",
+      "mean_dbr_outside",
+      "n_align_left",
+      "mean_kce_align_left",
+      "n_align_right",
+      "mean_kce_align_right",
+      "frac_breaks_outside",
+      "inside_outside_kce_gap",
+      "draft_year_y",
+      "combine_height",
+      "combine_weight",
+      "hand_size",
+      "arm_length",
+      "wing_span",
+      "ten_yd_split",
+      "forty",
+      "vertical",
+      "broad_jump",
+      "three_cone",
+      "short_shuttle",
+      "bench_reps",
+      "ngs_athleticism_score",
+      "ngs_college_production_score",
+      "ngs_final_score"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": -0.11047,
+            "mae": 1.312912,
+            "rmse": 1.716431,
+            "spearman": 0.19261,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0533,
+              -0.2852,
+              -0.5922,
+              -0.0902,
+              -0.0892
+            ],
+            "fold_mae": [
+              1.4826,
+              1.2795,
+              1.2245,
+              1.1004,
+              1.4719
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "time_to_peak_speed": 340.2,
+              "peak_accel": 295.8,
+              "mean_speed_retention": 293.2,
+              "mean_dbr_inside": 289.8,
+              "moving_frac": 147.6,
+              "max_dbr": 141.6,
+              "ngs_athleticism_score": 138.8,
+              "vertical": 136.8,
+              "n_frames": 132.4,
+              "arm_length": 122.8,
+              "mean_kce_align_right": 121.6,
+              "mean_dbr": 121.2,
+              "lateral_displacement": 116.8,
+              "combine_height": 115.0,
+              "mean_kce_inside": 113.8,
+              "mean_decel_peak": 111.2,
+              "peak_decel": 106.6,
+              "mean_turn_rate": 103.6,
+              "ngs_college_production_score": 103.4,
+              "max_cut_turn_deg": 100.6,
+              "mean_speed": 100.0,
+              "ngs_final_score": 99.0,
+              "max_turn_rate": 93.6,
+              "frac_above_80pct_peak": 91.4,
+              "mean_kce": 88.2
+            }
+          },
+          "hist_gb": {
+            "r2": -0.116331,
+            "mae": 1.341905,
+            "rmse": 1.720954,
+            "spearman": 0.180043,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.1107,
+              -0.2874,
+              -0.8154,
+              -0.095,
+              -0.0747
+            ],
+            "fold_mae": [
+              1.4393,
+              1.2755,
+              1.4012,
+              1.0562,
+              1.536
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.016477,
+            "mae": 1.28307,
+            "rmse": 1.642183,
+            "spearman": -0.110754,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0098,
+              -0.0059,
+              -0.0022,
+              -0.3131,
+              -0.026
+            ],
+            "fold_mae": [
+              1.5793,
+              1.0838,
+              0.939,
+              1.2966,
+              1.5127
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.32067,
+            "mae": 1.477065,
+            "rmse": 1.871845,
+            "spearman": -0.061874,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.2478,
+              -0.5432,
+              -0.5469,
+              -0.0997,
+              -0.5187
+            ],
+            "fold_mae": [
+              1.4164,
+              1.5025,
+              1.6745,
+              1.6285,
+              1.1648
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "ngs_athleticism_score": 288.0,
+              "mean_kce_outside": 237.8,
+              "mean_dbr_outside": 207.0,
+              "time_to_peak_speed": 205.6,
+              "mean_speed_retention": 205.2,
+              "mean_kce_align_right": 182.4,
+              "moving_frac": 161.8,
+              "inside_outside_kce_gap": 151.8,
+              "mean_decel_peak": 150.2,
+              "ngs_college_production_score": 148.2,
+              "ngs_final_score": 142.0,
+              "mean_dbr": 140.8,
+              "mean_burst_peak": 138.2,
+              "max_dbr": 123.4,
+              "mean_dbr_inside": 121.6,
+              "n_frames": 121.6,
+              "peak_accel": 114.0,
+              "lateral_displacement": 112.0,
+              "hand_size": 111.4,
+              "arm_length": 110.0,
+              "mean_kce_inside": 106.4,
+              "path_length": 102.8,
+              "max_turn_rate": 99.8,
+              "max_speed": 99.4,
+              "short_shuttle": 96.6
+            }
+          }
+        }
+      }
+    },
+    "name": "player_mean_yac",
+    "seconds": 5.5
+  },
+  "derived_sep_catch": {
+    "target": "derived_sep_catch",
+    "rows": 3159,
+    "players": 50,
+    "n_features": 128,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.012889,
+            "mae": 7.964931,
+            "rmse": 9.941754,
+            "spearman": 0.231488,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.031,
+              0.0637,
+              -0.1201,
+              -0.0067,
+              0.076
+            ],
+            "fold_mae": [
+              7.9885,
+              7.7319,
+              8.1378,
+              7.9613,
+              8.0074
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 556.2,
+              "a_long_at_pf": 486.4,
+              "max_turn_rate": 448.8,
+              "peak_decel": 420.4,
+              "lateral_displacement": 419.0,
+              "path_efficiency": 416.2,
+              "p95_jerk": 407.8,
+              "total_turn_deg": 401.4,
+              "frac_above_80pct_peak": 396.2,
+              "mean_turn_rate": 393.4,
+              "mean_jerk": 378.4,
+              "peak_accel": 375.8,
+              "mean_speed": 358.4,
+              "speed_at_pf": 352.4,
+              "release_burst": 303.8,
+              "moving_frac": 302.6,
+              "max_speed": 292.0,
+              "net_displacement": 271.2,
+              "path_length": 268.2,
+              "p95_speed": 247.0,
+              "yards_to_go": 221.4,
+              "time_to_peak_speed": 205.2,
+              "snap_to_pf_s": 198.6,
+              "quarter": 122.0,
+              "down": 103.2
+            }
+          },
+          "hist_gb": {
+            "r2": 0.010028,
+            "mae": 7.973783,
+            "rmse": 9.956151,
+            "spearman": 0.230063,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0439,
+              0.0858,
+              -0.1039,
+              -0.025,
+              0.0559
+            ],
+            "fold_mae": [
+              8.0286,
+              7.6742,
+              8.0822,
+              8.0638,
+              8.0223
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.007763,
+            "mae": 8.203832,
+            "rmse": 10.045219,
+            "spearman": -0.109199,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0252,
+              -0.0014,
+              -0.0234,
+              -0.0004,
+              -0.0562
+            ],
+            "fold_mae": [
+              8.2867,
+              8.1144,
+              8.1113,
+              7.9929,
+              8.5129
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.106405,
+            "mae": 8.600323,
+            "rmse": 10.525362,
+            "spearman": 0.016392,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0802,
+              -0.1355,
+              -0.0915,
+              -0.1298,
+              -0.1002
+            ],
+            "fold_mae": [
+              8.8736,
+              8.4999,
+              8.3936,
+              8.5519,
+              8.6824
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "a_long_at_pf": 526.0,
+              "cushion": 524.2,
+              "p95_jerk": 485.4,
+              "total_turn_deg": 443.4,
+              "lateral_displacement": 442.2,
+              "peak_decel": 441.4,
+              "max_turn_rate": 437.4,
+              "mean_jerk": 436.4,
+              "path_efficiency": 430.6,
+              "mean_turn_rate": 430.0,
+              "frac_above_80pct_peak": 423.6,
+              "moving_frac": 351.4,
+              "mean_speed": 331.2,
+              "speed_at_pf": 326.4,
+              "max_speed": 309.6,
+              "peak_accel": 298.8,
+              "path_length": 278.4,
+              "p95_speed": 276.8,
+              "release_burst": 275.0,
+              "net_displacement": 228.6,
+              "time_to_peak_speed": 217.8,
+              "yards_to_go": 212.2,
+              "snap_to_pf_s": 198.0,
+              "quarter": 122.2,
+              "cmb_mean_speed_retention": 85.6
+            }
+          }
+        }
+      }
+    },
+    "name": "derived_sep_catch",
+    "seconds": 16.0,
+    "validation_vs_official": {
+      "rows": 3159,
+      "pearson": 0.014078,
+      "spearman": 0.008527,
+      "derived_mean_yd": 17.614379,
+      "official_mean_yd": 3.221639,
+      "status": "REJECTED as target: catch-frame nearest *tracked* opponent fails validation against the official field"
+    },
+    "eligible_for_headline": false
+  },
+  "derived_sep_catch_validation_vs_official": {
+    "rows": 3159,
+    "pearson": 0.014078,
+    "spearman": 0.008527,
+    "derived_mean_yd": 17.614379,
+    "official_mean_yd": 3.221639,
+    "status": "REJECTED as target: catch-frame nearest *tracked* opponent fails validation against the official field"
+  },
+  "yards_after_catch": {
+    "target": "yards_after_catch",
+    "rows": 1259,
+    "players": 49,
+    "n_features": 127,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "stop_count",
+      "start_count",
+      "moving_frac",
+      "release_time_s",
+      "release_burst",
+      "speed_at_pf",
+      "a_long_at_pf",
+      "total_turn_deg",
+      "snap_to_pf_s",
+      "n_pre_pass_cuts",
+      "has_pre_pass_cut",
+      "mean_cut_turn_deg",
+      "mean_pre_pass_kce",
+      "mean_pre_pass_dbr",
+      "cmb_mean_speed",
+      "cmb_max_speed",
+      "cmb_p95_speed",
+      "cmb_time_to_peak_speed",
+      "cmb_frac_above_80pct_peak",
+      "cmb_peak_accel",
+      "cmb_peak_decel",
+      "cmb_mean_jerk",
+      "cmb_p95_jerk",
+      "cmb_mean_turn_rate",
+      "cmb_max_turn_rate",
+      "cmb_path_length",
+      "cmb_net_displacement",
+      "cmb_path_efficiency",
+      "cmb_lateral_displacement",
+      "cmb_moving_frac",
+      "cmb_mean_kce",
+      "cmb_max_kce",
+      "cmb_mean_dbr",
+      "cmb_max_dbr",
+      "cmb_mean_cut_turn_deg",
+      "cmb_max_cut_turn_deg",
+      "cmb_mean_speed_retention",
+      "cmb_mean_decel_peak",
+      "cmb_mean_burst_peak",
+      "cmb_n_frames",
+      "cmb_stop_count",
+      "cmb_start_count",
+      "cmb_duration_s",
+      "cmb_n_cuts",
+      "cmb_n_inside",
+      "cmb_n_outside",
+      "cmb_n_sessions",
+      "cmb_draft_year_x",
+      "cmb_n_inside_cuts",
+      "cmb_mean_kce_inside",
+      "cmb_mean_dbr_inside",
+      "cmb_n_outside_cuts",
+      "cmb_mean_kce_outside",
+      "cmb_mean_dbr_outside",
+      "cmb_n_align_left",
+      "cmb_mean_kce_align_left",
+      "cmb_n_align_right",
+      "cmb_mean_kce_align_right",
+      "cmb_frac_breaks_outside",
+      "cmb_inside_outside_kce_gap",
+      "cmb_draft_year_y",
+      "cmb_combine_height",
+      "cmb_combine_weight",
+      "cmb_hand_size",
+      "cmb_arm_length",
+      "cmb_wing_span",
+      "cmb_ten_yd_split",
+      "cmb_forty",
+      "cmb_vertical",
+      "cmb_broad_jump",
+      "cmb_three_cone",
+      "cmb_short_shuttle",
+      "cmb_bench_reps",
+      "cmb_ngs_athleticism_score",
+      "cmb_ngs_college_production_score",
+      "cmb_ngs_final_score",
+      "cushion",
+      "route_ran",
+      "receiver_alignment",
+      "in_motion_at_ball_snap",
+      "down",
+      "yards_to_go",
+      "quarter",
+      "play_direction",
+      "offense_formation",
+      "lined_up_position",
+      "position_group"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": -0.058163,
+            "mae": 4.605008,
+            "rmse": 6.96023,
+            "spearman": 0.219669,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0189,
+              -0.161,
+              -0.1212,
+              0.003,
+              -0.0559
+            ],
+            "fold_mae": [
+              4.7752,
+              5.029,
+              4.6298,
+              4.4015,
+              4.1879
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 299.4,
+              "peak_decel": 239.0,
+              "lateral_displacement": 225.2,
+              "a_long_at_pf": 219.4,
+              "frac_above_80pct_peak": 215.4,
+              "path_efficiency": 211.4,
+              "mean_jerk": 207.8,
+              "p95_jerk": 197.8,
+              "peak_accel": 195.4,
+              "max_turn_rate": 187.2,
+              "speed_at_pf": 186.8,
+              "total_turn_deg": 160.8,
+              "mean_speed": 158.8,
+              "mean_turn_rate": 154.4,
+              "moving_frac": 146.8,
+              "max_speed": 140.4,
+              "release_burst": 133.6,
+              "yards_to_go": 132.0,
+              "path_length": 124.2,
+              "time_to_peak_speed": 116.6,
+              "snap_to_pf_s": 104.0,
+              "net_displacement": 102.0,
+              "p95_speed": 85.2,
+              "quarter": 66.6,
+              "down": 59.4
+            }
+          },
+          "hist_gb": {
+            "r2": -0.086083,
+            "mae": 4.639502,
+            "rmse": 7.051456,
+            "spearman": 0.218533,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0782,
+              -0.1429,
+              -0.1534,
+              -0.0238,
+              -0.0986
+            ],
+            "fold_mae": [
+              4.9841,
+              5.0473,
+              4.7134,
+              4.3067,
+              4.1441
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.00851,
+            "mae": 4.63044,
+            "rmse": 6.794968,
+            "spearman": -0.156535,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.01,
+              -0.0229,
+              -0.0786,
+              -0.0021,
+              -0.0027
+            ],
+            "fold_mae": [
+              4.6426,
+              4.8347,
+              5.0371,
+              4.3963,
+              4.2399
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.125746,
+            "mae": 4.967337,
+            "rmse": 7.17906,
+            "spearman": 0.028059,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0771,
+              -0.088,
+              -0.1115,
+              -0.1136,
+              -0.3434
+            ],
+            "fold_mae": [
+              4.5726,
+              5.3721,
+              4.6617,
+              5.1874,
+              5.0431
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "peak_decel": 258.2,
+              "a_long_at_pf": 247.6,
+              "max_turn_rate": 244.6,
+              "cushion": 231.2,
+              "mean_turn_rate": 229.2,
+              "p95_jerk": 221.0,
+              "total_turn_deg": 218.2,
+              "path_efficiency": 203.2,
+              "mean_jerk": 199.2,
+              "peak_accel": 190.8,
+              "frac_above_80pct_peak": 180.2,
+              "lateral_displacement": 175.8,
+              "release_burst": 173.0,
+              "speed_at_pf": 159.6,
+              "max_speed": 142.0,
+              "mean_speed": 139.8,
+              "path_length": 134.2,
+              "moving_frac": 128.4,
+              "net_displacement": 121.4,
+              "quarter": 105.8,
+              "time_to_peak_speed": 100.0,
+              "snap_to_pf_s": 93.6,
+              "yards_to_go": 91.4,
+              "p95_speed": 70.6,
+              "release_time_s": 58.2
+            }
+          }
+        }
+      },
+      "by_game_play": {
+        "models": {
+          "lightgbm": {
+            "r2": 0.045722,
+            "mae": 4.289666,
+            "rmse": 6.609745,
+            "spearman": 0.356531,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0507,
+              -0.0091,
+              0.0019,
+              0.1552,
+              0.0322
+            ],
+            "fold_mae": [
+              4.7362,
+              4.3219,
+              4.4007,
+              3.7315,
+              4.258
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "cushion": 265.6,
+              "a_long_at_pf": 228.8,
+              "lateral_displacement": 220.6,
+              "peak_decel": 219.8,
+              "path_efficiency": 212.0,
+              "frac_above_80pct_peak": 212.0,
+              "speed_at_pf": 190.2,
+              "mean_turn_rate": 186.4,
+              "p95_jerk": 184.4,
+              "peak_accel": 180.8,
+              "mean_jerk": 177.6,
+              "max_turn_rate": 175.0,
+              "total_turn_deg": 160.8,
+              "mean_speed": 142.2,
+              "max_speed": 141.4,
+              "moving_frac": 137.2,
+              "release_burst": 128.4,
+              "time_to_peak_speed": 121.8,
+              "yards_to_go": 115.6,
+              "net_displacement": 114.0,
+              "path_length": 113.8,
+              "snap_to_pf_s": 96.4,
+              "p95_speed": 90.0,
+              "quarter": 69.0,
+              "cmb_time_to_peak_speed": 63.2
+            }
+          },
+          "hist_gb": {
+            "r2": 0.024813,
+            "mae": 4.347672,
+            "rmse": 6.681767,
+            "spearman": 0.331928,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0324,
+              -0.0807,
+              0.0437,
+              0.11,
+              0.0072
+            ],
+            "fold_mae": [
+              4.8035,
+              4.5295,
+              4.3351,
+              3.7625,
+              4.3075
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.002088,
+            "mae": 4.597783,
+            "rmse": 6.773299,
+            "spearman": -0.045705,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0133,
+              -0.0009,
+              -0.0009,
+              -0.0103,
+              -0.0
+            ],
+            "fold_mae": [
+              4.9091,
+              4.5998,
+              4.4543,
+              4.4384,
+              4.5873
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.145012,
+            "mae": 4.943915,
+            "rmse": 7.240232,
+            "spearman": 0.031493,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.1738,
+              -0.1149,
+              -0.4712,
+              -0.0685,
+              -0.1167
+            ],
+            "fold_mae": [
+              4.7336,
+              5.21,
+              4.4974,
+              4.9698,
+              5.3102
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "cushion": 243.0,
+              "max_turn_rate": 242.0,
+              "peak_decel": 228.8,
+              "a_long_at_pf": 227.0,
+              "mean_turn_rate": 225.2,
+              "peak_accel": 205.2,
+              "path_efficiency": 202.2,
+              "p95_jerk": 201.6,
+              "total_turn_deg": 199.2,
+              "lateral_displacement": 189.2,
+              "mean_jerk": 183.8,
+              "frac_above_80pct_peak": 182.6,
+              "speed_at_pf": 167.8,
+              "release_burst": 160.8,
+              "moving_frac": 140.0,
+              "mean_speed": 131.0,
+              "path_length": 126.2,
+              "max_speed": 122.4,
+              "net_displacement": 105.0,
+              "snap_to_pf_s": 103.2,
+              "quarter": 100.8,
+              "yards_to_go": 90.6,
+              "time_to_peak_speed": 89.4,
+              "p95_speed": 64.2,
+              "release_time_s": 60.4
+            }
+          }
+        }
+      }
+    },
+    "name": "yards_after_catch",
+    "seconds": 30.5
+  },
+  "legacy_player_features_on_play_target": {
+    "target": "separation_at_pass_forward",
+    "rows": 46737,
+    "players": 156,
+    "n_features": 62,
+    "feature_columns": [
+      "mean_speed",
+      "max_speed",
+      "p95_speed",
+      "time_to_peak_speed",
+      "frac_above_80pct_peak",
+      "peak_accel",
+      "peak_decel",
+      "mean_jerk",
+      "p95_jerk",
+      "mean_turn_rate",
+      "max_turn_rate",
+      "path_length",
+      "net_displacement",
+      "path_efficiency",
+      "lateral_displacement",
+      "moving_frac",
+      "mean_kce",
+      "max_kce",
+      "mean_dbr",
+      "max_dbr",
+      "mean_cut_turn_deg",
+      "max_cut_turn_deg",
+      "mean_speed_retention",
+      "mean_decel_peak",
+      "mean_burst_peak",
+      "n_frames",
+      "stop_count",
+      "start_count",
+      "duration_s",
+      "n_cuts",
+      "n_inside",
+      "n_outside",
+      "n_sessions",
+      "draft_year_x",
+      "n_inside_cuts",
+      "mean_kce_inside",
+      "mean_dbr_inside",
+      "n_outside_cuts",
+      "mean_kce_outside",
+      "mean_dbr_outside",
+      "n_align_left",
+      "mean_kce_align_left",
+      "n_align_right",
+      "mean_kce_align_right",
+      "frac_breaks_outside",
+      "inside_outside_kce_gap",
+      "draft_year_y",
+      "combine_height",
+      "combine_weight",
+      "hand_size",
+      "arm_length",
+      "wing_span",
+      "ten_yd_split",
+      "forty",
+      "vertical",
+      "broad_jump",
+      "three_cone",
+      "short_shuttle",
+      "bench_reps",
+      "ngs_athleticism_score",
+      "ngs_college_production_score",
+      "ngs_final_score"
+    ],
+    "groupings": {
+      "by_player": {
+        "models": {
+          "lightgbm": {
+            "r2": -0.002742,
+            "mae": 1.684431,
+            "rmse": 2.142614,
+            "spearman": 0.037733,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              0.0005,
+              -0.0034,
+              -0.0018,
+              -0.0076,
+              -0.008
+            ],
+            "fold_mae": [
+              1.6146,
+              1.6636,
+              1.6787,
+              1.7179,
+              1.7473
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false,
+            "importance": {
+              "mean_speed": 1509.8,
+              "max_speed": 901.0,
+              "time_to_peak_speed": 749.0,
+              "moving_frac": 451.6,
+              "peak_accel": 443.8,
+              "short_shuttle": 356.0,
+              "path_length": 352.6,
+              "lateral_displacement": 346.0,
+              "mean_kce_align_right": 346.0,
+              "combine_weight": 331.8,
+              "frac_above_80pct_peak": 309.8,
+              "p95_speed": 273.4,
+              "mean_dbr_inside": 268.6,
+              "mean_speed_retention": 228.6,
+              "combine_height": 226.8,
+              "ngs_athleticism_score": 223.6,
+              "peak_decel": 213.4,
+              "mean_kce_align_left": 205.4,
+              "arm_length": 202.2,
+              "ngs_final_score": 201.0,
+              "inside_outside_kce_gap": 193.0,
+              "path_efficiency": 191.2,
+              "broad_jump": 185.4,
+              "max_dbr": 172.8,
+              "mean_kce_outside": 169.4
+            }
+          },
+          "hist_gb": {
+            "r2": 0.000598,
+            "mae": 1.680839,
+            "rmse": 2.139043,
+            "spearman": 0.043381,
+            "kind": "hist_gb",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0012,
+              -0.0047,
+              0.0055,
+              -0.0024,
+              -0.0017
+            ],
+            "fold_mae": [
+              1.6294,
+              1.6564,
+              1.6686,
+              1.725,
+              1.7248
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          }
+        },
+        "baselines": {
+          "mean_dummy": {
+            "r2": -0.000849,
+            "mae": 1.688107,
+            "rmse": 2.140591,
+            "spearman": -0.031991,
+            "kind": "mean",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0034,
+              -0.0011,
+              -0.0003,
+              -0.0061,
+              -0.0006
+            ],
+            "fold_mae": [
+              1.6447,
+              1.6634,
+              1.6788,
+              1.7202,
+              1.7335
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": false
+          },
+          "shuffled_label_null": {
+            "r2": -0.003009,
+            "mae": 1.694905,
+            "rmse": 2.1429,
+            "spearman": 0.000704,
+            "kind": "lightgbm",
+            "n_splits": 5,
+            "fold_r2": [
+              -0.0042,
+              -0.0032,
+              -0.0027,
+              -0.003,
+              -0.0021
+            ],
+            "fold_mae": [
+              1.7003,
+              1.7152,
+              1.6863,
+              1.7002,
+              1.6727
+            ],
+            "oof": null,
+            "y_true": null,
+            "shuffled_labels": true,
+            "importance": {
+              "mean_speed": 1323.4,
+              "time_to_peak_speed": 716.6,
+              "max_speed": 626.2,
+              "mean_kce_align_right": 530.6,
+              "peak_accel": 481.8,
+              "moving_frac": 470.6,
+              "lateral_displacement": 459.0,
+              "short_shuttle": 382.4,
+              "frac_above_80pct_peak": 374.4,
+              "combine_weight": 277.4,
+              "ngs_athleticism_score": 245.4,
+              "mean_speed_retention": 220.6,
+              "ngs_final_score": 216.4,
+              "broad_jump": 215.8,
+              "vertical": 213.8,
+              "mean_dbr_inside": 211.4,
+              "mean_kce_align_left": 209.4,
+              "inside_outside_kce_gap": 207.8,
+              "forty": 198.6,
+              "peak_decel": 192.0,
+              "mean_dbr": 190.6,
+              "wing_span": 188.6,
+              "max_dbr": 184.4,
+              "ngs_college_production_score": 184.4,
+              "max_kce": 183.8
+            }
+          }
+        }
+      }
+    },
+    "name": "legacy_player_features_on_play_target",
+    "seconds": 20.0
+  },
+  "headline": {
+    "target": "sep_gain::by_game_play",
+    "oof_r2": 0.6561,
+    "prior_run": {
+      "oof_r2": 0.0355,
+      "mae": 1.6352,
+      "rows": 5006995,
+      "note": "previous run: player-level features against a play-level target"
+    },
+    "improvement_over_prior_r2": 18.48,
+    "headline_note": "selected by measured OOF R2 among validated official targets. sep_gain = separation_at_pass_forward - cushion and `cushion` is also a feature, so part of its score is algebraic: with-cushion R2=0.656062 vs without-cushion R2=0.107383 (sep_gain_no_cushion). The pure official target sep_at_pass_forward (no algebraic overlap) is reported separately and is the target statement used in WRITEUP.md."
+  },
+  "primary_real_target": {
+    "target": "separation_at_pass_forward",
+    "statement": "official player_play field, play level: pre-pass route kinematics + pre-snap context + combine athleticism, GroupKFold OOF",
+    "scores": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.261273,
+          "mae": 1.409154,
+          "spearman": 0.467757
+        },
+        "hist_gb": {
+          "r2": 0.263278,
+          "mae": 1.408852,
+          "spearman": 0.467767
+        },
+        "mean_dummy": {
+          "r2": -0.000593,
+          "mae": 1.706393,
+          "spearman": -0.021725
+        },
+        "shuffled_label_null": {
+          "r2": -0.05702,
+          "mae": 1.754819,
+          "spearman": 0.002119
+        }
+      },
+      "by_game_play": {
+        "lightgbm": {
+          "r2": 0.282029,
+          "mae": 1.386365,
+          "spearman": 0.490069
+        },
+        "hist_gb": {
+          "r2": 0.278585,
+          "mae": 1.393583,
+          "spearman": 0.484517
+        },
+        "mean_dummy": {
+          "r2": -0.000176,
+          "mae": 1.70599,
+          "spearman": -0.014169
+        },
+        "shuffled_label_null": {
+          "r2": -0.065621,
+          "mae": 1.753308,
+          "spearman": 0.004871
+        }
+      }
+    }
+  },
+  "summary_table": {
+    "sep_at_pass_forward": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.261273,
+          "mae": 1.409154,
+          "spearman": 0.467757
+        },
+        "hist_gb": {
+          "r2": 0.263278,
+          "mae": 1.408852,
+          "spearman": 0.467767
+        },
+        "mean_dummy": {
+          "r2": -0.000593,
+          "mae": 1.706393,
+          "spearman": -0.021725
+        },
+        "shuffled_label_null": {
+          "r2": -0.05702,
+          "mae": 1.754819,
+          "spearman": 0.002119
+        }
+      },
+      "by_game_play": {
+        "lightgbm": {
+          "r2": 0.282029,
+          "mae": 1.386365,
+          "spearman": 0.490069
+        },
+        "hist_gb": {
+          "r2": 0.278585,
+          "mae": 1.393583,
+          "spearman": 0.484517
+        },
+        "mean_dummy": {
+          "r2": -0.000176,
+          "mae": 1.70599,
+          "spearman": -0.014169
+        },
+        "shuffled_label_null": {
+          "r2": -0.065621,
+          "mae": 1.753308,
+          "spearman": 0.004871
+        }
+      }
+    },
+    "sep_at_pass_forward_kinematics_only": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.1155,
+          "mae": 1.590087,
+          "spearman": 0.257771
+        },
+        "hist_gb": {
+          "r2": 0.113394,
+          "mae": 1.592957,
+          "spearman": 0.25076
+        },
+        "mean_dummy": {
+          "r2": -0.000593,
+          "mae": 1.706393,
+          "spearman": -0.021725
+        },
+        "shuffled_label_null": {
+          "r2": -0.057559,
+          "mae": 1.754565,
+          "spearman": 0.010666
+        }
+      }
+    },
+    "sep_at_pass_forward_presnap_only": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.092715,
+          "mae": 1.581315,
+          "spearman": 0.338875
+        },
+        "hist_gb": {
+          "r2": 0.086114,
+          "mae": 1.583286,
+          "spearman": 0.337717
+        },
+        "mean_dummy": {
+          "r2": -0.000593,
+          "mae": 1.706393,
+          "spearman": -0.021725
+        },
+        "shuffled_label_null": {
+          "r2": -0.055564,
+          "mae": 1.748396,
+          "spearman": -0.005922
+        }
+      }
+    },
+    "player_mean_sep": {
+      "by_player": {
+        "lightgbm": {
+          "r2": -0.071727,
+          "mae": 0.351907,
+          "spearman": 0.22487
+        },
+        "hist_gb": {
+          "r2": -0.100565,
+          "mae": 0.356542,
+          "spearman": 0.23072
+        },
+        "mean_dummy": {
+          "r2": -0.02677,
+          "mae": 0.347379,
+          "spearman": -0.150526
+        },
+        "shuffled_label_null": {
+          "r2": -0.208397,
+          "mae": 0.380878,
+          "spearman": 0.123717
+        }
+      }
+    },
+    "player_mean_sep_preregistered": {
+      "by_player": {
+        "lightgbm": {
+          "r2": -0.126259,
+          "mae": 0.354388,
+          "spearman": 0.300716
+        },
+        "hist_gb": {
+          "r2": -0.237384,
+          "mae": 0.365294,
+          "spearman": 0.275146
+        },
+        "mean_dummy": {
+          "r2": -0.02677,
+          "mae": 0.347379,
+          "spearman": -0.150526
+        },
+        "shuffled_label_null": {
+          "r2": -0.394531,
+          "mae": 0.416305,
+          "spearman": -0.063151
+        }
+      }
+    },
+    "sep_gain": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.64633,
+          "mae": 1.377637,
+          "spearman": 0.818473
+        },
+        "hist_gb": {
+          "r2": 0.647126,
+          "mae": 1.374418,
+          "spearman": 0.819805
+        },
+        "mean_dummy": {
+          "r2": -0.000682,
+          "mae": 2.48809,
+          "spearman": -0.032589
+        },
+        "shuffled_label_null": {
+          "r2": -0.052669,
+          "mae": 2.540845,
+          "spearman": 0.014954
+        }
+      },
+      "by_game_play": {
+        "lightgbm": {
+          "r2": 0.656062,
+          "mae": 1.35029,
+          "spearman": 0.825441
+        },
+        "hist_gb": {
+          "r2": 0.657571,
+          "mae": 1.351309,
+          "spearman": 0.827166
+        },
+        "mean_dummy": {
+          "r2": -9.4e-05,
+          "mae": 2.487101,
+          "spearman": -0.009036
+        },
+        "shuffled_label_null": {
+          "r2": -0.063411,
+          "mae": 2.557569,
+          "spearman": 0.006383
+        }
+      }
+    },
+    "sep_gain_no_cushion": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.075556,
+          "mae": 2.279233,
+          "spearman": 0.318015
+        },
+        "hist_gb": {
+          "r2": 0.079262,
+          "mae": 2.268578,
+          "spearman": 0.327453
+        },
+        "mean_dummy": {
+          "r2": -0.000682,
+          "mae": 2.48809,
+          "spearman": -0.032589
+        },
+        "shuffled_label_null": {
+          "r2": -0.060182,
+          "mae": 2.548962,
+          "spearman": 0.002728
+        }
+      },
+      "by_game_play": {
+        "lightgbm": {
+          "r2": 0.107383,
+          "mae": 2.238316,
+          "spearman": 0.355848
+        },
+        "hist_gb": {
+          "r2": 0.109905,
+          "mae": 2.228496,
+          "spearman": 0.360204
+        },
+        "mean_dummy": {
+          "r2": -9.4e-05,
+          "mae": 2.487101,
+          "spearman": -0.009036
+        },
+        "shuffled_label_null": {
+          "r2": -0.066865,
+          "mae": 2.560128,
+          "spearman": 0.002521
+        }
+      }
+    },
+    "derived_sep_pf": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.050173,
+          "mae": 7.119768,
+          "spearman": 0.260776
+        },
+        "hist_gb": {
+          "r2": 0.053088,
+          "mae": 7.135916,
+          "spearman": 0.262905
+        },
+        "mean_dummy": {
+          "r2": -0.007826,
+          "mae": 7.493479,
+          "spearman": -0.111225
+        },
+        "shuffled_label_null": {
+          "r2": -0.109809,
+          "mae": 7.829614,
+          "spearman": -0.017498
+        }
+      }
+    },
+    "career_snaps_log": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.597917,
+          "mae": 1.180648,
+          "spearman": 0.760237
+        },
+        "hist_gb": {
+          "r2": 0.570034,
+          "mae": 1.204217,
+          "spearman": 0.746376
+        },
+        "mean_dummy": {
+          "r2": -0.004246,
+          "mae": 2.89142,
+          "spearman": -0.074356
+        },
+        "shuffled_label_null": {
+          "r2": -0.137176,
+          "mae": 2.884888,
+          "spearman": 0.06228
+        }
+      }
+    },
+    "player_mean_yac": {
+      "by_player": {
+        "lightgbm": {
+          "r2": -0.11047,
+          "mae": 1.312912,
+          "spearman": 0.19261
+        },
+        "hist_gb": {
+          "r2": -0.116331,
+          "mae": 1.341905,
+          "spearman": 0.180043
+        },
+        "mean_dummy": {
+          "r2": -0.016477,
+          "mae": 1.28307,
+          "spearman": -0.110754
+        },
+        "shuffled_label_null": {
+          "r2": -0.32067,
+          "mae": 1.477065,
+          "spearman": -0.061874
+        }
+      }
+    },
+    "derived_sep_catch": {
+      "by_player": {
+        "lightgbm": {
+          "r2": 0.012889,
+          "mae": 7.964931,
+          "spearman": 0.231488
+        },
+        "hist_gb": {
+          "r2": 0.010028,
+          "mae": 7.973783,
+          "spearman": 0.230063
+        },
+        "mean_dummy": {
+          "r2": -0.007763,
+          "mae": 8.203832,
+          "spearman": -0.109199
+        },
+        "shuffled_label_null": {
+          "r2": -0.106405,
+          "mae": 8.600323,
+          "spearman": 0.016392
+        }
+      }
+    },
+    "yards_after_catch": {
+      "by_player": {
+        "lightgbm": {
+          "r2": -0.058163,
+          "mae": 4.605008,
+          "spearman": 0.219669
+        },
+        "hist_gb": {
+          "r2": -0.086083,
+          "mae": 4.639502,
+          "spearman": 0.218533
+        },
+        "mean_dummy": {
+          "r2": -0.00851,
+          "mae": 4.63044,
+          "spearman": -0.156535
+        },
+        "shuffled_label_null": {
+          "r2": -0.125746,
+          "mae": 4.967337,
+          "spearman": 0.028059
+        }
+      },
+      "by_game_play": {
+        "lightgbm": {
+          "r2": 0.045722,
+          "mae": 4.289666,
+          "spearman": 0.356531
+        },
+        "hist_gb": {
+          "r2": 0.024813,
+          "mae": 4.347672,
+          "spearman": 0.331928
+        },
+        "mean_dummy": {
+          "r2": -0.002088,
+          "mae": 4.597783,
+          "spearman": -0.045705
+        },
+        "shuffled_label_null": {
+          "r2": -0.145012,
+          "mae": 4.943915,
+          "spearman": 0.031493
+        }
+      }
+    },
+    "legacy_player_features_on_play_target": {
+      "by_player": {
+        "lightgbm": {
+          "r2": -0.002742,
+          "mae": 1.684431,
+          "spearman": 0.037733
+        },
+        "hist_gb": {
+          "r2": 0.000598,
+          "mae": 1.680839,
+          "spearman": 0.043381
+        },
+        "mean_dummy": {
+          "r2": -0.000849,
+          "mae": 1.688107,
+          "spearman": -0.031991
+        },
+        "shuffled_label_null": {
+          "r2": -0.003009,
+          "mae": 1.694905,
+          "spearman": 0.000704
+        }
+      }
+    }
+  },
+  "learning_curve": [
+    {
+      "frac": 0.2,
+      "groups": 1622,
+      "rows": 1752,
+      "r2": 0.6213,
+      "mae": 1.4145,
+      "spearman": 0.7961
+    },
+    {
+      "frac": 0.4,
+      "groups": 3243,
+      "rows": 3486,
+      "r2": 0.6453,
+      "mae": 1.3956,
+      "spearman": 0.8198
+    },
+    {
+      "frac": 0.6,
+      "groups": 4865,
+      "rows": 5239,
+      "r2": 0.6425,
+      "mae": 1.3768,
+      "spearman": 0.8149
+    },
+    {
+      "frac": 0.8,
+      "groups": 6486,
+      "rows": 6965,
+      "r2": 0.6511,
+      "mae": 1.3624,
+      "spearman": 0.8216
+    },
+    {
+      "frac": 1.0,
+      "groups": 8108,
+      "rows": 8715,
+      "r2": 0.6561,
+      "mae": 1.3503,
+      "spearman": 0.8254
+    }
+  ],
+  "per_position_breakdown": {
+    "by_player": {
+      "SKILL": {
+        "n": 8715,
+        "r2": 0.6463,
+        "mae": 1.3776,
+        "spearman": 0.8185
+      }
+    },
+    "by_game_play": {
+      "SKILL": {
+        "n": 8715,
+        "r2": 0.6561,
+        "mae": 1.3503,
+        "spearman": 0.8254
+      }
+    }
+  },
+  "mixed_effects": {
+    "player_random_intercept": {
+      "label": "player RI",
+      "converged": true,
+      "group_col": "nfl_id",
+      "vc": null,
+      "rows": 8697,
+      "groups": 50,
+      "reml": "REML",
+      "ml_refit": false,
+      "singular_random_effects": false,
+      "note": null,
+      "r2_fitted_insample": 0.203859,
+      "r2_fixed_effects_insample": 0.192909,
+      "loglike": -17939.49472,
+      "params": {
+        "Intercept": 1.630751,
+        "C(route_ran)[T.CROSS]": 0.378922,
+        "C(route_ran)[T.FLAT]": 1.606224,
+        "C(route_ran)[T.GO]": -0.362844,
+        "C(route_ran)[T.HITCH]": -0.042613,
+        "C(route_ran)[T.IN]": -0.123771,
+        "C(route_ran)[T.OUT]": -0.138753,
+        "C(route_ran)[T.POST]": -0.0974,
+        "C(route_ran)[T.SCREEN]": 3.088507,
+        "C(route_ran)[T.SLANT]": 0.033772,
+        "speed_at_pf": -0.085247,
+        "release_time_s": 0.115132,
+        "path_efficiency": -0.000857,
+        "max_speed": 0.112752,
+        "cushion": 0.192775,
+        "snap_to_pf_s": -0.049447,
+        "Group Var": 0.011111
+      },
+      "pvalues": {
+        "Intercept": 4e-06,
+        "C(route_ran)[T.CROSS]": 8.7e-05,
+        "C(route_ran)[T.FLAT]": 0.0,
+        "C(route_ran)[T.GO]": 4.4e-05,
+        "C(route_ran)[T.HITCH]": 0.676316,
+        "C(route_ran)[T.IN]": 0.225624,
+        "C(route_ran)[T.OUT]": 0.180402,
+        "C(route_ran)[T.POST]": 0.333932,
+        "C(route_ran)[T.SCREEN]": 0.0,
+        "C(route_ran)[T.SLANT]": 0.765061,
+        "speed_at_pf": 1.1e-05,
+        "release_time_s": 0.320513,
+        "path_efficiency": 0.997849,
+        "max_speed": 0.000282,
+        "cushion": 0.0,
+        "snap_to_pf_s": 0.120323,
+        "Group Var": 0.005053
+      },
+      "random_intercept_sd": 0.199593
+    },
+    "game_random_intercept": {
+      "label": "game RI",
+      "converged": true,
+      "group_col": "game_id",
+      "vc": null,
+      "rows": 8697,
+      "groups": 304,
+      "reml": "REML",
+      "ml_refit": false,
+      "singular_random_effects": false,
+      "note": null,
+      "r2_fitted_insample": 0.216919,
+      "r2_fixed_effects_insample": 0.192987,
+      "loglike": -17943.221253,
+      "params": {
+        "Intercept": 1.651169,
+        "C(route_ran)[T.CROSS]": 0.39796,
+        "C(route_ran)[T.FLAT]": 1.657509,
+        "C(route_ran)[T.GO]": -0.33504,
+        "C(route_ran)[T.HITCH]": -0.047869,
+        "C(route_ran)[T.IN]": -0.117728,
+        "C(route_ran)[T.OUT]": -0.131312,
+        "C(route_ran)[T.POST]": -0.082298,
+        "C(route_ran)[T.SCREEN]": 3.115584,
+        "C(route_ran)[T.SLANT]": 0.04217,
+        "speed_at_pf": -0.086357,
+        "release_time_s": 0.127991,
+        "path_efficiency": -0.048412,
+        "max_speed": 0.113796,
+        "cushion": 0.193511,
+        "snap_to_pf_s": -0.051586,
+        "Group Var": 0.018978
+      },
+      "pvalues": {
+        "Intercept": 3e-06,
+        "C(route_ran)[T.CROSS]": 3.6e-05,
+        "C(route_ran)[T.FLAT]": 0.0,
+        "C(route_ran)[T.GO]": 0.000152,
+        "C(route_ran)[T.HITCH]": 0.638808,
+        "C(route_ran)[T.IN]": 0.247689,
+        "C(route_ran)[T.OUT]": 0.204287,
+        "C(route_ran)[T.POST]": 0.41336,
+        "C(route_ran)[T.SCREEN]": 0.0,
+        "C(route_ran)[T.SLANT]": 0.708449,
+        "speed_at_pf": 8e-06,
+        "release_time_s": 0.266814,
+        "path_efficiency": 0.878914,
+        "max_speed": 0.000201,
+        "cushion": 0.0,
+        "snap_to_pf_s": 0.104493,
+        "Group Var": 1.6e-05
+      },
+      "random_intercept_sd": 0.259768
+    },
+    "player_plus_team_vc": {
+      "label": "player RI + team VC",
+      "converged": true,
+      "group_col": "nfl_id",
+      "vc": {
+        "team": "0 + C(team_abbr)"
+      },
+      "rows": 8697,
+      "groups": 50,
+      "reml": "REML",
+      "ml_refit": false,
+      "singular_random_effects": false,
+      "note": null,
+      "r2_fitted_insample": 0.203712,
+      "r2_fixed_effects_insample": 0.192912,
+      "loglike": -17939.82744,
+      "params": {
+        "Intercept": 1.626224,
+        "C(route_ran)[T.CROSS]": 0.379241,
+        "C(route_ran)[T.FLAT]": 1.606382,
+        "C(route_ran)[T.GO]": -0.362426,
+        "C(route_ran)[T.HITCH]": -0.042124,
+        "C(route_ran)[T.IN]": -0.123775,
+        "C(route_ran)[T.OUT]": -0.138135,
+        "C(route_ran)[T.POST]": -0.097324,
+        "C(route_ran)[T.SCREEN]": 3.089824,
+        "C(route_ran)[T.SLANT]": 0.034647,
+        "speed_at_pf": -0.085252,
+        "release_time_s": 0.116573,
+        "path_efficiency": 3.9e-05,
+        "max_speed": 0.112998,
+        "cushion": 0.192835,
+        "snap_to_pf_s": -0.049501,
+        "team Var": 0.010781
+      },
+      "pvalues": {
+        "Intercept": 4e-06,
+        "C(route_ran)[T.CROSS]": 8.6e-05,
+        "C(route_ran)[T.FLAT]": 0.0,
+        "C(route_ran)[T.GO]": 4.5e-05,
+        "C(route_ran)[T.HITCH]": 0.679835,
+        "C(route_ran)[T.IN]": 0.225655,
+        "C(route_ran)[T.OUT]": 0.18237,
+        "C(route_ran)[T.POST]": 0.334364,
+        "C(route_ran)[T.SCREEN]": 0.0,
+        "C(route_ran)[T.SLANT]": 0.759167,
+        "speed_at_pf": 1.1e-05,
+        "release_time_s": 0.314388,
+        "path_efficiency": 0.999902,
+        "max_speed": 0.000272,
+        "cushion": 0.0,
+        "snap_to_pf_s": 0.119938,
+        "team Var": 0.004949
+      },
+      "random_intercept_sd": NaN
+    },
+    "player_plus_game_vc": {
+      "label": "player RI + game VC",
+      "converged": true,
+      "group_col": "nfl_id",
+      "vc": {
+        "game": "0 + C(game_id)"
+      },
+      "rows": 8697,
+      "groups": 50,
+      "reml": "REML",
+      "ml_refit": false,
+      "singular_random_effects": false,
+      "note": null,
+      "r2_fitted_insample": 0.2756,
+      "r2_fixed_effects_insample": 0.192265,
+      "loglike": -19101.560721,
+      "params": {
+        "Intercept": 1.858886,
+        "C(route_ran)[T.CROSS]": 0.352873,
+        "C(route_ran)[T.FLAT]": 1.479041,
+        "C(route_ran)[T.GO]": -0.382327,
+        "C(route_ran)[T.HITCH]": -0.131582,
+        "C(route_ran)[T.IN]": -0.136976,
+        "C(route_ran)[T.OUT]": -0.185089,
+        "C(route_ran)[T.POST]": -0.129101,
+        "C(route_ran)[T.SCREEN]": 2.9683,
+        "C(route_ran)[T.SLANT]": -0.041903,
+        "speed_at_pf": -0.083963,
+        "release_time_s": 0.051677,
+        "path_efficiency": -0.007571,
+        "max_speed": 0.091031,
+        "cushion": 0.192682,
+        "snap_to_pf_s": -0.04303,
+        "game Var": 16.0
+      },
+      "pvalues": {
+        "Intercept": 4.3e-05,
+        "C(route_ran)[T.CROSS]": 0.000234,
+        "C(route_ran)[T.FLAT]": 0.0,
+        "C(route_ran)[T.GO]": 1.5e-05,
+        "C(route_ran)[T.HITCH]": 0.194821,
+        "C(route_ran)[T.IN]": 0.177424,
+        "C(route_ran)[T.OUT]": 0.071918,
+        "C(route_ran)[T.POST]": 0.196395,
+        "C(route_ran)[T.SCREEN]": 0.0,
+        "C(route_ran)[T.SLANT]": 0.709319,
+        "speed_at_pf": 1.3e-05,
+        "release_time_s": 0.668611,
+        "path_efficiency": 0.980936,
+        "max_speed": 0.003856,
+        "cushion": 0.0,
+        "snap_to_pf_s": 0.17514,
+        "game Var": NaN
+      },
+      "random_intercept_sd": NaN
+    },
+    "population_oof_by_player": {
+      "r2": 0.186858,
+      "mae": 1.467266,
+      "rmse": 1.90895,
+      "spearman": 0.401545,
+      "label": "mixedlm_population_oof_by_player",
+      "model": "mixedlm_population",
+      "group_col": "nfl_id",
+      "n_splits": 5,
+      "folds_converged": 5,
+      "folds_ml_refit": 0,
+      "folds_fallback": 0,
+      "errors": [],
+      "n_rows": 8697,
+      "oof": null
+    },
+    "kce_directional": {
+      "label": "cut-level KCE ~ angle + speed + alignment side",
+      "converged": false,
+      "group_col": "nfl_id",
+      "vc": null,
+      "rows": 5618,
+      "groups": 509,
+      "reml": "REML",
+      "ml_refit": false,
+      "singular_random_effects": false,
+      "note": null,
+      "r2_fitted_insample": 0.988059,
+      "r2_fixed_effects_insample": 0.98763,
+      "loglike": 11342.306712,
+      "params": {
+        "Intercept": 1.134159,
+        "C(align_side)[T.NONE]": -0.003014,
+        "C(align_side)[T.RIGHT]": 0.008009,
+        "cut_angle_deg": -0.006182,
+        "approach_speed": -0.001118,
+        "speed_retention": 0.012553,
+        "Group Var": 0.023415
+      },
+      "pvalues": {
+        "Intercept": 0.0,
+        "C(align_side)[T.NONE]": 0.232728,
+        "C(align_side)[T.RIGHT]": 0.003698,
+        "cut_angle_deg": 0.0,
+        "approach_speed": 0.146387,
+        "speed_retention": 0.0,
+        "Group Var": 0.007254
+      },
+      "random_intercept_sd": 0.004835
+    }
+  }
+}

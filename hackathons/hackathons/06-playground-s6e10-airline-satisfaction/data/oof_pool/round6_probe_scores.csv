@@ -1,0 +1,10 @@
+key,what,public_lb,note
+q1_ubar_r2,0.96206 file + 2.0 x fitted ascent (k=7-11 consensus),0.96203,
+q2_ubar_r05,0.96206 file + 0.5 x same direction (line-search peak),0.96206,
+q3_gate_3teach,"gated h-blend, teacher = (cdeotte176 + pugovkin183 + own stack)/3, w=0.30",0.96206,q2 or q3 lifted the team above Kirill 0.96206 on the LB (rank evidence)
+q4_gate_ours_td,"gated h-blend, teacher = (own stack + pugovkin183)/2, w=0.30",0.96206,
+q5_gate_ours_only,"gated h-blend, teacher = own stack only, w=0.30",0.96205,
+q6_gate_3teach_w35,"gated h-blend, teacher = 3 teachers equal, w=0.35",0.96206,
+q7_gate_3teach_w40,"gated h-blend, teacher = 3 teachers equal, w=0.40",0.96205,
+q8_gate_ours2_w35,"gated h-blend, teacher = (tc+td+2*own)/4, w=0.35",0.96206,
+q9_gate_ours3_w35,"gated h-blend, teacher = (tc+td+3*own)/5, w=0.35",0.96206,

@@ -1,0 +1,957 @@
+=== 2026-10-22T03:39:37Z PRO session pro7b-1792640377 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792640377'...
+[colab] Session READY.
+DNS ready -> 34.50.156.23
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T03:40:35Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     3.8s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[    75.3s] MODEL_INIT_ERROR ImportError('Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported')
+config.json:   0%|          | 0.00/684 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors: reconstructing file:   0%|          |  0.00B / 3.09GB        
+model.safetensors: downloading bytes:           |  0.00B            
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-1.5B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+[    90.9s] FALLBACK_INIT_ERROR ImportError('Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported')
+[0;31m---------------------------------------------------------------------------[0m[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_661/2055639972.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    120[0m     )
+[0;32m--> 121[0;31m     [0mmodel[0m [0;34m=[0m [0mget_peft_model[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mlcfg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    122[0m     [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py[0m in [0;36mget_peft_model[0;34m(model, peft_config, adapter_name, mixed, autocast_adapter_dtype, revision, low_cpu_mem_usage)[0m
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[0m[1;32m    199[0m         [0mmodel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, **kwargs)[0m
+[1;32m   1840[0m         [0;31m# config is relevant for this, the `modules_to_save` attribute can follow later.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1841[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1842[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage)[0m
+[1;32m    176[0m             [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m                 [0mself[0m[0;34m.[0m[0mbase_model[0m [0;34m=[0m [0mcls[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0;34m{[0m[0madapter_name[0m[0;34m:[0m [0mpeft_config[0m[0;34m}[0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, low_cpu_mem_usage, state_dict)[0m
+[1;32m    343[0m         [0;32mif[0m [0mpeft_config[0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m [0;32mor[0m [0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 344[0;31m             [0mself[0m[0;34m.[0m[0minject_adapter[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mlow_cpu_mem_usage[0m[0;34m=[0m[0mlow_cpu_mem_usage[0m[0;34m,[0m [0mstate_dict[0m[0;34m=[0m[0mstate_dict[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    345[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36minject_adapter[0;34m(self, model, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage, state_dict)[0m
+[1;32m    977[0m                     [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m                         self._create_and_replace(
+[0m[1;32m    979[0m                             [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mtarget_name[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0mcurrent_key[0m[0;34m=[0m[0mkey[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_and_replace[0;34m(self, lora_config, adapter_name, target, target_name, parent, current_key, parameter_name)[0m
+[1;32m    388[0m             [0mdevice_map[0m [0;34m=[0m [0mget_device_map[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 389[0;31m             [0mnew_module[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_create_new_module[0m[0;34m([0m[0mlora_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    390[0m             [0;32mif[0m [0madapter_name[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mactive_adapters[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_new_module[0;34m(lora_config, adapter_name, target, **kwargs)[0m
+[1;32m    551[0m         [0;32mfor[0m [0mdispatcher[0m [0;32min[0m [0mdispatchers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m             [0mnew_module[0m [0;34m=[0m [0mdispatcher[0m[0;34m([0m[0mtarget[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mlora_config[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0;32mif[0m [0mnew_module[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# first match wins[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py[0m in [0;36mdispatch_torchao[0;34m(target, adapter_name, config, **kwargs)[0m
+[1;32m    159[0m [0;34m[0m[0m
+[0;32m--> 160[0;31m     [0;32mif[0m [0;32mnot[0m [0mis_torchao_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    161[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/import_utils.py[0m in [0;36mis_torchao_available[0;34m()[0m
+[1;32m    161[0m     [0;32mif[0m [0mtorchao_version[0m [0;34m<[0m [0mTORCHAO_MINIMUM_VERSION[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 162[0;31m         raise ImportError(
+[0m[1;32m    163[0m             [0;34mf"Found an incompatible version of torchao. Found version {torchao_version}, "[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported
+During handling of the above exception, another exception occurred:
+[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_661/2055639972.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    137[0m         lcfg = LoraConfig(r=16, lora_alpha=32, lora_dropout=0.05, bias="none", task_type="SEQ_CLS",
+[1;32m    138[0m                           target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"])
+[0;32m--> 139[0;31m         [0mmodel[0m [0;34m=[0m [0mget_peft_model[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mlcfg[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    140[0m         [0mmodel[0m[0;34m.[0m[0mprint_trainable_parameters[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    141[0m         [0mmodel[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/mapping_func.py[0m in [0;36mget_peft_model[0;34m(model, peft_config, adapter_name, mixed, autocast_adapter_dtype, revision, low_cpu_mem_usage)[0m
+[1;32m    196[0m         )
+[1;32m    197[0m [0;34m[0m[0m
+[0;32m--> 198[0;31m     return MODEL_TYPE_TO_PEFT_MODEL_MAPPING[peft_config.task_type](
+[0m[1;32m    199[0m         [0mmodel[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    200[0m         [0mpeft_config[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, **kwargs)[0m
+[1;32m   1839[0m         [0;31m# will be used to guard the target layer matching against matching `modules_to_save` layers. Only the[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1840[0m         [0;31m# config is relevant for this, the `modules_to_save` attribute can follow later.[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1841[0;31m         [0msuper[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0m__init__[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1842[0m [0;34m[0m[0m
+[1;32m   1843[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mpeft_config[0m[0;34m,[0m [0;34m"modules_to_save"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage)[0m
+[1;32m    175[0m             [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    176[0m             [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 177[0;31m                 [0mself[0m[0;34m.[0m[0mbase_model[0m [0;34m=[0m [0mcls[0m[0;34m([0m[0mmodel[0m[0;34m,[0m [0;34m{[0m[0madapter_name[0m[0;34m:[0m [0mpeft_config[0m[0;34m}[0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    178[0m [0;34m[0m[0m
+[1;32m    179[0m         [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mbase_model[0m[0;34m,[0m [0;34m"_cast_adapter_dtype"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36m__init__[0;34m(self, model, peft_config, adapter_name, low_cpu_mem_usage, state_dict)[0m
+[1;32m    342[0m         [0mself[0m[0;34m.[0m[0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    343[0m         [0;32mif[0m [0mpeft_config[0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m [0;32mor[0m [0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m [0;34m!=[0m [0mPeftType[0m[0;34m.[0m[0mXLORA[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 344[0;31m             [0mself[0m[0;34m.[0m[0minject_adapter[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mlow_cpu_mem_usage[0m[0;34m=[0m[0mlow_cpu_mem_usage[0m[0;34m,[0m [0mstate_dict[0m[0;34m=[0m[0mstate_dict[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    345[0m [0;34m[0m[0m
+[1;32m    346[0m         [0mself[0m[0;34m.[0m[0m_post_injection_hook[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mpeft_config[0m[0;34m[[0m[0madapter_name[0m[0;34m][0m[0;34m,[0m [0madapter_name[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36minject_adapter[0;34m(self, model, adapter_name, autocast_adapter_dtype, low_cpu_mem_usage, state_dict)[0m
+[1;32m    976[0m                     [0mctx[0m [0;34m=[0m [0minit_empty_weights[0m [0;32mif[0m [0mlow_cpu_mem_usage[0m [0;32melse[0m [0mnullcontext[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    977[0m                     [0;32mwith[0m [0mctx[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 978[0;31m                         self._create_and_replace(
+[0m[1;32m    979[0m                             [0mpeft_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mtarget_name[0m[0;34m,[0m [0mparent[0m[0;34m,[0m [0mcurrent_key[0m[0;34m=[0m[0mkey[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    980[0m                         )
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_and_replace[0;34m(self, lora_config, adapter_name, target, target_name, parent, current_key, parameter_name)[0m
+[1;32m    387[0m                 )
+[1;32m    388[0m             [0mdevice_map[0m [0;34m=[0m [0mget_device_map[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mmodel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 389[0;31m             [0mnew_module[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_create_new_module[0m[0;34m([0m[0mlora_config[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mtarget[0m[0;34m,[0m [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    390[0m             [0;32mif[0m [0madapter_name[0m [0;32mnot[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mactive_adapters[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    391[0m                 [0;31m# adding an additional adapter: it is not automatically trainable[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/model.py[0m in [0;36m_create_new_module[0;34m(lora_config, adapter_name, target, **kwargs)[0m
+[1;32m    550[0m         [0mnew_module[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    551[0m         [0;32mfor[0m [0mdispatcher[0m [0;32min[0m [0mdispatchers[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 552[0;31m             [0mnew_module[0m [0;34m=[0m [0mdispatcher[0m[0;34m([0m[0mtarget[0m[0;34m,[0m [0madapter_name[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mlora_config[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    553[0m             [0;32mif[0m [0mnew_module[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m  [0;31m# first match wins[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    554[0m                 [0;32mbreak[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/lora/torchao.py[0m in [0;36mdispatch_torchao[0;34m(target, adapter_name, config, **kwargs)[0m
+[1;32m    158[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    159[0m [0;34m[0m[0m
+[0;32m--> 160[0;31m     [0;32mif[0m [0;32mnot[0m [0mis_torchao_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    161[0m         [0;32mreturn[0m [0mnew_module[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    162[0m [0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/import_utils.py[0m in [0;36mis_torchao_available[0;34m()[0m
+[1;32m    160[0m [0;34m[0m[0m
+[1;32m    161[0m     [0;32mif[0m [0mtorchao_version[0m [0;34m<[0m [0mTORCHAO_MINIMUM_VERSION[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 162[0;31m         raise ImportError(
+[0m[1;32m    163[0m             [0;34mf"Found an incompatible version of torchao. Found version {torchao_version}, "[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    164[0m             [0;34mf"but only versions above {TORCHAO_MINIMUM_VERSION} are supported"[0m[0;34m[0m[0;34m[0m[0m
+[0;31mImportError[0m: Found an incompatible version of torchao. Found version 0.10.0, but only versions above 0.16.0 are supported[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== EXEC DONE 2026-10-22T03:42:38Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'pro7b-1792640377'...
+[colab] Session terminated.
+=== finished 2026-10-22T03:42:50Z ===
+=== 2026-10-22T03:43:59Z PRO session pro7b-1792640639 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792640639'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T03:44:57Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+bitsandbytes 0.50.2
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.8s] rows 51989 prompts 7190 classes 18
+[     3.9s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors.index.json:   0%|          | 0.00/27.8k [00:00<?, ?B/s]
+Downloading bytes:           |  0.00B            
+Reconstructing (incomplete total...): |          |  0.00B /  0.00B            
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-7B
+Key            | Status     | 
+---------------+------------+-
+lm_head.weight | UNEXPECTED | 
+score.weight   | MISSING    | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 40,434,688 || all params: 7,111,118,336 || trainable%: 0.5686
+[    79.9s] model ready Qwen/Qwen2.5-7B mem 27271 MB
+[    79.9s]   subsampled train -> 11999 rows
+[    79.9s] === fold 0: train 11999 val 10346 opt_steps 374
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[0;31m---------------------------------------------------------------------------[0m[0;31mValueError[0m                                Traceback (most recent call last)[0;32m/tmp/ipykernel_1506/1893487681.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m    214[0m             [0mb[0m [0;34m=[0m [0;34m{[0m[0mk[0m[0;34m:[0m [0mv[0m[0;34m.[0m[0mcuda[0m[0;34m([0m[0;34m)[0m [0;32mfor[0m [0mk[0m[0;34m,[0m [0mv[0m [0;32min[0m [0mb[0m[0;34m.[0m[0mitems[0m[0;34m([0m[0;34m)[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    215[0m             [0;32mwith[0m [0mtorch[0m[0;34m.[0m[0mautocast[0m[0;34m([0m[0;34m"cuda"[0m[0;34m,[0m [0mdtype[0m[0;34m=[0m[0mtorch[0m[0;34m.[0m[0mbfloat16[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_bf16_supported[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0mtorch[0m[0;34m.[0m[0mfloat16[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 216[0;31m                 [0mout[0m [0;34m=[0m [0mmodel[0m[0;34m([0m[0;34m**[0m[0mb[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    217[0m             [0mloss[0m [0;34m=[0m [0mout[0m[0;34m.[0m[0mloss[0m [0;34m/[0m [0mACCUM[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    218[0m             [0;32mif[0m [0mscaler[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/peft_model.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, inputs_embeds, labels, output_attentions, output_hidden_states, return_dict, task_ids, **kwargs)[0m
+[1;32m   1920[0m                 [0;32mif[0m [0mpeft_config[0m[0;34m.[0m[0mpeft_type[0m [0;34m==[0m [0mPeftType[0m[0;34m.[0m[0mPOLY[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1921[0m                     [0mkwargs[0m[0;34m[[0m[0;34m"task_ids"[0m[0;34m][0m [0;34m=[0m [0mtask_ids[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1922[0;31m                 return self.base_model(
+[0m[1;32m   1923[0m                     [0minput_ids[0m[0;34m=[0m[0minput_ids[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1924[0m                     [0mattention_mask[0m[0;34m=[0m[0mattention_mask[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/peft/tuners/tuners_utils.py[0m in [0;36mforward[0;34m(self, *args, **kwargs)[0m
+[1;32m    357[0m [0;34m[0m[0m
+[1;32m    358[0m     [0;32mdef[0m [0mforward[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m:[0m [0mAny[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m:[0m [0mAny[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 359[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mmodel[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    360[0m [0;34m[0m[0m
+[1;32m    361[0m     [0;32mdef[0m [0m_pre_injection_hook[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmodel[0m[0;34m:[0m [0mnn[0m[0;34m.[0m[0mModule[0m[0;34m,[0m [0mconfig[0m[0;34m:[0m [0mPeftConfig[0m[0;34m,[0m [0madapter_name[0m[0;34m:[0m [0mstr[0m[0;34m)[0m [0;34m->[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_wrapped_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1777[0m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_compiled_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m  [0;31m# type: ignore[misc][0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1778[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1779[0;31m             [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_call_impl[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1780[0m [0;34m[0m[0m
+[1;32m   1781[0m     [0;31m# torchrec tests the code consistency with the following code[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/torch/nn/modules/module.py[0m in [0;36m_call_impl[0;34m(self, *args, **kwargs)[0m
+[1;32m   1788[0m                 [0;32mor[0m [0m_global_backward_pre_hooks[0m [0;32mor[0m [0m_global_backward_hooks[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1789[0m                 or _global_forward_hooks or _global_forward_pre_hooks):
+[0;32m-> 1790[0;31m             [0;32mreturn[0m [0mforward_call[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m   1791[0m [0;34m[0m[0m
+[1;32m   1792[0m         [0mresult[0m [0;34m=[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/utils/generic.py[0m in [0;36mwrapper[0;34m(self, *args, **kwargs)[0m
+[1;32m    941[0m         [0;32mif[0m [0mreturn_dict_passed[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    942[0m             [0mreturn_dict[0m [0;34m=[0m [0mreturn_dict_passed[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 943[0;31m         [0moutput[0m [0;34m=[0m [0mfunc[0m[0;34m([0m[0mself[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    944[0m         [0;32mif[0m [0;32mnot[0m [0mreturn_dict[0m [0;32mand[0m [0;32mnot[0m [0misinstance[0m[0;34m([0m[0moutput[0m[0;34m,[0m [0mtuple[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    945[0m             [0moutput[0m [0;34m=[0m [0moutput[0m[0;34m.[0m[0mto_tuple[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py[0m in [0;36mforward[0;34m(self, input_ids, attention_mask, position_ids, past_key_values, inputs_embeds, labels, use_cache, **kwargs)[0m
+[1;32m    157[0m [0;34m[0m[0m
+[1;32m    158[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m [0;32mand[0m [0mbatch_size[0m [0;34m!=[0m [0;36m1[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 159[0;31m             [0;32mraise[0m [0mValueError[0m[0;34m([0m[0;34m"Cannot handle batch sizes > 1 if no padding token is defined."[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    160[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0mconfig[0m[0;34m.[0m[0mget_text_config[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mpad_token_id[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    161[0m             [0mlast_non_pad_token[0m [0;34m=[0m [0;34m-[0m[0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;31mValueError[0m: Cannot handle batch sizes > 1 if no padding token is defined.
+=== EXEC DONE 2026-10-22T03:47:02Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'pro7b-1792640639'...
+[colab] Session terminated.
+=== finished 2026-10-22T03:47:17Z ===
+=== 2026-10-22T04:11:01Z PRO session pro7b-1792642261 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792642261'...
+
+To authorize colab-cli, visit this URL in any browser:
+
+  https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=764086051850-6qr4p6gpi6hn506pt8ejuq83di341hur.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fsdk.cloud.google.com%2Fapplicationdefaultauthcode.html&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcolaboratory+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.file&state=kkGuRgto7tNnnf6fHX3PKhwopXHnJi&code_challenge=LR0iyGqwfQn0Ma4NG7Cq0OrRBM5gFMTSD3bak9wQzck&code_challenge_method=S256&prompt=consent&token_usage=remote&access_type=offline
+
+After approving, Google will display an authorization code.
+Enter the authorization code: 
+Aborted.
+create failed (attempt 1); backoff
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792642261'...
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:239 in _new_conn                                    │
+│                                                                              │
+│    236 │   │   :return: New socket connection.                               │
+│    237 │   │   """                                                           │
+│    238 │   │   try:                                                          │
+│ ❱  239 │   │   │   sock = connection.create_connection(                      │
+│    240 │   │   │   │   (self._dns_host, self.port),                          │
+│    241 │   │   │   │   self.timeout,                                         │
+│    242 │   │   │   │   source_address=self.source_address,                   │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/connection.py:60 in create_connection                        │
+│                                                                              │
+│    57 │   except UnicodeError:                                               │
+│    58 │   │   raise LocationParseError(f"'{host}', label empty or too long") │
+│       from None                                                              │
+│    59 │                                                                      │
+│ ❱  60 │   for res in socket.getaddrinfo(host, port, family,                  │
+│       socket.SOCK_STREAM):                                                   │
+│    61 │   │   af, socktype, proto, canonname, sa = res                       │
+│    62 │   │   sock = None                                                    │
+│    63 │   │   try:                                                           │
+│                                                                              │
+│ /media/pope/projecteo/connect/.unsloth/uv-python/cpython-3.13.13-linux-x86_6 │
+│ 4-gnu/lib/python3.13/socket.py:977 in getaddrinfo                            │
+│                                                                              │
+│   974 │   # We override this function since we want to translate the numeric │
+│       family                                                                 │
+│   975 │   # and socket type values to enum constants.                        │
+│   976 │   addrlist = []                                                      │
+│ ❱ 977 │   for res in _socket.getaddrinfo(host, port, family, type, proto,    │
+│       flags):                                                                │
+│   978 │   │   af, socktype, proto, canonname, sa = res                       │
+│   979 │   │   addrlist.append((_intenum_converter(af, AddressFamily),        │
+│   980 │   │   │   │   │   │    _intenum_converter(socktype, SocketKind),     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:793 in urlopen                                  │
+│                                                                              │
+│    790 │   │   │   response_conn = conn if not release_conn else None        │
+│    791 │   │   │                                                             │
+│    792 │   │   │   # Make the request on the HTTPConnection object           │
+│ ❱  793 │   │   │   response = self._make_request(                            │
+│    794 │   │   │   │   conn,                                                 │
+│    795 │   │   │   │   method,                                               │
+│    796 │   │   │   │   url,                                                  │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:494 in _make_request                            │
+│                                                                              │
+│    491 │   │   │   │   new_e, (OSError, NewConnectionError, TimeoutError,    │
+│        SSLError)                                                             │
+│    492 │   │   │   ) and (conn and conn.proxy and not                        │
+│        conn.has_connected_to_proxy):                                         │
+│    493 │   │   │   │   new_e = _wrap_proxy_error(new_e, conn.proxy.scheme)   │
+│ ❱  494 │   │   │   raise new_e                                               │
+│    495 │   │                                                                 │
+│    496 │   │   # conn.request() calls http.client.*.request, not the method  │
+│        in                                                                    │
+│    497 │   │   # urllib3.request. It also calls makefile (recv) on the       │
+│        socket.                                                               │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:470 in _make_request                            │
+│                                                                              │
+│    467 │   │   try:                                                          │
+│    468 │   │   │   # Trigger any extra validation we need to do.             │
+│    469 │   │   │   try:                                                      │
+│ ❱  470 │   │   │   │   self._validate_conn(conn)                             │
+│    471 │   │   │   except (SocketTimeout, BaseSSLError) as e:                │
+│    472 │   │   │   │   self._raise_timeout(err=e, url=url,                   │
+│        timeout_value=conn.timeout)                                           │
+│    473 │   │   │   │   raise                                                 │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:1125 in _validate_conn                          │
+│                                                                              │
+│   1122 │   │                                                                 │
+│   1123 │   │   # Force connect early to allow us to validate the connection. │
+│   1124 │   │   if conn.is_closed:                                            │
+│ ❱ 1125 │   │   │   conn.connect()                                            │
+│   1126 │   │                                                                 │
+│   1127 │   │   # TODO revise this, see                                       │
+│        https://github.com/urllib3/urllib3/issues/2791                        │
+│   1128 │   │   if not conn.is_verified and not conn.proxy_is_verified:       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:827 in connect                                      │
+│                                                                              │
+│    824 │   │                                                                 │
+│    825 │   │   try:                                                          │
+│    826 │   │   │   sock: socket.socket | ssl.SSLSocket                       │
+│ ❱  827 │   │   │   self.sock = sock = self._new_conn()                       │
+│    828 │   │   │   server_hostname: str = self.host                          │
+│    829 │   │   │   tls_in_tls = False                                        │
+│    830                                                                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connection.py:246 in _new_conn                                    │
+│                                                                              │
+│    243 │   │   │   │   socket_options=self.socket_options,                   │
+│    244 │   │   │   )                                                         │
+│    245 │   │   except socket.gaierror as e:                                  │
+│ ❱  246 │   │   │   raise NameResolutionError(self.host, self, e) from e      │
+│    247 │   │   except SocketTimeout as e:                                    │
+│    248 │   │   │   raise ConnectTimeoutError(                                │
+│    249 │   │   │   │   self,                                                 │
+╰──────────────────────────────────────────────────────────────────────────────╯
+NameResolutionError: HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:696 in send                                          │
+│                                                                              │
+│   693 │   │   │   resolved_timeout = TimeoutSauce(connect=timeout,           │
+│       read=timeout)                                                          │
+│   694 │   │                                                                  │
+│   695 │   │   try:                                                           │
+│ ❱ 696 │   │   │   resp = conn.urlopen(                                       │
+│   697 │   │   │   │   method=request.method,                                 │
+│   698 │   │   │   │   url=url,                                               │
+│   699 │   │   │   │   body=request.body,  # type: ignore[arg-type]  #        │
+│       urllib3 stubs don't accept Iterable[bytes | str]                       │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/connectionpool.py:847 in urlopen                                  │
+│                                                                              │
+│    844 │   │   │   elif isinstance(new_e, (OSError, HTTPException)):         │
+│    845 │   │   │   │   new_e = ProtocolError("Connection aborted.", new_e)   │
+│    846 │   │   │                                                             │
+│ ❱  847 │   │   │   retries = retries.increment(                              │
+│    848 │   │   │   │   method, url, error=new_e, _pool=self,                 │
+│        _stacktrace=sys.exc_info()[2]                                         │
+│    849 │   │   │   )                                                         │
+│    850 │   │   │   retries.sleep()                                           │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/urllib3/util/retry.py:555 in increment                                    │
+│                                                                              │
+│   552 │   │                                                                  │
+│   553 │   │   if new_retry.is_exhausted():                                   │
+│   554 │   │   │   reason = error or ResponseError(cause)                     │
+│ ❱ 555 │   │   │   raise MaxRetryError(_pool, url, reason) from reason  #     │
+│       type: ignore[arg-type]                                                 │
+│   556 │   │                                                                  │
+│   557 │   │   log.debug("Incremented Retry for (url='%s'): %r", url,         │
+│       new_retry)                                                             │
+│   558                                                                        │
+╰──────────────────────────────────────────────────────────────────────────────╯
+MaxRetryError: HTTPSConnectionPool(host='colab.research.google.com', port=443): 
+Max retries exceeded with url: 
+/tun/m/assign?nbh=737b1a4f_a77f_4444_a594_9afb3dcd164d........&variant=GPU&accel
+erator=A100&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/commands/session.py:159 in new                                  │
+│                                                                              │
+│   156 │                                                                      │
+│   157 │   typer.echo(f"[colab] Creating session '{name}'...")                │
+│   158 │   try:                                                               │
+│ ❱ 159 │   │   res = state.client.assign(                                     │
+│   160 │   │   │   uuid.uuid4(), variant=variant, accelerator=accelerator     │
+│   161 │   │   )                                                              │
+│   162 │   except ColabRequestError as e:                                     │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:232 in assign                                         │
+│                                                                              │
+│   229 │   │   variant: Optional[Variant] = None,                             │
+│   230 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   231 │   ) -> Union[PostAssignmentResponse, Assignment]:                    │
+│ ❱ 232 │   │   assignment = self._get_assignment(notebook_hash, variant,      │
+│       accelerator)                                                           │
+│   233 │   │   if isinstance(assignment, Assignment):                         │
+│   234 │   │   │   return assignment                                          │
+│   235                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:271 in _get_assignment                                │
+│                                                                              │
+│   268 │   │   accelerator: Optional[Accelerator] = None,                     │
+│   269 │   ) -> Union[GetAssignmentResponse, Assignment]:                     │
+│   270 │   │   url = self._build_assign_url(notebook_hash, variant,           │
+│       accelerator)                                                           │
+│ ❱ 271 │   │   return self._issue_request(url,                                │
+│       schema=Union[GetAssignmentResponse, Assignment])                       │
+│   272 │                                                                      │
+│   273 │   def _post_assignment(                                              │
+│   274 │   │   self,                                                          │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/colab_cli/client.py:187 in _issue_request                                 │
+│                                                                              │
+│   184 │   │   self.logger.debug(f"Request: {method} {endpoint}")             │
+│   185 │   │   self.logger.debug(f"Params: {params}")                         │
+│   186 │   │                                                                  │
+│ ❱ 187 │   │   response = self.session.request(                               │
+│   188 │   │   │   method, endpoint, headers=request_headers, params=params,  │
+│       **kwargs                                                               │
+│   189 │   │   )                                                              │
+│   190                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/google/auth/transport/requests.py:629 in request                          │
+│                                                                              │
+│   626 │   │                                                                  │
+│   627 │   │   with TimeoutGuard(remaining_time) as guard:                    │
+│   628 │   │   │   _helpers.request_log(_LOGGER, method, url, data, headers)  │
+│ ❱ 629 │   │   │   response = super(AuthorizedSession, self).request(         │
+│   630 │   │   │   │   method,                                                │
+│   631 │   │   │   │   url,                                                   │
+│   632 │   │   │   │   data=data,                                             │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:651 in request                                       │
+│                                                                              │
+│   648 │   │   │   "allow_redirects": allow_redirects,                        │
+│   649 │   │   }                                                              │
+│   650 │   │   send_kwargs.update(settings)                                   │
+│ ❱ 651 │   │   resp = self.send(prep, **send_kwargs)                          │
+│   652 │   │                                                                  │
+│   653 │   │   return resp                                                    │
+│   654                                                                        │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/sessions.py:784 in send                                          │
+│                                                                              │
+│   781 │   │   start = preferred_clock()                                      │
+│   782 │   │                                                                  │
+│   783 │   │   # Send the request                                             │
+│ ❱ 784 │   │   r = adapter.send(request, **kwargs)                            │
+│   785 │   │                                                                  │
+│   786 │   │   # Total elapsed time of the request (approximately)            │
+│   787 │   │   elapsed = preferred_clock() - start                            │
+│                                                                              │
+│ /home/pope/.local/share/uv/tools/google-colab-cli/lib/python3.13/site-packag │
+│ es/requests/adapters.py:729 in send                                          │
+│                                                                              │
+│   726 │   │   │   │   # This branch is for urllib3 v1.22 and later.          │
+│   727 │   │   │   │   raise SSLError(e, request=request)                     │
+│   728 │   │   │                                                              │
+│ ❱ 729 │   │   │   raise ConnectionError(e, request=request)                  │
+│   730 │   │                                                                  │
+│   731 │   │   except ClosedPoolError as e:                                   │
+│   732 │   │   │   raise ConnectionError(e, request=request)                  │
+╰──────────────────────────────────────────────────────────────────────────────╯
+ConnectionError: HTTPSConnectionPool(host='colab.research.google.com', 
+port=443): Max retries exceeded with url: 
+/tun/m/assign?nbh=737b1a4f_a77f_4444_a594_9afb3dcd164d........&variant=GPU&accel
+erator=A100&authuser=0 (Caused by 
+NameResolutionError("HTTPSConnection(host='colab.research.google.com', 
+port=443): Failed to resolve 'colab.research.google.com' ([Errno -2] Name or 
+service not known)"))
+create failed (attempt 2); backoff
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792642261'...
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T04:16:57Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[0;36m  File [0;32m"/tmp/ipykernel_3100/311025202.py"[0;36m, line [0;32m143[0m
+[0;31m    model.print_trainable_parameters()[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m expected 'except' or 'finally' block
+
+=== EXEC DONE 2026-10-22T04:16:59Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'pro7b-1792642261'...
+[colab] Session terminated.
+=== finished 2026-10-22T04:17:02Z ===
+=== 2026-10-22T04:52:51Z PRO session pro7b-1792644771 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792644771'...
+=== 2026-10-22T04:53:21Z PRO session pro7b-1792644801 gpu=A100 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'pro7b-1792644801'...
+[colab] Session READY.
+[colab] Session READY.
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+dns wait 1
+DNS ready -> 34.144.254.29
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T04:54:36Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[0;36m  File [0;32m"/tmp/ipykernel_1053/2730307855.py"[0;36m, line [0;32m145[0m
+[0;31m    tok.pad_token = tok.eos_token[0m
+[0m    ^[0m
+[0;31mIndentationError[0m[0;31m:[0m expected an indented block after 'if' statement on line 144
+
+=== EXEC DONE 2026-10-22T04:54:39Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: File or directory not found: /content/out.zip
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'pro7b-1792644771'...
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== EXEC START 2026-10-22T04:54:44Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[     0.0s] CONFIG {'MODEL_ID': 'Qwen/Qwen2.5-3B', 'DATA_PATH': '/content/train_all_v2.parquet', 'LABELS_PATH': '/content/labels.json', 'OUT_DIR': '/content/out', 'JOB_HOURS': '4.2', 'MAX_LEN': '384', 'EPOCHS': '1.0', 'BATCH': '8', 'ACCUM': '4', 'USE_4BIT': '0', 'SAMPLE_PER_FOLD': '11000', 'TOKENIZERS_PARALLELISM': 'false'}
+[colab] Session terminated.
+=== finished 2026-10-22T04:54:58Z ===
+[    13.4s] labels 18
+[    14.2s] rows 51989 prompts 7190 classes 18
+[    16.4s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/683 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[    44.7s] pad token <|endoftext|> 151643
+[    44.7s] fallback model Qwen/Qwen2.5-1.5B
+config.json:   0%|          | 0.00/684 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+model.safetensors: reconstructing file:   0%|          |  0.00B / 3.09GB        
+model.safetensors: downloading bytes:           |  0.00B            
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]
+[transformers] [1mQwen2ForSequenceClassification LOAD REPORT[0m from: Qwen/Qwen2.5-1.5B
+Key          | Status  | 
+-------------+---------+-
+score.weight | MISSING | 
+
+Notes:
+- MISSING:	those params were newly initialized because missing from the checkpoint. Consider training on your downstream task.
+trainable params: 18,492,416 || all params: 1,562,234,368 || trainable%: 1.1837
+[    67.1s] model ready Qwen/Qwen2.5-1.5B 4bit False mem 3016 MB
+[    67.2s] fold 0: subsampled train -> 10999 rows
+[transformers] `use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`.
+[   156.6s] fold 0 step 50/1374 loss 4.6187 mem 3194MB
+[   243.8s] fold 0 step 100/1374 loss 2.5467 mem 3194MB
+[   331.9s] fold 0 step 150/1374 loss 2.0209 mem 3194MB
+[   419.4s] fold 0 step 200/1374 loss 1.8363 mem 3194MB
+[   543.9s] fold 0 CHECKPOINT step 200 val_bal_acc 0.2439
+[   632.6s] fold 0 step 250/1374 loss 1.8131 mem 3194MB
+[   720.3s] fold 0 step 300/1374 loss 1.7024 mem 3194MB
+[   808.3s] fold 0 step 350/1374 loss 1.6044 mem 3194MB
+[   895.6s] fold 0 step 400/1374 loss 1.3588 mem 3194MB
+[  1020.1s] fold 0 CHECKPOINT step 400 val_bal_acc 0.3009
+[  1107.5s] fold 0 step 450/1374 loss 1.3163 mem 3194MB
+[  1195.1s] fold 0 step 500/1374 loss 1.2994 mem 3194MB
+[  1282.8s] fold 0 step 550/1374 loss 1.2677 mem 3194MB
+[  1370.3s] fold 0 step 600/1374 loss 1.2474 mem 3194MB
+[  1494.7s] fold 0 CHECKPOINT step 600 val_bal_acc 0.3347
+[  1583.2s] fold 0 step 650/1374 loss 1.2117 mem 3194MB
+[  1670.9s] fold 0 step 700/1374 loss 1.0838 mem 3194MB
+[  1760.2s] fold 0 step 750/1374 loss 0.5663 mem 3194MB
+[  1848.5s] fold 0 step 800/1374 loss 0.5338 mem 3194MB
+[  1972.9s] fold 0 CHECKPOINT step 800 val_bal_acc 0.3386
+[  2061.1s] fold 0 step 850/1374 loss 0.5327 mem 3194MB
+[  2148.5s] fold 0 step 900/1374 loss 0.5159 mem 3194MB
+[  2236.2s] fold 0 step 950/1374 loss 0.5044 mem 3194MB
+[  2323.3s] fold 0 step 1000/1374 loss 0.4794 mem 3194MB
+[  2447.7s] fold 0 CHECKPOINT step 1000 val_bal_acc 0.3568
+[  2535.4s] fold 0 step 1050/1374 loss 0.3253 mem 3194MB
+[  2622.9s] fold 0 step 1100/1374 loss 0.0989 mem 3194MB
+[  2710.4s] fold 0 step 1150/1374 loss 0.0647 mem 3194MB
+[  2798.0s] fold 0 step 1200/1374 loss 0.0693 mem 3194MB
+[  2922.4s] fold 0 CHECKPOINT step 1200 val_bal_acc 0.3583
+[  3010.4s] fold 0 step 1250/1374 loss 0.0637 mem 3194MB
+[  3099.9s] fold 0 step 1300/1374 loss 0.0667 mem 3194MB
+[  3188.2s] fold 0 step 1350/1374 loss 0.0691 mem 3194MB
+[  3354.7s] fold 0 CHECKPOINT step 1374 val_bal_acc 0.3608
+[  3355.1s] fold 1: subsampled train -> 11001 rows
+[  3443.0s] fold 1 step 50/1375 loss 0.7453 mem 3194MB
+[  3532.2s] fold 1 step 100/1375 loss 0.6765 mem 3194MB
+[  3623.7s] fold 1 step 150/1375 loss 0.6326 mem 3194MB
+[  3711.3s] fold 1 step 200/1375 loss 0.6057 mem 3194MB
+[  3839.1s] fold 1 CHECKPOINT step 200 val_bal_acc 0.4422
+[  3927.4s] fold 1 step 250/1375 loss 0.6344 mem 3194MB
+[  4018.0s] fold 1 step 300/1375 loss 0.6773 mem 3194MB
+[  4105.7s] fold 1 step 350/1375 loss 0.5911 mem 3194MB
+[  4193.5s] fold 1 step 400/1375 loss 0.1883 mem 3194MB
+[  4321.3s] fold 1 CHECKPOINT step 400 val_bal_acc 0.4649
+[  4409.2s] fold 1 step 450/1375 loss 0.2229 mem 3194MB
+[  4496.8s] fold 1 step 500/1375 loss 0.2322 mem 3194MB
+[  4585.2s] fold 1 step 550/1375 loss 0.2505 mem 3194MB
+[  4672.8s] fold 1 step 600/1375 loss 0.2659 mem 3194MB
+[  4800.8s] fold 1 CHECKPOINT step 600 val_bal_acc 0.4690
+[  4892.1s] fold 1 step 650/1375 loss 0.2076 mem 3194MB
+[  4980.8s] fold 1 step 700/1375 loss 0.1813 mem 3194MB
+[  5068.6s] fold 1 step 750/1375 loss 0.0577 mem 3194MB
+[  5156.2s] fold 1 step 800/1375 loss 0.0542 mem 3194MB
+[  5284.0s] fold 1 CHECKPOINT step 800 val_bal_acc 0.4700
+[  5372.4s] fold 1 step 850/1375 loss 0.0619 mem 3194MB
+[  5460.9s] fold 1 step 900/1375 loss 0.0431 mem 3194MB
+[  5552.3s] fold 1 step 950/1375 loss 0.0447 mem 3194MB
+[  5640.8s] fold 1 step 1000/1375 loss 0.0361 mem 3194MB
+[  5768.7s] fold 1 CHECKPOINT step 1000 val_bal_acc 0.4776
+[  5858.8s] fold 1 step 1050/1375 loss 0.0226 mem 3194MB
+[  5948.2s] fold 1 step 1100/1375 loss 0.0093 mem 3194MB
+[  6038.0s] fold 1 step 1150/1375 loss 0.0108 mem 3194MB
+[  6127.2s] fold 1 step 1200/1375 loss 0.0042 mem 3194MB
+[  6255.1s] fold 1 CHECKPOINT step 1200 val_bal_acc 0.4784
+[  6344.4s] fold 1 step 1250/1375 loss 0.0107 mem 3194MB
+[  6433.1s] fold 1 step 1300/1375 loss 0.0151 mem 3194MB
+[  6522.3s] fold 1 step 1350/1375 loss 0.0068 mem 3194MB
+[  6694.6s] fold 1 CHECKPOINT step 1375 val_bal_acc 0.4800
+[  6695.0s] fold 2: subsampled train -> 11002 rows
+[  6784.2s] fold 2 step 50/1375 loss 0.0798 mem 3194MB
+[  6872.5s] fold 2 step 100/1375 loss 0.1433 mem 3194MB
+[  6960.6s] fold 2 step 150/1375 loss 0.1995 mem 3194MB
+[  7049.7s] fold 2 step 200/1375 loss 0.1920 mem 3194MB
+[  7172.3s] fold 2 CHECKPOINT step 200 val_bal_acc 0.4784
+[  7261.3s] fold 2 step 250/1375 loss 0.2018 mem 3194MB
+[  7350.2s] fold 2 step 300/1375 loss 0.2418 mem 3194MB
+[  7439.8s] fold 2 step 350/1375 loss 0.2002 mem 3194MB
+[  7529.5s] fold 2 step 400/1375 loss 0.0967 mem 3194MB
+[  7652.1s] fold 2 CHECKPOINT step 400 val_bal_acc 0.4834
+[  7741.0s] fold 2 step 450/1375 loss 0.1206 mem 3194MB
+[  7830.4s] fold 2 step 500/1375 loss 0.1229 mem 3194MB
+[  7918.9s] fold 2 step 550/1375 loss 0.1023 mem 3194MB
+[  8008.0s] fold 2 step 600/1375 loss 0.1182 mem 3194MB
+[  8130.6s] fold 2 CHECKPOINT step 600 val_bal_acc 0.4708
+[  8220.7s] fold 2 step 650/1375 loss 0.1125 mem 3194MB
+[  8310.6s] fold 2 step 700/1375 loss 0.0933 mem 3194MB
+[  8400.7s] fold 2 step 750/1375 loss 0.0289 mem 3194MB
+[  8489.7s] fold 2 step 800/1375 loss 0.0399 mem 3194MB
+[  8612.3s] fold 2 CHECKPOINT step 800 val_bal_acc 0.4877
+[  8701.4s] fold 2 step 850/1375 loss 0.0340 mem 3194MB
+[  8790.7s] fold 2 step 900/1375 loss 0.0227 mem 3194MB
+[  8879.7s] fold 2 step 950/1375 loss 0.0238 mem 3194MB
+[  8968.8s] fold 2 step 1000/1375 loss 0.0246 mem 3194MB
+[  9091.5s] fold 2 CHECKPOINT step 1000 val_bal_acc 0.4889
+[  9181.0s] fold 2 step 1050/1375 loss 0.0126 mem 3194MB
+[  9270.0s] fold 2 step 1100/1375 loss 0.0077 mem 3194MB
+[  9358.9s] fold 2 step 1150/1375 loss 0.0064 mem 3194MB
+[  9447.8s] fold 2 step 1200/1375 loss 0.0068 mem 3194MB
+[  9570.4s] fold 2 CHECKPOINT step 1200 val_bal_acc 0.5012
+[  9659.8s] fold 2 step 1250/1375 loss 0.0027 mem 3194MB
+[  9748.3s] fold 2 step 1300/1375 loss 0.0087 mem 3194MB
+[  9836.7s] fold 2 step 1350/1375 loss 0.0060 mem 3194MB
+[ 10004.0s] fold 2 CHECKPOINT step 1375 val_bal_acc 0.5004
+[ 10004.5s] fold 3: subsampled train -> 10999 rows
+[ 10094.0s] fold 3 step 50/1374 loss 0.0306 mem 3194MB
+[ 10182.8s] fold 3 step 100/1374 loss 0.0576 mem 3194MB
+[ 10271.0s] fold 3 step 150/1374 loss 0.1254 mem 3194MB
+[ 10360.0s] fold 3 step 200/1374 loss 0.1543 mem 3194MB
+[ 10485.3s] fold 3 CHECKPOINT step 200 val_bal_acc 0.4697
+[ 10574.1s] fold 3 step 250/1374 loss 0.1527 mem 3194MB
+[ 10662.9s] fold 3 step 300/1374 loss 0.1504 mem 3194MB
+[ 10752.5s] fold 3 step 350/1374 loss 0.1455 mem 3194MB
+[ 10842.2s] fold 3 step 400/1374 loss 0.0903 mem 3194MB
+[ 10967.4s] fold 3 CHECKPOINT step 400 val_bal_acc 0.4917
+[ 11057.0s] fold 3 step 450/1374 loss 0.1193 mem 3194MB
+[ 11146.5s] fold 3 step 500/1374 loss 0.0990 mem 3194MB
+[ 11236.3s] fold 3 step 550/1374 loss 0.1015 mem 3194MB
+[ 11326.5s] fold 3 step 600/1374 loss 0.1082 mem 3194MB
+[ 11451.8s] fold 3 CHECKPOINT step 600 val_bal_acc 0.4858
+[ 11540.3s] fold 3 step 650/1374 loss 0.0713 mem 3194MB
+[ 11629.2s] fold 3 step 700/1374 loss 0.0921 mem 3194MB
+[ 11718.2s] fold 3 step 750/1374 loss 0.0337 mem 3194MB
+[ 11807.2s] fold 3 step 800/1374 loss 0.0347 mem 3194MB
+[ 11932.4s] fold 3 CHECKPOINT step 800 val_bal_acc 0.4855
+[ 12021.4s] fold 3 step 850/1374 loss 0.0185 mem 3194MB
+[ 12109.8s] fold 3 step 900/1374 loss 0.0316 mem 3194MB
+[ 12198.4s] fold 3 step 950/1374 loss 0.0199 mem 3194MB
+[ 12287.1s] fold 3 step 1000/1374 loss 0.0200 mem 3194MB
+[ 12412.3s] fold 3 CHECKPOINT step 1000 val_bal_acc 0.5058
+[ 12501.9s] fold 3 step 1050/1374 loss 0.0158 mem 3194MB
+[ 12591.0s] fold 3 step 1100/1374 loss 0.0080 mem 3194MB
+[ 12679.8s] fold 3 step 1150/1374 loss 0.0046 mem 3194MB
+[ 12768.8s] fold 3 step 1200/1374 loss 0.0074 mem 3194MB
+[ 12894.0s] fold 3 CHECKPOINT step 1200 val_bal_acc 0.5063
+[ 12983.3s] fold 3 step 1250/1374 loss 0.0040 mem 3194MB
+[ 13072.2s] fold 3 step 1300/1374 loss 0.0091 mem 3194MB
+[ 13161.0s] fold 3 step 1350/1374 loss 0.0037 mem 3194MB
+[ 13328.7s] fold 3 CHECKPOINT step 1374 val_bal_acc 0.5063
+[ 13329.1s] fold 4: subsampled train -> 10998 rows
+[ 13418.3s] fold 4 step 50/1374 loss 0.0092 mem 3194MB
+[ 13507.1s] fold 4 step 100/1374 loss 0.0870 mem 3194MB
+[ 13595.6s] fold 4 step 150/1374 loss 0.1474 mem 3194MB
+[ 13684.9s] fold 4 step 200/1374 loss 0.1724 mem 3194MB
+[ 13811.2s] fold 4 CHECKPOINT step 200 val_bal_acc 0.4825
+[ 13901.2s] fold 4 step 250/1374 loss 0.1671 mem 3194MB
+[ 13990.4s] fold 4 step 300/1374 loss 0.1509 mem 3194MB
+[ 14079.5s] fold 4 step 350/1374 loss 0.1521 mem 3194MB
+[ 14169.1s] fold 4 step 400/1374 loss 0.0615 mem 3194MB
+[ 14295.3s] fold 4 CHECKPOINT step 400 val_bal_acc 0.4954
+[ 14384.9s] fold 4 step 450/1374 loss 0.0843 mem 3194MB
+[ 14474.8s] fold 4 step 500/1374 loss 0.1105 mem 3194MB
+[ 14564.2s] fold 4 step 550/1374 loss 0.0932 mem 3194MB
+[ 14654.4s] fold 4 step 600/1374 loss 0.0970 mem 3194MB
+[ 14780.6s] fold 4 CHECKPOINT step 600 val_bal_acc 0.5007
+[ 14871.3s] fold 4 step 650/1374 loss 0.0945 mem 3194MB
+[ 14961.8s] fold 4 step 700/1374 loss 0.0856 mem 3194MB
+[ 15051.2s] fold 4 step 750/1374 loss 0.0431 mem 3194MB
+[ 15121.3s] TIME BUDGET reached in fold 4
+[ 15121.3s] stopping after fold 4 due to time budget
+[ 15121.3s] OVERALL OOF bal_acc 0.46967864718720903 coverage 51989 / 51989
+[ 15142.2s] DONE - artifacts zipped at /content/out.zip

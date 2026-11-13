@@ -1,0 +1,11 @@
+[   0.2s] rows 9290 prompts 510 classes 18
+[   0.2s] extracting stylometry
+[   1.7s] char tfidf
+[  17.9s] word tfidf
+[  22.8s] X (9290, 500033)
+/media/pope/projecteo/python_libs/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 2 leaked file objects to clean up at shutdown: {'/dev/shm/joblib_memmapping_folder_2957415_de2f1bb018cd47adad4924031b5b35e7_57e594b6c67c495aba7f4afff2d3fd36/2957415-132899500267488-b76d216aceff45f09e4698011d571207.pkl': 2, '/dev/shm/joblib_memmapping_folder_2957415_de2f1bb018cd47adad4924031b5b35e7_57e594b6c67c495aba7f4afff2d3fd36/2957415-132899500267488-34b534796f8043d6bcb15db246aa06f9.pkl': 2}
+  warnings.warn(
+/media/pope/projecteo/python_libs/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 14 leaked semlock objects to clean up at shutdown: {'/loky-2957415-9_bv8vee': 1, '/loky-2957415-x7o8_51v': 1, '/loky-2957415-pe7oncc5': 1, '/loky-2957415-5fi9hsfc': 1, '/loky-2957415-3scryka2': 1, '/loky-2957415-87710_l5': 1, '/loky-2957415-s5wosbku': 1, '/loky-2957415-6s7cc_7v': 1, '/loky-2957415-vmaay4jy': 1, '/loky-2957415-ze8ki3l6': 1, '/loky-2957415-6c7wbj97': 1, '/loky-2957415-snlu0wg4': 1, '/loky-2957415-9vok7jdn': 1, '/loky-2957415-hp0ic_39': 1}
+  warnings.warn(
+/media/pope/projecteo/python_libs/site-packages/joblib/externals/loky/backend/resource_tracker.py:444: UserWarning: resource_tracker: There appear to be 2 leaked folder objects to clean up at shutdown: {'/dev/shm/joblib_memmapping_folder_2957415_de2f1bb018cd47adad4924031b5b35e7_2377d6ebe9c44f67a2efc2fdab7d3c89': 1, '/dev/shm/joblib_memmapping_folder_2957415_de2f1bb018cd47adad4924031b5b35e7_57e594b6c67c495aba7f4afff2d3fd36': 1}
+  warnings.warn(

@@ -1,0 +1,7 @@
+{
+ "gpus": 4,
+ "rerun": false,
+ "config_dirs": [
+  "/kaggle/input/models/sorokin/qwen3_4b_grids15_sft139/transformers/bfloat16/1"
+ ]
+}

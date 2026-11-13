@@ -1,0 +1,13 @@
+features (2699, 111420) (3, 111420)
+C=  0.5 grouped-CV balanced_acc=0.2852 acc=0.2853
+C=  1.0 grouped-CV balanced_acc=0.3015 acc=0.3016
+C=  3.0 grouped-CV balanced_acc=0.3074 acc=0.3075
+C= 10.0 grouped-CV balanced_acc=0.3030 acc=0.3031
+BEST C=3.0 ba=0.3074
+00353fb1c541: gemini-3.6-flash=0.080, gemini-3.8-flash=0.071, glm-5.3-flash=0.067, claude-sonnet-5=0.066
+005f5a9a6139: gpt-5.6-terra=0.108, gpt-5.6-sol=0.085, claude-sonnet-5=0.077, gemini-3.1-pro-preview=0.070
+0062a53d5487: gemini-3.7-flash=0.241, gemini-3.1-pro-preview=0.135, gemini-3.6-flash=0.099, gemini-3.8-flash=0.072
+          id            model
+00353fb1c541 gemini-3.6-flash
+005f5a9a6139    gpt-5.6-terra
+0062a53d5487 gemini-3.7-flash

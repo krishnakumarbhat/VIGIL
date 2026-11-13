@@ -1,0 +1,18 @@
+member,oof_auc,folds,features,model
+lgb_raw_k5,0.959041,5,raw 21 columns,LightGBM lr 0.03
+xgb_raw_k5,0.958899,5,raw 21 columns,XGBoost lr 0.03
+cat_raw_k5,0.958711,5,raw 21 columns,CatBoost lr 0.06
+lgb_enc3_k5,0.960585,5,raw + orig_pred + orig_te + freq + te,LightGBM lr 0.03
+xgb_enc3_k5,0.960590,5,raw + orig_pred + orig_te + freq + te,XGBoost lr 0.03
+cat_enc3_k5,0.960635,5,raw + orig_pred + orig_te + freq + te,CatBoost lr 0.06
+lgb_enc4_k5,0.960731,5,enc3 + te_pair,LightGBM lr 0.03
+xgb_enc4_k5,0.960793,5,enc3 + te_pair,XGBoost lr 0.03
+cat_enc4_k5,0.960805,5,enc3 + te_pair,CatBoost lr 0.06
+lgb_enc4_k10,0.960987,10,enc3 + te_pair,LightGBM lr 0.015
+xgb_enc4_k10,0.960972,10,enc3 + te_pair,XGBoost lr 0.015
+cat_enc4_k10,0.961022,10,enc3 + te_pair,CatBoost lr 0.04
+cat_allcat_v1_k5,0.961095,5,"enc3 + te_pair, every raw column also categorical",CatBoost l2 3
+cat_allcat_v2_k5,0.961127,5,"orig_pred + orig_te + freq (no own TE), every raw column also categorical",CatBoost l2 10
+realmlp_raw_s42_k5,0.960883,5,raw + categorical twin of every number,"RealMLP n_ens 4, flat_anneal, seed 42"
+realmlp_raw_s7_k5,0.960885,5,raw + categorical twin of every number,"RealMLP n_ens 4, flat_anneal, seed 7"
+realmlp_enc_k5,0.960956,5,raw + twins + orig_pred + orig_te + freq + te + te_pair,"RealMLP n_ens 4, flat_anneal"

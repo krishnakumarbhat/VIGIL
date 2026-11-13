@@ -1,0 +1,116 @@
+{
+ "headline": "cross-fitted ensemble balanced accuracy on the 2,699 real competition rows",
+ "bal_acc": 0.68169,
+ "acc": 0.681734,
+ "rows": 2699,
+ "protocol": "SGKF(5, shuffle, seed 42, groups=prompt_id); per-fold temperature, weight search and per-class bias tuned on the 4 training folds only",
+ "members": {
+  "deberta_base": 0.37487972548230697,
+  "char": 0.018868046684400685,
+  "knn": 0.004422885879772935,
+  "local_qwen05b": 0.214000767584408,
+  "local_qwen05b_s1337": 0.27232027750920756,
+  "style": 0.0,
+  "svm": 0.04449727720717058,
+  "svmext": 0.07101101965273333,
+  "word": 0.0
+ },
+ "temperatures": {
+  "deberta_base": 0.7676114111793378,
+  "char": 1.4476935316410782,
+  "knn": 0.5787924564675055,
+  "local_qwen05b": 0.8528298260110321,
+  "local_qwen05b_s1337": 0.8802359358592483,
+  "style": 3.999995964430111,
+  "svm": 1.8781224640756276,
+  "svmext": 1.0623694144582598,
+  "word": 0.844318461360492
+ },
+ "biases": [
+  0.0,
+  -0.5,
+  0.0,
+  0.0,
+  0.0,
+  -0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.25,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.25,
+  -0.5
+ ],
+ "per_class_recall": {
+  "claude-fable-5": 0.5638,
+  "claude-opus-4-6": 0.86,
+  "claude-opus-4-8": 0.74,
+  "claude-opus-5": 0.92,
+  "claude-sonnet-5": 0.7267,
+  "gemini-3.1-pro-preview": 0.8667,
+  "gemini-3.6-flash": 0.7,
+  "gemini-3.7-flash": 0.6133,
+  "gemini-3.8-flash": 0.64,
+  "glm-5.3": 0.48,
+  "glm-5.3-flash": 0.52,
+  "gpt-5.5": 0.6867,
+  "gpt-5.6-luna": 0.62,
+  "gpt-5.6-sol": 0.6067,
+  "gpt-5.6-terra": 0.6067,
+  "gpt-6-astra": 0.8333,
+  "kimi-k3": 0.5,
+  "qwen3.8-max": 0.7867
+ },
+ "folds": [
+  {
+   "fold": 0,
+   "val_bal_acc": 0.4148,
+   "train_bal_before_bias": 0.7661,
+   "train_bal_after_bias": 0.7711
+  },
+  {
+   "fold": 1,
+   "val_bal_acc": 0.4963,
+   "train_bal_before_bias": 0.7438,
+   "train_bal_after_bias": 0.7494
+  },
+  {
+   "fold": 2,
+   "val_bal_acc": 0.6815,
+   "train_bal_before_bias": 0.7114,
+   "train_bal_after_bias": 0.7179
+  },
+  {
+   "fold": 3,
+   "val_bal_acc": 0.8685,
+   "train_bal_before_bias": 0.6556,
+   "train_bal_after_bias": 0.6657
+  },
+  {
+   "fold": 4,
+   "val_bal_acc": 0.9481,
+   "train_bal_before_bias": 0.6419,
+   "train_bal_after_bias": 0.6512
+  }
+ ],
+ "history": {
+  "stage1_overall": null,
+  "stage1_real_rows": 0.36672,
+  "deberta_real_rows": 0.4016,
+  "note": "stage-1 numbers are kept for provenance; the headline above supersedes them"
+ },
+ "artifacts": {
+  "recipe": "outputs/ensemble_recipe.json",
+  "report": "outputs/stack_v2_report.json",
+  "oof": "outputs/oof_real_stack_v2.npy",
+  "notes": "outputs/SESSION_NOTES.md",
+  "deploy_dir": "outputs/deploy/",
+  "builder": "src/make_submission.py"
+ },
+ "updated": "2026-10-23T14:27:13"
+}

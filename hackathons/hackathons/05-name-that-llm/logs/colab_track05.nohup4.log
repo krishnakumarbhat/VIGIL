@@ -1,0 +1,106 @@
+=== 2026-10-22T00:13:17Z session track05-1792627997 ===
+colab account -> pro (config: /home/pope/.config/colab-cli/sessions.pro.json)
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Creating session 'track05-1792627997'...
+[colab] Session READY.
+DNS ready -> 136.68.214.202
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/train_all_v2.parquet' to '/content/train_all_v2.parquet'
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Uploaded '/home/pope/Desktop/gpu /hackathons/05-name-that-llm/data/compact/labels.json' to '/content/labels.json'
+=== SANITY EXEC (local file path) ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+SANITY 2026-10-22T00:14:14.780808
+cwd /content
+torch 2.11.0+cu130 cuda True Tesla T4
+files: ['.config', 'labels.json', 'sample_data', 'train_all_v2.parquet']
+=== MAIN EXEC 2026-10-22T00:14:15Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+JOB CONFIG: {'MODEL_ID': 'Qwen/Qwen2.5-7B', 'DATA_PATH': '/content/train_all_v2.parquet', 'JOB_HOURS': '4.6', 'MAX_LEN': '384'}
+labels 18
+[     0.7s] rows 51989 prompts 7190 classes 18
+[     3.9s] fold sizes {0: 10346, 1: 10615, 2: 10175, 3: 10387, 4: 10466}
+/usr/local/lib/python3.13/dist-packages/huggingface_hub/utils/_auth.py:138: UserWarning: 
+Error while fetching `HF_TOKEN` secret value from your vault: 'Requesting secret HF_TOKEN timed out. Secrets can only be fetched when running from the Colab UI.'.
+  warnings.warn(f"\nError while fetching `HF_TOKEN` secret value from your vault: '{str(e)}'.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+config.json:   0%|          | 0.00/686 [00:00<?, ?B/s]
+tokenizer_config.json:   0%|          | 0.00/7.23k [00:00<?, ?B/s]
+vocab.json:   0%|          | 0.00/2.78M [00:00<?, ?B/s]
+merges.txt:   0%|          | 0.00/1.67M [00:00<?, ?B/s]
+tokenizer.json:   0%|          | 0.00/7.03M [00:00<?, ?B/s]
+[    29.5s] MODEL_INIT_ERROR ImportError('Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>=0.46.1`')
+[0;31m---------------------------------------------------------------------------[0m[0;31mImportError[0m                               Traceback (most recent call last)[0;32m/tmp/ipykernel_3913/3709613365.py[0m in [0;36m<cell line: 0>[0;34m()[0m
+[1;32m     95[0m     [0m_dt[0m [0;34m=[0m [0mtorch[0m[0;34m.[0m[0mbfloat16[0m [0;32mif[0m [0mtorch[0m[0;34m.[0m[0mcuda[0m[0;34m.[0m[0mis_bf16_supported[0m[0;34m([0m[0;34m)[0m [0;32melse[0m [0mtorch[0m[0;34m.[0m[0mfloat16[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     96[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 97[0;31m         model = AutoModelForSequenceClassification.from_pretrained(
+[0m[1;32m     98[0m             [0mMODEL_ID[0m[0;34m,[0m [0mnum_labels[0m[0;34m=[0m[0mlen[0m[0;34m([0m[0mlabels[0m[0;34m)[0m[0;34m,[0m [0mquantization_config[0m[0;34m=[0m[0mqcfg[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     99[0m             dtype=_dt, trust_remote_code=True, attn_implementation="sdpa")
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py[0m in [0;36mfrom_pretrained[0;34m(cls, pretrained_model_name_or_path, *model_args, **kwargs)[0m
+[1;32m    409[0m                 [0;32mif[0m [0mparent_quant[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    410[0m                     [0mconfig[0m[0;34m.[0m[0mquantization_config[0m [0;34m=[0m [0mparent_quant[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 411[0;31m             return model_class.from_pretrained(
+[0m[1;32m    412[0m                 [0mpretrained_model_name_or_path[0m[0;34m,[0m [0;34m*[0m[0mmodel_args[0m[0;34m,[0m [0mconfig[0m[0;34m=[0m[0mconfig[0m[0;34m,[0m [0;34m**[0m[0mhub_kwargs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    413[0m             )
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/modeling_utils.py[0m in [0;36mfrom_pretrained[0;34m(cls, pretrained_model_name_or_path, config, cache_dir, ignore_mismatched_sizes, force_download, local_files_only, token, revision, use_safetensors, weights_only, fusion_config, disable_mmap, *model_args, **kwargs)[0m
+[1;32m   4232[0m             [0mconfig[0m[0;34m.[0m[0m_experts_implementation[0m [0;34m=[0m [0mkwargs[0m[0;34m.[0m[0mpop[0m[0;34m([0m[0;34m"experts_implementation"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4233[0m [0;34m[0m[0m
+[0;32m-> 4234[0;31m         hf_quantizer, config, device_map = get_hf_quantizer(
+[0m[1;32m   4235[0m             [0mconfig[0m[0;34m,[0m [0mquantization_config[0m[0;34m,[0m [0mdevice_map[0m[0;34m,[0m [0mweights_only[0m[0;34m,[0m [0muser_agent[0m[0;34m,[0m [0mgguf_file[0m[0;34m=[0m[0mgguf_file[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   4236[0m         )
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/quantizers/auto.py[0m in [0;36mget_hf_quantizer[0;34m(config, quantization_config, device_map, weights_only, user_agent, gguf_file)[0m
+[1;32m    376[0m                 [0;34m"you did not passed a `quantization_config` or that you did not load a quantized model from the Hub."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    377[0m             )
+[0;32m--> 378[0;31m         hf_quantizer.validate_environment(
+[0m[1;32m    379[0m             [0mdevice_map[0m[0;34m=[0m[0mdevice_map[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    380[0m             [0mweights_only[0m[0;34m=[0m[0mweights_only[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.13/dist-packages/transformers/quantizers/quantizer_bnb_4bit.py[0m in [0;36mvalidate_environment[0;34m(self, *args, **kwargs)[0m
+[1;32m     60[0m             )
+[1;32m     61[0m         [0;32mif[0m [0;32mnot[0m [0mis_bitsandbytes_available[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 62[0;31m             raise ImportError(
+[0m[1;32m     63[0m                 [0;34mf"Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>={BITSANDBYTES_MIN_VERSION}`"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     64[0m             )
+[0;31mImportError[0m: Using `bitsandbytes` 4-bit quantization requires bitsandbytes: `pip install -U bitsandbytes>=0.46.1`[0;31m---------------------------------------------------------------------------[0;32m
+NOTE: If your import is failing due to a missing package, you can
+manually install dependencies using either !pip or !apt.
+
+To view examples of installing some common dependencies, click the
+"Open Examples" button below.
+[0;31m---------------------------------------------------------------------------[0m
+
+=== MAIN EXEC DONE 2026-10-22T00:14:48Z ===
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Download failed: Cannot download a directory: /content/out
+
+[colab] A new version of Colab CLI is available: 0.7.5 (current: 0.6.0)
+[colab] Run 'colab update' to update.
+[colab] To silence this check, set "enable_update_check": false in ~/.config/colab-cli/settings.json
+
+[colab] Stopping session 'track05-1792627997'...
+[colab] Session terminated.
+=== finished 2026-10-22T00:14:52Z ===

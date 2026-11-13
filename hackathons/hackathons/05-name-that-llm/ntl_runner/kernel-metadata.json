@@ -1,0 +1,15 @@
+{
+  "id": "krishnakumarbhat/ntl-submit-deberta-tfidf",
+  "title": "NTL Submit Deberta Tfidf",
+  "code_file": "main.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "machine_shape": "NvidiaTeslaT4",
+  "dataset_sources": [],
+  "competition_sources": ["name-that-llm"],
+  "kernel_sources": [],
+  "model_sources": []
+}
